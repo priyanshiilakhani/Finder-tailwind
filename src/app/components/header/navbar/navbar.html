@@ -1,9 +1,7 @@
 <div id="navbar" class="flex justify-start gap-1 items-center">
     @for (menu of navbarMenuData; track $index) {
-    <div class="hs-dropdown [--trigger:click] relative inline-flex transition-all duration-300 py-2 overflow-visible" >
-        <button type="button" class="hs-dropdown-toggle cursor-pointer text-default-900 flex items-center py-2 px-4.5 gap-1 rounded-full font-medium"
-          routerLinkActive="active"
->
+    <div class="hs-dropdown [--trigger:click] relative inline-flex transition-all duration-300 py-2 overflow-visible">
+        <button type="button" class="hs-dropdown-toggle cursor-pointer text-default-900 flex items-center py-2 px-4.5 gap-1 rounded-full font-medium">
             {{ menu.label }}
             <iconify-icon icon="tabler:chevron-down" class="size-4.5">
             </iconify-icon>
@@ -17,7 +15,7 @@
                 <ul class="flex flex-col">
                     @for (item of menu.items; track $index) {
                     <li class="group z-30">
-                        <a [routerLink]="item.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="block text-default text-sm font-semibold rounded-md hover:bg-default-100 hover:dark:bg-white/3 p-2">
+                        <a [routerLink]="item.link" class="block text-default text-sm font-semibold rounded-md hover:bg-default-100 hover:dark:bg-white/3 p-2">
 
                             <span class="font-medium">
                                 {{ item.title }}
@@ -28,7 +26,7 @@
                             </span>
 
                         </a>
-                        <a [routerLink]="item.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="absolute top-0 end-2 h-full -m-px w-50 rounded translate-x-full bg-body-bg p-2 border border-default-200 bg-cover bg-no-repeat opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:z-30">
+                        <a [routerLink]="item.link" class="absolute top-0 end-2 h-full -m-px w-50 rounded translate-x-full bg-body-bg p-2 border border-default-200 bg-cover bg-no-repeat opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:z-30">
 
                             <img [src]="item.image?.light" [alt]="item.title" class="block dark:hidden h-full w-full object-cover rounded-lg">
 
@@ -62,7 +60,7 @@
                         <ul class="flex flex-col gap-1 mb-4">
                             @for (link of item.links; track $index) {
                             <li>
-                                <a class="hover:underline text-sm" [routerLink]="link.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                                <a class="hover:underline text-sm" [routerLink]="link.link">
                                     {{ link.label }}
                                 </a>
                             </li>
@@ -103,7 +101,7 @@
 
                                 @for (subItem of item.links; track $index) {
 
-                                <a [routerLink]="subItem.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="text-sm py-2 px-3 hover:bg-default-300/25 dark:hover:bg-white/10 rounded-lg">
+                                <a [routerLink]="subItem.link" class="text-sm py-2 px-3 hover:bg-default-300/25 dark:hover:bg-white/10 rounded-lg">
 
                                     {{ subItem.label }}
 
@@ -116,7 +114,7 @@
                         <!-- NORMAL LINK -->
                         @else {
 
-                        <a [routerLink]="item.link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="py-2 px-3 text-sm inline-flex hover:bg-default-300/25 dark:hover:bg-white/10 w-full rounded-md">
+                        <a [routerLink]="item.link" class="py-2 px-3 text-sm inline-flex hover:bg-default-300/25 dark:hover:bg-white/10 w-full rounded-md">
 
                             {{ item.title }}
 

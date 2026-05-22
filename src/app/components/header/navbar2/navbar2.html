@@ -1,6 +1,9 @@
 <!-- Navbar -->
 <header>
-    <div class="navbar bg-transparent fixed transition-all top-0 inset-x-0 w-screen z-20 duration-300">
+    <div class="navbar fixed transition-all top-0 inset-x-0 w-screen z-20 duration-300" [ngClass]="{
+    'bg-white shadow-sm dark:bg-[#121519]': isSticky,
+    'bg-transparent': !isSticky
+  }">
         <div class="container">
             <div class="md:grid lg:grid-cols-5 grid-cols-3 flex items-center justify-between py-3 lg:py-3.5">
                 <div class="flex items-center lg:hidden">
@@ -35,26 +38,6 @@
 
                 <div>
                     <div class="flex justify-end items-center gap-4">
-                        <div class="hs-dropdown .[--trigger:hover] [--placement:bottom] pe-2">
-                            <button id="hs-dropdown-dark-mode" type="button" class="hs-dropdown-toggle hs-dark-mode group flex items-center text-default-600 focus:outline-hidden font-medium" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
-                                <lucide-icon name="sun" class="hs-dark-mode-active:hidden size-4.5"></lucide-icon>
-                                <lucide-icon name="moon" class="hs-dark-mode-active:block hidden size-4.5"></lucide-icon>
-                            </button>
-
-                            <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 mt-4 hidden z-10 transition-[margin,opacity] opacity-0 duration-300 mb-2 origin-bottom-left bg-body-bg border border-border shadow-custom rounded-lg p-3 space-y-0.5 w-36" role="menu">
-                                <button type="button" class="w-full flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-default-800 hover:bg-default-300/25 dark:hover:bg-white/10 focus:outline-hidden text-nowrap" data-hs-theme-click-value="default">
-                                    <div><lucide-icon name="sun" class="size-4.5"></lucide-icon></div>Light
-                                </button>
-
-                                <button type="button" class="w-full flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-default-800 hover:bg-default-300/25 dark:hover:bg-white/10 focus:outline-hidden" data-hs-theme-click-value="dark">
-                                    <lucide-icon name="moon" class="size-4.5"></lucide-icon> Dark
-                                </button>
-
-                                <button type="button" class="w-full flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-default-800 hover:bg-default-300/25 dark:hover:bg-white/10 focus:outline-hidden" data-hs-theme-click-value="auto">
-                                    <lucide-icon name="ban" class="size-4.5"></lucide-icon> Auto
-                                </button>
-                            </div>
-                        </div>
                         <app-theme-dropdown />
 
                         <div>

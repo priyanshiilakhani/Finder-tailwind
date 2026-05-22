@@ -4,10 +4,11 @@ import { LucideAngularModule } from 'lucide-angular';
 import { Navbar } from '../navbar/navbar';
 import { MobileMenu } from '../mobile-menu/mobile-menu';
 import { BackToTop } from '../back-to-top/back-to-top';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar1',
-  imports: [ThemeDropdown, LucideAngularModule, Navbar, MobileMenu, BackToTop],
+  imports: [ThemeDropdown, LucideAngularModule, Navbar, MobileMenu, BackToTop,CommonModule],
   templateUrl: './navbar1.html',
   styles: ``,
 })
@@ -16,9 +17,6 @@ export class Navbar1 {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    const scrollTop =
-      window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-    this.isSticky = scrollTop >= 75;
+    this.isSticky = window.scrollY >= 75;
   }
 }

@@ -1,10 +1,10 @@
 <!-- Navbar -->
 <header>
-    <div class="navbar bg-transparent fixed transition-all top-0 inset-x-0 w-screen z-20 duration-300" 
-     [class]="{
-          'bg-white shadow-sm dark:bg-[#121519]': isSticky,
-          'bg-transparent': !isSticky
-        }">
+    <div class="navbar fixed transition-all top-0 inset-x-0 w-screen z-50 duration-300" 
+    [ngClass]="{
+    'bg-white shadow-sm dark:bg-[#121519]': isSticky,
+    'bg-transparent': !isSticky
+  }">
         <div class="container">
             <div class="md:grid lg:grid-cols-5 grid-cols-3 flex items-center justify-between py-3 lg:py-3.5">
                 <div class="flex items-center lg:hidden md:me-0 me-6">
