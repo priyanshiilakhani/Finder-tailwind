@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Event, NavigationEnd, Router, RouterOutlet } from '@angular/router';
+import { TitleService } from './services/title.service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,17 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('finder-tailwind');
+    constructor(
+    private router: Router,
+    private titleService: TitleService,
+  ) {}
+
+  ngOnInit() {
+    this.titleService.init();
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        setTimeout(() => window.HSStaticMethods.autoInit(), 100);
+      }
+    });
+  }
 }
