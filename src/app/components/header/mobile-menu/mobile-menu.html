@@ -1,0 +1,153 @@
+<div class="hs-accordion-group">
+  @for (item of mobileMenuData; track $index) {
+
+  <div class="hs-accordion" [id]="'hs-basic-heading-' + $index">
+
+    <!-- MAIN BUTTON -->
+    <button
+      class="hs-accordion-toggle text-default-900 w-full flex items-center justify-between gap-2 py-2 px-4.5 rounded-md font-medium hs-accordion-active:bg-default-100"
+      aria-expanded="false">
+
+      {{ item.title }}
+
+      <iconify-icon
+        [icon]="item.icon"
+        class="size-4">
+      </iconify-icon>
+    </button>
+
+    <!-- MAIN CONTENT -->
+    <div
+      class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300 my-1 border rounded-md border-default-100 dark:border-white/20 relative z-40"
+      [class]="item.className">
+
+      <div class="flex flex-col">
+
+        <!-- DIRECT LINKS -->
+        @if (item.links?.length) {
+
+          @for (link of item.links; track $index) {
+
+            <a
+              [routerLink]="link.href"
+              class="text-default-900 text-sm font-semibold rounded-md hover:bg-default-100 hover:dark:bg-white/3 py-2 px-3">
+
+              @if (link.image) {
+                <img
+                  [src]="link.image"
+                  class="w-full rounded-md mb-2"
+                  alt="">
+              }
+
+              <span class="font-medium">
+                {{ link.title }}
+              </span>
+
+              @if (link.description) {
+                <span class="block text-xs font-normal text-body-color">
+                  {{ link.description }}
+                </span>
+              }
+            </a>
+          }
+        }
+
+        <!-- SECTIONS -->
+        @if (item.sections?.length) {
+
+          @for (section of item.sections; track $index) {
+
+            <div
+              class="text-default-900 font-semibold mb-2"
+              [class.pt-6]="$index !== 0">
+
+              {{ section.heading }}
+            </div>
+
+            <ul class="flex flex-col gap-2">
+
+              @for (link of section.links; track $index) {
+
+                <li>
+                  <a
+                    class="inline font-normal text-sm"
+                    [href]="link.href">
+
+                    {{ link.title }}
+                  </a>
+                </li>
+
+              }
+
+            </ul>
+          }
+        }
+
+        <!-- CHILD ACCORDIONS -->
+        @if (item.children?.length) {
+
+          @for (child of item.children; track $index) {
+
+            <div class="hs-accordion-group">
+
+              <div class="hs-accordion border-b border-white/20">
+
+                <!-- CHILD BUTTON -->
+                <button
+                  class="hs-accordion-toggle w-full flex items-center justify-between gap-2 py-2 px-3 rounded-md font-normal text-sm hs-accordion-active:bg-default-100"
+                  aria-expanded="false">
+
+                  {{ child.title }}
+
+                  <iconify-icon
+                    [icon]="child.icon"
+                    class="size-4">
+                  </iconify-icon>
+
+                </button>
+
+                <!-- CHILD CONTENT -->
+                <div
+                  class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300">
+
+                  <div class="border border-border rounded-md p-3 my-1">
+
+                    <ul class="gap-2 flex flex-col">
+
+                      @for (subLink of child.links; track $index) {
+
+                        <li>
+
+                          <a
+                            class="inline font-normal text-sm"
+                            [href]="subLink.href">
+
+                            {{ subLink.title }}
+
+                          </a>
+
+                        </li>
+
+                      }
+
+                    </ul>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          }
+        }
+
+      </div>
+
+    </div>
+
+  </div>
+
+  }
+</div>

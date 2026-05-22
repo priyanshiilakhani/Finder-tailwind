@@ -1,0 +1,28 @@
+<section class="py-12 lg:my-12 md:my-6 my-3">
+    <div class="container">
+        <h2 class="lg:pt-6 mb-4 lg:text-4.5xl md:text-3.5xl text-2.5xl text-default-900 font-semibold text-center">Complete Front-end Solution</h2>
+        <p class="text-lg md:pb-12 mb-6 lg:mb-6 text-center">All you need for your next directory or listings project</p>
+
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6 items-center">
+            <div>
+                <img src="assets/img/intro/pages-light.png" class="block dark:hidden" alt="Listings Front-end">
+                <img src="assets/img/intro/pages-dark.png" class="hidden dark:block" alt="Listings Front-end">
+            </div>
+
+            <div class="lg:w-[500px] w-full ms-auto">
+                <ul class="flex flex-col gap-4">
+                    @for (feature of featureData; track $index) {
+                    <li class="flex">
+                        <div>
+                            <iconify-icon [icon]="feature.icon" class="text-info text-lg mt-1 me-2">
+                            </iconify-icon>
+                        </div>
+
+                        <span>{{ feature.title }}</span>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

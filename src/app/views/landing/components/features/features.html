@@ -1,0 +1,20 @@
+<section class="py-12 lg:my-12 md:my-6 my-3">
+    <div class="container">
+        <h2 class="text-center text-default-900 font-semibold lg:text-4.5xl md:text-3.5xl text-2.5xl lg:mb-12 mb-4 lg:mt-2 lg:pt-6 lg:pb-4 md:pb-6 pb-4">Finder Feature Highlights</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:gap-12 md:gap-10 gap-6">
+            @for (item of featureGridData; track $index) {
+            <div class="text-center">
+                <img [src]="item.image" alt="" [class]="item.imageClass">
+
+                <h3 class="pt-1 pb-2 mb-1 text-xl text-default-800 font-semibold">
+                    {{ item.title }}
+                </h3>
+                <p>
+                    {{ item.description }}
+                </p>
+            </div>
+            }
+        </div>
+    </div>
+</section>

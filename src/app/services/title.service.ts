@@ -30,7 +30,7 @@ export class TitleService {
 
     if (route.snapshot.data['title']) {
       this.titleService.setTitle(
-        route.snapshot.data['title'] + ' - Technology and Corporate Tailwind CSS Template',
+        route.snapshot.data['title'] + ' | Finder - Multipurpose Tailwind CSS Landing Page Template',
       );
     }
   }

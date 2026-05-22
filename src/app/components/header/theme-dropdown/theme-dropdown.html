@@ -1,0 +1,20 @@
+<div class="hs-dropdown .[--trigger:hover] [--placement:bottom]" [class]="wrapperClass">
+    <button id="hs-dropdown-dark-mode" type="button" class="hs-dropdown-toggle hs-dark-mode group flex items-center text-default-600 focus:outline-hidden font-medium" aria-haspopup="menu" aria-expanded="false" aria-label="Dropdown">
+        <lucide-icon name="sun" class="hs-dark-mode-active:hidden size-4.5"></lucide-icon>
+        <lucide-icon name="moon" class="hs-dark-mode-active:block hidden size-4.5"></lucide-icon>
+    </button>
+
+    <div class="hs-dropdown-menu hs-dropdown-open:opacity-100 mt-4 hidden z-10 transition-[margin,opacity] opacity-0 duration-300 mb-2 origin-bottom-left bg-body-bg border border-border shadow-custom rounded-lg p-3 space-y-0.5 w-36" role="menu">
+        @for (item of themeData; track $index) {
+        <button type="button" class="w-full flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-default-800 hover:bg-default-300/25 dark:hover:bg-white/10 focus:outline-hidden" [class.text-nowrap]="$first" [attr.data-hs-theme-click-value]="item.mode" (click)="setTheme(item.mode)">
+
+            <div>
+                <lucide-icon [name]="item.icon" class="size-4.5">
+                </lucide-icon>
+            </div>
+
+            {{ item.label }}
+        </button>
+        }
+    </div>
+</div>
