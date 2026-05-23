@@ -1,0 +1,40 @@
+<section class="lg:py-16 md:pt-6 pt-2 pb-10">
+  <div class="container">
+    <h2
+      class="lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-center text-default-900 lg:mb-12 md:mb-8 mb-6"
+    >
+      Currently in demand
+    </h2>
+
+    <div class="swiper">
+      <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-12">
+        @for (category of carCategories; track $index) {
+          <swiper-slide>
+            <div class="group">
+              <a [routerLink]="category.link" class="group">
+                <div class="rounded-full w-33 mx-auto h-auto overflow-hidden">
+                  <img
+                    [src]="category.image"
+                    alt="Category image"
+                    class="w-33 h-auto object-cover transition-transform duration-500 group-hover:scale-110 rounded-full z-0"
+                  />
+                </div>
+
+                <h3 class="text-default-900 font-semibold pt-4 text-center">
+                  <a
+                    class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300"
+                    [routerLink]="category.link"
+                  >
+                    {{ category.title }}
+                  </a>
+                </h3>
+              </a>
+            </div>
+          </swiper-slide>
+        }
+      </swiper-container>
+      <!-- Pagination (Bullets) -->
+      <div id="category-pagination" class="swiper-pagination static mt-3"></div>
+    </div>
+  </div>
+</section>

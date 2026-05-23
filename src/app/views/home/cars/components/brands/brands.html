@@ -1,0 +1,16 @@
+<section class="lg:py-16 md:pt-6 pt-2 pb-12">
+  <div class="container">
+    <div class="swiper pt-1 pt-sm-2 py-lg-2 py-xl-3">
+      <swiper-container [config]="swiperConfig" init="false" class="mb-12 lg:mb-0">
+        @for (brand of brandData; track $index) {
+          <swiper-slide>
+            <a [routerLink]="brand.link" [title]="brand.title" [attr.aria-label]="brand.title">
+              <div [innerHTML]="getSafeSvg(brand.svg)"></div>
+            </a>
+          </swiper-slide>
+        }
+      </swiper-container>
+      <div id="brand-pagination" class="swiper-pagination static mt-3"></div>
+    </div>
+  </div>
+</section>
