@@ -1,94 +1,54 @@
-  <section class="lg:pb-28 md:pb-18 pb-12">
-        <div class="container">
-            <div class="flex items-start justify-between gap-4 pb-6 mb-4">
-                <h2 class="text-center lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold text-default-900">Latest blogs</h2>
-                <div class="inline-flex items-center gap-2">
-                    <a href="blog-layout-v1.html" class="hover:underline flex items-center me-1 font-semibold">View all
-                        <i class="iconify lucide--chevron-right text-lg"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="swiper pb-5" data-swiper='{
-                "slidesPerView": 1,
-                "spaceBetween": 24,
-                "pagination": {
-                    "el": ".swiper-pagination",
-                    "clickable": true
-                },
-                "breakpoints": {
-                    "500": {
-                    "slidesPerView": 2
-                    },
-                    "992": {
-                    "slidesPerView": 3
-                    }
-                }
-                }'>
-                <div class="swiper-wrapper lg:mb-0 mb-15">
-                    <!-- Article -->
-                    <div class="swiper-slide">
-                        <a href="blog-single-v1.html" class="group">
-                            <div class="rounded-md overflow-hidden mb-6">
-                                <img src="/img/blog/v1/01.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
-                            </div>
-                            <div class="mb-3">
-                                <a class="text-secondary text-xs uppercase" href="#!">Renting advice</a>
-                            </div>
-                            <h3 class="text-default-900 font-semibold text-xl mb-2">
-                                <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" href="blog-single-v1.html">What to know when renting an apartment</a>
-                            </h3>
-                            <p class="text-sm mb-4">It is quite difficult to find a good apartment for long-term rent in large cities. In addition, potential tenants can face prob...</p>
-
-                            <div class="text-sm gap-3">
-                                <a class="font-semibold" href="#!">by Cody Fisher</a>
-                                <span class="text-secondary">July 09, 2024</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <a href="blog-single-v1.html" class="group">
-                            <div class="rounded-md overflow-hidden mb-6">
-                                <img src="/img/blog/v1/02.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
-                            </div>
-                            <div class="mb-3">
-                                <a class="text-secondary text-xs uppercase" href="#!">Investment advice</a>
-                            </div>
-                            <h3 class="text-default-900 font-semibold text-xl mb-2">
-                                <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" href="blog-single-v1.html">Types of luxury housing</a>
-                            </h3>
-                            <p class="text-sm mb-4">What luxury housing is clear to every person. Housing characterized by increased comfort, interior, quality and ma...</p>
-
-                            <div class="text-sm gap-3">
-                                <a class="font-semibold" href="#!">by Kristin Watson</a>
-                                <span class="text-secondary">June 26, 2024</span>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <a href="blog-single-v1.html" class="group">
-                            <div class="rounded-md overflow-hidden mb-6">
-                                <img src="/img/blog/v1/03.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
-                            </div>
-                            <div class="mb-3">
-                                <a class="text-secondary text-xs uppercase" href="#!">Home improvement</a>
-                            </div>
-                            <h3 class="text-default-900 font-semibold text-xl mb-2">
-                                <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" href="blog-single-v1.html">How to modernize your home on a budget</a>
-                            </h3>
-                            <p class="text-sm mb-4">Modernizing your home doesn't have to break the bank. Here are some budget-friendly tips to give your living space a mo...</p>
-
-                            <div class="text-sm gap-3">
-                                <a class="font-semibold" href="#!">by Darrell Steward</a>
-                                <span class="text-secondary">May 13, 2024</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <!-- Pagination (Bullets) -->
-                <div class="swiper-pagination static mt-3 mt-sm-4"></div>
+<section class="lg:pb-28 md:pb-18 pb-12">
+    <div class="container">
+        <div class="flex items-start justify-between gap-4 pb-6 mb-4">
+            <h2 class="text-center lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold text-default-900">Latest blogs</h2>
+            <div class="inline-flex items-center gap-2">
+                <a routerLink="/blog-layout/v1" class="hover:underline flex items-center me-1 font-semibold">View all
+                    <iconify-icon icon="lucide:chevron-right" class="text-lg"></iconify-icon>
+                </a>
             </div>
         </div>
-    </section>
+
+        <div class="swiper pb-5">
+            <swiper-container class="swiper-wrapper lg:mb-0 mb-15" [config]="swiperConfig" init="false">
+                @for (item of blogData; track $index) {
+                <swiper-slide>
+                    <a [routerLink]="item.link" class="group">
+                        <div class="rounded-md overflow-hidden mb-6">
+                            <img [src]="item.image" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
+                        </div>
+
+                        <div class="mb-3">
+                            <a class="text-secondary text-xs uppercase" [routerLink]="[]">
+                                {{ item.category }}
+                            </a>
+                        </div>
+
+                        <h3 class="text-default-900 font-semibold text-xl mb-2">
+                            <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" [routerLink]="item.link">
+                                {{ item.title }}
+                            </a>
+                        </h3>
+
+                        <p class="text-sm mb-4">
+                            {{ item.description }}
+                        </p>
+
+                        <div class="text-sm gap-3">
+                            <a class="font-semibold" [routerLink]="[]">
+                                by {{ item.author }}
+                            </a>
+
+                            <span class="text-secondary">
+                                {{ item.date }}
+                            </span>
+                        </div>
+                    </a>
+                </swiper-slide>
+                }
+            </swiper-container>
+            <!-- Pagination (Bullets) -->
+            <div id="blog-pagination" class="swiper-pagination static mt-3 mt-sm-4"></div>
+        </div>
+    </div>
+</section>

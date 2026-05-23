@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'real-estate-property-cost',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './property-cost.html',
   styles: ``,
 })

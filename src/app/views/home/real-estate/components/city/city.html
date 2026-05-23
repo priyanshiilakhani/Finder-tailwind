@@ -1,187 +1,76 @@
-    <section class="md:py-16 py-12 lg:mb-10">
-        <div class="container">
-            <div class="flex justify-between lg:mb-10 md:mb-8 mb-6">
-                <h2 class="lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold text-default-900">Search by city</h2>
-                <div class="flex gap-2">
-                    <button type="button" class="size-10 flex items-center border border-default-300 rounded-full justify-center animate-slide-start bg-body rounded-circle me-1" id="city-prev" aria-label="Prev">
-                        <i class="iconify lucide--chevron-left size-4.5"></i>
-                    </button>
-                    <button type="button" class="size-10 flex items-center justify-center border border-default-300 rounded-full animate-slide-end bg-body rounded-circle" id="city-next" aria-label="Next">
-                        <i class="iconify lucide--chevron-right size-4.5"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Carousel -->
-            <div class="swiper pb-5" data-swiper='{
-          " slidesPerView": 1, "spaceBetween" : 24, "loop" : true, "navigation" : { "prevEl" : "#city-prev" , "nextEl" : "#city-next" }, "pagination" : { "el" : ".swiper-pagination" , "clickable" : true }, "breakpoints" : { "460" : { "slidesPerView" : 2, "spaceBetween" : 16 }, "768" : { "slidesPerView" : 2, "spaceBetween" : 24 }, "860" : { "slidesPerView" : 3 }, "1200" : { "slidesPerView" : 4 } } }'>
-                <div class="swiper-wrapper mb-15">
-
-                    <div class="swiper-slide h-auto">
-                        <a href="listings-real-estate.html">
-                            <div class="border border-default-300 group rounded-md">
-                                <div class="rounded-tr-md rounded-tl-md overflow-hidden group">
-                                    <img src="/img/home/real-estate/cities/01.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-tr-md rounded-tl-md group-hover:scale-110 z-0">
-                                </div>
-                                <div class="p-4 text-center">
-                                    <a href="listings-real-estate.html" class="text-xl text-default-900 text-center font-semibold relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">New york</a>
-                                </div>
-
-                                <div class="pb-4 px-4">
-                                    <div class="flex justify-between">
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--zap size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for sale <span class="font-semibold text-body-color">1549</span></div>
-                                        </div>
-                                        <div class="mx-2 block bg-default-200 h-auto w-0.25"></div>
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--tag size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for rent <span class="font-semibold text-body-color">2806</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide h-auto">
-                        <a href="listings-real-estate.html">
-                            <div class="border border-default-300 group rounded-md">
-                                <div class="rounded-tr-md rounded-tl-md overflow-hidden group">
-                                    <img src="/img/home/real-estate/cities/02.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-tr-md rounded-tl-md group-hover:scale-110 z-0">
-                                </div>
-                                <div class="p-4 text-center">
-                                    <a href="listings-real-estate.html" class="text-xl text-default-900 text-center font-semibold relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">Dallas</a>
-                                </div>
-
-                                <div class="pb-4 px-4">
-                                    <div class="flex justify-between">
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--zap size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for sale <span class="font-semibold text-body-color">986</span></div>
-                                        </div>
-                                        <div class="mx-2 block bg-default-200 h-auto w-0.25"></div>
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--tag size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for rent <span class="font-semibold text-body-color">2903</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide h-auto">
-                        <a href="listings-real-estate.html">
-                            <div class="border border-default-300 group rounded-md">
-                                <div class="rounded-tr-md rounded-tl-md overflow-hidden group">
-                                    <img src="/img/home/real-estate/cities/03.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-tr-md rounded-tl-md group-hover:scale-110 z-0">
-                                </div>
-                                <div class="p-4 text-center">
-                                    <a href="listings-real-estate.html" class="text-xl text-default-900 text-center font-semibold relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">San francisco</a>
-                                </div>
-
-                                <div class="pb-4 px-4">
-                                    <div class="flex justify-between">
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--zap size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for sale <span class="font-semibold text-body-color">2134</span></div>
-                                        </div>
-                                        <div class="mx-2 block bg-default-200 h-auto w-0.25"></div>
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--tag size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for rent <span class="font-semibold text-body-color">4561</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide h-auto">
-                        <a href="listings-real-estate.html">
-                            <div class="border border-default-300 group rounded-md">
-                                <div class="rounded-tr-md rounded-tl-md overflow-hidden group">
-                                    <img src="/img/home/real-estate/cities/04.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-tr-md rounded-tl-md group-hover:scale-110 z-0">
-                                </div>
-                                <div class="p-4 text-center">
-                                    <a href="listings-real-estate.html" class="text-xl text-default-900 text-center font-semibold relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">Los angeles</a>
-                                </div>
-
-                                <div class="pb-4 px-4">
-                                    <div class="flex justify-between">
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--zap size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for sale <span class="font-semibold text-body-color">1875</span></div>
-                                        </div>
-                                        <div class="mx-2 block bg-default-200 h-auto w-0.25"></div>
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--tag size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for rent <span class="font-semibold text-body-color">3262</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide h-auto">
-                        <a href="listings-real-estate.html">
-                            <div class="border border-default-300 group rounded-md">
-                                <div class="rounded-tr-md rounded-tl-md overflow-hidden group">
-                                    <img src="/img/home/real-estate/cities/05.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-tr-md rounded-tl-md group-hover:scale-110 z-0">
-                                </div>
-                                <div class="p-4 text-center">
-                                    <a href="listings-real-estate.html" class="text-xl text-default-900 text-center font-semibold relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">Chicago</a>
-                                </div>
-
-                                <div class="pb-4 px-4">
-                                    <div class="flex justify-between">
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--zap size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for sale <span class="font-semibold text-body-color">1549</span></div>
-                                        </div>
-                                        <div class="mx-2 block bg-default-200 h-auto w-0.25"></div>
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--tag size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for rent <span class="font-semibold text-body-color">2806</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="swiper-slide h-auto">
-                        <a href="listings-real-estate.html">
-                            <div class="border border-default-300 group rounded-md">
-                                <div class="rounded-tr-md rounded-tl-md overflow-hidden group">
-                                    <img src="/img/home/real-estate/cities/06.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-tr-md rounded-tl-md group-hover:scale-110 z-0">
-                                </div>
-                                <div class="p-4 text-center">
-                                    <a href="listings-real-estate.html" class="text-xl text-default-900 text-center font-semibold relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">Philadelphia</a>
-                                </div>
-
-                                <div class="pb-4 px-4">
-                                    <div class="flex justify-between">
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--zap size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for sale <span class="font-semibold text-body-color">874</span></div>
-                                        </div>
-                                        <div class="mx-2 block bg-default-200 h-auto w-0.25"></div>
-                                        <div class="pe-1 text-center w-1/2">
-                                            <i class="iconify lucide--tag size-4 mb-1 text-default-500"></i>
-                                            <div class="text-sm">for rent <span class="font-semibold text-body-color">1625</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Pagination (Bullets) -->
-                <div class="swiper-pagination static pt-lg-1 mt-3 mt-sm-4"></div>
+<section class="md:py-16 py-12 lg:mb-10">
+    <div class="container">
+        <div class="flex justify-between lg:mb-10 md:mb-8 mb-6">
+            <h2 class="lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold text-default-900">Search by city</h2>
+            <div class="flex gap-2">
+                <button type="button" class="size-10 flex items-center border border-default-300 rounded-full justify-center animate-slide-start bg-body rounded-circle me-1" id="city-prev" aria-label="Prev">
+                    <iconify-icon icon="lucide:chevron-left" class="size-4.5"></iconify-icon>
+                </button>
+                <button type="button" class="size-10 flex items-center justify-center border border-default-300 rounded-full animate-slide-end bg-body rounded-circle" id="city-next" aria-label="Next">
+                    <iconify-icon icon="lucide:chevron-right" class="size-4.5"></iconify-icon>
+                </button>
             </div>
         </div>
-    </section>
+
+        <!-- Carousel -->
+        <div class="swiper pb-5">
+            <swiper-container class="mb-15" [config]="swiperConfig" init="false">
+
+                @for (item of cityData; track $index) {
+                <swiper-slide class="h-auto">
+                    <a [routerLink]="item.link">
+                        <div class="border border-default-300 group rounded-md">
+
+                            <div class="rounded-tr-md rounded-tl-md overflow-hidden group">
+                                <img [src]="item.image" [alt]="item.name" class="w-full h-full object-cover transition-transform duration-500 rounded-tr-md rounded-tl-md group-hover:scale-110 z-0">
+                            </div>
+
+                            <div class="p-4 text-center">
+                                <a [routerLink]="item.link" class="text-xl text-default-900 text-center font-semibold relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">
+                                    {{ item.name }}
+                                </a>
+                            </div>
+
+                            <div class="pb-4 px-4">
+                                <div class="flex justify-between">
+
+                                    <div class="pe-1 text-center w-1/2">
+                                        <iconify-icon icon="lucide:zap" class="size-4 mb-1 text-default-500">
+                                        </iconify-icon>
+
+                                        <div class="text-sm">
+                                            for sale
+                                            <span class="font-semibold text-body-color">
+                                                {{ item.sale }}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mx-2 block bg-default-200 h-auto w-0.25"></div>
+
+                                    <div class="pe-1 text-center w-1/2">
+                                        <iconify-icon icon="lucide:tag" class="size-4 mb-1 text-default-500">
+                                        </iconify-icon>
+
+                                        <div class="text-sm">
+                                            for rent
+                                            <span class="font-semibold text-body-color">
+                                                {{ item.rent }}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+                </swiper-slide>
+                }
+            </swiper-container>
+
+            <!-- Pagination (Bullets) -->
+            <div id="city-pagination" class="swiper-pagination static pt-lg-1 mt-3 mt-sm-4"></div>
+        </div>
+    </div>
+</section>

@@ -1,125 +1,127 @@
 <section class="lg:py-24 md:py-20 py-14 relative">
-        <div class="container">
-            <div class="flex justify-between mb-6 flex-wrap">
-                <h2 class="lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold mb-4 text-default-900">Added today</h2>
-                <ul class="inline-flex gap-2 pb-4 overflow-x-auto">
-                    <li>
-                        <a [routerLink]="[]" class="border border-dark inline-flex rounded-full dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Apartments</a>
-                    </li>
+    <div class="container">
+        <div class="flex justify-between mb-6 flex-wrap">
+            <h2 class="lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold mb-4 text-default-900">Added today</h2>
+            <ul class="inline-flex gap-2 pb-4 overflow-x-auto">
+                @for (category of CategoriesData; track $index) {
+                <li>
+                    <a [routerLink]="[]" class="border inline-flex rounded-full  text-default-900 py-2.5 px-5 text-sm font-medium" [class]="$first ? 'border-dark dark:border-white' : 'border-default-300 transition-all duration-300 hover:border-dark hover:dark:border-white'">{{category.name}}</a>
+                </li>
+                }
+            </ul>
+        </div>
 
-                    <li>
-                        <a [routerLink]="[]" class="border border-default-300 inline-flex transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Houses</a>
-                    </li>
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6">
 
-                    <li>
-                        <a [routerLink]="[]" class="border border-default-300 inline-flex transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Rooms</a>
-                    </li>
+            <!-- Large Card -->
+            @if (largeProperty) {
+            <div class="relative rounded-xl overflow-hidden group">
+                <div class="absolute inset-0 bg-black/10 z-10"></div>
 
-                    <li>
-                        <a [routerLink]="[]" class="border border-default-300 inline-flex transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Commercials</a>
-                    </li>
-                </ul>
+                <img [src]="largeProperty.image" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 z-0">
+
+                <div class="p-4 inline-flex">
+                    <div class="inline-flex gap-2 absolute top-0 start-0 p-3 mt-2 ms-2">
+
+                        @if (largeProperty.verified) {
+                        <span class="bg-info text-white text-xs flex items-center px-2 py-1 font-medium rounded">
+                            Verified
+                            <iconify-icon icon="lucide:shield" class="ms-1"></iconify-icon>
+                        </span>
+                        }
+
+                        @if (largeProperty.featured) {
+                        <span class="bg-warning text-white px-2 py-1 text-xs font-semibold rounded">
+                            Featured
+                        </span>
+                        }
+                    </div>
+                </div>
+
+                <div class="absolute top-0 start-0 size-full z-10 p-4 lg:p-6">
+                    <div class="flex items-end h-full p-3">
+                        <div class="flex flex-wrap items-center justify-between w-full gap-3">
+                            <div>
+                                <h3 class="text-white flex flex-wrap md:text-2.5xl text-20 items-center mb-1 lg:mb-2">
+                                    {{ largeProperty.title }}
+
+                                    <span class="text-base font-medium mx-2">|</span>
+
+                                    <span class="text-base">
+                                        {{ largeProperty.area }}
+                                    </span>
+                                </h3>
+
+                                <p class="text-sm text-white">
+                                    {{ largeProperty.address }}
+                                </p>
+                            </div>
+
+                            <a [routerLink]="largeProperty.link" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors relative">
+                                From {{ largeProperty.price }}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <span class="absolute top-0 start-0 size-full bg-black opacity-30 md:hidden block"></span>
+
+                <span class="absolute top-0 start-0 size-full hidden md:block" style="background: linear-gradient(0deg, rgba(64,64,64,0.74) 10.5%, rgba(0,0,0,0) 54.86%)">
+                </span>
             </div>
+            }
 
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-6">
-                <div class="relative rounded-xl overflow-hidden group">
+            <!-- Small Cards -->
+            <div>
+                @for (item of smallProperties; track $index) {
+
+                <div class="relative rounded-xl overflow-hidden group mb-6 last:mb-0">
                     <div class="absolute inset-0 bg-black/10 z-10"></div>
-                    <img src="assets/img/listings/real-estate/featured/01.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 z-0">
 
-                    <div class="p-4 inline-flex">
-                        <div class="inline-flex gap-2 absolute top-0 start-0 p-3 mt-2 ms-2">
-                            <span class="bg-info text-white text-xs flex items-center px-2 py-1 font-medium rounded">
-                                Verified
-                                <iconify-icon icon="lucide:shield" class="ms-1"></iconify-icon>
-                            </span>
-                            <span class="bg-warning text-white px-2 py-1 text-xs font-semibold rounded">Featured</span>
-                        </div>
+                    <img [src]="item.image" alt="Category image" class="w-full lg:h-81.5 h-47 object-cover transition-transform duration-500 group-hover:scale-105">
+
+                    <div class="absolute top-0 start-0 z-20 p-3 mt-2 ms-2 flex gap-2">
+
+                        @if (item.featured) {
+                        <span class="bg-warning text-white px-2 py-1 text-xs font-semibold rounded">
+                            Featured
+                        </span>
+                        }
                     </div>
 
-                    <div class="absolute top-0 start-0 size-full z-10 p-4 lg:p-6">
-                        <div class="flex items-end h-full p-3">
-                            <div class="flex flex-wrap items-center justify-between w-full gap-3">
-                                <div>
-                                    <h3 class="text-white flex flex-wrap md:text-2.5xl text-20 items-center mb-1 lg:mb-2">
-                                        3-bed apartment
-                                        <span class="text-base font-medium mx-2">|</span>
-                                        <span class="text-base">127 sq.m</span>
-                                    </h3>
-                                    <p class="text-sm text-white">
-                                        3811 Ditmars Blvd Astoria, NY 11105
-                                    </p>
-                                </div>
-                                <a routerLink="/single-entry-real-estate" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors relative">
-                                    From $3,850
-                                </a>
+                    <div class="absolute top-0 start-0 size-full z-20 p-4 lg:p-6 flex items-end">
+                        <div class="flex flex-wrap items-center justify-between w-full gap-3">
+                            <div>
+                                <h3 class="text-white flex flex-wrap items-center md:text-2.5xl text-20 mb-1 lg:mb-2">
+                                    {{ item.title }}
+
+                                    <span class="text-base font-medium mx-2">|</span>
+
+                                    <span class="text-base">
+                                        {{ item.area }}
+                                    </span>
+                                </h3>
+
+                                <p class="text-sm text-white">
+                                    {{ item.address }}
+                                </p>
                             </div>
+
+                            <a [routerLink]="item.link" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors">
+                                From {{ item.price }}
+                            </a>
                         </div>
                     </div>
+
                     <span class="absolute top-0 start-0 size-full bg-black opacity-30 md:hidden block"></span>
-                    <span class="absolute top-0 start-0 size-full hidden md:block" style="background: linear-gradient(0deg, rgba(64,64,64,0.74) 10.5%, rgba(0,0,0,0) 54.86%)"></span>
+
+                    <span class="absolute top-0 start-0 size-full hidden md:block" style="background: linear-gradient(0deg, rgba(64,64,64,0.74) 10.5%, rgba(0,0,0,0) 54.86%)">
+                    </span>
                 </div>
 
-                <div>
-                    <div class="relative rounded-xl overflow-hidden group mb-6">
-                        <div class="absolute inset-0 bg-black/10 z-10"></div>
-
-                        <img src="assets/img/listings/real-estate/featured/02.jpg" alt="Category image" class="w-full lg:h-81.5 h-47 object-cover transition-transform duration-500 group-hover:scale-105">
-
-                        <div class="absolute top-0 start-0 z-10 p-3 mt-2 ms-2 flex gap-2">
-                            <span class="bg-warning text-white px-2 py-1 text-xs font-semibold rounded">Featured</span>
-                        </div>
-
-                        <div class="absolute top-0 start-0 size-full z-20 p-4 lg:p-6 flex items-end">
-                            <div class="flex flex-wrap items-center justify-between w-full gap-3">
-                                <div>
-                                    <h3 class="text-white flex flex-wrap items-center md:text-2.5xl text-20 mb-1 lg:mb-2">
-                                        2-bed apartment
-                                        <span class="text-base font-medium mx-2">|</span>
-                                        <span class="text-base">78 sq.m</span>
-                                    </h3>
-                                    <p class="text-sm text-white">
-                                        40 S 9th St, Brooklyn, NY 11249
-                                    </p>
-                                </div>
-                                <a routerLink="/single-entry-real-estate" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors">
-                                    From $2,600
-                                </a>
-                            </div>
-                        </div>
-
-                        <span class="absolute top-0 start-0 size-full bg-black opacity-30 md:hidden block"></span>
-                        <span class="absolute top-0 start-0 size-full hidden md:block" style="background: linear-gradient(0deg, rgba(64,64,64,0.74) 10.5%, rgba(0,0,0,0) 54.86%)"></span>
-                    </div>
-
-                    <div class="relative rounded-xl overflow-hidden group">
-                        <div class="absolute inset-0 bg-black/10 z-10"></div>
-                        <img src="assets/img/listings/real-estate/featured/03.jpg" alt="Category image" class="w-full object-cover lg:h-81.5 h-47 transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute top-0 start-0 z-20 p-3 mt-2 ms-2 flex gap-2">
-                            <span class="bg-warning text-white px-2 py-1 text-xs font-semibold rounded">Featured</span>
-                        </div>
-
-                        <div class="absolute top-0 start-0 size-full z-20 p-4 lg:p-6 flex items-end">
-                            <div class="flex flex-wrap items-center justify-between w-full gap-3">
-                                <div>
-                                    <h3 class="text-white flex flex-wrap items-center md:text-2.5xl text-20 mb-1 lg:mb-2">
-                                        1-bed apartment
-                                        <span class="text-base font-medium mx-2">|</span>
-                                        <span class="text-base">78 sq.m</span>
-                                    </h3>
-                                    <p class="text-sm text-white">
-                                        444 Park Ave, Brooklyn, NY 11205
-                                    </p>
-                                </div>
-                                <a routerLink="/single-entry-real-estate" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors">
-                                    From $1,750
-                                </a>
-                            </div>
-                        </div>
-                        <span class="absolute top-0 start-0 size-full bg-black opacity-30 md:hidden block"></span>
-                        <span class="absolute top-0 start-0 size-full hidden md:block" style="background: linear-gradient(0deg, rgba(64,64,64,0.74) 10.5%, rgba(0,0,0,0) 54.86%)"></span>
-                    </div>
-                </div>
+                }
             </div>
         </div>
-        <div class="absolute top-0 start-0 w-full h-4/5 -z-10 bg-default-100 dark:bg-white/3 "></div>
-    </section>
+    </div>
+    <div class="absolute top-0 start-0 w-full h-4/5 -z-10 bg-default-100 dark:bg-white/3 "></div>
+</section>

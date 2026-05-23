@@ -10,10 +10,11 @@ import { City } from "./components/city/city";
 import { Partners } from "./components/partners/partners";
 import { TopAgents } from "./components/top-agents/top-agents";
 import { Blog } from "./components/blog/blog";
+import { Footer } from "@app/components/footer/footer/footer";
 
 @Component({
   selector: 'app-real-estate',
-  imports: [Navbar2, Hero, Categories, ActionCards, TopOffers, RecentlyAdded, PropertyCost, City, Partners, TopAgents, Blog],
+  imports: [Navbar2, Hero, Categories, ActionCards, TopOffers, RecentlyAdded, PropertyCost, City, Partners, TopAgents, Blog, Footer],
   templateUrl: './real-estate.html',
   styles: ``,
 })

@@ -5,10 +5,11 @@ import { Navbar } from '../navbar/navbar';
 import { MobileMenu } from '../mobile-menu/mobile-menu';
 import { BackToTop } from '../back-to-top/back-to-top';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-navbar1',
-  imports: [ThemeDropdown, LucideAngularModule, Navbar, MobileMenu, BackToTop,CommonModule],
+  imports: [ThemeDropdown, LucideAngularModule, Navbar, MobileMenu, BackToTop, CommonModule, RouterLink],
   templateUrl: './navbar1.html',
   styles: ``,
 })
