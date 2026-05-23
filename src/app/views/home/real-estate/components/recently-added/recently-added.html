@@ -4,19 +4,19 @@
                 <h2 class="lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold mb-4 text-default-900">Added today</h2>
                 <ul class="inline-flex gap-2 pb-4 overflow-x-auto">
                     <li>
-                        <a href="#!" class="border border-dark inline-flex rounded-full dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Apartments</a>
+                        <a [routerLink]="[]" class="border border-dark inline-flex rounded-full dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Apartments</a>
                     </li>
 
                     <li>
-                        <a href="#!" class="border border-default-300 inline-flex transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Houses</a>
+                        <a [routerLink]="[]" class="border border-default-300 inline-flex transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Houses</a>
                     </li>
 
                     <li>
-                        <a href="#!" class="border border-default-300 inline-flex transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Rooms</a>
+                        <a [routerLink]="[]" class="border border-default-300 inline-flex transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Rooms</a>
                     </li>
 
                     <li>
-                        <a href="#!" class="border border-default-300 inline-flex transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Commercials</a>
+                        <a [routerLink]="[]" class="border border-default-300 inline-flex transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Commercials</a>
                     </li>
                 </ul>
             </div>
@@ -24,13 +24,13 @@
             <div class="grid md:grid-cols-2 grid-cols-1 gap-6">
                 <div class="relative rounded-xl overflow-hidden group">
                     <div class="absolute inset-0 bg-black/10 z-10"></div>
-                    <img src="/img/listings/real-estate/featured/01.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 z-0">
+                    <img src="assets/img/listings/real-estate/featured/01.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 z-0">
 
                     <div class="p-4 inline-flex">
                         <div class="inline-flex gap-2 absolute top-0 start-0 p-3 mt-2 ms-2">
                             <span class="bg-info text-white text-xs flex items-center px-2 py-1 font-medium rounded">
                                 Verified
-                                <i class="iconify lucide--shield ms-1"></i>
+                                <iconify-icon icon="lucide:shield" class="ms-1"></iconify-icon>
                             </span>
                             <span class="bg-warning text-white px-2 py-1 text-xs font-semibold rounded">Featured</span>
                         </div>
@@ -49,7 +49,7 @@
                                         3811 Ditmars Blvd Astoria, NY 11105
                                     </p>
                                 </div>
-                                <a href="single-entry-real-estate.html" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors relative">
+                                <a routerLink="/single-entry-real-estate" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors relative">
                                     From $3,850
                                 </a>
                             </div>
@@ -63,7 +63,7 @@
                     <div class="relative rounded-xl overflow-hidden group mb-6">
                         <div class="absolute inset-0 bg-black/10 z-10"></div>
 
-                        <img src="/img/listings/real-estate/featured/02.jpg" alt="Category image" class="w-full lg:h-81.5 h-47 object-cover transition-transform duration-500 group-hover:scale-105">
+                        <img src="assets/img/listings/real-estate/featured/02.jpg" alt="Category image" class="w-full lg:h-81.5 h-47 object-cover transition-transform duration-500 group-hover:scale-105">
 
                         <div class="absolute top-0 start-0 z-10 p-3 mt-2 ms-2 flex gap-2">
                             <span class="bg-warning text-white px-2 py-1 text-xs font-semibold rounded">Featured</span>
@@ -81,7 +81,7 @@
                                         40 S 9th St, Brooklyn, NY 11249
                                     </p>
                                 </div>
-                                <a href="single-entry-real-estate.html" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors">
+                                <a routerLink="/single-entry-real-estate" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors">
                                     From $2,600
                                 </a>
                             </div>
@@ -93,7 +93,7 @@
 
                     <div class="relative rounded-xl overflow-hidden group">
                         <div class="absolute inset-0 bg-black/10 z-10"></div>
-                        <img src="/img/listings/real-estate/featured/03.jpg" alt="Category image" class="w-full object-cover lg:h-81.5 h-47 transition-transform duration-500 group-hover:scale-105">
+                        <img src="assets/img/listings/real-estate/featured/03.jpg" alt="Category image" class="w-full object-cover lg:h-81.5 h-47 transition-transform duration-500 group-hover:scale-105">
                         <div class="absolute top-0 start-0 z-20 p-3 mt-2 ms-2 flex gap-2">
                             <span class="bg-warning text-white px-2 py-1 text-xs font-semibold rounded">Featured</span>
                         </div>
@@ -110,7 +110,7 @@
                                         444 Park Ave, Brooklyn, NY 11205
                                     </p>
                                 </div>
-                                <a href="single-entry-real-estate.html" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors">
+                                <a routerLink="/single-entry-real-estate" class="bg-primary/90 text-sm font-semibold text-white px-4 py-2 rounded group-hover:bg-primary transition-colors">
                                     From $1,750
                                 </a>
                             </div>

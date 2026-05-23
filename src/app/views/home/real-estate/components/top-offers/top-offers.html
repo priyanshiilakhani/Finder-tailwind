@@ -1,498 +1,165 @@
- <section class="lg:py-12 pt-6 pb-12">
-        <div class="container">
-            <div class="flex justify-between lg:mb-10 mb-8">
-                <h2 class="lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold text-default-900">Top offers</h2>
-                <div class="flex gap-2">
-                    <button type="button" class="size-10 flex items-center border border-default-300 rounded-full justify-center animate-slide-start bg-body rounded-circle me-1" id="offers-prev" aria-label="Prev">
-                        <i class="iconify lucide--chevron-left  animate-target size-4.5"></i>
-                    </button>
-
-                    <button type="button" class="size-10 flex items-center justify-center border border-default-300 rounded-full animate-slide-end bg-body rounded-circle" id="offers-next" aria-label="Next">
-                        <i class="iconify lucide--chevron-right  animate-target size-4.5"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Carousel -->
-            <div class="swiper pb-5" data-swiper='{
-                    "slidesPerView": 1,
-                    "spaceBetween": 24,
-                    "loop": true,
-                    "navigation": {
-                        "prevEl": "#offers-prev",
-                        "nextEl": "#offers-next"
-                    },
-                    "pagination": {
-                        "el": ".swiper-pagination",
-                        "clickable": true
-                    },
-                    "breakpoints": {
-                        "460": {
-                        "slidesPerView": 2
-                        },
-                        "768": {
-                        "slidesPerView": 3
-                        },
-                        "992": {
-                        "slidesPerView": 4
-                        }
-                    }
-                }'>
-                <div class="swiper-wrapper mb-15">
-                    <div class="swiper-slide h-auto group">
-                        <article class="bg-body-bg rounded-lg border border-default-200 h-full transition">
-                            <div class="relative bg-default-100 dark:bg-white/3 overflow-hidden rounded-t-lg">
-                                <div class="swiper z-20" data-swiper='{
-                                        "pagination": { "el": ".swiper-pagination" },
-                                        "navigation": { "prevEl": ".btn-prev", "nextEl": ".btn-next" },
-                                        "breakpoints": { "991": { "allowTouchMove": false } }
-                                    }'>
-                                    <a class="swiper-wrapper" href="single-entry-real-estate.html">
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/01.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/01.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/01.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <div class="absolute top-0 start-0 z-10 flex flex-col gap-2 pt-2 ps-2 mt-2 ms-2">
-                                        <div class="bg-info text-white text-xs inline-flex item-center font-medium px-2 py-1 rounded items-center">
-                                            Verified <i class="iconify lucide--shield ms-1"></i>
-                                        </div>
-
-                                        <div>
-                                            <p class="bg-primary inline-flex w-auto text-white text-xs px-2 py-1 rounded">New</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
-                                        <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--heart"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="absolute top-1/2 start-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 ms-3">
-                                        <button type="button" class="btn-prev size-8 bg-white rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--chevron-left text-lg"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="absolute top-1/2 end-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 me-3">
-                                        <button type="button" class="btn-next size-8 bg-white rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--chevron-right text-lg"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="swiper-pagination bottom-0 mb-2"></div>
-                                </div>
-                            </div>
-
-                            <div class="p-4">
-                                <div class="pb-1 mb-2">
-                                    <span class="bg-default-100 dark:bg-white/3 font-medium text-default-800 text-xs px-2 py-1 rounded">For rent</span>
-                                </div>
-                                <div class="text-xl text-default-900 font-semibold mb-2">$1,620</div>
-                                <h3 class="text-sm font-normal text-default-700 mb-2">
-                                    <a href="single-entry-real-estate.html" class="text-body-color">
-                                        40 S 9th St, Brooklyn, NY 11249
-                                    </a>
-                                </h3>
-                                <div class="text-sm text-default-900 font-semibold">65 sq.m</div>
-                            </div>
-
-                            <div class="flex gap-2.5 px-3 pb-3 text-sm text-default-700">
-                                <div class="flex items-center gap-1">
-                                    2<i class="iconify lucide--bed-single text-default-500 size-5"></i>
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                    1<i class="iconify lucide--shower-head text-default-500 size-5"></i>
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                    1<i class="iconify lucide--car text-default-500 size-5"></i>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="swiper-slide h-auto group">
-                        <article class="bg-body-bg rounded-lg border border-default-200 h-full transition">
-                            <div class="relative bg-default-100 dark:bg-white/3 overflow-hidden rounded-t-lg">
-                                <div class="swiper z-20" data-swiper='{
-                                    "pagination": { "el": ".swiper-pagination" },
-                                    "navigation": { "prevEl": ".btn-prev", "nextEl": ".btn-next" },
-                                    "breakpoints": { "991": { "allowTouchMove": false } }
-                                }'>
-                                    <a class="swiper-wrapper" href="single-entry-real-estate.html">
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/04.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/04.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/04.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <div class="absolute top-0 start-0 z-10 flex flex-col gap-2 pt-2 ps-2 mt-2 ms-2">
-                                        <div>
-                                            <p class="bg-primary inline-flex w-auto text-white text-xs px-2 py-1 rounded">New</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
-                                        <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--heart"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="absolute top-1/2 start-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 ms-3">
-                                        <button type="button" class="btn-prev size-8 bg-white rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--chevron-left text-lg"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="absolute top-1/2 end-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 me-3">
-                                        <button type="button" class="btn-next size-8 bg-white rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--chevron-right text-lg"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="swiper-pagination bottom-0 mb-2"></div>
-                                </div>
-                            </div>
-
-                            <div class="p-4">
-                                <div class="pb-1 mb-2">
-                                    <span class="bg-default-100 dark:bg-white/3 font-medium text-default-800 text-xs px-2 py-1 rounded">For rent</span>
-                                </div>
-                                <div class="text-xl text-default-900 font-semibold mb-2">$1,170</div>
-                                <h3 class="text-sm font-normal text-default-700 mb-2">
-                                    <a href="single-entry-real-estate.html" class="text-body-color">
-                                        67-04 Myrtle Ave Glendale, NY 11385
-                                    </a>
-                                </h3>
-                                <div class="text-sm text-default-900 font-semibold">42 sq.m</div>
-                            </div>
-
-                            <div class="flex gap-2.5 px-3 pb-3 text-sm text-default-700">
-                                <div class="flex items-center gap-1">
-                                    1<i class="iconify lucide--bed-single text-default-500 size-5"></i>
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                    1<i class="iconify lucide--shower-head text-default-500 size-5"></i>
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                    0<i class="iconify lucide--car text-default-500 size-5"></i>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="swiper-slide h-auto group">
-                        <article class="bg-body-bg rounded-lg border border-default-200 h-full transition">
-                            <div class="relative bg-default-100 dark:bg-white/3 overflow-hidden rounded-t-lg">
-                                <div class="swiper z-20" data-swiper='{
-                                        "pagination": { "el": ".swiper-pagination" },
-                                        "navigation": { "prevEl": ".btn-prev", "nextEl": ".btn-next" },
-                                        "breakpoints": { "991": { "allowTouchMove": false } }
-                                    }'>
-                                    <a class="swiper-wrapper" href="single-entry-real-estate.html">
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/06.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/06.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/06.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <div class="absolute top-0 start-0 z-10 flex flex-col gap-2 pt-2 ps-2 mt-2 ms-2">
-                                        <div class="bg-info text-white text-xs inline-flex item-center font-medium px-2 py-1 rounded items-center">
-                                            Verified <i class="iconify lucide--shield ms-1"></i>
-                                        </div>
-
-                                        <div>
-                                            <p class="bg-primary inline-flex w-auto text-white text-xs px-2 py-1 rounded">New</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
-                                        <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--heart"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="absolute top-1/2 start-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 ms-3">
-                                        <button type="button" class="btn-prev size-8 bg-white rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--chevron-left text-lg"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="absolute top-1/2 end-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 me-3">
-                                        <button type="button" class="btn-next size-8 bg-white rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--chevron-right text-lg"></i>
-                                        </button>
-                                    </div>
-                                    <div class="swiper-pagination bottom-0 mb-2"></div>
-                                </div>
-                            </div>
-
-                            <div class="p-4">
-                                <div class="pb-1 mb-2">
-                                    <span class="bg-default-100 dark:bg-white/3 font-medium text-default-800 text-xs px-2 py-1 rounded">For sale</span>
-                                </div>
-
-                                <div class="text-xl text-default-900 font-semibold mb-2">$475,000</div>
-                                <h3 class="text-sm font-normal text-default-700 mb-2">
-                                    <a href="single-entry-real-estate.html" class="text-body-color">
-                                        929 Hart St, Brooklyn, NY 11237
-                                    </a>
-                                </h3>
-                                <div class="text-sm text-default-900 font-semibold">108 sq.m</div>
-                            </div>
-
-                            <div class="flex gap-2.5 px-3 pb-3 text-sm text-default-700">
-                                <div class="flex items-center gap-1">
-                                    3<i class="iconify lucide--bed-single text-default-500 size-5"></i>
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                    2<i class="iconify lucide--shower-head text-default-500 size-5"></i>
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                    1<i class="iconify lucide--car text-default-500 size-5"></i>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="swiper-slide h-auto group">
-                        <article class="bg-body-bg rounded-lg border border-default-200 h-full transition">
-                            <div class="relative bg-default-100 dark:bg-white/3 overflow-hidden rounded-t-lg">
-                                <div class="swiper z-20" data-swiper='{
-                                        "pagination": { "el": ".swiper-pagination" },
-                                        "navigation": { "prevEl": ".btn-prev", "nextEl": ".btn-next" },
-                                        "breakpoints": { "991": { "allowTouchMove": false } }
-                                    }'>
-                                    <a class="swiper-wrapper" href="single-entry-real-estate.html">
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/07.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/07.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/07.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <div class="absolute top-0 start-0 z-10 flex flex-col gap-2 pt-2 ps-2 mt-2 ms-2">
-                                        <div class="bg-info text-white text-xs inline-flex item-center font-medium px-2 py-1 rounded items-center">
-                                            Verified <i class="iconify lucide--shield ms-1"></i>
-                                        </div>
-                                    </div>
-
-                                    <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
-                                        <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--heart"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="absolute top-1/2 start-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 ms-3">
-                                        <button type="button" class="btn-prev size-8 bg-white rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--chevron-left text-lg"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="absolute top-1/2 end-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 me-3">
-                                        <button type="button" class="btn-next size-8 bg-white rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--chevron-right text-lg"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="swiper-pagination bottom-0 mb-2"></div>
-                                </div>
-                            </div>
-
-                            <div class="p-4">
-                                <div class="pb-1 mb-2">
-                                    <span class="bg-default-100 dark:bg-white/3 font-medium text-default-800 text-xs px-2 py-1 rounded">For rent</span>
-                                </div>
-                                <div class="text-xl text-default-900 font-semibold mb-2">$1,490</div>
-                                <h3 class="text-sm font-normal text-default-700 mb-2">
-                                    <a href="single-entry-real-estate.html" class="text-body-color">
-                                        123 Bedford Avenue, Brooklyn, NY 11211
-                                    </a>
-                                </h3>
-                                <div class="text-sm text-default-900 font-semibold">80 sq.m</div>
-                            </div>
-
-                            <div class="flex gap-2.5 px-3 pb-3 text-sm text-default-700">
-                                <div class="flex items-center gap-1">
-                                    2<i class="iconify lucide--bed-single text-default-500 size-5"></i>
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                    1<i class="iconify lucide--shower-head text-default-500 size-5"></i>
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                    1<i class="iconify lucide--car text-default-500 size-5"></i>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="swiper-slide h-auto group">
-                        <article class="bg-body-bg rounded-lg border border-default-200 h-full transition">
-                            <div class="relative bg-default-100 dark:bg-white/3 overflow-hidden rounded-t-lg">
-                                <div class="swiper z-20" data-swiper='{
-                                        "pagination": { "el": ".swiper-pagination" },
-                                        "navigation": { "prevEl": ".btn-prev", "nextEl": ".btn-next" },
-                                        "breakpoints": { "991": { "allowTouchMove": false } }
-                                    }'>
-                                    <a class="swiper-wrapper" href="single-entry-real-estate.html">
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/02.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/02.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-
-                                        <div class="swiper-slide">
-                                            <div class="block relative pb-[calc(248/362*100%)]">
-                                                <img src="/img/listings/real-estate/02.jpg" alt="Image" class="absolute inset-0 size-full object-cover">
-                                                <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"></span>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <div class="absolute top-0 start-0 z-10 flex flex-col gap-2 pt-2 ps-2 mt-2 ms-2">
-                                        <div>
-                                            <p class="bg-primary inline-flex w-auto text-white text-xs px-2 py-1 rounded">New</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
-                                        <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--heart"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="absolute top-1/2 start-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 ms-3">
-                                        <button type="button" class="btn-prev size-8 bg-white rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--chevron-left text-lg"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="absolute top-1/2 end-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 me-3">
-                                        <button type="button" class="btn-next size-8 bg-white rounded-full shadow flex items-center justify-center">
-                                            <i class="iconify lucide--chevron-right text-lg"></i>
-                                        </button>
-                                    </div>
-
-                                    <div class="swiper-pagination bottom-0 mb-2"></div>
-                                </div>
-                            </div>
-
-                            <div class="p-4">
-                                <div class="pb-1 mb-2">
-                                    <span class="bg-default-100 dark:bg-white/3 font-medium text-default-800 text-xs px-2 py-1 rounded">For rent</span>
-                                </div>
-                                <div class="text-xl text-default-900 font-semibold mb-2">$1,320</div>
-                                <h3 class="text-sm font-normal text-default-700 mb-2">
-                                    <a href="single-entry-real-estate.html" class="text-body-color">
-                                        517 82nd St, Brooklyn, NY 11209
-                                    </a>
-                                </h3>
-                                <div class="text-sm text-default-900 font-semibold">45 sq.m</div>
-                            </div>
-
-                            <div class="flex gap-2.5 px-3 pb-3 text-sm text-default-700">
-                                <div class="flex items-center gap-1">
-                                    1<i class="iconify lucide--bed-single text-default-500 size-5"></i>
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                    1<i class="iconify lucide--shower-head text-default-500 size-5"></i>
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                    0<i class="iconify lucide--car text-default-500 size-5"></i>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-                <div class="swiper-pagination static pt-lg-1 mt-3 mt-sm-4"></div>
+<section class="lg:py-12 pt-6 pb-12">
+    <div class="container">
+        <div class="flex justify-between lg:mb-10 mb-8">
+            <h2 class="lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold text-default-900">Top offers</h2>
+            <div class="flex gap-2">
+                <button type="button" class="size-10 flex items-center border border-default-300 rounded-full justify-center animate-slide-start bg-body rounded-circle me-1" id="offers-prev" aria-label="Prev">
+                    <iconify-icon icon="lucide:chevron-left" class="animate-target size-4.5"></iconify-icon>
+                </button>
+
+                <button type="button" class="size-10 flex items-center justify-center border border-default-300 rounded-full animate-slide-end bg-body rounded-circle" id="offers-next" aria-label="Next">
+                    <iconify-icon icon="lucide:chevron-right" class="animate-target size-4.5"></iconify-icon>
+                </button>
             </div>
         </div>
-    </section>
+
+        <!-- Carousel -->
+        <div class="swiper pb-5">
+            <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper mb-15">
+                @for (item of propertyData; track $index;let i = $index) {
+
+                <swiper-slide class="h-auto group">
+
+                    <article class="bg-body-bg rounded-lg border border-default-200 h-full transition">
+
+                        <div class="relative bg-default-100 dark:bg-white/3 overflow-hidden rounded-t-lg">
+
+                            <div class="swiper z-20">
+
+                                <!-- Inner Swiper -->
+                                <swiper-container  #innerSwiper [config]="propertyImageSwiper(i)" init="false" routerLink="/single-entry-real-estate">
+
+                                    @for (image of item.images; track $index ) {
+
+                                    <swiper-slide>
+
+                                        <div class="block relative pb-[calc(248/362*100%)]">
+
+                                            <img [src]="image" alt="Image" class="absolute inset-0 size-full object-cover">
+
+                                            <span class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10">
+                                            </span>
+
+                                        </div>
+
+                                    </swiper-slide>
+
+                                    }
+
+                                </swiper-container>
+
+                                <!-- Badges -->
+                                <div class="absolute top-0 start-0 z-10 flex flex-col gap-2 pt-2 ps-2 mt-2 ms-2">
+
+                                    @if (item.verified) {
+                                    <div class="bg-info text-white text-xs inline-flex item-center font-medium px-2 py-1 rounded items-center">
+
+                                        Verified
+
+                                        <iconify-icon icon="lucide:shield" class="ms-1">
+                                        </iconify-icon>
+
+                                    </div>
+                                    }
+
+                                    @if (item.isNew) {
+                                    <div>
+                                        <p class="bg-primary inline-flex w-auto text-white text-xs px-2 py-1 rounded">
+                                            New
+                                        </p>
+                                    </div>
+                                    }
+
+                                </div>
+
+                                <!-- Wishlist -->
+                                <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
+
+                                    <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
+
+                                        <iconify-icon icon="lucide:heart"></iconify-icon>
+
+                                    </button>
+
+                                </div>
+                                <div class="absolute top-1/2 start-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 ms-3">
+                                    <button type="button" [class]="'btn-prev-' + i" class="size-8 bg-white rounded-full shadow flex items-center justify-center">
+                                        <iconify-icon icon="lucide:chevron-left" class="text-lg"></iconify-icon>
+                                    </button>
+                                </div>
+
+                                <div class="absolute top-1/2 end-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 me-3">
+                                    <button type="button" [class]="'btn-next-' + i" class="size-8 bg-white rounded-full shadow flex items-center justify-center">
+                                        <iconify-icon icon="lucide:chevron-right" class="text-lg"></iconify-icon>
+                                    </button>
+                                </div>
+                                <div [class]="'offers-pagination-' + i" class="swiper-pagination bottom-0 mb-2"></div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4">
+
+                            <div class="pb-1 mb-2">
+
+                                <span class="bg-default-100 dark:bg-white/3 font-medium text-default-800 text-xs px-2 py-1 rounded">
+
+                                    {{ item.type }}
+
+                                </span>
+
+                            </div>
+
+                            <div class="text-xl text-default-900 font-semibold mb-2">
+                                {{ item.price }}
+                            </div>
+
+                            <h3 class="text-sm font-normal text-default-700 mb-2">
+
+                                <a routerLink="/single-entry-real-estate" class="text-body-color">
+
+                                    {{ item.address }}
+
+                                </a>
+
+                            </h3>
+
+                            <div class="text-sm text-default-900 font-semibold">
+                                {{ item.area }}
+                            </div>
+
+                        </div>
+
+                        <!-- Footer -->
+                        <div class="flex gap-2.5 px-3 pb-3 text-sm text-default-700">
+
+                            <div class="flex items-center gap-1">
+                                {{ item.beds }}
+                                <iconify-icon icon="lucide:bed-single" class="text-default-500" height="20" width="20">
+                                </iconify-icon>
+
+                            </div>
+
+                            <div class="flex items-center gap-1">
+                                {{ item.baths }}
+                                <iconify-icon icon="lucide:shower-head" class="text-default-500" height="20" width="20">
+                                </iconify-icon>
+                            </div>
+
+                            <div class="flex items-center gap-1">
+                                {{ item.parking }}
+                                <iconify-icon icon="lucide:car" class="text-default-500" height="20" width="20">
+                                </iconify-icon>
+                            </div>
+                        </div>
+                    </article>
+                </swiper-slide>
+                }
+
+            </swiper-container>
+            <div id="offers-pagination" class="swiper-pagination static pt-lg-1 mt-3 mt-sm-4"></div>
+        </div>
+    </div>
+</section>

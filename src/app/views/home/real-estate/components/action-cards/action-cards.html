@@ -1,16 +1,13 @@
 <section class="lg:py-18 py-0">
     <div class="container">
         <div class="swiper pb-5">
-            <swiper-container slides-per-view="1" space-between="24" pagination="true" pagination-el=".swiper-pagination" pagination-clickable="true" [breakpoints]='{
-        "500": { "slidesPerView": 2 },
-        "768": { "slidesPerView": 3 }
-      }' class="swiper-wrapper lg:mb-0 mb-15">
+            <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-15">
                 @for (card of actioncardsData; track $index) {
                 <swiper-slide>
                     <div class="rounded-md group overflow-hidden" [class]="card.bgClass">
 
                         <div class="pt-12 py-6 pb-4">
-                            <div class="mx-auto mb-4 text-dark-emphasis" [class]="card.textClass" [innerHTML]="card.svg">
+                            <div class="mx-auto mb-4 text-dark-emphasis" [class]="card.textClass" [innerHTML]="getSafeSvg(card.svg)">
                             </div>
 
                             <h3 class="text-xl font-semibold text-center" [class]="card.textClass">
@@ -35,7 +32,7 @@
                 }
             </swiper-container>
             <!-- Pagination (Bullets) -->
-            <div class="swiper-pagination static mt-3 mt-sm-4"></div>
+            <div id="swiper-pagination1" class="swiper-pagination static mt-3 mt-sm-4"></div>
         </div>
     </div>
 </section>

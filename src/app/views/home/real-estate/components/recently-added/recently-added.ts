@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'real-estate-recently-added',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './recently-added.html',
   styles: ``,
+  schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RecentlyAdded {}
