@@ -1,0 +1,38 @@
+<section class="md:pb-18 pb-12">
+    <div class="container">
+        <div class="grid md:grid-cols-12 grid-cols-1 gap-6 bg-info rounded-md lg:py-20 md:py-14.5 md:px-0 px-6 py-12 mb-12 dark items-center">
+            <div class="lg:col-span-10 md:col-span-9 col-span-1">
+                <div class="lg:w-3xl md:w-100 w-full mx-auto">
+                    <h2 class="text-white md:text-start text-center lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold mb-6">Want to be listed in our directory?</h2>
+                    <div class="flex lg:gap-12 flex-wrap md:justify-start justify-center md:gap-6 gap-4 items-center">
+
+                        @for (item of ctaData; track $index) {
+
+                        <div class="gap-3 flex items-center">
+
+                            <div>
+                                <div class="size-8 text-white text-sm font-semibold rounded-full border border-white flex justify-center items-center">
+                                    {{ $index + 1 }}
+                                </div>
+                            </div>
+
+                            <div class="text-sm font-medium text-white">
+                                {{ item }}
+                            </div>
+
+                        </div>
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 md:col-span-3 col-span-1">
+                <div class="md:text-start text-center">
+                    <a [routerLink]="[]" class=" text-white inline-flex bg-primary hover:bg-primary-hover py-3.5 px-6 font-semibold transition-all duration-300 rounded-md">Register now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

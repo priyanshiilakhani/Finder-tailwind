@@ -59,7 +59,6 @@ export type paymentMethodType = {
 
 export const paymentMethodsData: paymentMethodType[] = [
   {
-   
     src: 'assets/img/payment-methods/visa-dark-mode.svg',
     alt: 'Visa',
   },
@@ -78,5 +77,26 @@ export const paymentMethodsData: paymentMethodType[] = [
   {
     src: 'assets/img/payment-methods/apple-pay-dark-mode.svg',
     alt: 'Apple Pay',
+  },
+];
+
+export const footerData3: footerType[] = [
+  {
+    title: 'For patients',
+    links: ['Family medicine', 'Pediatrics', 'Top hospitals', 'Telehealth', 'Dentistry'],
+  },
+  {
+    title: 'For providers',
+    links: [
+      'Provider log in',
+      'Promote your practice',
+      'Claim your free profile',
+      'News and features',
+      'Help center',
+    ],
+  },
+  {
+    title: 'Our company',
+    links: ['Contact us', 'About us', 'Healthgrades methodologies', 'Privacy preferences'],
   },
 ];

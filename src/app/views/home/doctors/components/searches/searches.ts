@@ -1,15 +1,14 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { footerData3 } from '../data';
+import { medicalCategoryData } from '../../data';
 
 @Component({
-  selector: 'app-footer3',
+  selector: 'doctors-searches',
   imports: [RouterLink],
-  templateUrl: './footer3.html',
+  templateUrl: './searches.html',
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-
-export class Footer3 {
-  footerData3 = footerData3;
+export class Searches {
+  medicalCategoryData = medicalCategoryData;
 }

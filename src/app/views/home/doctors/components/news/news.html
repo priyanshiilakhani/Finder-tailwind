@@ -1,0 +1,92 @@
+<section class="lg:py-28 md:py-18 py-12">
+    <div class="container">
+        <div class="flex items-start justify-between lg:gap-4 md:mb-8 mb-6">
+            <h2 class="text-default-900 lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold">Health news</h2>
+            <div class="inline-flex items-center gap-2 ">
+                <a [routerLink]="[]" class="hover:underline flex items-center text-nowrap me-1 font-semibold">View all
+                    <iconify-icon icon="lucide:chevron-right" class="text-lg"></iconify-icon>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 grid-cols-1 lg:gap-6">
+            <div>
+                <a routerLink="/blog-single/v3">
+                    <div class="overflow-hidden rounded-md w-full h-105 mb-6">
+                        <img src="assets/img/blog/v4/featured01.jpg" class="rounded-md mb-6 object-cover w-full h-105 transition-transform duration-500 hover:scale-105" alt="Image">
+                    </div>
+                    <div class="flex items-center gap-1 text-default-500 mb-4">
+                        <div class="relative flex flex-nowrap items-center">
+                            <div class="size-6 me-2 ms-1">
+                                <img class="w-full h-full rounded-full object-cover" src="assets/img/blog/v4/author/01.jpg" alt="Avatar">
+                            </div>
+                            <a [routerLink]="[]" class="text-default-600 hover:text-default-900 font-semibold text-sm">Dr. Martha Simpson</a>
+                        </div>
+                        <iconify-icon icon="lucide:dot"></iconify-icon>
+                        <div class="text-sm">May 13, 2024</div>
+                    </div>
+
+                    <h3 class="md:text-2xl text-xl font-semibold mb-4 text-default-900">
+                        <a class="hover:underline" routerLink="/blog-single/v3">Herbal medicines: advantages and disadvantages</a>
+                    </h3>
+
+                    <a [routerLink]="[]" class="py-1 px-2 uppercase text-xs text-default-800 bg-default-100 dark:bg-white/3 rounded-md font-medium">Herbal medicine</a>
+                </a>
+            </div>
+
+            <hr class="my-6 text-default-200 dark:text-white/20 lg:hidden block">
+
+            <div class="lg:ps-8">
+
+                @for (item of blogPostsData; track $index; let last = $last) {
+
+                <div class="grid md:grid-cols-12 grid-cols-1 md:gap-12 gap-6 lg:pb-4">
+                    <div class="col-span-9 md:order-1 order-2">
+                        <div class="flex items-center gap-1 text-default-500 mb-4">
+                            <div class="relative flex flex-nowrap items-center">
+                                <div class="size-6 me-2">
+                                    <img class="w-full h-full rounded-full object-cover" [src]="item.authorImage" [alt]="item.authorName">
+                                </div>
+
+                                <a [routerLink]="[]" class="text-default-600 hover:text-default-900 font-semibold text-sm">
+                                    {{ item.authorName }}
+                                </a>
+
+                            </div>
+
+                            <iconify-icon icon="lucide:dot"></iconify-icon>
+
+                            <div class="text-sm">
+                                {{ item.date }}
+                            </div>
+
+                        </div>
+
+                        <h3 class="text-xl font-semibold mb-4 text-default-900">
+                            <a class="hover:underline" [routerLink]="item.link">
+                                {{ item.title }}
+                            </a>
+                        </h3>
+
+                        <a [routerLink]="[]" class="py-1 px-2 uppercase text-xs text-default-800 bg-default-100 dark:bg-white/3 rounded-md font-medium">
+                            {{ item.category }}
+                        </a>
+                    </div>
+
+                    <div class="col-span-3 md:order-2 order-1">
+                        <div class="overflow-hidden rounded-md w-33">
+                            <img [src]="item.image" class="rounded-md object-cover w-33 transition-transform duration-500 hover:scale-105" [alt]="item.title">
+                        </div>
+                    </div>
+                </div>
+
+                @if (!last) {
+                <hr class="my-6 text-default-200 dark:text-white/20">
+                }
+                }
+
+            </div>
+
+        </div>
+    </div>
+</section>

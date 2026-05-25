@@ -1,0 +1,22 @@
+   <section class="lg:pb-28 md:pb-18 pb-12">
+        <div class="container">
+            <h2 class="text-default-900 lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold mb-4">How it works</h2>
+            <p class="mb-8">Finder gives you the tools and information you need to:</p>
+
+            <div class="swiper pb-5">
+                <swiper-container [config]="swiperConfig" init="false" class="swiper-wrapper md:mb-0 mb-12">
+
+                    @for (step of stepsData; track $index) {
+                        <swiper-slide>
+                            <div>
+                                <img [src]="step.image" [alt]="step.alt" class="w-40.5 md:mx-0 mx-auto rounded-md">
+                            </div>
+                            <h3 class="mt-1 pt-4 text-2xl text-default-900 font-semibold mb-2">{{ step.title }}</h3>
+                            <p>{{ step.description }}</p>
+                        </swiper-slide>
+                    }
+                </swiper-container>
+                <div id="step-pagination" class="swiper-pagination static mt-3"></div>
+            </div>
+        </div>
+    </section>

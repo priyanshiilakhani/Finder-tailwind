@@ -1,0 +1,76 @@
+<section class="lg:py-30 md:py-18 py-12">
+    <div class="container">
+        <div class="grid lg:grid-cols-3 md:grid-cols-1 lg:gap-6">
+            <div class="col-span-1">
+                <div>
+                    <h2 class="text-default-900 lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold pb-5">Popular <br class="hidden lg:block"> searches</h2>
+                    <div class="mt-12 lg:block hidden">
+                        <img src="assets/img/home/doctors/popular-searches-light.png" class="block dark:hidden rounded-xl" alt="Image">
+                        <img src="assets/img/home/doctors/popular-searches-dark.png" class="hidden dark:block rounded-xl" alt="Image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 col-span-1">
+                <div class="lg:w-3xl w-full lg:ms-auto">
+                    @for (section of medicalCategoryData; track $index; let last=$last) {
+
+                    <div class="grid md:grid-cols-3 grid-cols-1 gap-6" [class]="!last ? 'lg:mb-12 mb-8' : ''">
+
+                        <div class="col-span-1">
+                            <div class="md:block flex justify-between items-center">
+
+                                <h3 class="md:mb-4 lg:text-2.5xl md:text-2xl text-xl text-default-900 font-semibold">
+                                    {{ section.title }}
+                                </h3>
+
+                                <div class="inline-flex items-center gap-2 ">
+                                    <a [routerLink]="section.viewAllLink" class="hover:underline text-sm py-2 flex items-center text-nowrap me-1 font-semibold">
+
+                                        View all
+
+                                        <iconify-icon icon="lucide:chevron-right" class="text-lg">
+                                        </iconify-icon>
+
+                                    </a>
+                                </div>
+
+                            </div>
+
+                            <hr class="mt-4 text-default-200 dark:text-white/20">
+                        </div>
+
+                        <div class="md:col-span-2 col-span-1 lg:w-md lg:ms-auto w-full">
+
+                            <div class="grid grid-cols-2 gap-6">
+
+                                @for (column of section.columns; track $index) {
+
+                                <div class="flex flex-col gap-2">
+
+                                    @for (item of column; track $index) {
+
+                                    <a [routerLink]="[]" class="text-default-700 hover:underline hover:text-default-900">
+
+                                        {{ item }}
+
+                                    </a>
+
+                                    }
+
+                                </div>
+
+                                }
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

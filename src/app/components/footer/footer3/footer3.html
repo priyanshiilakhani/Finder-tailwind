@@ -1,1 +1,107 @@
-<p>footer3 works!</p>
+<footer class="bg-body-bg dark">
+    <div class="container">
+        <div class="pt-12 pb-2">
+            <div class="grid lg:grid-cols-4 md:grid-cols-12 md:gap-6 md:mb-12 mb-4">
+                @for (section of footerData3; track $index) {
+
+                <!-- Desktop -->
+                <div class="lg:col-span-1 md:col-span-3 col-span-1 md:block hidden">
+                    <span class="mb-3 text-white font-semibold">
+                        {{ section.title }}
+                    </span>
+
+                    <div class="pt-2">
+                        <ul class="gap-2 flex flex-col">
+
+                            @for (item of section.links; track $index) {
+                            <li class="pt-1">
+                                <a [routerLink]="[]" class="text-sm text-white/70 transition-all duration-300 hover:underline hover:text-white">
+
+                                    {{ item }}
+                                </a>
+                            </li>
+                            }
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="hs-accordion-group md:hidden block">
+                    <div class="hs-accordion border-b border-white/20 py-3">
+
+                        <button class="hs-accordion-toggle inline-flex items-center gap-x-3 w-full font-semibold text-start text-base text-white" aria-expanded="false">
+
+                            {{ section.title }}
+
+                            <iconify-icon icon="lucide:chevron-down" class="hs-accordion-active:hidden block size-4">
+                            </iconify-icon>
+
+                            <iconify-icon icon="lucide:chevron-up" class="hs-accordion-active:block hidden size-4">
+                            </iconify-icon>
+                        </button>
+
+                        <div class="hs-accordion-content w-full overflow-hidden hidden transition-[height] duration-300" role="region">
+
+                            <div class="pt-2">
+                                <ul class="gap-2 flex flex-col">
+
+                                    @for (item of section.links; track $index) {
+                                    <li class="pt-1">
+                                        <a [routerLink]="[]" class="text-sm text-white/70 transition-all duration-300 hover:underline hover:text-white">
+
+                                            {{ item }}
+                                        </a>
+                                    </li>
+                                    }
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+
+                <div class="lg:col-span-1 md:col-span-4 md:mt-0 mt-6">
+                    <span class="mb-6 block text-white font-semibold">Subscribe to our newsletter</span>
+                    <div class="relative w-full flex items-center mb-4">
+                        <iconify-icon icon="lucide:mail" class="absolute top-1/2 start-0 -translate-y-1/2 text-white/50 text-xl ms-3"></iconify-icon>
+                        <input type="search" placeholder="your email" required class="w-full ps-11 pe-2 py-2 border bg-transparent border-default-300 dark:border-white/20 rounded-md text-sm text-white/70 focus:ring-0 focus:outline-none placeholder:text-white/70" />
+                    </div>
+                    <button type="button" class="w-full border border-white/70 bg-transparent rounded-md text-white py-2.5 px-6 text-sm font-semibold transition-all duration-300 hover:bg-white/70 hover:text-dark">Subscribe</button>
+                </div>
+            </div>
+
+            <div class="flex md:justify-between justify-center items-center gap-4 flex-wrap lg:py-6 pt-4 pb-6">
+                <p class="text-sm text-center text-white/60 md:order-1 order-2">© All rights reserved. Made by <a [routerLink]="[]" class="text-white hover:underline font-semibold">Coderthemes</a></p>
+
+                <div class="flex md:order-2 order-1">
+                    <div class="group flex justify-center items-center flex-col hs-tooltip [--placement:auto]">
+                        <button type="button" class="hs-tooltip-toggle size-10 inline-flex justify-center items-center gap-2 ">
+                            <iconify-icon icon="tabler:brand-instagram" class="text-white"></iconify-icon>
+                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible text-white/70 inline-block absolute invisible text-xs -mt-4 -ms-5 z-10 py-1 px-2 " role="tooltip">
+                                instagram
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="group flex justify-center items-center flex-col hs-tooltip [--placement:auto]">
+                        <button type="button" class="hs-tooltip-toggle size-10 inline-flex justify-center items-center gap-2 ">
+                            <iconify-icon icon="tabler:brand-facebook-filled" class="text-white"></iconify-icon>
+                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible text-white/70 inline-block absolute invisible text-xs -mt-4 -ms-5 z-10 py-1 px-2 " role="tooltip">
+                                Facebook
+                            </span>
+                        </button>
+                    </div>
+
+                    <div class="group flex justify-center items-center flex-col hs-tooltip [--placement:auto]">
+                        <button type="button" class="hs-tooltip-toggle size-10 inline-flex justify-center items-center gap-2 ">
+                            <iconify-icon icon="tabler:brand-x" class="text-white"></iconify-icon>
+                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible text-white/70 inline-block absolute invisible text-xs -mt-4 -ms-5 z-10 py-1 px-2 " role="tooltip">
+                                X (Twitter)
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
