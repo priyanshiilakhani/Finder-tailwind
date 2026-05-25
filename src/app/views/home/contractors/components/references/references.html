@@ -1,1 +1,44 @@
-<p>references works!</p>
+<section class="lg:pb-24 pt-5 md:pb-18 pb-14.5">
+    <div class="container">
+        <div class="flex md:items-center items-start justify-between gap-4 lg:mb-10 md:mb-8 mb-6">
+            <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-default-900">Common pricing references</h2>
+            <div class="inline-flex items-center gap-2 ">
+                <a [routerLink]="[]" class="hover:underline flex items-center text-nowrap me-1 font-semibold">View all
+                    <iconify-icon icon="lucide:chevron-right" class="text-lg"></iconify-icon>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6">
+            @for (reference of referencesData; track $index) {
+            <div class="group">
+                <a [routerLink]="reference.link" class="group">
+                    <div class="md:flex block border border-border rounded-md">
+                        <div class="md:rounded-bl-md rounded-bl-0 md:rounded-tr-none rounded-tr-md rounded-tl-md overflow-hidden group relative lg:h-45.75 h-48">
+                            <img [src]="reference.image" alt="" class="lg:h-45.75 h-48 w-full object-cover transition-transform duration-500 md:rounded-bl-md rounded-bl-0 md:rounded-tr-none rounded-tr-md rounded-tl-md group-hover:scale-105 z-0">
+                        </div>
+
+                        <div class="lg:p-6 p-4">
+                            <h3 class="text-default-900 font-semibold mb-2 group-hover:underline">
+                                <a [routerLink]="reference.link">{{ reference.title }}</a>
+                            </h3>
+
+                            <div class="flex items-center lg:gap-4 gap-1 mb-6">
+                                <div class="flex items-center gap-1">
+                                    <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+                                    <span class="text-sm text-body-color">{{ reference.rating }}</span>
+                                    <span class="text-xs text-secondary">({{ reference.reviews }})</span>
+                                </div>
+
+                                <div class="text-sm text-default-900">{{ reference.price }}</div>
+                            </div>
+
+                            <button type="button" class="mt-auto rounded-md border border-default-900 dark:border-white text-default-900 dark:text-white py-2.5 px-5 text-sm font-semibold inline-flex relative z-2 ms-auto transition-all duration-300 ease-in-out hover:bg-default-900 hover:text-white">Book now</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            }
+        </div>
+    </div>
+</section>

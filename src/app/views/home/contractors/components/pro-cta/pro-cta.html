@@ -1,1 +1,42 @@
-<p>pro-cta works!</p>
+<section class="relative bg-info lg:py-48 md:py-16 py-12">
+    <div class="container">
+        <div class="lg:w-md md:w-50 w-full lg:py-12">
+            <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl md:text-start text-center text-white font-semibold mb-8">Grow your business with us. Become a Pro today</h2>
+
+            <div class="flex gap-4 flex-wrap items-center">
+                <a routerLink="/add-contractor/location" class="py-3.5 px-6 rounded-md text-white bg-primary transition-all duration-300 hover:bg-primary-hover lg:w-auto w-full flex justify-center items-center gap-2">
+                    <iconify-icon icon="lucide:plus" class="text-lg"></iconify-icon>
+                    Add business
+                </a>
+
+                <a [routerLink]="[]" class="inline-flex items-center justify-center px-6 py-3 border lg:w-auto w-full border-white text-white rounded-md group">
+                    <span class="flex items-center gap-2 relative ">
+                        <span class="flex items-center gap-2 relative">
+                            <span class="relative z-10">Learn more</span>
+                            <span class="relative size-4 overflow-hidden">
+                                <iconify-icon icon="lucide:chevron-right" class="absolute top-0 start-0 transform transition-transform duration-300 group-hover:-translate-x-full"></iconify-icon>
+                                <iconify-icon icon="lucide:chevron-right" class="absolute top-0 start-full transform transition-transform duration-300 group-hover:-translate-x-full"></iconify-icon>
+                            </span>
+                        </span>
+                    </span>
+                </a>
+
+                <div class="absolute z-10 top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center justify-center" style="width:164px; height:164px;">
+
+                    <svg class="animate-spin" width="144" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="animation-duration: 22s;">
+                        <path id="circlePath" fill="none" d="M 10, 50a 40,40 0 1,1 80,0a 40,40 0 1,1 -80,0"></path>
+                        <text font-size="7.7" fill="#fff" style="letter-spacing: -.05em;">
+                            <textPath href="#circlePath">
+                                Feature your business customers &nbsp; Feature your business customers
+                            </textPath>
+                        </text>
+                    </svg>
+                    <span class="absolute top-0 start-0 w-full h-full border-2 border-white rounded-full"></span>
+                    <span class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-full" style="width:87px; height:87px;"></span>
+                    <span class="absolute top-1/2 start-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary rounded-full" style="width:30px; height:30px;"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="assets/img/home/contractors/become-pro-cta.jpg" class="absolute top-0 end-0 w-1/2 h-full object-cover hidden md:block" alt="Image">
+</section>

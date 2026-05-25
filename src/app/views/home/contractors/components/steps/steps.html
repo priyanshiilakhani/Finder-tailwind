@@ -1,1 +1,30 @@
-<p>steps works!</p>
+<section class="lg:py-24 md:py-18 py-14.5">
+    <div class="container">
+        <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-default-900 mb-4">How it works</h2>
+        <p class="mb-8 text-lg">Effortlessly find, connect, and hire the perfect contractor for your job - all in just three easy steps.</p>
+
+        <div class="swiper pb-5">
+            <swiper-container class="swiper-wrapper lg:mb-0 mb-15" [config]="swiperConfig" init="false">
+
+                @for (item of stepsData; track $index) {
+                <swiper-slide>
+
+                    <div [innerHTML]="getSafeSvg(item.svg)"></div>
+
+                    <h3 class="pt-6 mb-2 text-xl font-semibold text-default-900">
+                        {{ item.title }}
+                    </h3>
+
+                    <p>
+                        {{ item.description }}
+                    </p>
+
+                </swiper-slide>
+                }
+            </swiper-container>
+
+            <!-- Pagination (Bullets) -->
+            <div id="steps-pagination" class="swiper-pagination static mt-3"></div>
+        </div>
+    </div>
+</section>

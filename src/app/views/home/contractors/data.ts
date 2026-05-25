@@ -1,3 +1,23 @@
+const th01 = 'assets/img/home/contractors/projects/th01.jpg';
+const th02 = 'assets/img/home/contractors/projects/th02.jpg';
+const th03 = 'assets/img/home/contractors/projects/th03.jpg';
+const th04 = 'assets/img/home/contractors/projects/th04.jpg';
+const th05 = 'assets/img/home/contractors/projects/th05.jpg';
+
+const project01 = 'assets/img/home/contractors/projects/01.jpg';
+const project02 = 'assets/img/home/contractors/projects/02.jpg';
+const project03 = 'assets/img/home/contractors/projects/03.jpg';
+
+const project04 = 'assets/img/home/contractors/projects/04.jpg';
+const project05 = 'assets/img/home/contractors/projects/05.jpg';
+const project06 = 'assets/img/home/contractors/projects/06.jpg';
+const project07 = 'assets/img/home/contractors/projects/07.jpg';
+
+const advice01 = 'assets/img/home/contractors/advice/01.jpg';
+const advice02 = 'assets/img/home/contractors/advice/02.jpg';
+const advice03 = 'assets/img/home/contractors/advice/03.jpg';
+const advice04 = 'assets/img/home/contractors/advice/04.jpg';
+
 export const servicesData: string[] = [
   'Handyperson',
   'Electrician',
@@ -10,7 +30,7 @@ export type CategoryItem = {
   title: string;
   link: string;
   svg: string;
-}
+};
 
 export const categoriesData: CategoryItem[] = [
   {
@@ -109,5 +129,221 @@ export const categoriesData: CategoryItem[] = [
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor">
                                 <path d="M19.331 17.263a4.68 4.68 0 0 0 4.671-4.672c0-1.296-.528-2.511-1.461-3.392a5.59 5.59 0 0 0 .545-2.407c0-3.081-2.507-5.588-5.588-5.588-3.004 0-5.463 2.383-5.583 5.359a5.65 5.65 0 0 0-2.624 2.34c-.296-.057-.602-.088-.914-.088-2.647 0-4.8 2.153-4.8 4.8a4.81 4.81 0 0 0 4.31 4.775v3.454H3.566a.49.49 0 0 0 0 .98h16.342a.49.49 0 0 0 0-.98h-2.895v-4.582h2.318 0zM8.378 12.306a.49.49 0 0 0-.49.49v2.594 2.014c-1.876-.241-3.331-1.847-3.331-3.788 0-2.107 1.714-3.82 3.82-3.82s3.82 1.714 3.82 3.82c0 1.941-1.455 3.547-3.331 3.788v-1.811l1.744-1.744a.49.49 0 0 0-.693-.693l-1.051 1.051v-1.411a.49.49 0 0 0-.49-.49zm7.656 9.539h-1.821l.688-.688a.49.49 0 1 0-.693-.693l-.688.688v-.959a.49.49 0 1 0-.98 0v.959l-.688-.688a.49.49 0 1 0-.693.693l.688.688h-2.98v-3.454c1.218-.124 2.303-.706 3.08-1.57.688.293 1.418.442 2.177.442h1.909v4.582zm.49-14.825a.49.49 0 0 0-.49.49v2.242l-.57-.57a1.57 1.57 0 0 0 .171-.713 1.58 1.58 0 0 0-1.577-1.577 1.58 1.58 0 0 0-1.577 1.577 1.58 1.58 0 0 0 1.577 1.577 1.57 1.57 0 0 0 .713-.171l1.263 1.263v1.938 1.088l-1.133-1.132a.49.49 0 1 0-.693.693l1.825 1.825v.735h-1.909a4.56 4.56 0 0 1-1.584-.279 4.77 4.77 0 0 0 .637-2.388c0-1.979-1.204-3.683-2.919-4.416a4.64 4.64 0 0 1 2.311-1.842.49.49 0 0 0 .324-.471l-.003-.094c0-2.541 2.067-4.608 4.608-4.608s4.608 2.067 4.608 4.608a4.61 4.61 0 0 1-.604 2.28.49.49 0 0 0 .121.626c.889.706 1.399 1.76 1.399 2.892 0 2.036-1.656 3.692-3.692 3.692h-2.318v-.938-2.067l1.744-1.744a.49.49 0 1 0-.693-.693l-1.051 1.051v-.959V7.51a.49.49 0 0 0-.49-.49zm-1.869 1.448c0 .151-.057.289-.15.394l-.028.026-.026.028a.59.59 0 0 1-.394.149.6.6 0 0 1-.597-.597.6.6 0 0 1 .597-.597.6.6 0 0 1 .597.597zM1.898 21.845H.513a.49.49 0 0 0 0 .98h1.385a.49.49 0 1 0 0-.98zm21.589 0h-1.916a.49.49 0 0 0 0 .98h1.916a.49.49 0 0 0 0-.98zM6.973 2.908c-.474-1.048-1.518-1.733-2.69-1.733a2.95 2.95 0 0 0-2.752 1.88C.664 3.199 0 3.954 0 4.862a.49.49 0 0 0 .49.49h7.588a.49.49 0 0 0 .49-.49c0-.968-.677-1.77-1.594-1.954zM1.135 4.373a.85.85 0 0 1 .697-.362l.042.001a.49.49 0 0 0 .497-.369 1.97 1.97 0 0 1 1.913-1.487 1.97 1.97 0 0 1 1.875 1.357.49.49 0 0 0 .449.337 1.01 1.01 0 0 1 .856.524H1.135z"></path>
                             </svg>`,
+  },
+];
+
+export type ProjectType = {
+  image: string;
+  title: string;
+  rating: number;
+  reviews: number;
+  price: string;
+  link: string;
+};
+
+export const projectsData: ProjectType[] = [
+  {
+    image: th01,
+    title: 'Decks & porches',
+    rating: 4.7,
+    reviews: 95,
+    price: '$1,890',
+    link: '/listings-contractors',
+  },
+  {
+    image: th02,
+    title: 'Roof repair',
+    rating: 4.5,
+    reviews: 48,
+    price: '$1,120',
+    link: '/listings-contractors',
+  },
+  {
+    image: th03,
+    title: 'Appliance repair',
+    rating: 4.8,
+    reviews: 113,
+    price: '$120',
+    link: '/listings-contractors',
+  },
+  {
+    image: th04,
+    title: 'Gutter service',
+    rating: 5.0,
+    reviews: 73,
+    price: '$390',
+    link: '/listings-contractors',
+  },
+  {
+    image: th05,
+    title: 'Home cleaning',
+    rating: 4.9,
+    reviews: 256,
+    price: '$75',
+    link: '/listings-contractors',
+  },
+  {
+    image: th05,
+    title: 'Fence repair',
+    rating: 4.8,
+    reviews: 29,
+    price: '$205',
+    link: '/listings-contractors',
+  },
+];
+
+export type HomeProjectsType = {
+  image: string;
+  title: string;
+  rating: number;
+  reviews: number;
+  price: string;
+  link: string;
+};
+
+export const homeProjectsData: HomeProjectsType[] = [
+  {
+    image: project01,
+    title: 'One time cleaning service',
+    rating: 4.9,
+    reviews: 256,
+    price: '$80',
+    link: '/listings-contractors',
+  },
+  {
+    image: project02,
+    title: 'Handyperson for small projects',
+    rating: 4.7,
+    reviews: 63,
+    price: '$250',
+    link: '/listings-contractors',
+  },
+  {
+    image: project03,
+    title: 'Fence installation & repair',
+    rating: 4.8,
+    reviews: 29,
+    price: '$310',
+    link: '/listings-contractors',
+  },
+];
+
+export type AdviceType = {
+  image: string;
+  category: string;
+  title: string;
+  description: string;
+  date: string;
+};
+
+export const adviceData: AdviceType[] = [
+  {
+    image: advice01,
+    category: 'Cleaning',
+    title: 'Expert advice from masters of cleanliness',
+    description:
+      'Unlock the secrets to a spotless home with tips from cleaning professionals. From tackling stubborn...',
+    date: 'Oct 19, 2024',
+  },
+  {
+    image: advice02,
+    category: 'Flooring',
+    title: 'How to quickly clean laminate flooring',
+    description:
+      'Learn the fastest and most effective methods to clean laminate flooring without damaging its surface...',
+    date: 'Sep 13, 2024',
+  },
+  {
+    image: advice03,
+    category: 'Air Conditioning',
+    title: 'Choose air conditioner with air ionization',
+    description:
+      'Explore the benefits of air conditioners with air ionization technology. Find out how these units improve air...',
+    date: 'Sep 05, 2024',
+  },
+  {
+    image: advice04,
+    category: 'Landscaping',
+    title: 'Landscaping ideas from top local experts',
+    description:
+      "Get inspired by creative landscaping ideas from the best local experts. Whether you're revamping your garden...",
+    date: 'Aug 26, 2024',
+  },
+];
+
+export type StepsType = {
+  title: string;
+  description: string;
+  svg: string;
+};
+
+export const stepsData: StepsType[] = [
+  {
+    title: 'Explore',
+    description: 'Browse through our curated list of contractors.',
+    svg: `<svg class="text-default-500" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor">
+                            <path d="M41.441 35.281a.95.95 0 0 1-.184-.018.99.99 0 0 1-.175-.054.93.93 0 0 1-.162-.086.91.91 0 0 1-.142-.116c-.043-.043-.082-.091-.117-.142s-.063-.105-.085-.162-.042-.116-.053-.175a.95.95 0 0 1-.019-.184.93.93 0 0 1 .019-.183.88.88 0 0 1 .053-.175c.023-.057.052-.112.085-.162a.93.93 0 0 1 .117-.142c.174-.174.416-.275.663-.275a.94.94 0 0 1 .663.275c.043.043.082.091.116.142a.97.97 0 0 1 .087.162c.024.057.041.115.053.175a.93.93 0 0 1 .019.183.95.95 0 0 1-.019.184c-.012.059-.03.118-.053.175a.94.94 0 0 1-.087.162c-.034.052-.073.099-.116.142s-.091.082-.143.116a.86.86 0 0 1-.162.086.95.95 0 0 1-.175.054.93.93 0 0 1-.183.018zM27.48 37.367c-9.238 0-16.753-7.515-16.753-16.752S18.242 3.862 27.48 3.862s16.754 7.515 16.754 16.752-7.516 16.753-16.754 16.753zm0-31.63c-8.204 0-14.878 6.674-14.878 14.877A14.9 14.9 0 0 0 27.48 35.492a14.9 14.9 0 0 0 14.879-14.878A14.9 14.9 0 0 0 27.48 5.737zm-3.993 17.638a.94.94 0 0 1-.925-.79.94.94 0 0 1 .617-1.033c.162-.489.689-.756 1.18-.596l1.025.334a.94.94 0 0 1 .644.965c-.034.432-.359.784-.787.852l-1.605.256a.94.94 0 0 1-.149.012zm8.37 0a.94.94 0 0 1-.149-.012l-1.605-.256a.94.94 0 0 1-.143-1.817l1.025-.334a.94.94 0 0 1 1.18.596.94.94 0 0 1 .617 1.033.94.94 0 0 1-.925.79zM41.989 6.104A20.38 20.38 0 0 0 27.478.094a20.39 20.39 0 0 0-14.511 6.01 20.38 20.38 0 0 0-6.011 14.51 20.37 20.37 0 0 0 5.363 13.833l-1.308 1.308-1.546-1.546a.94.94 0 0 0-1.326 0l-6.95 6.95C.423 41.925 0 42.945 0 44.03s.423 2.105 1.189 2.871a4.05 4.05 0 0 0 2.872 1.188 4.05 4.05 0 0 0 2.872-1.188l6.95-6.949c.176-.176.275-.414.275-.663s-.099-.487-.275-.663l-1.546-1.546 1.308-1.308c3.018 2.76 6.728 4.53 10.788 5.136 1.029.154 2.057.23 3.08.23a20.38 20.38 0 0 0 9.325-2.256.94.94 0 0 0 .407-1.262.94.94 0 0 0-1.262-.407c-7.226 3.703-15.941 2.332-21.688-3.414a18.52 18.52 0 0 1-5.463-13.186A18.52 18.52 0 0 1 14.293 7.43c7.271-7.27 19.101-7.27 26.371 0 5.964 5.963 7.184 15.221 2.966 22.512a.94.94 0 0 0 .342 1.281.94.94 0 0 0 1.281-.342c4.643-8.025 3.3-18.214-3.263-24.777zM11.895 39.289l-6.287 6.287a2.19 2.19 0 0 1-3.092 0 2.17 2.17 0 0 1 0-3.092l6.287-6.287.883.883-2.639 2.639a.94.94 0 0 0 0 1.326c.183.183.423.275.663.275s.48-.092.663-.275l2.639-2.639.883.883zm23.459-13.825v-2.415c.184-.75 1.136-4.809 1.137-8.386 0-1.47-.33-2.859-.607-3.765l-.418-1.188c-.201-.5-.284-.707-.579-.879a.94.94 0 0 0-1.058.078l-.241.193a6.23 6.23 0 0 1-5.206 1.234c-2.622-.557-5.338.498-6.898 2.64-.835.124-1.604.543-2.164 1.192a3.55 3.55 0 0 0-.824 2.839 1.01 1.01 0 0 0 .024.114l1.46 5.258v3.086c0 1.853.942 3.422 2.725 4.535.703.439 1.511.796 2.408 1.063l-.022 1.583a.94.94 0 0 0 .938.95h3.273a.94.94 0 0 0 .938-.95l-.022-1.581c.9-.266 1.709-.622 2.413-1.061 1.779-1.111 2.72-2.68 2.72-4.539zm-6.222 3.95l-.103.025a.94.94 0 0 0-.693.918l.018 1.363h-1.372l.019-1.363a.94.94 0 0 0-.693-.918l-.097-.024c-1.309-.314-4.352-1.325-4.352-3.952v-6.082c0-.19.155-.345.345-.345h3.445a8.71 8.71 0 0 0 6.002-2.385.94.94 0 0 0 .038-1.325.94.94 0 0 0-1.325-.038c-1.28 1.208-2.955 1.873-4.715 1.873h-3.444c-.601 0-1.148.241-1.548.63l-.309-1.111a1.67 1.67 0 0 1 .395-1.288c.319-.369.781-.58 1.268-.58a.94.94 0 0 0 .799-.447l.015-.024c1.09-1.724 3.168-2.596 5.169-2.171a8.09 8.09 0 0 0 5.992-1.054c.291.869.63 2.176.63 3.547l-.103 2.099a.95.95 0 0 0-.148-.01.94.94 0 0 0-.93.945l.043 5.239v2.528c0 2.636-3.04 3.641-4.347 3.95zm-1.461-1.163a2.41 2.41 0 0 1-2.201-1.433.94.94 0 0 1 .479-1.237.94.94 0 0 1 1.236.478.53.53 0 0 0 .971 0c.209-.474.763-.688 1.236-.478a.94.94 0 0 1 .479 1.237 2.41 2.41 0 0 1-2.201 1.433z"></path>
+                        </svg>
+    `,
+  },
+  {
+    title: 'Connect',
+    description: 'Connect with them through our platform.',
+    svg: `<svg class="text-default-500" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor">
+                            <path d="M43.313 0H18.938c-2.585 0-4.687 2.103-4.687 4.688v8.438H4.688C2.103 13.125 0 15.228 0 17.813v19.875c0 2.585 2.103 4.688 4.688 4.688h1.875v4.688a.94.94 0 0 0 .938.937.94.94 0 0 0 .663-.275l5.35-5.35h15.549c2.585 0 4.688-2.103 4.688-4.687V29.25h1.875v4.688a.94.94 0 0 0 .938.937.94.94 0 0 0 .663-.275l5.35-5.35h1.487c2.392 0 3.938-1.84 3.938-4.687V4.688A4.7 4.7 0 0 0 43.313 0zM31.875 37.688c0 1.551-1.262 2.813-2.812 2.813H13.125a.94.94 0 0 0-.663.275l-4.025 4.025v-3.362A.94.94 0 0 0 7.5 40.5H4.688c-1.551 0-2.812-1.262-2.812-2.812V17.813C1.875 16.262 3.137 15 4.688 15h24.375c1.551 0 2.813 1.262 2.813 2.813v19.875zm14.25-13.125c0 1.05-.268 2.813-2.062 2.813h-1.875a.94.94 0 0 0-.663.275L37.5 31.674v-3.362a.94.94 0 0 0-.937-.937H33.75v-6.75h5.813a.94.94 0 0 0 .938-.937.94.94 0 0 0-.937-.937H33.75v-.937c0-2.585-2.103-4.687-4.687-4.687H16.125V4.688c0-1.551 1.262-2.812 2.813-2.812h24.375c1.551 0 2.813 1.262 2.813 2.813v19.875zM39.563 7.5H22.688a.94.94 0 0 0-.937.938.94.94 0 0 0 .938.938h16.875a.94.94 0 0 0 .938-.937.94.94 0 0 0-.937-.937zm0 5.625h-3.75a.94.94 0 0 0-.937.938.94.94 0 0 0 .938.938h3.75a.94.94 0 0 0 .938-.937.94.94 0 0 0-.937-.937zM8.438 22.5a.94.94 0 0 0 .938-.937.94.94 0 0 0-.937-.937.94.94 0 0 0-.937.938.94.94 0 0 0 .938.938zm16.875-1.875H12.188a.94.94 0 0 0-.937.938.94.94 0 0 0 .938.938h13.125a.94.94 0 0 0 .938-.937.94.94 0 0 0-.937-.937zm0 5.625h-9.375a.94.94 0 0 0-.937.938.94.94 0 0 0 .938.938h9.375a.94.94 0 0 0 .938-.937.94.94 0 0 0-.937-.937zM8.438 28.125h3.75a.94.94 0 0 0 .938-.937.94.94 0 0 0-.937-.937h-3.75a.94.94 0 0 0-.937.938.94.94 0 0 0 .938.938zm9.375 3.75H8.625a.94.94 0 0 0-.937.938.94.94 0 0 0 .938.938h9.188a.94.94 0 0 0 .938-.937.94.94 0 0 0-.937-.937z"></path>
+                        </svg>
+    `,
+  },
+  {
+    title: 'Get quotes and hire',
+    description: 'Receive quotes from interested contractors.',
+    svg: `<svg class="text-default-500" xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor">
+                            <path d="M4.519 8.136c.196.471.752.703 1.224.507s.703-.752.507-1.224-.752-.703-1.224-.507-.704.753-.507 1.224zm3.875 0c.153.368.535.607.935.576.391-.03.729-.307.834-.685.222-.798-.673-1.478-1.384-1.054-.393.234-.56.74-.384 1.163zM4.752 44.84h35.053A8.21 8.21 0 0 0 48 36.645a8.21 8.21 0 0 0-7.257-8.141l-.001-20.593A4.76 4.76 0 0 0 35.99 3.16H4.752A4.76 4.76 0 0 0 0 7.912v32.175a4.76 4.76 0 0 0 4.752 4.753zm0-1.875a2.88 2.88 0 0 1-2.877-2.878V12.202h36.993v16.302a8.28 8.28 0 0 0-6.536 4.779H5.76a.94.94 0 0 0-.937.938v4.766a.94.94 0 0 0 .938.938h9.613a.94.94 0 0 0 .938-.937.94.94 0 0 0-.937-.937H6.698V35.16h25.048a8.24 8.24 0 0 0-.135 1.487c0 .47.04.941.12 1.405h-8.109a.94.94 0 0 0-.937.938.94.94 0 0 0 .938.938h8.675a8.28 8.28 0 0 0 2.298 3.04H4.752zm41.373-6.32a6.33 6.33 0 0 1-6.32 6.32 6.39 6.39 0 0 1-6.32-6.32 6.31 6.31 0 0 1 .132-1.285c.595-2.871 3.144-5.035 6.188-5.035a6.33 6.33 0 0 1 6.32 6.319zM4.752 5.035H35.99a2.88 2.88 0 0 1 2.877 2.877v2.415H1.875V7.912a2.88 2.88 0 0 1 2.877-2.877zm2.879 23.769a8.43 8.43 0 0 0 5.579 2.124 8.43 8.43 0 0 0 5.58-2.125 8.4 8.4 0 0 0-5.579-14.654 8.4 8.4 0 0 0-5.579 14.655zm5.293.242a6.54 6.54 0 0 1-3.678-1.339 4.04 4.04 0 0 1 3.954-3.3c1.973.004 3.628 1.419 3.972 3.3-1.208.927-2.728 1.407-4.249 1.34zm-1.021-7.821a1.31 1.31 0 0 1 1.307-1.307 1.31 1.31 0 0 1 1.307 1.307 1.31 1.31 0 0 1-1.301 1.307 1.31 1.31 0 0 1-1.312-1.307zm1.307-5.201c3.593 0 6.515 2.922 6.515 6.514 0 1.287-.383 2.534-1.08 3.589-.563-1.321-1.596-2.39-2.879-3.01.393-.529.626-1.184.626-1.893 0-1.755-1.428-3.182-3.182-3.182s-3.182 1.427-3.182 3.182c0 .708.233 1.363.626 1.892-1.283.62-2.315 1.69-2.878 3.011a6.52 6.52 0 0 1-1.08-3.589c0-3.592 2.922-6.514 6.514-6.514zm25.504 21.598l-1.285-1.285a.94.94 0 0 0-1.326 0 .94.94 0 0 0 0 1.326l1.948 1.948a.94.94 0 0 0 1.326 0l4.368-4.367a.94.94 0 0 0 0-1.326.94.94 0 0 0-1.326 0l-3.704 3.705z"></path>
+                        </svg>
+    `,
+  },
+];
+
+export type ReferenceType = {
+  image: string;
+  title: string;
+  rating: number;
+  reviews: number;
+  price: string;
+  link: string;
+};
+
+export const referencesData: ReferenceType[] = [
+  {
+    image: project04,
+    title: 'Cleaning up after repairs',
+    rating: 4.5,
+    reviews: 63,
+    price: 'From $150',
+    link: '/listings-contractors',
+  },
+  {
+    image: project05,
+    title: 'Installation of flat roofs',
+    rating: 4.3,
+    reviews: 18,
+    price: 'From $187',
+    link: '/listings-contractors',
+  },
+  {
+    image: project06,
+    title: 'Handyperson for small projects',
+    rating: 4.7,
+    reviews: 35,
+    price: 'From $230',
+    link: '/listings-contractors',
+  },
+  {
+    image: project07,
+    title: 'One-time cleaning service',
+    rating: 4.9,
+    reviews: 127,
+    price: 'From $120',
+    link: '/listings-contractors',
   },
 ];

@@ -1,1 +1,57 @@
-<p>expert-advice works!</p>
+<section class="lg:py-24 md:py-18 py-14 bg-default-100 dark:bg-white/3">
+    <div class="container">
+        <div class="flex md:items-center items-start justify-between gap-4 lg:mb-10 md:mb-8 mb-6">
+            <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-default-900">Expert advice</h2>
+            <div class="inline-flex items-center gap-2 ">
+                <a [routerLink]="[]" class="hover:underline flex items-center text-nowrap me-1 font-semibold">View all
+                    <iconify-icon icon="lucide:chevron-right" class="text-lg"></iconify-icon>
+                </a>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 grid-cols-1 md:gap-12 gap-6">
+
+            @for (item of adviceData; track $index) {
+
+            <div class="group">
+                <a [routerLink]="[]" class="group">
+
+                    <div class="flex md:items-center items-start">
+
+                        <div class="rounded-md overflow-hidden md:w-32.5 w-auto">
+                            <img [src]="item.image" alt="" class="md:w-32.5 w-auto h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-105 z-0">
+                        </div>
+
+                        <div class="md:pe-12 pe-0 ps-4">
+
+                            <span class="text-xs py-1 px-2 text-default-900 bg-default-200/60 rounded-md">
+                                {{ item.category }}
+                            </span>
+
+                            <h3 class="pt-1 my-2 text-xl font-semibold text-default-900">
+                                <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" [routerLink]="[]">
+
+                                    {{ item.title }}
+                                </a>
+                            </h3>
+
+                            <p class="mb-2">
+                                {{ item.description }}
+                            </p>
+
+                            <span class="text-sm text-secondary">
+                                {{ item.date }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+            </div>
+
+            }
+
+        </div>
+    </div>
+</section>
