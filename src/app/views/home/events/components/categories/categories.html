@@ -1,0 +1,27 @@
+<section class="lg:pt-28 lg:pb-16 md:pt-16 md:pb-12 py-12">
+    <div class="container">
+        <div class="swiper py-5">
+
+            <swiper-container class="lg:mb-0 mb-15" [config]="swiperConfig" init="false">
+
+                @for (item of eventCategoriesData; track $index) {
+                <swiper-slide>
+                    <div>
+                        <a class="flex-col justify-center gap-2 rounded-full border border-border flex items-center" [routerLink]="item.link" style="width: 150px; height: 150px">
+
+                            <span [innerHTML]="getSafeSvg(item.icon)"></span>
+
+                            {{ item.title }}
+
+                        </a>
+                    </div>
+                </swiper-slide>
+                }
+
+            </swiper-container>
+
+            <!-- Pagination (Bullets) -->
+            <div id="category-pagination" class="swiper-pagination static mt-3"></div>
+        </div>
+    </div>
+</section>

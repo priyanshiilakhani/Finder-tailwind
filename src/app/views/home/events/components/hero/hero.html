@@ -1,0 +1,143 @@
+<section class="relative lg:pt-30 md:pt-25 pt-20 overflow-hidden">
+    <div class="container">
+        <form class="relative z-10 bg-body-bg border border-border rounded-md shadow p-2 lg:mb-8 mb-4">
+            <div class="flex flex-col md:flex-row gap-2 p-1">
+                <div class="flex flex-col sm:flex-row w-full gap-2 sm:gap-3">
+                    <!-- Search input -->
+                    <div class="relative w-full">
+                        <iconify-icon icon="lucide:search" class="absolute top-1/2 start-2 -translate-y-1/2 text-xl text-default-400"></iconify-icon>
+                        <input type="search" placeholder="Search by Artist, Events" required class="w-full ps-10 pe-0 py-3 border-0 rounded-none focus:ring-0 text-base bg-transparent">
+                    </div>
+
+                    <hr class="sm:hidden border-t border-default-300 dark:border-default-600">
+                    <div class="hidden sm:block my-2 w-px bg-default-300 dark:bg-default-600"></div>
+                    <!-- Location select -->
+                    <div class="relative w-full max-w-[200px]">
+                        <iconify-icon icon="lucide:map-pin" class="absolute top-1/2 start-2 -translate-y-1/2 z-10 text-xl text-default-500"></iconify-icon>
+                        <select required class="w-full ps-8 py-3 border-0 bg-transparent text-base focus:ring-0">
+                            <option value="">Location</option>
+                            <option>New York</option>
+                            <option>Los Angeles</option>
+                            <option>Chicago</option>
+                            <option>Houston</option>
+                            <option>Phoenix</option>
+                            <option>Philadelphia</option>
+                            <option>San Antonio</option>
+                            <option>San Diego</option>
+                            <option>Dallas</option>
+                            <option>San Jose</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="px-6 py-3.5 text-white bg-primary hover:bg-primary-hover rounded-md text-base">
+                    Search
+                </button>
+            </div>
+        </form>
+
+        <div class="relative z-10 grid md:grid-cols-3 grid-cols-1 items-center gap-6">
+            <div class="col-span-1">
+                <div class="lg:mt-12 lg:pt-12 pt-6 mb-6">
+                    <h1 class="md:text-start text-center lg:text-5xl md:text-4.5xl text-3xl font-bold text-default-900 lg:mt-4 lg:mb-6 mb-4">Discover Events Near You</h1>
+                    <p class="md:text-start text-center">Tickets for all events in one place</p>
+                </div>
+
+                <div class="flex gap-2 lg:mt-25 md:mt-15 lg:mb-8 md:justify-start justify-center">
+                    <button type="button" class="size-10 flex items-center border border-default-300 dark:border-white/20 bg-body-bg rounded-full justify-center me-1" id="hero-prev" aria-label="Prev">
+                        <iconify-icon icon="lucide:chevron-left" class="size-4.5"></iconify-icon>
+                    </button>
+
+                    <button type="button" class="size-10 flex items-center justify-center border border-default-300 bg-body-bg dark:border-white/20 rounded-full" id="hero-next" aria-label="Next">
+                        <iconify-icon icon="lucide:chevron-right" class="size-4.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 col-span-1">
+                <div class="swiper">
+                    <swiper-container [config]="swiperConfig" init="false">
+
+                        @for (item of heroSliderData; track $index) {
+
+                        <swiper-slide>
+
+                            <a [routerLink]="item.link" class="block overflow-hidden bg-default-400 rounded-2xl aspect-[856/463]">
+
+                                <img [src]="item.image" alt="Image" class="w-full h-full object-cover">
+
+                            </a>
+
+                            <div class="absolute shadow" style="bottom:9%; left:7%; width:160px; height:86px;">
+
+                                <div class="absolute flex flex-col text-white z-20" style="top:19px; left:75px;">
+
+                                    <div class="text-2xs leading-[10px]">
+                                        From
+                                    </div>
+
+                                    <div class="text-2xl font-semibold">
+                                        {{ item.price }}
+                                    </div>
+
+                                </div>
+
+                                <svg class="relative z-10 ms-2 mt-1" xmlns="http://www.w3.org/2000/svg" width="142" height="69">
+
+                                    <path class="text-primary" d="M8 0h31.189c.666 2.588 3.015 4.5 5.811 4.5s5.145-1.912 5.811-4.5H134a8 8 0 0 1 8 8v53a8 8 0 0 1-8 8H50.659c-.824-2.33-3.046-4-5.659-4s-4.835 1.67-5.659 4H8a8 8 0 0 1-8-8V8a8 8 0 0 1 8-8z" fill="currentColor" />
+
+                                    <path d="M45 65V4.5c2.796 0 5.145-1.912 5.811-4.5H134a8 8 0 0 1 8 8v53a8 8 0 0 1-8 8H50.659c-.824-2.33-3.046-4-5.659-4z" fill="url(#A)" />
+
+                                    <path d="M45 4v61" stroke="#1d2735" stroke-width="1.5" stroke-dasharray="4 2" />
+
+                                    <path d="M23.5 25l.008 8.919a1 1 0 0 0 .499.865l7.72 4.466-7.728-4.453a1 1 0 0 0-.998 0l-7.728 4.453 7.72-4.466a1 1 0 0 0 .499-.865L23.5 25z" stroke="currentColor" stroke-width="2" style="color: #c92d2d" />
+
+                                    <defs>
+                                        <linearGradient id="A" x1="46" y1="35.5" x2="66.5" y2="35.5" gradientUnits="userSpaceOnUse">
+
+                                            <stop stop-color="rgba(0,0,0,.15)" />
+
+                                            <stop class="text-primary" offset="1" stop-color="currentColor" stop-opacity="0" />
+
+                                        </linearGradient>
+                                    </defs>
+
+                                </svg>
+
+                                <img [src]="item.ticketImage" class="absolute top-0 start-0 w-full h-full object-cover" alt="Ticket">
+
+                            </div>
+
+                        </swiper-slide>
+
+                        }
+
+                    </swiper-container>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden lg:block">
+            <span class="absolute z-1 font-bold top-10 -start-5 text-9xl text-[#f5f7fa] dark:text-[#1a1a1a] [text-shadow:1px_1px_0_#e0e5eb,-1px_1px_0_#e0e5eb,-1px_-1px_0_#e0e5eb,1px_-1px_0_#e0e5eb] dark:[text-shadow:1px_1px_0_#444,-1px_1px_0_#444,-1px_-1px_0_#444,1px_-1px_0_#444]">
+                Hobbies
+            </span>
+
+            <span class="absolute z-1 font-bold top-[140px] start-15 text-9xl text-[#f5f7fa] dark:text-[#1a1a1a] [text-shadow:1px_1px_0_#e0e5eb,-1px_1px_0_#e0e5eb,-1px_-1px_0_#e0e5eb,1px_-1px_0_#e0e5eb] dark:[text-shadow:1px_1px_0_#444,-1px_1px_0_#444,-1px_-1px_0_#444,1px_-1px_0_#444]">
+                Concerts
+            </span>
+
+            <span class="absolute z-10 font-bold top-[190px] -end-50 text-9xl text-[#f5f7fa] dark:text-[#1a1a1a] [text-shadow:1px_1px_0_#e0e5eb,-1px_1px_0_#e0e5eb,-1px_-1px_0_#e0e5eb,1px_-1px_0_#e0e5eb] dark:[text-shadow:1px_1px_0_#444,-1px_1px_0_#444,-1px_-1px_0_#444,1px_-1px_0_#444]">
+                Sports
+            </span>
+
+            <span class="absolute z-10 font-bold top-[285px] -end-62 text-9xl text-[#f5f7fa] dark:text-[#1a1a1a] [text-shadow:1px_1px_0_#e0e5eb,-1px_1px_0_#e0e5eb,-1px_-1px_0_#e0e5eb,1px_-1px_0_#e0e5eb] dark:[text-shadow:1px_1px_0_#444,-1px_1px_0_#444,-1px_-1px_0_#444,1px_-1px_0_#444]">
+                Theaters
+            </span>
+        </div>
+
+        <!-- Background Overlay -->
+        <span class="absolute top-0 start-0 w-full bg-default-100 dark:bg-white/3 lg:hidden" style="height:calc(100% - 20px)"></span>
+        <span class="absolute top-0 start-0 w-full bg-default-100 dark:bg-white/3 hidden lg:block" style="height:calc(100% - 52px)"></span>
+    </div>
+</section>

@@ -1,0 +1,56 @@
+<!-- Featured news -->
+<section class="mt-4 lg:pb-24 md:pb-14 pb-8">
+    <div class="container">
+        <div class="lg:pt-12 pt-0 border-t border-default-300">
+            <div class="flex items-center justify-between md:mb-8 mb-4 pt-12">
+                <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold">Featured News</h2>
+                <div class="inline-flex items-center gap-2">
+                    <a routerLink="/listings-events" class="hover:underline flex items-center py-2 font-semibold">View all
+                        <lucide-icon name="chevron-right" class="size-4.5 ms-1"></lucide-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper pb-5">
+            <swiper-container class="lg:mb-0 mb-12" [config]="swiperConfig" init="false">
+
+                @for (item of blogSlidesData; track $index) {
+                <swiper-slide class="group">
+                    <div class="cursor-pointer">
+
+                        <div class="flex gap-4 mb-6">
+                            <div class="rounded-md w-35 h-full overflow-hidden">
+                                <img [src]="item.image" alt="Image" class="w-35 h-full object-cover transition-transform duration-500 group-hover:scale-110 z-0 rounded-md" />
+                            </div>
+
+                            <div class="text-sm text-secondary text-uppercase transform mt-10 -rotate-90">
+                                {{ item.category }}
+                            </div>
+                        </div>
+
+                        <h3 class="text-xl text-default-900 font-semibold mb-2">
+                            <a class="group-hover:underline" [routerLink]="[]">
+                                {{ item.title }}
+                            </a>
+                        </h3>
+
+                        <p class="pb-1 mb-2">
+                            {{ item.description }}
+                        </p>
+
+                        <div class="text-sm text-secondary">
+                            {{ item.readTime }}
+                        </div>
+
+                    </div>
+                </swiper-slide>
+                }
+
+            </swiper-container>
+
+            <!-- Pagination (Bullets) -->
+            <div id="news-pagination" class="swiper-pagination static mt-3 mt-md-4"></div>
+        </div>
+    </div>
+</section>

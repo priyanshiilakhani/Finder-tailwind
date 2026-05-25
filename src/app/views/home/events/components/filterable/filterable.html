@@ -1,0 +1,145 @@
+<section class="lg:py-28 md:py-18 py-12 bg-default-100 dark:bg-white/3">
+    <div class="container">
+        <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-default-900 mb-8">Choose Your Event</h2>
+
+        <div class="grid lg:grid-cols-12 grid-cols-1 gap-6 mb-8">
+            <div class="lg:col-span-9 col-span-1">
+                <div class="grid md:grid-cols-4 col-span-1 gap-4">
+
+                    <div class="relative">
+                        <iconify-icon icon="lucide:menu" class="absolute top-1/2 start-0 -translate-y-1/2 ms-3"></iconify-icon>
+                        <select aria-label="Category select" class="w-full bg-transparent ps-10 border border-default-300 dark:border-white/20 rounded-md text-default-400">
+                            <option value="">Category</option>
+                            <option value="Concerts">Concerts</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Hobbies">Hobbies</option>
+                            <option value="Disco">Disco</option>
+                            <option value="Conference">Conference</option>
+                            <option value="Cinema">Cinema</option>
+                        </select>
+                    </div>
+
+                    <div class="relative">
+                        <iconify-icon icon="lucide:map-pin" class="absolute top-1/2 start-0 -translate-y-1/2 ms-3"></iconify-icon>
+                        <select aria-label="Location select" class="w-full bg-transparent ps-10 border border-default-300 dark:border-white/20 rounded-md text-default-400">
+                            <option value="">Location</option>
+                            <option value="New York">New York</option>
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="Houston">Houston</option>
+                            <option value="Phoenix">Phoenix</option>
+                            <option value="Philadelphia">Philadelphia</option>
+                            <option value="San Antonio">San Antonio</option>
+                            <option value="San Diego">San Diego</option>
+                            <option value="Dallas">Dallas</option>
+                            <option value="San Jose">San Jose</option>
+                        </select>
+                    </div>
+
+                    <div class="relative">
+                        <iconify-icon icon="lucide:calendar" class="absolute top-1/2 start-0 -translate-y-1/2 ms-3"></iconify-icon>
+                        <input id="datepicker" type="text" data-datepicker='{"dateFormat": "M j, Y"}' placeholder=" Date" class="w-full bg-transparent ps-10 border border-default-300 text-sm dark:border-white/20 rounded-md text-default-400 placeholder-default-400">
+                    </div>
+
+                    <div class="relative">
+                        <iconify-icon icon="lucide:credit-card" class="absolute top-1/2 start-0 -translate-y-1/2 ms-3"></iconify-icon>
+                        <select aria-label="Price select" class="w-full bg-transparent ps-10 border border-default-300 dark:border-white/20 rounded-md text-default-400">
+                            <option value="">Price</option>
+                            <option value="Free">Free</option>
+                            <option value="Up to $25">Up to $25</option>
+                            <option value="$25 - $50">$25 - $50</option>
+                            <option value="$50 - $100">$50 - $100</option>
+                            <option value="$100 - $200">$100 - $200</option>
+                            <option value="Over $200">Over $200</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-3 col-span-1">
+                <div class="flex items-center lg:mx-auto gap-4">
+                    <div class="text-sm font-semibold text-default-900 hidden sm:inline lg:hidden xl:inline">
+                        Sort by :
+                    </div>
+
+                    <div class="relative w-40">
+                        <lucide-icon name="arrow-up-down" class="absolute top-1/2 start-0 -translate-y-1/2 z-10"></lucide-icon>
+                        <select class="bg-transparent border-0 rounded-none text-sm ps-6 pe-1 w-full text-default-600">
+                            <option value="Most popular">Most popular</option>
+                            <option value="Best rated">Best rated</option>
+                            <option value="Most recent">Most recent</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper px-2 pb-4">
+            <swiper-container class="swiper-wrapper lg:mb-0 mb-12" [config]="swiperConfig" init="false">
+
+                @for (item of filterableData; track $index) {
+                <div class="swiper-slide h-auto group">
+                    <a [routerLink]="item.link">
+                        <div class="bg-body-bg rounded-md">
+                            <div class="rounded-md size-full overflow-hidden relative">
+                                <img [src]="item.image" [alt]="item.title" class="size-full object-cover transition-transform duration-500 group-hover:scale-110 z-0 rounded-md">
+
+                                <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
+                                    <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
+                                        <iconify-icon icon="lucide:heart"></iconify-icon>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="md:p-6 p-4">
+                                <ul class="flex flex-wrap items-center gap-2 text-sm mb-3">
+                                    <li class="flex items-center">
+                                        <iconify-icon icon="lucide:calendar" class="me-1"></iconify-icon>
+                                        {{ item.date }}
+                                    </li>
+
+                                    <li>{{ item.time }}</li>
+
+                                    <li class="flex mx-n1">
+                                        <iconify-icon icon="lucide:dot" class="text-base"></iconify-icon>
+                                    </li>
+
+                                    <li>{{ item.category }}</li>
+                                </ul>
+
+                                <h3 class="text-xl font-semibold text-default-900 mb-3 pt-1">
+                                    <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" [routerLink]="item.link">
+                                        {{ item.title }}
+                                    </a>
+                                </h3>
+
+                                <div class="flex items-center text-sm">
+                                    <iconify-icon icon="lucide:map-pin" class="me-1"></iconify-icon>
+                                    {{ item.location }}
+                                </div>
+                            </div>
+
+                            <div class="pb-6 px-6 flex items-center justify-between">
+                                <div class="text-info text-xl font-semibold">
+                                    {{ item.price }}
+                                </div>
+
+                                <button type="button" class="rounded-md border border-default-900 dark:border-white text-default-900 dark:text-white py-2.5 px-5 text-sm font-medium inline-flex relative z-2 ms-auto transition-all duration-300 ease-in-out hover:bg-default-900 hover:text-white">
+                                    Book now
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                }
+
+            </swiper-container>
+            <!-- Pagination (Bullets) -->
+            <div id="filterable-pagination" class="swiper-pagination static mt-3 mt-md-4"></div>
+        </div>
+    </div>
+
+    <div class="text-center lg:mt-10 md:mt-8 mt-6">
+        <a class="py-3.5 px-6 rounded-md bg-primary text-white text-sm font-semibold inline-flex items-center transition-all duration-300 ease-in-out hover:bg-primary-hover" routerLink="/listings-events">View all 32 events</a>
+    </div>
+</section>
