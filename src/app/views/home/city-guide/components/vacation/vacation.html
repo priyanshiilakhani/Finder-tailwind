@@ -1,0 +1,71 @@
+<section class="lg:py-28 md:py-14 pb-12 pt-0 relative">
+    <div class="container">
+        <div class="flex md:items-center items-start justify-between gap-6 mb-8">
+            <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold">Popular vacation spots</h2>
+            <div class="inline-flex items-center gap-2">
+                <a routerLink="/listings-top-filters-city-guide" class="hover:underline flex items-center py-2 font-semibold">View all
+                    <lucide-icon name="chevron-right" class="size-4.5 ms-1"></lucide-icon>
+                </a>
+            </div>
+        </div>
+
+        <div class="swiper">
+            <swiper-container class="lg:mb-0 mb-12" [config]="swiperConfig" init="false">
+
+                @for (item of cityGuideData; track $index) {
+                <swiper-slide class="group">
+
+                    <a [routerLink]="item.link">
+
+                        <div class="rounded-md size-full overflow-hidden relative">
+
+                            <img [src]="item.image" alt="Image" class="size-full object-cover transition-transform duration-500 group-hover:scale-110 z-0 rounded-md" />
+
+                            <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
+                                <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
+                                    <i class="iconify lucide--heart"></i>
+                                </button>
+                            </div>
+
+                        </div>
+
+                        <div class="pt-4 pb-2">
+                            <h3 class="text-xl font-semibold text-default-900">
+                                <a [routerLink]="item.link" class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">
+                                    {{ item.title }}
+                                </a>
+                            </h3>
+                        </div>
+
+                        <div class="flex items-center gap-3 bg-transparent">
+
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="star" class="fill-warning text-warning size-4"></i>
+                                <span class="text-sm text-default-500">{{ item.rating }}</span>
+                                <span class="text-xs text-default-400 self-end">({{ item.reviews }})</span>
+                            </div>
+
+                            <div class="flex items-center gap-1 text-sm">
+                                <i data-lucide="credit-card" class="size-3.5"></i>
+                                {{ item.price }}
+                            </div>
+
+                            <div class="flex items-center gap-1 text-sm">
+                                <i data-lucide="map-pin" class="size-3.5"></i>
+                                <span class="text-truncate">{{ item.distance }}</span>
+                            </div>
+
+                        </div>
+
+                    </a>
+                </swiper-slide>
+                }
+
+            </swiper-container>
+            <!-- Pagination (Bullets) -->
+            <div id="vacation-pagination" class="swiper-pagination static mt-3 mt-sm-4"></div>
+        </div>
+    </div>
+    <span class="absolute lg:block hidden bg-emerald-50 dark:bg-default-200 rounded-full top-13.75 start-50 w-15 h-15"></span>
+    <span class="absolute lg:block hidden bg-primary/10 rounded-full top-6.25 start-47.5 w-6.75 h-6.75"></span>
+</section>

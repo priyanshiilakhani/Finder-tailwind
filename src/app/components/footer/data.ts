@@ -121,3 +121,29 @@ export const footerData4: footerType[] = [
     links: ['About us', 'Ticket delivery', 'Payment'],
   },
 ];
+
+export const footerData5: footerType[] = [
+  {
+    title: 'Quick links',
+    links: [
+      'Top cities',
+      'Accommodation',
+      'Cafes & restaurants',
+      'Night clubs',
+      'Events & meetups',
+      'Beauty salons',
+      'Pharmacies',
+    ],
+  },
+  {
+    title: 'Profile',
+    links: [
+      'My account',
+      'My listings',
+      'Gift cards',
+      'Help center',
+      'Taxes & fees',
+      'Privacy policy',
+    ],
+  },
+];

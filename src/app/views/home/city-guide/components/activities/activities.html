@@ -1,0 +1,209 @@
+<section class="relative">
+    <div class="container">
+        <div class="flex items-center justify-between md:mb-12 mb-6">
+            <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold">Popular activities</h2>
+            <div class="inline-flex items-center gap-2">
+                <a routerLink="/listings-events" class="hover:underline flex items-center py-2 font-semibold">View all
+                    <i data-lucide="chevron-right" class="size-4.5 ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="swiper" data-swiper='{
+                "slidesPerView": 1,
+                "spaceBetween": 24,
+                "pagination": {
+                "el": ".swiper-pagination",
+                "clickable": true
+                },
+                "breakpoints": {
+                "500": {
+                    "slidesPerView": 2
+                },
+                "900": {
+                    "slidesPerView": 3
+                },
+                "1200": {
+                    "slidesPerView": 4
+                }
+                }
+            }'>
+            <div class="swiper-wrapper lg:mb-0 mb-12">
+                <div class="swiper-slide h-auto">
+                    <div class="group">
+                        <a routerLink="/single-entry-city-guide">
+                            <div class="border-default-200 border dark:border-white/20 group rounded-md">
+                                <div class="rounded-tl-md rounded-tr-md overflow-hidden relative">
+                                    <img src="assets/img/listings/city-guide/v1/01.jpg" alt="" class="w-full h-full object-cover transition-transform duration-500 rounded-tl-md rounded-tr-md group-hover:scale-105 z-0">
+                                    <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
+                                        <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
+                                            <i class="iconify lucide--heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 pb-2 px-4">
+                                    <span class="rounded-md inline-block font-medium text-default-600 bg-default-100 dark:bg-white/3 text-xs px-2 py-1 text-decoration-none mb-2">Entertainment</span>
+
+                                    <h3 class="text-xl font-semibold pt-1 mb-2">
+                                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" routerLink="/single-entry-city-guide">Barcelona National Zoo</a>
+                                    </h3>
+                                    <p class="text-sm">Discover fascinating animals and a fun-filled adventure for the whole family.</p>
+                                </div>
+
+                                <div class="pb-4 px-4">
+                                    <ul class="flex-nowrap flex gap-4 text-sm items-center">
+                                        <li class="flex items-center gap-1">
+                                            <i data-lucide="star" class="fill-warning text-warning size-4"></i>
+                                            <span class="text-sm">4.8</span>
+                                            <span class="text-xs text-secondary">(127)</span>
+                                        </li>
+
+                                        <li class="flex items-center gap-1">
+                                            <i data-lucide="map-pin" class="size-3.5"></i>
+                                            <span>5.7 km from center</span>
+                                        </li>
+                                    </ul>
+                                    <div class="text-default-900 font-semibold pt-4">$20</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide h-auto">
+                    <div class="group">
+                        <a routerLink="/single-entry-city-guide">
+                            <div class="border-default-200 border dark:border-white/20 group rounded-md">
+                                <div class="rounded-tl-md rounded-tr-md overflow-hidden relative">
+                                    <img src="assets/img/listings/city-guide/v1/02.jpg" alt="" class="w-full h-full object-cover transition-transform duration-500 rounded-tl-md rounded-tr-md group-hover:scale-105 z-0">
+                                    <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
+                                        <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
+                                            <i class="iconify lucide--heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 pb-2 px-4">
+                                    <span class="rounded-md inline-block font-medium text-default-600 bg-default-100 dark:bg-white/3 text-xs px-2 py-1 text-decoration-none mb-2">Entertainment</span>
+
+                                    <h3 class="text-xl font-semibold pt-1 mb-2">
+                                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" routerLink="/single-entry-city-guide">Mountain Lake Tour</a>
+                                    </h3>
+                                    <p class="text-sm">Enjoy breathtaking views, fresh air, and a peaceful escape into the wilderness.</p>
+                                </div>
+
+                                <div class="pb-4 px-4">
+                                    <ul class="flex-nowrap flex gap-4 text-sm items-center">
+                                        <li class="flex items-center gap-1">
+                                            <i data-lucide="star" class="fill-warning text-warning size-4"></i>
+                                            <span class="text-sm">4.5</span>
+                                            <span class="text-xs text-secondary">(214)</span>
+                                        </li>
+
+
+                                        <li class="flex items-center gap-1">
+                                            <i data-lucide="map-pin" class="size-3.5"></i>
+                                            <span>13 km from center</span>
+                                        </li>
+                                    </ul>
+                                    <div class="text-default-900 font-semibold pt-4">$60</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide h-auto">
+                    <div class="group">
+                        <a routerLink="/single-entry-city-guide">
+                            <div class="border-default-200 border dark:border-white/20 group rounded-md">
+                                <div class="rounded-tl-md rounded-tr-md overflow-hidden relative">
+                                    <img src="assets/img/listings/city-guide/v1/03.jpg" alt="" class="w-full h-full object-cover transition-transform duration-500 rounded-tl-md rounded-tr-md group-hover:scale-105 z-0">
+                                    <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
+                                        <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
+                                            <i class="iconify lucide--heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 pb-2 px-4">
+                                    <span class="rounded-md inline-block font-medium text-default-600 bg-default-100 dark:bg-white/3 text-xs px-2 py-1 text-decoration-none mb-2">Entertainment</span>
+
+                                    <h3 class="text-xl font-semibold pt-1 mb-2">
+                                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" routerLink="/single-entry-city-guide">Jeep Tour with 4x4 Club</a>
+                                    </h3>
+                                    <p class="text-sm">Explore the wild side of Barcelona in our reliable off-road 4x4 vehicle!</p>
+                                </div>
+
+                                <div class="pb-4 px-4">
+                                    <ul class="flex-nowrap flex gap-4 text-sm items-center">
+                                        <li class="flex items-center gap-1">
+                                            <i data-lucide="star" class="fill-warning text-warning size-4"></i>
+                                            <span class="text-sm">4.7</span>
+                                            <span class="text-xs text-secondary">(185)</span>
+                                        </li>
+
+                                        <li class="flex items-center gap-1">
+                                            <i data-lucide="map-pin" class="size-3.5"></i>
+                                            <span>9.8 km from center</span>
+                                        </li>
+                                    </ul>
+                                    <div class="text-default-900 font-semibold pt-4">$130</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide h-auto">
+                    <div class="group">
+                        <a routerLink="/single-entry-city-guide">
+                            <div class="border-default-200 border dark:border-white/20 group rounded-md">
+                                <div class="rounded-tl-md rounded-tr-md overflow-hidden relative">
+                                    <img src="assets/img/listings/city-guide/v1/04.jpg" alt="" class="w-full h-full object-cover transition-transform duration-500 rounded-tl-md rounded-tr-md group-hover:scale-105 z-0">
+                                    <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
+                                        <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
+                                            <i class="iconify lucide--heart"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="pt-4 pb-2 px-4">
+                                    <span class="rounded-md inline-block font-medium text-default-600 bg-default-100 dark:bg-white/3 text-xs px-2 py-1 text-decoration-none mb-2">Entertainment</span>
+
+                                    <h3 class="text-xl font-semibold pt-1 mb-2">
+                                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" routerLink="/single-entry-city-guide">Art & Design Museum</a>
+                                    </h3>
+                                    <p class="text-sm">Europe's most extensive collection of modern and contemporary art.</p>
+                                </div>
+
+                                <div class="pb-4 px-4">
+                                    <ul class="flex-nowrap flex gap-4 text-sm items-center">
+                                        <li class="flex items-center gap-1">
+                                            <i data-lucide="star" class="fill-warning text-warning size-4"></i>
+                                            <span class="text-sm">4.9</span>
+                                            <span class="text-xs text-secondary">(2078)</span>
+                                        </li>
+
+
+                                        <li class="flex items-center gap-1">
+                                            <i data-lucide="map-pin" class="size-3.5"></i>
+                                            <span>1.4 km from center</span>
+                                        </li>
+                                    </ul>
+                                    <div class="text-default-900 font-semibold pt-4">$130</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination (Bullets) -->
+            <div class="swiper-pagination position-static mt-3 mt-sm-4"></div>
+        </div>
+    </div>
+    <span class="absolute lg:block hidden bg-emerald-50 dark:bg-default-200 rounded-full -top-9.75 start-40 w-24.5 h-24.5"></span>
+    <span class="absolute lg:block hidden bg-emerald-50 dark:bg-default-200 rounded-full bottom-25.75 end-35 w-8.5 h-8.5"></span>
+    <span class="absolute lg:block hidden bg-warning/10 rounded-full -bottom-3.25 end-37.5 w-24.5 h-24.5"></span>
+</section>

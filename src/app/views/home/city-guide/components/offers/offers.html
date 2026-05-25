@@ -1,0 +1,62 @@
+<section class="lg:pb-28 md:pb-14 pb-12 relative">
+    <div class="container">
+        <div class="flex items-center justify-between gap-6 mb-8">
+            <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold">Top offers</h2>
+            <div class="inline-flex items-center gap-2">
+                <a routerLink="/listings-top-filters-city-guide" class="hover:underline flex items-center py-2 font-semibold">View all
+                    <i data-lucide="chevron-right" class="size-4.5 ms-1"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="swiper" data-swiper='{
+                    "slidesPerView": 1,
+                    "spaceBetween": 24,
+                    "autoHeight": true,
+                    "pagination": {
+                    "el": ".swiper-pagination",
+                    "clickable": true
+                    },
+                    "breakpoints": {
+                    "500": {
+                        "slidesPerView": 2
+                    },
+                    "992": {
+                        "slidesPerView": 3
+                    }
+                    }
+                }'>
+            <div class="swiper-wrapper lg:mb-0 mb-12">
+
+                <div class="swiper-slide">
+                    <a [routerLink]="[]">
+                        <div class="rounded-md size-full overflow-hidden">
+                            <img src="assets/img/home/city-guide/offers/01.jpg" alt="Image" class="size-full object-cover transition-transform duration-500 hover:scale-105 z-0 rounded-md">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a [routerLink]="[]">
+                        <div class="rounded-md size-full overflow-hidden">
+                            <img src="assets/img/home/city-guide/offers/02.jpg" alt="Image" class="size-full object-cover transition-transform duration-500 hover:scale-105 z-0 rounded-md">
+                        </div>
+                    </a>
+                </div>
+
+                <div class="swiper-slide">
+                    <a [routerLink]="[]">
+                        <div class="rounded-md size-full overflow-hidden">
+                            <img src="assets/img/home/city-guide/offers/03.jpg" alt="Image" class="size-full object-cover transition-transform duration-500 hover:scale-105 z-0 rounded-md">
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Pagination (Bullets) -->
+            <div class="swiper-pagination static mt-3 mt-sm-4"></div>
+        </div>
+    </div>
+    <span class="absolute lg:block hidden bg-emerald-50 dark:bg-default-200 rounded-full -top-3.75 end-50 w-15 h-15"></span>
+    <span class="absolute lg:block hidden bg-primary/10 rounded-full -top-10.25 end-47.5 w-6.75 h-6.75"></span>
+</section>
