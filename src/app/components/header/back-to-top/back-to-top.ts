@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-back-to-top',
@@ -7,41 +7,46 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener } from '@angular/core';
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class BackToTop {
-   showButton = false;
+    @ViewChild('topButton')
+  topButton!: ElementRef<HTMLAnchorElement>;
 
-  totalLength = 318;
-  dashOffset = 318;
+  @ViewChild('scrollProgress')
+  scrollProgress!: ElementRef<SVGRectElement>;
 
-  ngOnInit(): void {
-    this.onWindowScroll();
+  private length = 0;
+  private scrollOffset = 450;
+
+  ngAfterViewInit(): void {
+
+    const progress = this.scrollProgress.nativeElement;
+
+    this.length = progress.getTotalLength();
+
+    progress.style.strokeDasharray = `${this.length}`;
+    progress.style.strokeDashoffset = `${this.length}`;
   }
 
-  @HostListener('window:scroll', [])
+  @HostListener('window:scroll')
   onWindowScroll(): void {
 
-    const scrollTop =
-      window.pageYOffset ||
-      document.documentElement.scrollTop;
+    const button = this.topButton.nativeElement;
+    const progress = this.scrollProgress.nativeElement;
 
-    const docHeight =
-      document.documentElement.scrollHeight -
-      document.documentElement.clientHeight;
+    if (window.pageYOffset > this.scrollOffset) {
+      button.classList.remove('opacity-0', 'pointer-events-none');
+    } else {
+      button.classList.add('opacity-0', 'pointer-events-none');
+    }
 
-    const scrollPercent = scrollTop / docHeight;
+    const scrollPercent =
+      document.documentElement.scrollTop /
+      (document.documentElement.scrollHeight -
+        document.documentElement.clientHeight);
 
-    const draw = this.totalLength * scrollPercent;
+    const draw = this.length * scrollPercent;
 
-    this.dashOffset = this.totalLength - draw;
-
-    this.showButton = scrollTop > 450;
-  }
-
-  scrollToTop(): void {
-
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    progress.style.strokeDashoffset = `${this.length - draw}`;
   }
 }
