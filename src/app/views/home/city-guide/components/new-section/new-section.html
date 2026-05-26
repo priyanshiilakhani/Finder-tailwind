@@ -5,127 +5,80 @@
         <div class="grid md:grid-cols-12 grid-cols-1 gap-6 lg:items-center items-start">
             <div class="md:col-span-5 col-span-1">
                 <div>
-                    <div class="swiper size-full" id="images" data-swiper='{
-                                "allowTouchMove": false,
-                                "loop": true,
-                                "effect": "flip",
-                                "flipEffect": {
-                                "slideShadows": false
-                                }
-                            }'>
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="assets/img/home/city-guide/new/01.jpg" class="size-full rounded-md object-fit-cover" alt="Image">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="assets/img/home/city-guide/new/02.jpg" class="size-full rounded-md object-fit-cover" alt="Image">
-                            </div>
-
-                            <div class="swiper-slide">
-                                <img src="assets/img/home/city-guide/new/03.jpg" class="size-full rounded-md object-fit-cover" alt="Image">
-                            </div>
-                        </div>
+                    <div class="swiper size-full" id="images">
+                        <swiper-container #imageSwiper [config]="swiperConfig" init="false">
+                            @for (item of swiperData; track $index) {
+                            <swiper-slide>
+                                <img [src]="item.image" class="size-full rounded-md object-fit-cover" alt="Image">
+                            </swiper-slide>
+                            }
+                        </swiper-container>
                     </div>
                 </div>
             </div>
 
             <div class="md:col-span-7 col-span-1 lg:ps-0 md:ps-6">
                 <div class="lg:w-160 w-full lg:ms-24">
-                    <div class="swiper" data-swiper='{
-                            "spaceBetween": 32,
-                            "loop": true,
-                            "speed": 400,
-                            "autoHeight": true,
-                            "controlSlider": "#images",
-                            "navigation": {
-                                "prevEl": "#new-prev",
-                                "nextEl": "#new-next"
-                            }
-                            }'>
+                    <div class="swiper">
                         <div class="flex gap-2 lg:mb-8 mb-6">
                             <button type="button" class="size-10 flex items-center border border-default-300 dark:border-white/20 bg-body-bg rounded-full justify-center me-1" id="new-prev" aria-label="Prev">
-                                <i class="iconify lucide--chevron-left  size-4.5"></i>
+                                <iconify-icon icon="lucide:chevron-left" height="18" width="18"></iconify-icon>
                             </button>
 
                             <button type="button" class="size-10 flex items-center justify-center border border-default-300 bg-body-bg dark:border-white/20 rounded-full" id="new-next" aria-label="Next">
-                                <i class="iconify lucide--chevron-right  size-4.5"></i>
+                                <iconify-icon icon="lucide:chevron-right" height="18" width="18"></iconify-icon>
                             </button>
                         </div>
 
-                        <div class="swiper-wrapper lg:py-8">
-                            <div class="swiper-slide">
-                                <h3 class="lg:text-3.5xl md:text-2.5xl text-2xl mb-4">Jardinet D'Aribau Restaurant</h3>
-                                <div class="flex items-center gap-4 md:mb-6 mb-4">
-                                    <div class="flex items-center gap-1">
-                                        <i data-lucide="star" class="fill-warning text-warning size-4"></i>
-                                        <span class="text-sm text-default-500">4.9</span>
-                                        <span class="text-xs text-default-400 self-end">(597)</span>
-                                    </div>
-                                    <div class="flex items-center gap-1 text-sm">
-                                        <i data-lucide="credit-card" class="size-3.5"></i>
-                                        $60
-                                    </div>
-                                    <div class="flex items-center gap-1 text-sm">
-                                        <i data-lucide="map-pin" class="size-3.5"></i>
-                                        <span class="text-truncate">0.3 km from center</span>
-                                    </div>
-                                </div>
-                                <p class="lg:mb-8 mb-4">Experience authentic Mediterranean flavors at Jardinet D'Aribau, a charming restaurant in the heart of Barcelona. With a focus on quality and creativity, Jardinet D'Aribau offers a diverse menu that blends traditional Mediterranean cuisine with modern culinary techniques. Perfect for a memorable dining experience!</p>
-                                <a routerLink="/single-entry-city-guide" class="inline-flex items-center gap-1 bg-primary text-white md:px-6 md:py-3.5 py-2.5 px-5 rounded-full font-semibold md:text-base text-sm transition-all duration-300 hover:bg-primary-hover">
-                                    View more
-                                    <i class="iconify lucide--chevron-right text-xl -me-1"></i>
-                                </a>
-                            </div>
+                        <swiper-container #contentSwiper class="lg:py-8" [config]="swiperConfigs" init="false">
+                            @for (item of swiperData; track $index) {
+                            <swiper-slide>
+                                <h3 class="lg:text-3.5xl md:text-2.5xl text-2xl mb-4">
+                                    {{ item.title }}
+                                </h3>
 
-                            <div class="swiper-slide">
-                                <h3 class="lg:text-3.5xl md:text-2.5xl text-2xl mb-4">Barcelona Oceanarium</h3>
                                 <div class="flex items-center gap-4 md:mb-6 mb-4">
                                     <div class="flex items-center gap-1">
-                                        <i data-lucide="star" class="fill-warning text-warning size-4"></i>
-                                        <span class="text-sm text-default-500">4.7</span>
-                                        <span class="text-xs text-default-400 self-end">(8325)</span>
-                                    </div>
-                                    <div class="flex items-center gap-1 text-sm">
-                                        <i data-lucide="credit-card" class="size-3.5"></i>
-                                        $40
-                                    </div>
-                                    <div class="flex items-center gap-1 text-sm">
-                                        <i data-lucide="map-pin" class="size-3.5"></i>
-                                        <span class="text-truncate">1.8 km from center</span>
-                                    </div>
-                                </div>
-                                <p class="lg:mb-8 mb-4">Enter a world of aquatic discovery at one of the biggest aquariums in Europe, featuring a five-million-liter main tank and thousands of sea creatures from all over the world. Marvel at the mesmerizing dance of stingrays, the graceful glide of sea turtles, and the vibrant colors of tropical fish.</p>
-                                <a routerLink="/single-entry-city-guide" class="inline-flex items-center gap-1 bg-primary text-white md:px-6 md:py-3.5 py-2.5 px-5 rounded-full font-semibold md:text-base text-sm transition-all duration-300 hover:bg-primary-hover">
-                                    View more
-                                    <i class="iconify lucide--chevron-right text-xl -me-1"></i>
-                                </a>
-                            </div>
+                                        <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
 
-                            <div class="swiper-slide">
-                                <h3 class="lg:text-3.5xl md:text-2.5xl text-2xl mb-4">VRFun Virtual Reality Park</h3>
-                                <div class="flex items-center gap-4 md:mb-6 mb-4">
-                                    <div class="flex items-center gap-1">
-                                        <i data-lucide="star" class="fill-warning text-warning size-4"></i>
-                                        <span class="text-sm text-default-500">4.9</span>
-                                        <span class="text-xs text-default-400 self-end">(112)</span>
+                                        <span class="text-sm text-default-500">
+                                            {{ item.rating }}
+                                        </span>
+
+                                        <span class="text-xs text-default-400 self-end">
+                                            ({{ item.reviews }})
+                                        </span>
                                     </div>
+
                                     <div class="flex items-center gap-1 text-sm">
-                                        <i data-lucide="credit-card" class="size-3.5"></i>
-                                        $25
+                                        <lucide-icon name="credit-card" class="size-3.5"></lucide-icon>
+
+                                        {{ item.price }}
                                     </div>
+
                                     <div class="flex items-center gap-1 text-sm">
-                                        <i data-lucide="map-pin" class="size-3.5"></i>
-                                        <span class="text-truncate">2.1 km from center</span>
+                                        <lucide-icon name="map-pin" class="size-3.5"></lucide-icon>
+
+                                        <span class="text-truncate">
+                                            {{ item.distance }}
+                                        </span>
                                     </div>
                                 </div>
-                                <p class="lg:mb-8 mb-4">VRFun on International Drive is an immersive virtual reality park offering cutting-edge VR experiences for all ages. Guests can engage in thrilling multiplayer games, virtual roller coasters, and interactive adventures in a high-tech environment, making it a top attraction for futuristic fun and family entertainment.</p>
-                                <a routerLink="/single-entry-city-guide" class="inline-flex items-center gap-1 bg-primary text-white md:px-6 md:py-3.5 py-2.5 px-5 rounded-full font-semibold md:text-base text-sm transition-all duration-300 hover:bg-primary-hover">
+
+                                <p class="lg:mb-8 mb-4">
+                                    {{ item.description }}
+                                </p>
+
+                                <a [routerLink]="item.link" class="inline-flex items-center gap-1 bg-primary text-white md:px-6 md:py-3.5 py-2.5 px-5 rounded-full font-semibold md:text-base text-sm transition-all duration-300 hover:bg-primary-hover">
+
                                     View more
-                                    <i class="iconify lucide--chevron-right text-xl -me-1"></i>
+
+                                    <iconify-icon icon="lucide:chevron-right" class="text-xl -me-1">
+                                    </iconify-icon>
                                 </a>
-                            </div>
-                        </div>
+                            </swiper-slide>
+                            }
+                        </swiper-container>
                     </div>
                 </div>
             </div>

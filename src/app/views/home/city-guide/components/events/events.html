@@ -5,11 +5,11 @@
 
             <div class="flex gap-2">
                 <button type="button" class="size-10 flex items-center border border-default-300 dark:border-white/20 bg-body-bg rounded-full justify-center me-1" id="events-prev" aria-label="Prev">
-                    <i class="iconify lucide--chevron-left  size-4.5"></i>
+                    <iconify-icon icon="lucide:chevron-left" height="18" width="18"></iconify-icon>
                 </button>
 
                 <button type="button" class="size-10 flex items-center justify-center border border-default-300 bg-body-bg dark:border-white/20 rounded-full" id="events-next" aria-label="Next">
-                    <i class="iconify lucide--chevron-right  size-4.5"></i>
+                    <iconify-icon icon="lucide:chevron-right" height="18" width="18"></iconify-icon>
                 </button>
             </div>
         </div>
@@ -17,96 +17,51 @@
 
     <div class="relative py-3 lg:ms-77 ms-4">
         <div class="relative my-3">
-            <div class="swiper" data-swiper='{
-                    "slidesPerView": 1,
-                    "spaceBetween": 24,
-                    "loop": true,
-                    "navigation": {
-                        "prevEl": "#events-prev",
-                        "nextEl": "#events-next"
-                    },
-                    "breakpoints": {
-                        "500": {"slidesPerView": 1},
-                        "992": {"slidesPerView": 2},
-                        "1200": {"slidesPerView": "auto"}
+            <div class="swiper">
+
+                <swiper-container [config]="swiperConfig" init="false">
+
+                    @for (item of eventsData; track $index) {
+                    <div class="swiper-slide max-w-241.5">
+                        <div class="relative w-full rounded overflow-hidden">
+                            <div class="bg-default-100 dark:bg-white/3">
+                                <img [src]="item.image" alt="Image" class="w-full h-full object-cover">
+                            </div>
+
+                            <div class="absolute inset-0 flex items-end lg:p-12">
+                                <div class="lg:p-3 lg:m-3 md:m-4 md:p-6 p-2 m-4">
+
+                                    <ul class="text-sm mb-2 flex items-center gap-3" [class]="item.subTextClass">
+
+                                        <li class="flex items-center gap-1.5">
+                                            <iconify-icon icon="lucide:calendar"></iconify-icon>
+                                            {{ item.date }}
+                                        </li>
+
+                                        <li class="flex items-center gap-1.5">
+                                            <iconify-icon icon="lucide:clock"></iconify-icon>
+                                            {{ item.time }}
+                                        </li>
+                                    </ul>
+
+                                    <h3 class="lg:mb-8 md:mb-6 mb-4 lg:text-2.5xl md:text-2xl text-xl font-semibold" [class]="item.textClass">
+
+                                        {{ item.title }}
+                                    </h3>
+
+                                    <a [routerLink]="[]" class="inline-flex items-center gap-1 bg-primary text-white md:px-6 md:py-3.5 py-2.5 px-5 rounded-full font-semibold md:text-base text-sm transition-all duration-300 hover:bg-primary-hover">
+
+                                        Tickets from {{ item.ticketPrice }}
+
+                                        <iconify-icon icon="lucide:chevron-right" class="text-xl -me-1"></iconify-icon>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     }
-                    }'>
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide max-w-241.5">
-                        <div class="relative w-full rounded overflow-hidden">
-                            <div class="bg-default-100 dark:bg-white/3">
-                                <img src="assets/img/home/city-guide/events/01.jpg" alt="Image" class="w-full h-full object-cover">
-                            </div>
-                            <div class="absolute inset-0 flex items-end lg:p-12">
-                                <div class="lg:p-3 lg:m-3 md:m-4 md:p-6 p-2 m-4">
-                                    <ul class="text-sm mb-2 dark:text-black/70 flex items-center gap-3">
-                                        <li class="flex items-center gap-1.5">
-                                            <i class="iconify lucide--calendar"></i> Nov 15
-                                        </li>
-                                        <li class="flex items-center gap-1.5">
-                                            <i class="iconify lucide--clock"></i> 19:00
-                                        </li>
-                                    </ul>
-                                    <h3 class="lg:mb-8 md:mb-6 mb-4 lg:text-2.5xl md:text-2xl text-xl text-default-900 dark:text-default-100 font-semibold">Simon Blues Concert</h3>
-                                    <a [routerLink]="[]" class="inline-flex items-center gap-1 bg-primary text-white md:px-6 md:py-3.5 py-2.5 px-5 rounded-full font-semibold md:text-base text-sm transition-all duration-300 hover:bg-primary-hover">
-                                        Tickets from $60
-                                        <i class="iconify lucide--chevron-right text-xl -me-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="swiper-slide max-w-241.5">
-                        <div class="relative w-full rounded overflow-hidden">
-                            <div class="bg-default-100 dark:bg-white/3">
-                                <img src="assets/img/home/city-guide/events/02.jpg" alt="Image" class="w-full h-full object-cover">
-                            </div>
-                            <div class="absolute inset-0 flex items-end lg:p-12">
-                                <div class="lg:p-3 lg:m-3 md:m-4 md:p-6 p-2 m-4">
-                                    <ul class="text-sm mb-2 text-white/70 flex items-center gap-3">
-                                        <li class="flex items-center gap-1.5">
-                                            <i class="iconify lucide--calendar"></i> Oct 28
-                                        </li>
-                                        <li class="flex items-center gap-1.5">
-                                            <i class="iconify lucide--clock"></i> 21:00
-                                        </li>
-                                    </ul>
-                                    <h3 class="lg:mb-8 md:mb-6 mb-4 lg:text-2.5xl md:text-2xl text-xl text-white font-semibold">The Concert in Palau Sant Jordi</h3>
-                                    <a [routerLink]="[]" class="inline-flex items-center gap-1 bg-primary text-white md:px-6 md:py-3.5 py-2.5 px-5 rounded-full font-semibold md:text-base text-sm transition-all duration-300 hover:bg-primary-hover">
-                                        Tickets from $45
-                                        <i class="iconify lucide--chevron-right text-xl -me-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide max-w-241.5">
-                        <div class="relative w-full rounded overflow-hidden">
-                            <div class="bg-default-100 dark:bg-white/3">
-                                <img src="assets/img/home/city-guide/events/03.jpg" alt="Image" class="w-full h-full object-cover">
-                            </div>
-                            <div class="absolute inset-0 flex items-end lg:p-12">
-                                <div class="lg:p-3 lg:m-3 md:m-4 md:p-6 p-2 m-4">
-                                    <ul class="text-sm mb-2 text-white/70 flex items-center gap-3">
-                                        <li class="flex items-center gap-1.5">
-                                            <i class="iconify lucide--calendar"></i> Sep 7
-                                        </li>
-                                        <li class="flex items-center gap-1.5">
-                                            <i class="iconify lucide--clock"></i> 81:30
-                                        </li>
-                                    </ul>
-                                    <h3 class="lg:mb-8 md:mb-6 mb-4 lg:text-2.5xl md:text-2xl text-xl text-white font-semibold">Dance About Passion: Tango Show</h3>
-                                    <a [routerLink]="[]" class="inline-flex items-center gap-1 bg-primary text-white md:px-6 md:py-3.5 py-2.5 px-5 rounded-full font-semibold md:text-base text-sm transition-all duration-300 hover:bg-primary-hover">
-                                        Tickets from $50
-                                        <i class="iconify lucide--chevron-right text-xl -me-1"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </swiper-container>
             </div>
 
             <div class="container absolute top-0 h-[calc(100%+64px)] -mt-8">

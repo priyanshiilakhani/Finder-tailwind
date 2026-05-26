@@ -23,7 +23,7 @@
 
                             <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
                                 <button type="button" class="size-8 bg-white text-default-700 rounded-full shadow flex items-center justify-center">
-                                    <i class="iconify lucide--heart"></i>
+                                    <iconify-icon icon="lucide:heart"></iconify-icon>
                                 </button>
                             </div>
 
@@ -40,18 +40,18 @@
                         <div class="flex items-center gap-3 bg-transparent">
 
                             <div class="flex items-center gap-1">
-                                <i data-lucide="star" class="fill-warning text-warning size-4"></i>
+                                <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
                                 <span class="text-sm text-default-500">{{ item.rating }}</span>
                                 <span class="text-xs text-default-400 self-end">({{ item.reviews }})</span>
                             </div>
 
                             <div class="flex items-center gap-1 text-sm">
-                                <i data-lucide="credit-card" class="size-3.5"></i>
+                                <lucide-icon name="credit-card" class="size-3.5"></lucide-icon>
                                 {{ item.price }}
                             </div>
 
                             <div class="flex items-center gap-1 text-sm">
-                                <i data-lucide="map-pin" class="size-3.5"></i>
+                                <lucide-icon name="map-pin" class="size-3.5"></lucide-icon>
                                 <span class="text-truncate">{{ item.distance }}</span>
                             </div>
 
