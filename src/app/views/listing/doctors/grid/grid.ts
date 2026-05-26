@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-grid',
+  selector: 'doctors-grid',
   imports: [],
   templateUrl: './grid.html',
   styles: ``,

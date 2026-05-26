@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-single-entry',
+  selector: 'events-single-entry',
   imports: [],
   templateUrl: './single-entry.html',
   styles: ``,

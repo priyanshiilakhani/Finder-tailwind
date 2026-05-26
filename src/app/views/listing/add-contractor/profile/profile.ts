@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'cars-list',
+  selector: 'app-profile',
   imports: [],
-  templateUrl: './list.html',
+  templateUrl: './profile.html',
   styles: ``,
 })
-export class List {}
+export class Profile {}

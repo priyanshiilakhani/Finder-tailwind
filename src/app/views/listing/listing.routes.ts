@@ -15,6 +15,7 @@ import { SingleEntry as EventsSingleEntry } from './events/single-entry/single-e
 import { SideFilters } from './city-guide/side-filters/side-filters';
 import { TopFilters } from './city-guide/top-filters/top-filters';
 import { SingleEntry as CityGuideSingleEntry } from './city-guide/single-entry/single-entry';
+import { AddCar } from './add-car/add-car';
 
 export const LISTING_ROUTES: Route[] = [
   {
@@ -99,6 +100,17 @@ export const LISTING_ROUTES: Route[] = [
   },
   {
     path: 'add-property',
-    loadChildren: () => import('./add-property/add-property.routes').then((mod) => mod.ADD_PROPERTY_ROUTES)
+    loadChildren: () =>
+      import('./add-property/add-property.routes').then((mod) => mod.ADD_PROPERTY_ROUTES),
+  },
+  {
+    path: 'add-contractor',
+    loadChildren: () =>
+      import('./add-contractor/add-contractor.routes').then((mod) => mod.ADD_CONTRACTOR_ROUTES),
+  },
+  {
+    path: 'add-car',
+    component: AddCar,
+    data: { title: 'Add (Sell) Car Page' },
   },
 ];
