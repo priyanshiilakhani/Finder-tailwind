@@ -1,0 +1,147 @@
+<section class="lg:mt-6 md:mt-4 mt-2 py-12">
+    <div class="container">
+        <div class="grid grid-cols-12 gap-6">
+            <div class="lg:col-span-9 col-span-12 lg:mb-4 lg:pb-12 ">
+                <div class="flex items-center justify-between mb-4 lg:pb-4 md:pb-6">
+                    <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold">Reviews</h2>
+
+                    <div class="flex items-center text-xl text-default-900 font-semibold">
+                        <lucide-icon name="star" class="fill-warning text-warning me-2 size-3.5"></lucide-icon>
+                        4.9
+                        <span class="text-sm font-normal text-default-500 ms-1">(32)</span>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <div class="mb-4 me-4 w-full whitespace-nowrap overflow-x-auto">
+                        <div class="flex flex-nowrap gap-2 pb-2 mb-1">
+                            <div>
+                                <input type="radio" class="hidden peer" checked>
+                                <label class="cursor-pointer rounded-full font-medium px-5 py-2 inline-flex text-sm border border-default-300 peer-checked:bg-default-100 peer-checked:dark:bg-white/3 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 hover:bg-default-100 dark:hover:bg-white/3">
+                                    All
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" class="hidden peer">
+                                <label class="cursor-pointer rounded-full font-medium px-5 py-2 inline-flex text-sm border border-default-300 peer-checked:bg-default-100 peer-checked:dark:bg-white/3 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 hover:bg-default-100 dark:hover:bg-white/3">
+                                    Only positive (30)
+                                </label>
+                            </div>
+
+                            <div>
+                                <input type="radio" class="hidden peer">
+                                <label class="cursor-pointer rounded-full font-medium px-5 py-2 inline-flex text-sm border border-default-300 peer-checked:bg-default-100 peer-checked:dark:bg-white/3 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 hover:bg-default-100 dark:hover:bg-white/3">
+                                    Only negative (2)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 pb-4">
+                        <button class="border border-default-900 text-nowrap text-default-800 text-sm px-4 py-2 rounded-md inline-flex items-center justify-center hover:bg-default-900 hover:text-body-bg transition-all duration-300">
+                            <iconify-icon icon="lucide:edit-3" class="text-base -ms-1 me-2"></iconify-icon>
+                            Add review
+                        </button>
+                    </div>
+                </div>
+
+                @for (item of reviewsData; track $index) {
+                <div class="border-b border-border py-6" [class.pt-0]="$first">
+
+                    <div class="flex items-center justify-between mb-4" [class.mt-0]="$first" [class.mt-2]="!$first">
+
+                        <div class="flex items-center pe-4">
+                            <div class="rounded-full overflow-hidden size-12">
+                                <img [src]="item.userAvatar" alt="Avatar" class="w-full h-full object-cover">
+                            </div>
+
+                            <div class="ps-4">
+                                <h6 class="mb-1 font-semibold text-default-900">{{ item.userName }}</h6>
+                                <div class="text-xs">{{ item.date }}</div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-1">
+
+                            @for (star of [1, 2, 3, 4, 5]; track $index) {
+                            @if (star <= item.rating) { <lucide-icon name="star" class="fill-warning text-warning size-3.5"></lucide-icon>
+                                } @else {
+                                <lucide-icon name="star" class="text-warning size-3.5"></lucide-icon>
+                                }
+                                }
+                        </div>
+                    </div>
+
+                    <p class="text-sm mb-2">
+                        Review on:<a class="hover-underline font-semibold text-default-900 ms-2" [routerLink]="[]">{{ item.reviewOn }}
+                        </a>
+                    </p>
+
+                    <p class="text-sm mb-4">
+                        {{ item.description }}
+                    </p>
+
+                    @if (item.images?.length) {
+                    <div class="grid grid-cols-3 gap-2 md:w-88.5 w-full mb-4">
+
+                        @for (image of item.images; track $index) {
+                        <div class="group relative overflow-hidden rounded-xl">
+
+                            <img [src]="image.image" class="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105" />
+
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-xl">
+
+                                <a [href]="image.image" class="image-popup after:absolute after:inset-0 after:z-1 rounded-xl" appGlightbox>
+
+                                    <div class="absolute inset-0 flex justify-center items-center z-20 opacity-0 group-hover:opacity-100 transition duration-300">
+
+                                        <iconify-icon icon="lucide:zoom-in" class="text-white text-3xl relative z-30">
+                                        </iconify-icon>
+
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                    }
+
+                    <div class="flex items-center">
+                        <button type="button" class="text-default-600 flex items-center">
+                            <iconify-icon icon="lucide:thumbs-up" class="text-base me-1">
+                            </iconify-icon>
+
+                            {{ item.likes }}
+                        </button>
+
+                        <div class="w-px h-5 bg-default-300 dark:bg-white/20 my-2 mx-4"></div>
+
+                        <button type="button" class="text-default-600 flex items-center">
+                            <iconify-icon icon="lucide:thumbs-down" class="text-base me-1">
+                            </iconify-icon>
+
+                            {{ item.dislikes }}
+                        </button>
+                    </div>
+                </div>
+                }
+
+                <nav class="flex items-center gap-x-1 mt-8" aria-label="Pagination">
+                    <div class="flex items-center gap-x-1">
+                        <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center bg-default-200 text-default-800 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-600 dark:text-white dark:focus:bg-neutral-500" aria-current="page">1</button>
+                        <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">2</button>
+                        <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">3</button>
+                        <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">4</button>
+                        <div class="hs-tooltip inline-block">
+                            <button type="button" class="hs-tooltip-toggle group min-h-9.5 min-w-9.5 flex justify-center items-center text-default-400 hover:text-blue-600 p-2 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:bg-white/10">
+                                <iconify-icon icon="lucide:ellipsis" class="text-lg"></iconify-icon>
+                            </button>
+                        </div>
+                        <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
