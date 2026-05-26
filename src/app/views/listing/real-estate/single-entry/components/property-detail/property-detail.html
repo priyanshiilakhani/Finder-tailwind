@@ -1,0 +1,194 @@
+<div class="lg:w-3xl w-full">
+    <div class="flex justify-between gap-6 items-center mb-4">
+        <div class="flex gap-2">
+            <div class="bg-info text-white text-xs inline-flex item-center font-medium px-2 py-1 rounded items-center">
+                Verified <iconify-icon icon="lucide:shield" class="ms-1"></iconify-icon>
+            </div>
+            <p class="bg-primary inline-flex w-auto text-white text-xs px-2 py-1 rounded">New</p>
+        </div>
+
+        <div class="flex gap-2">
+            <div class="group flex justify-center items-center flex-col">
+                <!-- Dropdown + Tooltip Combined -->
+                <div class="hs-dropdown relative inline-flex hs-tooltip [--placement:auto]">
+                    <!-- Button -->
+                    <button type="button" class="hs-dropdown-toggle hs-tooltip-toggle size-10 inline-flex justify-center items-center gap-2">
+                        <lucide-icon name="Share-2" class="stroke-2 size-4 text-default-700"></lucide-icon>
+                        <!-- Tooltip -->
+                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-default-800 text-default-50 rounded inline-block absolute invisible text-xs -mt-4 -ms-3 z-10 py-1 px-2">
+                            Share
+                        </span>
+                    </button>
+
+                    <!-- Dropdown -->
+                    <div class="hs-dropdown-menu hidden transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 absolute top-10! z-20 min-w-38 border border-border bg-body-bg shadow-custom rounded-md mt-2">
+                        <div class="p-2.5 space-y-0.5">
+                            <a [routerLink]="[]" class="flex items-center gap-x-2 py-2 px-3 rounded-md text-sm hover:bg-default-100">
+                                <lucide-icon name="facebook" class="size-4 fill-default-800"></lucide-icon>
+                                Facebook
+                            </a>
+
+                            <a [routerLink]="[]" class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm hover:bg-default-100">
+                                <lucide-icon name="instagram" class="size-4 text-default-800"></lucide-icon>
+                                Instagram
+                            </a>
+
+                            <a [routerLink]="[]" class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm hover:bg-default-100">
+                                <lucide-icon name="linkedin" class="size-4 fill-default-800"></lucide-icon>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="group flex justify-center items-center flex-col hs-tooltip [--placement:auto]">
+                <button type="button" class="hs-tooltip-toggle size-10 inline-flex justify-center items-center gap-2 ">
+                    <lucide-icon name="heart" class="stroke-2 size-4 text-default-700"></lucide-icon>
+                    <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-default-800 text-default-50 rounded inline-block absolute invisible text-xs -mt-4 -ms-3 z-10 py-1 px-2 " role="tooltip">
+                        Wishlist
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="md:text-2.5xl text-xl text-default-900 font-semibold pb-1 mb-2">$1,170</div>
+    <p class="text-sm pb-1 mb-2">67-04 Myrtle Ave Glendale, NY 11385</p>
+
+    <div class="flex gap-2 mb-6">
+        <div class="flex items-center text-sm gap-1 me-2">
+            1
+            <iconify-icon icon="lucide:bed-single" class="text-base text-default-600"></iconify-icon>
+        </div>
+
+        <div class="flex items-center text-sm gap-1 me-2">
+            1
+            <iconify-icon icon="lucide:shower-head" class="text-base text-default-600"></iconify-icon>
+        </div>
+
+        <div class="flex items-center text-sm gap-1 me-2">
+            0
+            <iconify-icon icon="lucide:car" class="text-base text-default-600"></iconify-icon>
+        </div>
+
+        <div class="text-sm">42 sq.m</div>
+    </div>
+
+    <div class="items-center flex text-default-700 bg-default-100 dark:bg-white/3 border border-default-200 p-4 dark:border-white/20 rounded-md text-sm" role="alert">
+        <iconify-icon icon="lucide:info" class="text-lg pe-1 me-1"></iconify-icon>
+        <div>We estimate this home will sell faster than 94% nearby.</div>
+    </div>
+
+    <h2 class="md:pt-12 pt-10 mb-4 text-xl font-semibold text-default-900">About</h2>
+    <p class="text-sm mb-4">It offers a comfortable living area leading to a formal dining room, gorgeous hardwood floors throughout, spacious renovated Island kitchen with granite countertops and stainless steel appliances. Additionally, revel in the convenience of a master bedroom featuring a built-in dressing room, complemented by a private bath and shower for added comfort. This inviting apartment is conveniently located close to transportation hubs, ensuring easy access to the city's heartbeat.</p>
+
+    <h2 class="md:pt-12 pt-10 mb-4 text-xl font-semibold text-default-900">General information</h2>
+
+    <table class="w-auto text-sm border-collapse mb-4">
+        <tbody>
+
+            @for (item of propertyDetailsData; track $index) {
+
+            <tr>
+                <th scope="row" class="text-sm text-default-900 py-2 pe-4 text-start">
+
+                    {{ item.label }}
+                </th>
+
+                <td class="py-2 px-3 text-body-color">
+                    {{ item.value }}
+                </td>
+            </tr>
+
+            }
+
+        </tbody>
+    </table>
+
+    <h2 class="md:pt-12 pt-10 mb-4 text-xl font-semibold text-default-900">Amenities</h2>
+    <div class="grid lg:grid-cols-3 grid-cols-2 gap-4 text-sm">
+        @for (item of amenitiesData; track $index) {
+        <div class="flex items-center">
+            <iconify-icon [icon]="item.icon" class="text-lg me-2">
+            </iconify-icon>
+
+            {{ item.title }}
+        </div>
+        }
+    </div>
+
+    <h2 class="md:pt-12 pt-10 mb-4 text-xl font-semibold text-default-900">Transportation</h2>
+
+    <div class="grid lg:grid-cols-3 grid-cols-2 gap-4 text-sm">
+        @for (item of transportScoreData; track $index) {
+        <div class="flex items-center">
+            <iconify-icon [icon]="item.icon" class="text-lg me-2">
+            </iconify-icon>
+
+            <span>
+                <span class="font-bold">{{ item.score }}</span>
+                {{ item.label }}
+            </span>
+        </div>
+        }
+    </div>
+
+    <h2 class="md:pt-12 pt-10 mb-4 text-xl font-semibold text-default-900">Location</h2>
+
+    <div class="flex gap-2 mb-2 pb-4 overflow-x-auto whitespace-nowrap">
+
+        @for (item of nearbyCategoriesData; track $index) {
+
+        <div>
+            <input type="radio" [id]="item.id" name="bedrooms" class="hidden peer" [checked]="item.checked">
+
+            <label [for]="item.id" class="cursor-pointer font-semibold rounded-full px-5 py-2 inline-flex text-sm border border-default-300 peer-checked:bg-default-100 peer-checked:dark:bg-white/3 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 hover:bg-default-100 dark:hover:bg-white/3">
+
+                <iconify-icon [icon]="item.icon" class="text-lg me-2">
+                </iconify-icon>
+
+                {{ item.name }}
+            </label>
+        </div>
+
+        }
+
+    </div>
+
+    <iframe class="border rounded-md border-border" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2311.3724100313693!2d-73.82417211551919!3d42.62335692577899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89dde016efd1fe73%3A0x6861561b35064fe9!2sGlendale%20Ave!5e0!3m2!1sen!2suk!4v1726842151281!5m2!1sen!2suk" width="100%" height="350" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map"></iframe>
+
+    <div class="mt-6 flex justify-between items-center">
+        <div class="flex gap-3 text-sm">
+            <div>
+                Published: <span class="font-medium text-default-800">Sep 9, 2024</span>
+            </div>
+
+            <div>
+                Views: <span class="font-medium text-default-800">158</span>
+            </div>
+        </div>
+
+        <div>
+            <div class="flex gap-2">
+                <div class="group flex justify-center items-center flex-col hs-tooltip [--placement:auto]">
+                    <button type="button" class="hs-tooltip-toggle size-10 inline-flex justify-center items-center gap-2 ">
+                        <lucide-icon name="Share-2" class="stroke-2 size-4 text-default-700"></lucide-icon>
+                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-default-800 text-white rounded inline-block absolute invisible text-xs -mt-4 -ms-3 z-10 py-1 px-2 " role="tooltip">
+                            Share
+                        </span>
+                    </button>
+                </div>
+
+                <div class="group flex justify-center items-center flex-col hs-tooltip [--placement:auto]">
+                    <button type="button" class="hs-tooltip-toggle size-10 inline-flex justify-center items-center gap-2 ">
+                        <lucide-icon name="heart" class="stroke-2 size-4 text-default-700"></lucide-icon>
+                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-default-800 text-white rounded inline-block absolute invisible text-xs -mt-4 -ms-3 z-10 py-1 px-2 " role="tooltip">
+                            Wishlist
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

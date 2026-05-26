@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-listings',
+  selector: 'real-estate-single-entry-listings',
   imports: [],
   templateUrl: './listings.html',
   styles: ``,

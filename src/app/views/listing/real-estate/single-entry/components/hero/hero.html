@@ -1,0 +1,39 @@
+<div
+    class="grid md:grid-cols-3 grid-cols-1 md:grid-rows-2 md:gap-6 gap-4"
+   >
+
+    @for (item of galleryData; track $index) {
+
+    <div
+        class="group relative overflow-hidden rounded-xl"
+        [class.md:col-span-2]="item.large"
+        [class.row-span-2]="item.large"
+        [class.col-span-1]="!item.large"
+        [class.row-span-1]="!item.large">
+
+        <img
+            [src]="item.image"
+            class="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105" />
+
+        <div
+            class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-xl">
+
+            <a
+                [href]="item.image"
+                class="image-popup after:absolute after:inset-0 after:z-1 rounded-xl" appGlightbox>
+
+                <div
+                    class="absolute inset-0 flex justify-center items-center z-20 opacity-0 group-hover:opacity-100 transition duration-300">
+
+                    <iconify-icon
+                        icon="lucide:zoom-in"
+                        class="text-white text-3xl relative z-30">
+                    </iconify-icon>
+
+                </div>
+            </a>
+        </div>
+    </div>
+
+    }
+</div>

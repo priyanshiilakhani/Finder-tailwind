@@ -17,7 +17,7 @@ File: Style CSS File
 @import "swiper/swiper-bundle.css";
 /* @import "leaflet/dist/leaflet.css"; */
 
-/* @import "glightbox/dist/css/glightbox.min.css"; */
+@import "glightbox/dist/css/glightbox.min.css";
 
 @import 'nouislider/dist/nouislider.min.css';
 @import "./_noui-rangeslider.css";
