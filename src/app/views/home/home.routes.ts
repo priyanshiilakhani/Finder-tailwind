@@ -10,31 +10,31 @@ export const HOME_ROUTES: Route[] = [
   {
     path: 'real-estate',
     component: RealEstate,
-    data: { title: 'Index' },
+    data: { title: 'Real Estate' },
   },
   {
     path: 'cars',
     component: Cars,
-    data: { title: 'Index' },
+    data: { title: 'Cars' },
   },
   {
     path: 'contractors',
     component: Contractors,
-    data: { title: 'Index' },
+    data: { title: 'Contractors' },
   },
   {
     path: 'doctors',
     component: Doctors,
-    data: { title: 'Index' },
+    data: { title: 'Doctors' },
   },
   {
     path: 'events',
     component: Events,
-    data: { title: 'Index' },
+    data: { title: 'Events' },
   },
   {
     path: 'city-guide',
     component: CityGuide,
-    data: { title: 'Index' },
+    data: { title: 'City Guide' },
   },
 ];
