@@ -147,3 +147,123 @@ export const footerData5: footerType[] = [
     ],
   },
 ];
+
+export type FooterFeatureType = {
+  icon: string;
+  title: string;
+};
+
+export type FooterLinkType = {
+  label: string;
+};
+
+export type FooterSectionType = {
+  title: string;
+  links: FooterLinkType[];
+};
+
+export type AppButtonType = {
+  ariaLabel: string;
+  icon?: string;
+  iconSvg?: boolean;
+  textSvg: boolean;
+};
+
+export type SocialMediaType = {
+  icon: string;
+  tooltip: string;
+};
+
+export const footerFeatureData: FooterFeatureType[] = [
+  {
+    icon: 'tabler:copy',
+    title: 'Over 1 million listings',
+  },
+  {
+    icon: 'tabler:file-search',
+    title: 'Personalized search',
+  },
+  {
+    icon: 'tabler:cash-banknote-edit',
+    title: 'Online car appraisal',
+  },
+  {
+    icon: 'tabler:bulb',
+    title: 'Non-stop innovation',
+  },
+];
+
+export const footerSectionData: FooterSectionType[] = [
+  {
+    title: 'Buying & selling',
+    links: [
+      {
+        label: 'Find a car',
+      },
+      {
+        label: 'Sell your car',
+      },
+      {
+        label: 'Car dealers',
+      },
+      {
+        label: 'Compare cars',
+      },
+      {
+        label: 'Online car appraisal',
+      },
+    ],
+  },
+  {
+    title: 'About',
+    links: [
+      {
+        label: 'About Finder',
+      },
+      {
+        label: 'Contact us',
+      },
+      {
+        label: 'FAQs & support',
+      },
+      {
+        label: 'Mobile app',
+      },
+      {
+        label: 'Blog & news',
+      },
+    ],
+  },
+  {
+    title: 'Profile',
+    links: [
+      {
+        label: 'My account',
+      },
+      {
+        label: 'Wishlist',
+      },
+      {
+        label: 'My listings',
+      },
+      {
+        label: 'Add listings',
+      },
+    ],
+  },
+];
+
+export const socialMediaData: SocialMediaType[] = [
+  {
+    icon: 'tabler:brand-instagram',
+    tooltip: 'instagram',
+  },
+  {
+    icon: 'tabler:brand-facebook-filled',
+    tooltip: 'Facebook',
+  },
+  {
+    icon: 'tabler:brand-x',
+    tooltip: 'X (Twitter)',
+  },
+];

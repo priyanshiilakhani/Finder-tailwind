@@ -1,16 +1,22 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Pagination } from 'swiper/modules';
 import { SwiperOptions } from 'swiper/types';
+import { featureData } from '../../data';
+import { SwiperDirective } from '@/app/directive/swiper-directive';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 @Component({
   selector: 'cars-features',
-  imports: [],
+  imports: [SwiperDirective],
   templateUrl: './features.html',
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
   
 export class Features {
+  featureData = featureData;
   swiperConfig: SwiperOptions = {
     modules: [Pagination],
     slidesPerView: 1,

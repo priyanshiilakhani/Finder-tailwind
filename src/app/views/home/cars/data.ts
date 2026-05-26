@@ -11,6 +11,20 @@ const cityCarsImg = 'assets/img/home/cars/categories/03.jpg';
 const offRoadCarsImg = 'assets/img/home/cars/categories/04.jpg';
 const familyCarsImg = 'assets/img/home/cars/categories/05.jpg';
 
+const carImage1 = 'assets/img/listings/cars/grid/03.jpg';
+const carImage2 = 'assets/img/listings/cars/grid/05.jpg';
+const carImage3 = 'assets/img/listings/cars/grid/02.jpg';
+const carImage4 = 'assets/img/listings/cars/grid/07.jpg';
+
+const accessoryImage1 = 'assets/img/home/cars/accessories/01.png';
+const accessoryImage2 = 'assets/img/home/cars/accessories/02.png';
+const accessoryImage3 = 'assets/img/home/cars/accessories/03.png';
+const accessoryImage4 = 'assets/img/home/cars/accessories/04.png';
+
+const blogImage1 = 'assets/img/blog/v2/vlog/01.jpg';
+const blogImage2 = 'assets/img/blog/v2/vlog/02.jpg';
+const blogImage3 = 'assets/img/blog/v2/vlog/03.jpg';
+
 export type CategoriesType = {
   image: string;
   title: string;
@@ -161,5 +175,155 @@ export const carCategoriesData: CarCategoryType[] = [
     image: familyCarsImg,
     title: 'Family cars',
     link: '/listings-grid-cars',
+  },
+];
+
+type FeatureType = {
+  icon: string;
+  title: string;
+};
+
+export const featureData: FeatureType[] = [
+  {
+    icon: 'lucide:copy',
+    title: 'Over 1 million listings',
+  },
+  {
+    icon: 'lucide:file-search',
+    title: 'Personalized search',
+  },
+  {
+    icon: 'lucide:car',
+    title: 'Online car appraisal',
+  },
+  {
+    icon: 'lucide:lightbulb',
+    title: 'Non-stop innovation',
+  },
+];
+
+type CarListingType = {
+  image: string;
+  badge: string;
+  badgeColor: string;
+  verified: boolean;
+  date: string;
+  title: string;
+  year: string;
+  price: string;
+  location: string;
+  mileage: string;
+  fuel: string;
+  transmission: string;
+};
+
+export const carListingData: CarListingType[] = [
+  {
+    image: carImage1,
+    badge: 'New',
+    badgeColor: 'bg-primary',
+    verified: true,
+    date: '30/09/2024',
+    title: 'Ford Truck Lifted',
+    year: '2024',
+    price: '$79,000',
+    location: 'Boston',
+    mileage: '0K mi',
+    fuel: 'Diesel',
+    transmission: 'Automatic',
+  },
+  {
+    image: carImage2,
+    badge: 'Used',
+    badgeColor: 'bg-warning',
+    verified: false,
+    date: '15/07/2024',
+    title: 'Mercedes-Benz Coupe',
+    year: '2021',
+    price: '$115,400',
+    location: 'New York',
+    mileage: '15K mi',
+    fuel: 'Gasoline',
+    transmission: 'Manual',
+  },
+  {
+    image: carImage3,
+    badge: 'Used',
+    badgeColor: 'bg-warning',
+    verified: true,
+    date: '16/08/2024',
+    title: 'Porsche 911 Turbo S',
+    year: '2017',
+    price: '$85,000',
+    location: 'Chicago',
+    mileage: '32K mi',
+    fuel: 'Gasoline',
+    transmission: 'Manual',
+  },
+  {
+    image: carImage4,
+    badge: 'New',
+    badgeColor: 'bg-primary',
+    verified: true,
+    date: '19/10/2024',
+    title: 'Tesla Model 3',
+    year: '2024',
+    price: '$36,200',
+    location: 'Los Angeles',
+    mileage: '0K mi',
+    fuel: 'Electric',
+    transmission: 'Automatic',
+  },
+];
+
+type AccessoryType = {
+  image: string;
+  title: string;
+};
+
+export const accessoryData: AccessoryType[] = [
+  {
+    image: accessoryImage1,
+    title: 'Tires',
+  },
+  {
+    image: accessoryImage2,
+    title: 'Disks',
+  },
+  {
+    image: accessoryImage3,
+    title: 'Tuning',
+  },
+  {
+    image: accessoryImage4,
+    title: 'Child seat',
+  },
+];
+
+type BlogType = {
+  image: string;
+  likePercentage: string;
+  duration: string;
+  title: string;
+};
+
+export const blogData: BlogType[] = [
+  {
+    image: blogImage1,
+    likePercentage: '100%',
+    duration: '36:12',
+    title: 'Electric Mercedes sedan car reportedly debuting in 2025',
+  },
+  {
+    image: blogImage2,
+    likePercentage: '99%',
+    duration: '24:30',
+    title: 'Budget vs Premium tyres: which are better value this year?',
+  },
+  {
+    image: blogImage3,
+    likePercentage: '100%',
+    duration: '17:25',
+    title: 'Tesla fixes common recall with over-the-air update',
   },
 ];

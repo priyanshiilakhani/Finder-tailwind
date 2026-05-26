@@ -9,6 +9,7 @@ import { Features } from "./components/features/features";
 import { Listings } from "./components/listings/listings";
 import { Accessories } from "./components/accessories/accessories";
 import { Videos } from "./components/videos/videos";
+import { Footer1 } from "@app/components/footer/footer1/footer1";
 
 @Component({
   selector: 'app-cars',
@@ -22,7 +23,8 @@ import { Videos } from "./components/videos/videos";
     Listings,
     Accessories,
     Videos,
-  ],
+    Footer1
+],
   templateUrl: './cars.html',
   styles: ``,
 })

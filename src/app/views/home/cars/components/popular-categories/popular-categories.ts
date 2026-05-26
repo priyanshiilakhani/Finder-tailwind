@@ -24,7 +24,7 @@ export class PopularCategories {
     slidesPerView: 2,
     spaceBetween: 24,
     pagination: {
-      el: '#category-pagination',
+      el: '#pcategory-pagination',
       clickable: true,
     },
     breakpoints: {

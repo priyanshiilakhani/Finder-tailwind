@@ -16,8 +16,8 @@
 
     <div class="swiper">
       <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-12">
-        @for (item of categoriesData; track item.title) {
-          <div class="swiper-slide">
+        @for (item of categoriesData; track $index) {
+          <swiper-slide>
             <a [routerLink]="item.link" class="group">
               <div class="bg-default-100 dark:bg-white/3 px-4 py-6 group rounded-xl">
                 <img
@@ -40,7 +40,7 @@
                 </p>
               </div>
             </a>
-          </div>
+          </swiper-slide>
         }
       </swiper-container>
       <!-- Pagination (Bullets) -->

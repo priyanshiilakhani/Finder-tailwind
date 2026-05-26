@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { LucideAngularModule } from "lucide-angular";
-import { Navbar } from "../navbar/navbar";
 import { ThemeDropdown } from "../theme-dropdown/theme-dropdown";
 import { MobileMenu } from "../mobile-menu/mobile-menu";
 import { BackToTop } from "../back-to-top/back-to-top";
+import { NavbarMenu } from "../navbar-menu/navbar-menu";
 
 @Component({
   selector: 'app-navbar3',
-  imports: [CommonModule, LucideAngularModule, Navbar, ThemeDropdown, MobileMenu, BackToTop],
+  imports: [CommonModule, LucideAngularModule, ThemeDropdown, MobileMenu, BackToTop, NavbarMenu],
   templateUrl: './navbar3.html',
   styles: ``,
 })

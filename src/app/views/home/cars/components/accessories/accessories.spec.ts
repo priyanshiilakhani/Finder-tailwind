@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Accessories } from './accessories';
 
 describe('Accessories', () => {

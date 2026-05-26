@@ -1,1 +1,66 @@
-<p>videos works!</p>
+<section class="lg:py-14 md:pt-8 pt-2 pb-10">
+  <div class="container">
+    <div class="flex items-start justify-between gap-4 lg:mb-10 md:mb-8 mb-6">
+      <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-default-900">
+        Popular videos
+      </h2>
+      <div class="inline-flex items-center gap-2">
+        <a
+          [routerLink]="[]"
+          class="hover:underline flex items-center text-nowrap me-1 font-semibold">
+          More video
+          <iconify-icon icon="lucide:chevron-right" class="text-lg"></iconify-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="swiper pb-5">
+      <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-12">
+        @for (item of blogData; track $index) {
+          <swiper-slide class="group">
+            <a routerLink="/blog-single/v2">
+              <div class="rounded-md w-full h-full overflow-hidden relative">
+                <img
+                  [src]="item.image"
+                  alt="Image"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 z-0 rounded-md"
+                />
+
+                <div class="absolute top-0 start-0 z-10 flex flex-col gap-1 pt-2 ps-2 mt-2 ms-2">
+                  <div
+                    class="bg-black/70 size-8 text-white inline-flex items-center justify-center rounded-md"
+                  >
+                    <iconify-icon icon="lucide:video"></iconify-icon>
+                  </div>
+                </div>
+
+                <div
+                  class="absolute bottom-0 start-0 flex items-center justify-between w-full bg-black/30 text-white z-10 py-1 px-3 backdrop-blur-sm"
+                  data-bs-theme="dark"
+                >
+                  <div class="flex items-center text-sm">
+                    <iconify-icon icon="lucide:thumbs-up" class="text-base me-2"></iconify-icon>
+
+                    {{ item.likePercentage }}
+                  </div>
+
+                  <div class="text-sm">
+                    {{ item.duration }}
+                  </div>
+                </div>
+              </div>
+
+              <h3 class="pt-6 text-xl font-semibold text-default-900">
+                <a class="group-hover:underline" routerLink="/blog-single/v2">
+                  {{ item.title }}
+                </a>
+              </h3>
+            </a>
+          </swiper-slide>
+        }
+      </swiper-container>
+
+      <div id="videos-pagination" class="swiper-pagination static mt-3 mt-sm-4"></div>
+    </div>
+  </div>
+</section>

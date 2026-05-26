@@ -1,1 +1,41 @@
-<p>accessories works!</p>
+<section class="lg:py-14 pt-2 pb-12">
+    <div class="container">
+        <div
+            class="grid md:grid-cols-3 grid-cols-1 md:gap-0 gap-8 bg-default-100 dark:bg-white/3 lg:px-24 lg:py-18 md:py-14.5 md:px-12 py-12 px-8 rounded-lg">
+            <div class="col-span-1">
+                <div class="md:text-start text-center">
+                    <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-default-900 mb-3">Auto market
+                    </h2>
+                    <p class="lg:mb-8 mb-6">Choose the best for your car!</p>
+                    <a routerLink="/listings-grid-cars"
+                        class="rounded-md bg-primary transition-all duration-300 hover:bg-primary-hover py-3.5 px-6 font-semibold inline-flex justify-center items-center text-white">Go
+                        to shop
+                        <iconify-icon icon="lucide:chevron-right" width="18" height="18" class="ms-2"></iconify-icon>
+                    </a>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 col-span-1">
+                <div class="swiper">
+                    <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-12">
+                        @for (item of accessoryData; track $index) {
+                        <swiper-slide class="group">
+                            <a [routerLink]="[]">
+                                <img [src]="item.image" alt="Image" class="mb-4">
+                                <h3 class="text-center font-medium">
+                                    <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300"
+                                        [routerLink]="[]">
+                                        {{ item.title }}
+                                    </a>
+                                </h3>
+                            </a>
+                        </swiper-slide>
+                        }
+                    </swiper-container>
+
+                    <div id="accessories-pagination" class="swiper-pagination static mt-3 mt-lg-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

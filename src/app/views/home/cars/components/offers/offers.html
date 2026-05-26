@@ -34,7 +34,7 @@
                                         <div class="flex gap-2">
                                             <div class="hs-tooltip [--placement:top] inline-block">
                                                 <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300">
-                                                    <iconify-icon icon="lucide:heart" class="size-3.5 text-body-color"></iconify-icon>
+                                                    <iconify-icon icon="lucide:heart" width="14" height="14" class="text-body-color"></iconify-icon>
                                                     <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
                                                         Wishlist
                                                     </span>
@@ -43,7 +43,7 @@
 
                                             <div class="hs-tooltip [--placement:top] inline-block">
                                                 <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300">
-                                                    <iconify-icon icon="lucide:bell" class="size-3.5 text-body-color"></iconify-icon>
+                                                    <iconify-icon icon="lucide:bell" width="14" height="14" class="text-body-color"></iconify-icon>
                                                     <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
                                                         Notify
                                                     </span>
@@ -52,7 +52,7 @@
 
                                             <div class="hs-tooltip [--placement:top] inline-block">
                                                 <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300">
-                                                    <iconify-icon icon="lucide:repeat" class="size-3.5 text-body-color"></iconify-icon>
+                                                    <iconify-icon icon="lucide:repeat" width="14" height="14" class="text-body-color"></iconify-icon>
                                                     <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
                                                         Compare
                                                     </span>
@@ -63,7 +63,7 @@
 
                                     <h3 class="mb-2 text-xl text-default-900 font-semibold">
                                         <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300 me-1" routerLink="/single-entry-cars">Maserati Granturismo</a>
-                                        <span class="text-xs font-normal text-secondary">(2024)</span>
+                                        <span class="text-xs font-normal text-secondary ms-1">(2024)</span>
                                     </h3>
 
                                     <div class="text-default-900 font-semibold">$73,000</div>
@@ -103,13 +103,38 @@
                     <div class="mb-6">
                         <a routerLink="/single-entry-cars" class="group">
                             <div class="border border-border rounded-md group md:flex block">
-                                <div class="rounded-tl-md md:rounded-bl-md rounded-bl-none md:rounded-tr-none rounded-tr-md w-[322.39px] h-57 overflow-hidden relative">
-                                    <img src="assets/img/listings/cars/list/01.jpg" alt="Image" class="w-[322.39px] h-57 object-cover transition-transform duration-500 group-hover:scale-110 z-0 rounded-tl-md md:rounded-bl-md rounded-bl-none md:rounded-tr-none rounded-tr-md">
+                               <div
+    class="shrink-0
+           w-full
+           max-w-[391px]
+           mx-auto
+           md:mx-0
+           md:min-w-[322.39px]
+           md:max-w-[322.39px]
+           md:w-[322.39px]
+           h-57
+           overflow-hidden
+           relative
+           rounded-tl-md
+           md:rounded-bl-md
+           rounded-bl-none
+           md:rounded-tr-none
+           rounded-tr-md"
+>
 
-                                    <div class="absolute top-0 start-0 z-10 flex flex-col gap-1 pt-2 ps-2 mt-2 ms-2">
-                                        <p class="bg-primary inline-flex w-auto text-white text-xs px-2 py-0.5 rounded">New</p>
-                                    </div>
-                                </div>
+    <img
+        src="assets/img/listings/cars/list/01.jpg"
+        alt="Image"
+        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+    >
+
+    <div class="absolute top-0 start-0 z-10 flex flex-col gap-1 pt-2 ps-2 mt-2 ms-2">
+        <p class="bg-primary inline-flex w-auto text-white text-xs px-2 py-0.5 rounded">
+            New
+        </p>
+    </div>
+
+</div>
 
                                 <div>
                                     <div class="pb-4 pt-6 px-6 md:my-2">
@@ -119,7 +144,7 @@
                                             <div class="flex gap-2">
                                                 <div class="hs-tooltip [--placement:top] inline-block">
                                                     <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300">
-                                                        <iconify-icon icon="lucide:heart" class="size-3.5 text-body-color"></iconify-icon>
+                                                        <iconify-icon icon="lucide:heart" width="14" height="14" class="text-body-color"></iconify-icon>
                                                         <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
                                                             Wishlist
                                                         </span>
@@ -128,7 +153,7 @@
 
                                                 <div class="hs-tooltip [--placement:top] inline-block">
                                                     <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300">
-                                                        <iconify-icon icon="lucide:bell" class="size-3.5 text-body-color"></iconify-icon>
+                                                        <iconify-icon icon="lucide:bell" width="14" height="14" class="text-body-color"></iconify-icon>
                                                         <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
                                                             Notify
                                                         </span>
@@ -137,7 +162,7 @@
 
                                                 <div class="hs-tooltip [--placement:top] inline-block">
                                                     <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300">
-                                                        <iconify-icon icon="lucide:repeat" class="size-3.5 text-body-color"></iconify-icon>
+                                                        <iconify-icon icon="lucide:repeat" width="14" height="14" class="text-body-color"></iconify-icon>
                                                         <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
                                                             Compare
                                                         </span>
@@ -148,7 +173,7 @@
 
                                         <h3 class="mb-2 text-xl text-default-900 font-semibold">
                                             <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300 me-1" routerLink="/single-entry-cars">Volvo XC90 Sport 4WD</a>
-                                            <span class="text-xs font-normal text-secondary">(2024)</span>
+                                            <span class="text-xs font-normal text-secondary ms-1">(2024)</span>
                                         </h3>
 
                                         <div class="text-default-900 font-semibold">$92,500</div>
@@ -186,13 +211,34 @@
 
                     <a routerLink="/single-entry-cars" class="group">
                         <div class="border border-border rounded-md group md:flex block">
-                            <div class="rounded-tl-md md:rounded-bl-md rounded-bl-none md:rounded-tr-none rounded-tr-md w-[322.39px] h-57 overflow-hidden relative">
-                                <img src="assets/img/listings/cars/list/05.jpg" alt="Image" class="w-[322.39px] h-57 object-cover transition-transform duration-500 group-hover:scale-110 z-0 rounded-tl-md md:rounded-bl-md rounded-bl-none md:rounded-tr-none rounded-tr-md">
-
-                                <div class="absolute top-0 start-0 z-10 flex flex-col gap-1 pt-2 ps-2 mt-2 ms-2">
-                                    <p class="bg-warning inline-flex w-auto text-white text-xs px-2 py-0.5 rounded">User</p>
-                                </div>
+                          <div  class="shrink-0
+                                w-full
+                                max-w-[391px]
+                                mx-auto
+                                md:mx-0
+                                md:min-w-[322.39px]
+                                md:max-w-[322.39px]
+                                md:w-[322.39px]
+                                h-57
+                                overflow-hidden
+                                relative
+                                rounded-tl-md
+                                md:rounded-bl-md
+                                rounded-bl-none
+                                md:rounded-tr-none
+                                rounded-tr-md">
+                            <img
+                                src="assets/img/listings/cars/list/05.jpg"
+                                alt="Image"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 z-0 rounded-tl-md md:rounded-bl-md rounded-bl-none md:rounded-tr-none rounded-tr-md"
+                            >
+                            <div class="absolute top-0 start-0 z-10 flex flex-col gap-1 pt-2 ps-2 mt-2 ms-2">
+                                <p class="bg-warning inline-flex w-auto text-white text-xs px-2 py-0.5 rounded">
+                                    User
+                                </p>
                             </div>
+                        </div>
+   
 
                             <div>
                                 <div class="pb-4 pt-6 px-6 my-2">
@@ -202,7 +248,7 @@
                                         <div class="flex gap-2">
                                             <div class="hs-tooltip [--placement:top] inline-block">
                                                 <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300">
-                                                    <iconify-icon icon="lucide:heart" class="size-3.5 text-body-color"></iconify-icon>
+                                                    <iconify-icon icon="lucide:heart" width="14" height="14" class="text-body-color"></iconify-icon>
                                                     <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
                                                         Wishlist
                                                     </span>
@@ -211,7 +257,7 @@
 
                                             <div class="hs-tooltip [--placement:top] inline-block">
                                                 <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300">
-                                                    <iconify-icon icon="lucide:bell" class="size-3.5 text-body-color"></iconify-icon>
+                                                    <iconify-icon icon="lucide:bell" width="14" height="14" class="text-body-color"></iconify-icon>
                                                     <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
                                                         Notify
                                                     </span>
@@ -220,7 +266,7 @@
 
                                             <div class="hs-tooltip [--placement:top] inline-block">
                                                 <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300">
-                                                    <iconify-icon icon="lucide:repeat" class="size-3.5 text-body-color"></iconify-icon>
+                                                    <iconify-icon icon="lucide:repeat" width="14" height="14" class="text-body-color"></iconify-icon>
                                                     <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
                                                         Compare
                                                     </span>
@@ -231,7 +277,7 @@
 
                                     <h3 class="mb-2 text-xl text-default-900 font-semibold">
                                         <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300 me-1" routerLink="/single-entry-cars">Mercedes-Benz Coupe</a>
-                                        <span class="text-xs font-normal text-secondary">(2024)</span>
+                                        <span class="text-xs font-normal text-secondary ms-1">(2024)</span>
                                     </h3>
 
                                     <div class="text-default-900 font-semibold">$92,500</div>
