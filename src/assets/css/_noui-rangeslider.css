@@ -33,9 +33,9 @@
 }
 
 .noUi-tooltip {
-    border: 0;
+    bottom: 180% !important;   
+    border: 1px solid #d1d5db !important;
     font-weight: 600;
     font-size: 12px;
     background-color: var(--color-body-bg);
-    color: var(--color-body-color);
 }
