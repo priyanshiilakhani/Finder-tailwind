@@ -1,0 +1,195 @@
+<div class="flex items-center justify-between gap-4 pb-4 mb-2">
+  <div class="relative w-31.25">
+    <lucide-icon
+      name="arrow-up-down"
+      class="absolute start-0 top-1/2 -translate-y-1/2 z-10 size-3.5">
+    </lucide-icon>
+    <select class="w-full ps-6 pe-2 py-1 border-0 rounded-none text-sm text-default-700 focus:outline-none focus:ring-0 bg-transparent">
+      <option selected>Popular</option>
+      <option>Newest</option>
+    </select>
+  </div>
+
+  <div class="flex items-center gap-4 justify-end">
+    <div class="ms-auto">
+      <a [routerLink]="[]" class="flex items-center text-default-700 text-sm font-normal">
+        <iconify-icon icon="lucide:repeat" class="text-base me-2"></iconify-icon>
+        Compare (1)
+      </a>
+    </div>
+
+    <div class="flex">
+      <a
+        routerLink="/listings-grid-cars"
+        class="text-xl text-default-900 px-2 py-0 pointer-events-none"
+      >
+        <iconify-icon icon="lucide:layout-grid"></iconify-icon>
+      </a>
+
+      <a routerLink="/listings-list-cars" class="text-xl text-default-500 px-2 py-0">
+        <iconify-icon icon="lucide:list"></iconify-icon>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div>
+  @for (item of carListingData; track $index) {
+    <div class="mb-6">
+      <div class="bg-default-100/80 dark:bg-white/3 rounded-md group md:grid grid-cols-12">
+        <div class="col-span-5 relative">
+          <div
+            class="rounded-tl-md md:rounded-bl-md rounded-bl-none md:rounded-tr-none rounded-tr-md size-full overflow-hidden relative"
+          >
+            <img
+              [src]="item.image"
+              alt="Image"
+              class="size-full object-cover transition-transform duration-500 group-hover:scale-110 z-0 rounded-tl-md md:rounded-bl-md rounded-bl-none md:rounded-tr-none rounded-tr-md"
+            />
+
+            <div class="absolute top-0 start-0 z-10 flex flex-col gap-1 pt-2 ps-2 mt-2 ms-2">
+              @if (item.isVerified) {
+                <div
+                  class="bg-info text-white text-xs inline-flex item-center font-medium px-2 py-0.5 rounded items-center"
+                >
+                  Verified
+                  <iconify-icon icon="lucide:shield" class="ms-1"></iconify-icon>
+                </div>
+              }
+
+              <div>
+                <p class="bg-warning inline-flex w-auto text-white text-xs px-2 py-0.5 rounded">
+                  {{ item.condition }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-span-7">
+          <div class="pb-4 pt-6 px-6 md:my-2">
+            <div class="flex justify-between items-center mb-2">
+              <div class="text-xs text-secondary me-4">
+                {{ item.date }}
+              </div>
+
+              <div class="flex gap-2">
+                <div class="hs-tooltip [--placement:top] inline-block">
+                  <button
+                    type="button"
+                    class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300"
+                  >
+                    <iconify-icon
+                      icon="lucide:heart"
+                      width="14"
+                      height="14"
+                      class="text-body-color"
+                    ></iconify-icon>
+
+                    <span
+                      class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md"
+                      role="tooltip"
+                    >
+                      Wishlist
+                    </span>
+                  </button>
+                </div>
+
+                <div class="hs-tooltip [--placement:top] inline-block">
+                  <button
+                    type="button"
+                    class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300"
+                  >
+                    <iconify-icon
+                      icon="lucide:bell"
+                      width="14"
+                      height="14"
+                      class="text-body-color"
+                    ></iconify-icon>
+
+                    <span
+                      class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md"
+                      role="tooltip"
+                    >
+                      Notify
+                    </span>
+                  </button>
+                </div>
+
+                <div class="hs-tooltip [--placement:top] inline-block">
+                  <button
+                    type="button"
+                    class="hs-tooltip-toggle flex justify-center items-center size-8 border border-default-300 dark:border-white/20 rounded-full hover:border-body-color transition-all duration-300"
+                  >
+                    <iconify-icon
+                      icon="lucide:repeat"
+                      width="14"
+                      height="14"
+                      class="text-body-color"
+                    ></iconify-icon>
+
+                    <span
+                      class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md"
+                      role="tooltip"
+                    >
+                      Compare
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <h3 class="mb-2 text-xl text-default-900 font-semibold">
+              <a
+                class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300 me-1"
+                routerLink="/single-entry-cars"
+              >
+                {{ item.title }}
+              </a>
+
+              <span class="text-xs font-normal text-secondary"> ({{ item.year }}) </span>
+            </h3>
+
+            <div class="text-default-900 font-semibold">
+              {{ item.price }}
+            </div>
+
+            <p class="text-sm pt-2 mt-1">
+              {{ item.description }}
+            </p>
+          </div>
+
+          <div class="pb-6 px-6">
+            <div class="pt-6 border-t border-border">
+              <div class="grid md:grid-cols-4 grid-cols-2 gap-2">
+                <div class="flex gap-2 items-center text-sm">
+                  <iconify-icon icon="lucide:map-pin" class="text-body-color"></iconify-icon>
+
+                  {{ item.location }}
+                </div>
+
+                <div class="flex gap-2 items-center text-sm">
+                  <iconify-icon icon="lucide:gauge" class="text-body-color"></iconify-icon>
+
+                  {{ item.mileage }}
+                </div>
+
+                <div class="flex gap-2 items-center text-sm">
+                  <iconify-icon icon="lucide:fuel" class="text-body-color"></iconify-icon>
+
+                  {{ item.fuelType }}
+                </div>
+
+                <div class="flex gap-2 items-center text-sm">
+                  <iconify-icon icon="tabler:manual-gearbox" class="text-body-color"></iconify-icon>
+
+                  {{ item.transmission }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

@@ -1,1 +1,37 @@
-<p>list works!</p>
+<app-navbar3 />
+
+<section class="lg:mt-20 mt-15 pt-6 pb-16">
+  <div class="container">
+    <grid-breadcrumb />
+
+    <grid-filter />
+
+    <div class="grid lg:grid-cols-12 grid-cols-1 gap-6 md:pt-4 pt-0 pb-12">
+      <div class="lg:col-span-3 pe-6">
+        <grid-filter-sidebar />
+      </div>
+
+      <div class="lg:col-span-9 col-span-1">
+        <list-car-info />
+
+        <grid-pagination />
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lg:hidden text-center fixed lg:z-0 z-20 bottom-0 inset-x-0">
+  <button
+    type="button"
+    class="pt-3.5 px-4.5 pb-4.5 w-full inline-flex justify-center items-center text-start bg-default-900 text-body-bg font-medium align-middle hover:bg-default-950 focus:outline-hidden"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    aria-controls="filterSidebar"
+    aria-label="Toggle navigation"
+    data-hs-overlay="#filterSidebar"
+  >
+    <iconify-icon icon="tabler:columns-2" class="me-2 text-body-bg">
+    </iconify-icon> Filters
+  </button>
+</div>
+<app-footer1 />

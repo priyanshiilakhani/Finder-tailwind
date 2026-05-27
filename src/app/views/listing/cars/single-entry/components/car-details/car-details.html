@@ -1,0 +1,119 @@
+<div class="grid lg:grid-cols-12 grid-cols-1 gap-6">
+  <div class="lg:col-span-8 col-span-1">
+    <div class="swiper group relative">
+      <!-- Main Swiper -->
+      <swiper-container  #mainSwiper [config]="swiperConfig" init="false">
+        @for (item of carGalleryData; track $index) {
+          <swiper-slide>
+            <div class="rounded-md overflow-hidden">
+              <img [src]="item" alt="Image" />
+            </div>
+          </swiper-slide>
+        }
+      </swiper-container>
+
+      <!-- Prev Button -->
+      <div
+        class="absolute top-1/2 start-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 ms-3"
+      >
+        <button
+          type="button"
+          class="btn-prev size-10 bg-white text-dark rounded-full shadow flex items-center justify-center"
+        >
+          <iconify-icon icon="lucide:chevron-left" class="text-lg"></iconify-icon>
+        </button>
+      </div>
+
+      <!-- Next Button -->
+      <div
+        class="absolute top-1/2 end-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 me-3"
+      >
+        <button
+          type="button"
+          class="btn-next size-10 bg-white text-dark rounded-full shadow flex items-center justify-center"
+        >
+          <iconify-icon icon="lucide:chevron-right" class="text-lg"></iconify-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="swiper swiper-load swiper-thumbs mt-3">
+      <swiper-container #thumbSwiper [config]="swiperConfig2" init="false">
+        @for (item of carThumbnailData; track $index) {
+          <swiper-slide class="swiper-thumb overflow-hidden">
+            <div>
+              <img [src]="item" class="rounded-md" alt="Thumbnail" />
+            </div>
+          </swiper-slide>
+        }
+      </swiper-container>
+    </div>
+
+    <single-entry-specifications />
+
+    <single-entry-features />
+
+    <div>
+      <h2 class="md:text-2.5xl text-xl font-semibold mb-4 md:mt-2 pt-12 text-default-900">
+        Seller's description
+      </h2>
+
+      <p>
+        This stunning convertible blends luxury with performance, featuring a sleek design, advanced
+        technology, and a powerful engine. Enjoy open-air driving with premium comfort and the
+        unmistakable elegance of Mercedes-Benz. Impeccably maintained and ready to provide an
+        exhilarating driving experience. Don't miss out on this exceptional vehicle.
+      </p>
+
+      <div class="hidden" id="commentsCollapse">
+        <p class="my-4">
+          This A205 Cabriolet comes equipped with top-of-the-line features, including a responsive
+          infotainment system, advanced safety options, and a finely crafted interior that showcases
+          Mercedes-Benz's commitment to quality. The soft-top roof operates seamlessly, allowing you
+          to transition from a cozy cabin to an open-air cruiser in seconds. Whether you're
+          navigating city streets or cruising along the coast, this cabriolet delivers a smooth,
+          refined ride every time.
+        </p>
+
+        <p class="mb-4">
+          With low mileage and a full service history, this 2021 model remains in excellent
+          condition, both mechanically and aesthetically. The exterior shines in pristine condition,
+          and the interior has been meticulously cared for, ensuring a like-new experience. This
+          Mercedes-Benz A205 Cabriolet is the perfect choice for those who desire a blend of
+          sophistication, comfort, and thrilling performance in their next vehicle.
+        </p>
+      </div>
+
+      <div class="nav">
+        <div class="flex">
+          <button
+            class="w-full text-default-900 inlinr-flex items-center text-start text-sm font-medium py-3 hover:underline"
+            type="button"
+            onclick="document.getElementById('commentsCollapse').classList.toggle('hidden')"
+            aria-expanded="false"
+            aria-controls="commentsCollapse"
+          >
+            Show more
+            <iconify-icon icon="lucide:chevron-down"></iconify-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:mt-12 mt-6 pt-6 border-t border-border flex items-center text-sm">
+      <div>Published: <span class="text-default-800">Jul 15, 2024</span></div>
+
+      <span class="mx-3 h-4 border-l border-default-300"></span>
+
+      <div>Ad number: <span class="text-default-800">681013232</span></div>
+
+      <span class="mx-3 h-4 border-l border-default-300"></span>
+
+      <div>Views: <span class="text-default-800">48</span></div>
+    </div>
+  </div>
+
+  <div class="lg:col-span-4 col-span-1">
+    <single-entry-right-sidebar />
+  </div>
+</div>

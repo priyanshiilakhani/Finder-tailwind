@@ -1,0 +1,330 @@
+<div>
+  <div
+    id="filterSidebar"
+    class="hs-overlay lg:static [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-auto hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform hidden fixed top-0 start-0 bottom-0 z-60 bg-body-bg lg:w-auto w-87"
+    role="dialog"
+    tabindex="-1"
+    aria-label="Sidebar"
+  >
+    <div class="flex flex-col lg:sticky top-0 lg:h-full h-screen">
+      <header
+        class="py-4 px-6 lg:px-0 lg:py-0 flex justify-between items-center gap-x-2 lg:border-none border-b border-default-200 shrink-0"
+      >
+        <a class="focus:outline-hidden focus:opacity-80" [routerLink]="[]" aria-label="Brand">
+          <h3 class="text-xl font-semibold text-default-900 lg:hidden block">Filters</h3>
+        </a>
+
+        <div class="lg:hidden -me-2">
+          <button type="button" data-hs-overlay="#filterSidebar">
+            <iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon>
+            <span class="sr-only">Close</span>
+          </button>
+        </div>
+      </header>
+
+      <nav class="h-full overflow-y-auto flex-1" data-simplebar>
+        <div class="w-full flex flex-col flex-wrap lg:pt-0 px-6 lg:px-0 pb-4 lg:pb-0 pt-6">
+          <div class="flex flex-nowrap gap-2 pb-6 mb-4">
+            @for (item of carCategoryData; track $index) {
+              <div>
+                <input type="radio" class="hidden peer" [checked]="item.checked" />
+
+                <label
+                  class="cursor-pointer rounded-full font-medium px-5 py-2 inline-flex text-sm border border-default-300 peer-checked:bg-default-100 peer-checked:dark:bg-white/3 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 hover:bg-default-100 dark:hover:bg-white/3"
+                >
+                  {{ item.label }}
+                </label>
+              </div>
+            }
+          </div>
+
+          <div class="mb-4 pb-6">
+            <h4 class="text-default-900 font-semibold mb-4">Location and radius</h4>
+
+            <div class="relative w-full mb-4">
+              <select
+                aria-label="Car location select"
+                class="w-full rounded-md border border-default-300 bg-transparent dark:border-white/20 ps-10 pe-8 py-2 text-sm text-default-500"
+              >
+                @for (item of locationOptionsData; track $index) {
+                  <option [value]="item.value" [selected]="item.selected">
+                    {{ item.value }}
+                  </option>
+                }
+              </select>
+
+              <iconify-icon
+                icon="lucide:map-pin"
+                class="absolute start-3 top-1/2 -translate-y-1/2 text-default-700 size-4"
+              ></iconify-icon>
+
+              <iconify-icon
+                icon="lucide:chevron-down"
+                class="absolute end-3 top-1/2 -translate-y-1/2 h-4 w-4"
+              ></iconify-icon>
+            </div>
+
+            <div class="relative w-full">
+              <select
+                aria-label="Car location select"
+                class="w-full rounded-md border border-default-300 bg-transparent dark:border-white/20 ps-10 pe-8 py-2 text-sm text-default-500"
+              >
+                @for (item of radiusOptionsData; track $index) {
+                  <option [value]="item.value" [selected]="item.selected">
+                    {{ item.value }}
+                  </option>
+                }
+              </select>
+
+              <iconify-icon
+                icon="lucide:navigation"
+                class="absolute start-3 top-1/2 -translate-y-1/2 text-default-700 size-4"
+              ></iconify-icon>
+
+              <iconify-icon
+                icon="lucide:chevron-down"
+                class="absolute end-3 top-1/2 -translate-y-1/2 h-4 w-4"
+              ></iconify-icon>
+            </div>
+          </div>
+
+          <div class="mb-4 pb-6">
+            <h4 class="text-default-900 font-semibold mb-4">Body type</h4>
+
+            <div
+              class="overflow-x-auto h-45 [&::-webkit-scrollbar]:w-0.75 [&::-webkit-scrollbar-track]:bg-default-100 [&::-webkit-scrollbar-thumb]:bg-default-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+            >
+              <div class="flex flex-col gap-3">
+                @for (item of bodyTypeData; track $index) {
+                  <label
+                    [for]="item.id"
+                    class="flex items-center gap-2 text-sm text-default-700 cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      [id]="item.id"
+                      class="w-4 h-4 border-default-300 rounded bg-transparent checked:bg-black checked:border-black"
+                      [checked]="item.checked"
+                    />
+
+                    {{ item.label }}
+                  </label>
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4 pb-6">
+            <h4 class="text-default-900 font-semibold mb-4">Year</h4>
+
+            <div class="flex items-center">
+              <div class="w-1/2">
+                <select
+                  class="w-full rounded-md border border-default-300 dark:border-white/20 bg-transparent px-3 py-2 text-sm text-default-700"
+                >
+                  <option value="">From</option>
+
+                  @for (item of yearOptionsData; track $index) {
+                    <option [value]="item.value">
+                      {{ item.value }}
+                    </option>
+                  }
+                </select>
+              </div>
+
+              <span class="mx-3 text-default-500">−</span>
+
+              <div class="w-1/2">
+                <select
+                  class="w-full rounded-md border border-default-300 dark:border-white/20 bg-transparent px-3 py-2 text-sm text-default-700"
+                >
+                  <option value="">To</option>
+
+                  @for (item of yearOptionsData; track $index) {
+                    <option [value]="item.value" [selected]="item.selected">
+                      {{ item.value }}
+                    </option>
+                  }
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4 pb-6">
+            <h4 class="text-default-900 font-semibold mb-4">Make and model</h4>
+
+            <div class="flex flex-col gap-3">
+              <select
+                class="w-full rounded-md border border-default-300 text-sm dark:border-white/20 bg-transparent px-3 py-2 text-default-500"
+              >
+                @for (item of makeOptionsData; track $index) {
+                  <option [value]="item.value" [selected]="item.selected">
+                    {{ item.value }}
+                  </option>
+                }
+              </select>
+
+              <select
+                class="w-full rounded-md border border-default-300 text-sm dark:border-white/20 bg-transparent px-3 py-2 text-default-500"
+              >
+                @for (item of modelOptionsData; track $index) {
+                  <option [value]="item.value" [selected]="item.selected">
+                    {{ item.value }}
+                  </option>
+                }
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-4 pb-1">
+            <h4 class="text-sm font-semibold mb-4 pb-2">Price</h4>
+
+            <div class="mt-10">
+              <nouislider
+                class="price-slider"
+                [min]="0"
+                [max]="200000"
+                [step]="1000"
+                [(ngModel)]="priceRange"
+                [connect]="true"
+                [tooltips]="tooltips"
+              >
+              </nouislider>
+            </div>
+          </div>
+
+          <div class="mb-4 pb-6">
+            <h4 class="text-default-900 font-semibold mb-4">Drivetrain</h4>
+
+            <div class="flex flex-col gap-3">
+              @for (item of drivetrainData; track $index) {
+                <label
+                  [for]="item.id"
+                  class="flex items-center gap-2 text-sm text-default-700 cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    [id]="item.id"
+                    class="w-4 h-4 border-default-300 rounded bg-transparent checked:bg-black checked:border-black"
+                  />
+
+                  {{ item.label }}
+                </label>
+              }
+            </div>
+          </div>
+
+          <div class="mb-4 pb-6">
+            <h4 class="text-default-900 font-semibold mb-4">Fuel type</h4>
+
+            <div class="flex flex-col gap-3">
+              @for (item of fuelTypeData; track $index) {
+                <label
+                  [for]="item.id"
+                  class="flex items-center gap-2 text-sm text-default-700 cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    [id]="item.id"
+                    class="w-4 h-4 border-default-300 rounded bg-transparent checked:bg-black checked:border-black"
+                  />
+
+                  {{ item.label }}
+                </label>
+              }
+            </div>
+          </div>
+
+          <div class="mb-4 pb-6">
+            <h4 class="text-default-900 font-semibold mb-4">Transmission</h4>
+
+            <div class="flex flex-col gap-3">
+              @for (item of transmissionData; track $index) {
+                <label
+                  [for]="item.id"
+                  class="flex items-center gap-2 text-sm text-default-700 cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    [id]="item.id"
+                    class="w-4 h-4 border-default-300 rounded bg-transparent checked:bg-black checked:border-black"
+                  />
+
+                  {{ item.label }}
+                </label>
+              }
+            </div>
+          </div>
+
+          <div class="mb-4 pb-6">
+            <h4 class="text-default-900 font-semibold mb-4">Mileage</h4>
+
+            <div class="flex items-center">
+              <input
+                type="number"
+                step="500"
+                placeholder="From"
+                class="w-1/2 px-3 py-2 border border-default-300 dark:border-white/20 rounded-md bg-transparent"
+              />
+
+              <iconify-icon icon="lucide:minus" class="mx-3 sm:mx-1 lg:mx-2 xl:mx-3"></iconify-icon>
+
+              <input
+                type="number"
+                step="500"
+                placeholder="To"
+                class="w-1/2 px-3 py-2 border border-default-300 dark:border-white/20 rounded-mdbg-transparent"
+              />
+            </div>
+          </div>
+
+          <div class="mb-4 pb-6">
+            <h4 class="text-default-900 font-semibold mb-4">Color</h4>
+
+            <div
+              class="overflow-x-auto h-45 [&::-webkit-scrollbar]:w-0.75 [&::-webkit-scrollbar-track]:bg-default-100 [&::-webkit-scrollbar-thumb]:bg-default-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+            >
+              <div class="flex flex-col gap-3">
+                @for (item of colorData; track $index) {
+                  <label
+                    [for]="item.id"
+                    class="flex items-center gap-2 text-sm text-default-700 cursor-pointer"
+                  >
+                    <input
+                      type="checkbox"
+                      [id]="item.id"
+                      class="w-4 h-4 border-default-300 rounded bg-transparent checked:bg-black checked:border-black"
+                    />
+
+                    {{ item.label }}
+                  </label>
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-4 pb-6">
+            <h4 class="text-default-900 font-semibold mb-4">Sellers</h4>
+
+            <div class="flex flex-col gap-3">
+              @for (item of sellersData; track $index) {
+                <label
+                  [for]="item.id"
+                  class="flex items-center gap-2 text-sm text-default-700 cursor-pointer"
+                >
+                  <input
+                    type="checkbox"
+                    [id]="item.id"
+                    class="w-4 h-4 border-default-300 rounded bg-transparent checked:bg-black checked:border-black"
+                  />
+
+                  {{ item.label }}
+                </label>
+              }
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

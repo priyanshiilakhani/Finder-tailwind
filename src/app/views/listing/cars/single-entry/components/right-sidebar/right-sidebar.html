@@ -1,0 +1,97 @@
+<div class="lg:sticky lg:top-26">
+                        <div class="flex gap-2 mb-2 pb-1">
+                            <div class="bg-info text-white text-xs inline-flex item-center font-medium px-2 py-1 rounded items-center">
+                                Verified <iconify-icon icon="lucide:shield" class="ms-1"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="bg-warning inline-flex w-auto text-white text-xs px-2 py-1 rounded">Used</p>
+                            </div>
+                        </div>
+
+                        <div class="text-3.5xl text-default-900 font-semibold mb-2 pb-1">$41 900</div>
+
+                        <div class="grid md:grid-cols-4 grid-cols-2 gap-2 mb-6">
+                            <div class="flex gap-2 items-center text-sm">
+                                <iconify-icon icon="lucide:map-pin" class="text-body-color"></iconify-icon>
+                                Dallas
+                            </div>
+
+                            <div class="flex gap-2 items-center text-sm">
+                                <iconify-icon icon="lucide:gauge" class="text-body-color"></iconify-icon>
+                                56K mi
+                            </div>
+
+                            <div class="flex gap-2 items-center text-sm">
+                                <iconify-icon icon="lucide:fuel" class="text-body-color"></iconify-icon>
+                                Gasoline
+                            </div>
+
+                            <div class="flex gap-2 items-center text-sm">
+                                <iconify-icon icon="tabler:manual-gearbox" class="text-body-color"></iconify-icon>
+                                Automatic
+                            </div>
+                        </div>
+
+                        <div class="bg-default-100 dark:bg-white/3 rounded-md md:p-2 mb-6">
+                            <div class="p-6">
+                                <div class="flex items-center group justify-between mb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="rounded-full overflow-hidden w-18 h-18">
+                                            <img src="assets/img/listings/cars/single/seller.jpg" alt="Avatar">
+                                        </div>
+
+                                        <div>
+                                            <a class="group-hover:underline text-sm font-semibold text-default-900" [routerLink]="[]">Darrell Steward</a>
+                                            <div class="flex items-center gap-1">
+                                                <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+                                                <span class="text-sm font-medium text-default-800">4.9</span>
+                                                <span class="text-xs text-default-500">(5 reviews)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="ps-4 flex justify-between">
+                                        <div>
+                                            <span class="py-1 px-1.5 rounded-md text-default-900 bg-body-bg text-xs font-semibold">Private seller</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="flex mb-3">
+                                    <a class="relative py-2 flex items-center" [routerLink]="[]">
+                                        <span class="hover-underline text-sm">Other ads by this seller</span>
+                                        <iconify-icon icon="lucide:chevron-right" class="text-base ms-1"></iconify-icon>
+                                    </a>
+                                </div>
+
+                                <div class="flex gap-4 flex-wrap">
+                                    <button type="button" class="rounded-md border border-default-900 text-default-900 bg-transparent hover:text-body-bg hover:bg-default-900 py-2.5 px-5 transition-all duration-500 text-sm font-semibold">(316) *** **** - reveal</button>
+                                    <a class="bg-primary text-white py-2.5 px-5 rounded-md hover:bg-primary-hover inline-flex items-center transition-all duration-500 text-sm font-semibold" href="mailto:d.steward@example.com">
+                                        <iconify-icon icon="lucide:mail" class="text-base me-2"></iconify-icon>
+                                        Send email
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="border border-border rounded-md md:p-8 p-6">
+                            <h4 class="text-default-900 font-semibold mb-4">Email me price drops and new listings for these search results:</h4>
+                            <form class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-2 sm:gap-3 lg:gap-2 xl:gap-3 mb-4" novalidate>
+                                <div class="relative">
+                                    <iconify-icon icon="lucide:mail" class="absolute start-3 top-1/2 -translate-y-1/2 text-default-500"></iconify-icon>
+                                    <input type="email" placeholder="Your email" required class="w-full border border-default-300 rounded-md py-2 ps-10 pe-3 text-sm bg-transparent" />
+                                </div>
+                                <button type="submit" class="bg-default-100 dark:bg-white/3 text-default-700 text-sm font-semibold px-4 py-2 rounded-md hover:bg-default-200 dark:bg-hover-white/10 transition">
+                                    Subscribe
+                                </button>
+                            </form>
+
+                            <div class="flex items-start gap-2">
+
+                                <label for="concent" class="text-xs flex items-center gap-2 text-default-700 cursor-pointer">
+                                    <input type="checkbox" id="concent" class="w-4 h-4 border-default-300 rounded bg-transparent checked:bg-black checked:border-black">
+                                    I agree to receive price drop alerts on this vehicle and helpful shopping information.
+                                </label>
+                            </div>
+                        </div>
+                    </div>

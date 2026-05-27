@@ -1,0 +1,112 @@
+<div>
+                        <h2 class="pt-12 md:mt-2 md:mb-4 mb-2 md:text-2.5xl text-xl font-semibold text-default-900">Features</h2>
+
+                        <div class="hs-accordion-group">
+                            <div class="hs-accordion hs-accordion-active:border-b-default-200 bg-transparent border-b border-border group dark:hs-accordion-active:border-b-default-200" id="headingExterior">
+                                <button class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start text-xl font-semibold text-default-900 py-5" aria-expanded="false" aria-controls="exterior">
+                                    <a [routerLink]="[]" class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">Exterior</a>
+                                    <iconify-icon icon="lucide:plus" class="hs-accordion-active:hidden block size-5 text-default-800"></iconify-icon>
+                                    <iconify-icon icon="lucide:minus" class="hs-accordion-active:block hidden size-5 text-default-800"></iconify-icon>
+                                </button>
+                                <div id="exterior" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300 mb-4" role="region" aria-labelledby="headingExterior">
+                                    <ul class="flex flex-col gap-2 list-disc list-inside text-default-600">
+                                        <li class="mt-1">Alloy Wheels</li>
+                                        <li class="mt-1">Sunroof / Moonroof</li>
+                                        <li class="mt-1">Tinged glass</li>
+                                        <li class="mt-1">LED Headlights</li>
+                                        <li class="mt-1">Foldable Roof</li>
+                                        <li class="mt-1">Tow Hitch</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="hs-accordion active hs-accordion-active:border-b-default-200 bg-transparent border-b border-border group dark:hs-accordion-active:border-b-default-200" id="headingInterior">
+                                <button class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start text-xl font-semibold text-default-900 py-5" aria-expanded="true" aria-controls="interior">
+
+                                    <a [routerLink]="[]" class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-100 after:h-0.25 after:bg-current after:transition-all after:duration-300">
+                                        Interior
+                                    </a>
+                                    <iconify-icon icon="lucide:plus" class="hs-accordion-active:hidden block size-5 text-default-800"></iconify-icon>
+                                    <iconify-icon icon="lucide:minus" class="hs-accordion-active:block hidden size-5 text-default-800"></iconify-icon>
+                                </button>
+
+                                <div id="interior" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 mb-4 grid md:grid-cols-2 grid-cols-1 gap-3" role="region" aria-labelledby="headingInterior">
+                                    <ul class="flex flex-col gap-2 list-disc list-inside text-default-600">
+                                        <li class="mt-1">Adjustable Steering Wheel</li>
+                                        <li class="mt-1">Auto-Dimming Rearview Mirror</li>
+                                        <li class="mt-1">Driver Adjustable Lumbar</li>
+                                        <li class="mt-1">Driver Illuminated Vanity Mirror</li>
+                                        <li class="mt-1">Universal Garage Door Opener</li>
+                                        <li class="mt-1">Steering Wheel Audio Controls</li>
+                                    </ul>
+
+                                    <ul class="flex flex-col gap-2 list-disc list-inside text-default-600">
+                                        <li class="mt-1">Heated Front Seats</li>
+                                        <li class="mt-1">Leather Seats</li>
+                                        <li class="mt-1">Leather Steering Wheel</li>
+                                        <li class="mt-1">Pass-Through Rear Seat</li>
+                                        <li class="mt-1">Passenger Adjustable Lumbar</li>
+                                        <li class="mt-1">Passenger Illuminated Visor Mirror</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="hs-accordion hs-accordion-active:border-b-default-200 bg-transparent border-b border-border group dark:hs-accordion-active:border-b-default-200" id="headingSafety">
+                                <button class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start text-xl font-semibold text-default-900 py-5" aria-expanded="false" aria-controls="safety">
+                                    <a [routerLink]="[]" class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">Safety</a>
+                                    <iconify-icon icon="lucide:plus" class="hs-accordion-active:hidden block size-5 text-default-800"></iconify-icon>
+                                    <iconify-icon icon="lucide:minus" class="hs-accordion-active:block hidden size-5 text-default-800"></iconify-icon>
+                                </button>
+                                <div id="safety" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300 mb-4" role="region" aria-labelledby="headingSafety">
+                                    <div class="grid md:grid-cols-2 grid-cols-1 gap-3">
+                                        <ul class="flex flex-col gap-2 list-disc list-inside text-default-600">
+                                            <li class="mt-1">Airbag: Driver</li>
+                                            <li class="mt-1">Airbag: Passenger</li>
+                                            <li class="mt-1">Adaptive Cruise Control</li>
+                                            <li class="mt-1">Blind Spot Monitor</li>
+                                            <li class="mt-1">Alarm</li>
+                                            <li class="mt-1">Antilock Brakes</li>
+                                        </ul>
+
+                                        <ul class="flex flex-col gap-2 list-disc list-inside text-default-600">
+                                            <li class="mt-1">Brake Assist</li>
+                                            <li class="mt-1">Lane Departure Warning</li>
+                                            <li class="mt-1">Stability Control</li>
+                                            <li class="mt-1">Fog Lights</li>
+                                            <li class="mt-1">Power Door Locks</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hs-accordion hs-accordion-active:border-b-default-200 bg-transparent border-b border-border group dark:hs-accordion-active:border-b-default-200" id="headingTechnology">
+                                <button class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start text-xl font-semibold text-default-900 py-5" aria-expanded="false" aria-controls="technology">
+                                    <a [routerLink]="[]" class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">Technology</a>
+                                    <iconify-icon icon="lucide:plus" class="hs-accordion-active:hidden block size-5 text-default-800"></iconify-icon>
+                                    <iconify-icon icon="lucide:minus" class="hs-accordion-active:block hidden size-5 text-default-800"></iconify-icon>
+                                </button>
+
+                                <div id="technology" class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300 mb-4" role="region" aria-labelledby="headingTechnology">
+                                    <div class="grid md:grid-cols-2 grid-cols-1 gap-3">
+                                        <ul class="flex flex-col gap-2 list-disc list-inside text-default-600">
+                                            <li class="mt-1">Multi-Zone A/C</li>
+                                            <li class="mt-1">Climate Control</li>
+                                            <li class="mt-1">Navigation System</li>
+                                            <li class="mt-1">Remote Start</li>
+                                            <li class="mt-1">Bluetooth</li>
+                                            <li class="mt-1">Remote Start</li>
+                                        </ul>
+
+                                        <ul class="flex flex-col gap-2 list-disc list-inside text-default-600">
+                                            <li class="mt-1">Apple CarPlay</li>
+                                            <li class="mt-1">Android Auto</li>
+                                            <li class="mt-1">Backup Camera</li>
+                                            <li class="mt-1">HomeLink</li>
+                                            <li class="mt-1">Keyless Start</li>
+                                            <li class="mt-1">Premium Sound System</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>

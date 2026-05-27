@@ -1,0 +1,146 @@
+<div class="flex lg:gap-4 w-full gap-2 py-4">
+  <div>
+    <div class="relative">
+      <input
+        type="email"
+        class="peer bg-transparent pe-4 py-2.25 rounded-md border border-border ps-10 block md:w-83.5 lg:w-80 w-full text-sm"
+        placeholder="Search for location"
+        value="New York, Brooklyn"
+      />
+      <div
+        class="absolute inset-y-0 start-0 flex items-center pointer-events-none ps-4 peer-disabled:opacity-50 peer-disabled:pointer-events-none"
+      >
+        <lucide-icon name="map-pin" class="size-3.5"></lucide-icon>
+      </div>
+    </div>
+  </div>
+
+  <div class="md:grid md:grid-cols-2 w-full flex gap-3">
+    <div class="md:col-span-1 md:block hidden">
+      <select
+        aria-label="Rent or sale select"
+        class="w-full border border-default-200 bg-transparent dark:border-white/20 rounded-md px-3 py-2 text-sm"
+      >
+        <option value="For rent" selected>For rent</option>
+        <option value="For sale">For sale</option>
+      </select>
+    </div>
+
+    <div class="md:col-span-1 lg:block hidden whitespace-nowrap">
+      <div class="relative">
+        <!-- Button -->
+        <button
+          type="button"
+          (click)="toggleHomeTypeDropdown()"
+          class="flex items-center justify-between w-full px-3 py-2 border border-default-300 text-default-700 rounded-md bg-transparent"
+        >
+          <div class="flex items-center">
+            <lucide-icon name="house" class="size-3.5 me-2"></lucide-icon>
+
+            <span class="text-sm">Home Type</span>
+
+            @if (selectedHomeTypeCount > 0) {
+              <span class="ms-1 text-sm"> ({{ selectedHomeTypeCount }}) </span>
+            }
+          </div>
+
+          <svg
+            class="w-4 h-4 text-default-500"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <!-- Dropdown -->
+        <div
+          class="absolute z-20 mt-2 w-full bg-white border border-default-200 rounded-lg shadow-lg p-3"
+          [class.hidden]="!homeTypeDropdownOpen"
+        >
+          <div class="flex flex-col gap-2">
+            @for (item of homeTypeData; track $index) {
+              <label
+                class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+              >
+                <div class="flex items-center">
+                  <input
+                    type="checkbox"
+                    [(ngModel)]="item.checked"
+                    class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded"
+                  />
+
+                  <span class="ms-2">
+                    {{ item.label }}
+                  </span>
+                </div>
+
+                <span class="text-xs text-default-500">
+                  {{ item.count }}
+                </span>
+              </label>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-span-1 lg:hidden block">
+      <button
+        type="button"
+        class="border text-sm border-default-800 text-default-800 px-5 py-2.5 rounded-md lg:hidden flex items-center"
+      >
+        <iconify-icon icon="lucide:map" class="text-base me-2 -ms-1"></iconify-icon>
+        <span class="hidden sm:inline">Show on map</span>
+        <span class="sm:hidden">Map</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="relative">
+    <span
+      class="absolute -top-2.5 -end-2.5 mt-1 -ms-1 bg-primary text-white text-xs font-medium px-2 py-0.5 rounded-full"
+    >
+      3
+    </span>
+
+    <button
+      type="button"
+      class="size-10 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-md bg-default-900 text-body-bg disabled:opacity-50 disabled:pointer-events-none"
+      aria-haspopup="dialog"
+      aria-expanded="false"
+      aria-controls="filters"
+      data-hs-overlay="#filters"
+    >
+      <iconify-icon icon="lucide:sliders-horizontal" width="18" height="18"></iconify-icon>
+    </button>
+  </div>
+</div>
+
+<div class="flex items-center gap-6 mb-3 mt-2">
+  <!-- Left text -->
+  <div class="text-sm whitespace-nowrap">Showing 156 results</div>
+
+  <!-- Right select -->
+  <div class="relative ms-auto w-37.5">
+    <lucide-icon
+      name="arrow-up-down"
+      class="absolute start-0 top-1/2 -translate-y-1/2 z-10 size-3.5"
+    ></lucide-icon>
+    <select
+      class="w-full border-0 rounded-none ps-6 p-2 text-sm bg-transparent focus:outline-none focus:ring-0"
+    >
+      <option value="Price Asc" selected>Price Asc</option>
+      <option value="Price Desc">Price Desc</option>
+      <option value="Updated">Updated</option>
+      <option value="Video">Video</option>
+      <option value="3D Tour">3D Tour</option>
+    </select>
+  </div>
+</div>

@@ -15,7 +15,7 @@ register();
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-  
+
 export class Accessories {
   accessoryData = accessoryData;
 

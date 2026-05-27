@@ -1,0 +1,149 @@
+<div class="grid md:grid-cols-2 grid-cols-1 gap-6">
+  @for (item of realEstateListingData; track $index) {
+    <div class="group" [attr.data-map-bind-to-marker]="item.markerId">
+      <a>
+        <div
+          class="bg-body-bg rounded-md border border-default-200 group-hover:border-default-900 h-full transition"
+          [class.rounded-lg]="item.markerId === 4"
+        >
+          <div class="relative bg-default-100 dark:bg-white/3 overflow-hidden">
+            <div class="swiper z-20">
+              <swiper-container
+                [config]="getSwiperConfig(item.markerId)"
+                init="false"
+                [routerLink]="item.routeLink"
+              >
+                @for (image of item.images; track $index) {
+                  <swiper-slide>
+                    <div class="block relative pb-[calc(248/362*100%)]">
+                      <img
+                        [src]="image"
+                        alt="Image"
+                        class="absolute inset-0 size-full object-cover"
+                        [class.rounded-tr-md]="item.markerId !== 4"
+                        [class.rounded-tl-md]="item.markerId !== 4"
+                        [class.rounded-md]="item.markerId === 2 || item.markerId === 6"
+                      />
+
+                      <span
+                        class="absolute inset-0 bg-gradient-to-b from-transparent to-black/10 z-10"
+                        [class.rounded-tr-md]="item.markerId === 4"
+                        [class.rounded-tl-md]="item.markerId === 4"
+                      ></span>
+                    </div>
+                  </swiper-slide>
+                }
+              </swiper-container>
+
+              <div class="absolute top-0 start-0 z-10 flex flex-col gap-2 pt-2 ps-2 mt-2 ms-2">
+                @if (item.isVerified) {
+                  <div
+                    class="bg-info text-white text-xs inline-flex item-center font-medium px-2 py-1 rounded items-center"
+                  >
+                    Verified
+                    <iconify-icon icon="lucide:shield" class="ms-1"></iconify-icon>
+                  </div>
+                }
+
+                @if (item.isNew) {
+                  <div>
+                    <p class="bg-primary inline-flex w-auto text-white text-xs px-2 py-1 rounded">
+                      New
+                    </p>
+                  </div>
+                }
+              </div>
+
+              <div
+                class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2"
+              >
+                <button
+                  type="button"
+                  class="size-8 bg-white text-dark rounded-full shadow flex items-center justify-center"
+                >
+                  <iconify-icon icon="lucide:heart"></iconify-icon>
+                </button>
+              </div>
+
+              <div
+                class="absolute top-1/2 start-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 ms-3"
+              >
+                <button
+                  type="button"
+                  class="size-8 bg-white rounded-full shadow flex items-center justify-center"
+                  [class]="'btn-prev-' + item.markerId"
+                >
+                  <iconify-icon icon="lucide:chevron-left" class="text-lg"></iconify-icon>
+                </button>
+              </div>
+
+              <div
+                class="absolute top-1/2 end-0 -translate-y-1/2 z-10 hidden lg:block opacity-0 group-hover:opacity-100 me-3"
+              >
+                <button
+                  type="button"
+                  class="size-8 bg-white rounded-full shadow flex items-center justify-center"
+                  [class]="'btn-next-' + item.markerId"
+                >
+                  <iconify-icon icon="lucide:chevron-right" class="text-lg"></iconify-icon>
+                </button>
+              </div>
+
+              <div
+                [class]="'swiper-pagination bottom-0 mb-2 property-pagination-' + item.markerId"
+              ></div>
+            </div>
+          </div>
+
+          <div class="p-4">
+            <div class="text-xl text-default-900 font-semibold mb-2">
+              {{ item.price }}
+            </div>
+
+            <h3 class="text-sm font-normal text-default-700 mb-2">
+              <a [routerLink]="item.routeLink" class="text-body-color">
+                {{ item.address }}
+              </a>
+            </h3>
+
+            <div class="text-sm text-default-900 font-semibold">
+              {{ item.area }}
+            </div>
+          </div>
+
+          <div class="flex gap-2.5 px-3 pb-3 text-sm text-default-700">
+            <div class="flex items-center gap-1">
+              {{ item.bedrooms }}
+              <iconify-icon
+                icon="lucide:bed-single"
+                class="text-default-500"
+                width="20"
+                height="20"
+              ></iconify-icon>
+            </div>
+
+            <div class="flex items-center gap-1">
+              {{ item.bathrooms }}
+              <iconify-icon
+                icon="lucide:shower-head"
+                class="text-default-500"
+                width="20"
+                height="20"
+              ></iconify-icon>
+            </div>
+
+            <div class="flex items-center gap-1">
+              {{ item.parking }}
+              <iconify-icon
+                icon="lucide:car"
+                class="text-default-500"
+                width="20"
+                height="20"
+              ></iconify-icon>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  }
+</div>

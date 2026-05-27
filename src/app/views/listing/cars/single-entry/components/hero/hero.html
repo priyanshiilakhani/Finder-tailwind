@@ -1,0 +1,51 @@
+<div class="flex justify-between items-center mb-6">
+                <h1 class="mb-0 lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold text-default-900">
+                    Mercedes-Benz A205 Cabriolet&nbsp;&nbsp;
+                    <span class="text-xl font-normal text-default-500 align-middle">(2021)</span>
+                </h1>
+
+                <div class="flex gap-2">
+                    <div class="group flex justify-center items-center flex-col">
+                        <!-- Dropdown + Tooltip Combined -->
+                        <div class="hs-dropdown relative inline-flex hs-tooltip [--placement:auto]">
+                            <!-- Button -->
+                            <button type="button" class="hs-dropdown-toggle hs-tooltip-toggle size-10 focus:bg-default-100 dark:focus:bg-white/3 inline-flex justify-center items-center gap-2 rounded-full">
+                                <lucide-icon name="Share-2" class="stroke-2 size-4 text-default-700"></lucide-icon>
+                                <!-- Tooltip -->
+                                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-default-800 text-default-50 rounded inline-block absolute invisible text-xs -mt-4 -ms-3 z-10 py-1 px-2">
+                                    Share
+                                </span>
+                            </button>
+
+                            <!-- Dropdown -->
+                            <div class="hs-dropdown-menu hidden transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 absolute top-10! z-20 min-w-38 border border-border bg-body-bg shadow-custom rounded-md mt-2">
+                                <div class="p-2.5 space-y-0.5">
+                                    <a [routerLink]="[]" class="flex items-center gap-x-2 py-2 px-3 rounded-md text-sm hover:bg-default-100">
+                                        <lucide-icon name="facebook" class="size-4 fill-default-800"></lucide-icon>
+                                        Facebook
+                                    </a>
+
+                                    <a [routerLink]="[]" class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm hover:bg-default-100">
+                                        <lucide-icon name="instagram" class="size-4 text-default-800"></lucide-icon>
+                                        Instagram
+                                    </a>
+
+                                    <a [routerLink]="[]" class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm hover:bg-default-100">
+                                        <lucide-icon name="linkedin" class="size-4 fill-default-800"></lucide-icon>
+                                        LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group flex justify-center items-center flex-col hs-tooltip [--placement:auto]">
+                        <button type="button" class="hs-tooltip-toggle size-10 bg-default-100 dark:bg-white/3 rounded-full inline-flex justify-center items-center gap-2 ">
+                            <lucide-icon name="heart" class="stroke-2 size-4 text-default-700"></lucide-icon>
+                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-default-800 text-body-bg rounded inline-block absolute invisible text-xs -mt-6 -ms-3 z-10 py-1 px-2 " role="tooltip">
+                                Wishlist
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
