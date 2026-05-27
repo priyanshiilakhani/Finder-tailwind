@@ -39,3 +39,9 @@
     font-size: 12px;
     background-color: var(--color-body-bg);
 }
+
+.dark .noUi-tooltip {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #d1d5db !important;
+}
