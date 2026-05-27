@@ -1,0 +1,180 @@
+<div>
+    <div id="accountSidebar"
+        class="hs-overlay lg:static [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-auto hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform  hidden fixed top-0 start-0 bottom-0 z-60 bg-body-bg lg:w-auto w-87"
+        role="dialog" tabindex="-1" aria-label="Sidebar">
+        <div class="flex flex-col lg:sticky lg:h-full h-screen top-0">
+            <header
+                class="py-4 px-6 lg:px-0 lg:py-0 flex justify-between items-center gap-x-2 lg:border-none border-b border-default-200 shrink-0">
+                <a class="focus:outline-hidden focus:opacity-80 " [routerLink]="[]" aria-label="Brand">
+                    <h3 class="text-xl font-semibold text-default-900 lg:hidden block">Filters</h3>
+                </a>
+
+                <div class="lg:hidden -me-2">
+                    <button type="button" class="" data-hs-overlay="#accountSidebar">
+                        <iconify-icon icon="lucide:x" class="size-5"></iconify-icon>
+                        <span class="sr-only">Close</span>
+                    </button>
+                </div>
+            </header>
+
+            <nav class="h-full overflow-y-auto flex-1" data-simplebar>
+                <div class="w-full flex flex-col flex-wrap px-6 lg:px-0 pb-4 lg:pb-0 pt-6">
+                    <div class="mb-4 pb-6">
+                        <div class="flex justify-between items-center gap-4 mb-4">
+                            <h4 class="text-default-900 font-semibold">Filter</h4>
+                            <div>
+                                <a class="underline hover:no-underline text-default-800 text-xs" [routerLink]="[]">Clear
+                                    all</a>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-2 pb-4 flex-wrap mb-6">
+                            <button
+                                class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300">
+                                <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+                                Barcelona
+                            </button>
+
+                            <button
+                                class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300">
+                                <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+                                Entertainment
+                            </button>
+
+                            <button
+                                class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300">
+                                <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+                                $5 - $150
+                            </button>
+
+                            <button
+                                class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300">
+                                <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+                                5<lucide-icon name="star"
+                                    class="fill-warning text-warning ms-1 me-1 size-3"></lucide-icon>
+                            </button>
+
+                            <button
+                                class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300">
+                                <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+                                4 <lucide-icon name="star"
+                                    class="fill-warning text-warning ms-1 me-1 size-3"></lucide-icon>
+                            </button>
+                        </div>
+
+                        <div class="relative">
+                            <iconify-icon icon="lucide:search"
+                                class="absolute start-4 top-1/2 -translate-y-1/2 text-default-500"></iconify-icon>
+                            <input type="search" placeholder="Search by keywords"
+                                class="w-full rounded-full border border-default-300 dark:border-white/20 bg-transparent text-sm ps-10 pe-4 py-2.25" />
+                        </div>
+                    </div>
+
+                    <div class="mb-4 pb-6">
+                        <h4 class="font-semibold mb-4 text-default-900">Location and date</h4>
+
+                        <div class="flex flex-col gap-4">
+                            <div class="relative">
+                                <iconify-icon icon="lucide:map-pin"
+                                    class="absolute start-4 top-1/2 -translate-y-1/2 text-default-500 z-10"></iconify-icon>
+                                <select
+                                    class="w-full rounded-full border border-default-300 dark:border-white/20 ps-10 pe-4 text-sm py-2.25 bg-transparent text-default-700"
+                                    aria-label="Location select">
+                                    <option value="">Any location</option>
+                                    <option value="Paris">Paris</option>
+                                    <option value="Rome">Rome</option>
+                                    <option value="Barcelona" selected>Barcelona</option>
+                                    <option value="London">London</option>
+                                    <option value="Amsterdam">Amsterdam</option>
+                                    <option value="Berlin">Berlin</option>
+                                    <option value="Prague">Prague</option>
+                                    <option value="Venice">Venice</option>
+                                    <option value="Vienna">Vienna</option>
+                                    <option value="Florence">Florence</option>
+                                </select>
+                            </div>
+
+                            <div class="relative">
+                                <lucide-icon name="calendar"
+                                    class="absolute start-2 top-1/2 -translate-y-1/2 text-default-500 size-3.5"></lucide-icon>
+                                <input id="datepicker" mwlFlatpickr type="date" [options]="flatPickrOptions"
+                                    placeholder="Choose date"
+                                    class="w-full text-sm rounded-full border border-default-300  dark:border-white/20 ps-10 pe-4 py-2.25 text-default-700 bg-transparent" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 pb-6">
+                        <h4 class="font-semibold mb-4 text-default-900">Category</h4>
+                        <ul class="flex flex-col gap-2">
+                            @for (item of categoryItemData; track $index) {
+                            <li>
+                                <a [routerLink]="[]" class="flex items-center py-1 px-0" 
+                                   [ngClass]="
+                                    item.isActive
+                                        ? 'text-default-900 font-semibold'
+                                        : 'text-default-700 hover:text-default-900'
+                                    ">
+                                    <span [innerHTML]="getSafeSvg(item.iconSvg)"></span>
+
+                                    <span class="text-sm" [ngClass]="item.isActive ? 'font-semibold' : 'font-normal'">
+                                        {{ item.title }}
+                                    </span>
+
+                                    <span class="ms-auto text-default-400 text-sm">
+                                        {{ item.count }}
+                                    </span>
+                                </a>
+                            </li>
+                            }
+                        </ul>
+                    </div>
+
+                    <div class="mb-4 pb-4">
+                        <h4 class="font-semibold mb-4 pb-2">Price</h4>
+
+                        <div class="mt-10">
+                            <nouislider class="price-slider" [min]="0" [max]="300" [step]="1" [(ngModel)]="priceRange"
+                                [connect]="true" [tooltips]="tooltips">
+                            </nouislider>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold mb-4 pb-2">Average rating</h4>
+                        <div class="flex flex-col gap-3">
+
+                            <label for="star-5" class="flex items-center gap-2 text-sm text-default-700 cursor-pointer">
+                                <input type="checkbox" id="star-5" checked
+                                    class="w-4 h-4 bg-transparent border-default-300 rounded text-black focus:ring-black">
+                                5
+                                <lucide-icon name="star" class="fill-warning text-warning size-3.5 ms-1"></lucide-icon>
+                            </label>
+
+                            <label for="star-4" class="flex items-center gap-2 text-sm text-default-700 cursor-pointer">
+                                <input type="checkbox" id="star-4" checked
+                                    class="w-4 h-4 bg-transparent border-default-300 rounded text-black focus:ring-black">
+                                4 <lucide-icon name="star"
+                                    class="fill-warning text-warning size-3.5 ms-1"></lucide-icon>
+                            </label>
+
+                            <label for="star-3" class="flex items-center gap-2 text-sm text-default-700 cursor-pointer">
+                                <input type="checkbox" id="star-3"
+                                    class="w-4 h-4 bg-transparent border-default-300 rounded text-black focus:ring-black">
+                                3 <lucide-icon name="star"
+                                    class="fill-warning text-warning size-3.5 ms-1"></lucide-icon>
+                            </label>
+
+                            <label for="star-2" class="flex items-center gap-2 text-sm text-default-700 cursor-pointer">
+                                <input type="checkbox" id="star-2"
+                                    class="w-4 h-4 bg-transparent border-default-300 rounded text-black focus:ring-black">
+                                2-1 <lucide-icon name="star"
+                                    class="fill-warning text-warning size-3.5 ms-1"></lucide-icon>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

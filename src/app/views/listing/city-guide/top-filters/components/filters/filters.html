@@ -1,0 +1,460 @@
+<div class="grid md:grid-cols-12 grid-cols-2 lg:gap-6 gap-4 mb-4 items-center">
+  <div class="lg:col-span-10 md:col-span-9 col-span-1">
+    <div class="grid lg:grid-cols-4 md:grid-cols-3 col-span-1 lg:gap-6 gap-4">
+      <div class="relative">
+        <!-- Button -->
+        <button
+          type="button"
+          onclick="document.getElementById('typeDropdown').classList.toggle('hidden')"
+          class="flex items-center justify-between w-full px-4 py-2.5 border border-default-900 text-default-700 rounded-full bg-transparent"
+        >
+          <div class="flex items-center">
+            <iconify-icon icon="lucide:house" class="text-base me-2"></iconify-icon>
+            <span class="text-sm">Type</span>
+            <span class="ms-1 text-sm" id="typeCount">(4)</span>
+          </div>
+          <iconify-icon icon="lucide:chevron-down"></iconify-icon>
+        </button>
+
+        <!-- Dropdown -->
+        <div
+          id="typeDropdown"
+          class="absolute z-20 mt-2 w-full bg-white border border-default-200 rounded-lg shadow-lg p-3 hidden"
+        >
+          <div class="flex flex-col gap-2">
+            <!-- Apartments -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="apartments"
+                  checked
+                  class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded"
+                  onclick="updateFilterCount('typeCount')"
+                  data-count-id="typeCount"
+                />
+                <span class="ms-2">Apartments</span>
+              </div>
+              <span class="text-xs text-default-500">621</span>
+            </label>
+
+            <!-- Hotels -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="hotels"
+                  checked
+                  class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded"
+                  onclick="updateFilterCount('typeCount')"
+                  data-count-id="typeCount"
+                />
+                <span class="ms-2">Hotels</span>
+              </div>
+              <span class="text-xs text-default-500">57</span>
+            </label>
+
+            <!-- Hostels -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="hostels"
+                  class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded"
+                  onclick="updateFilterCount('typeCount')"
+                  data-count-id="typeCount"
+                />
+                <span class="ms-2">Hostels</span>
+              </div>
+              <span class="text-xs text-default-500">83</span>
+            </label>
+
+            <!-- Bed and Breakfasts -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="bb"
+                  class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded"
+                  onclick="updateFilterCount('typeCount')"
+                  data-count-id="typeCount"
+                />
+                <span class="ms-2">Bed and Breakfasts</span>
+              </div>
+              <span class="text-xs text-default-500">46</span>
+            </label>
+
+            <!-- Resorts -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="resorts"
+                  checked
+                  class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded"
+                  onclick="updateFilterCount('typeCount')"
+                  data-count-id="typeCount"
+                />
+                <span class="ms-2">Resorts</span>
+              </div>
+              <span class="text-xs text-default-500">19</span>
+            </label>
+
+            <!-- Motels -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="motels"
+                  class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded"
+                  onclick="updateFilterCount('typeCount')"
+                  data-count-id="typeCount"
+                />
+                <span class="ms-2">Motels</span>
+              </div>
+              <span class="text-xs text-default-500">10</span>
+            </label>
+
+            <!-- Cabins -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="cabins"
+                  checked
+                  class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded"
+                  onclick="updateFilterCount('typeCount')"
+                  data-count-id="typeCount"
+                />
+                <span class="ms-2">Cabins or Cottages</span>
+              </div>
+              <span class="text-xs text-default-500">24</span>
+            </label>
+
+            <!-- Villas -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="villas"
+                  class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded"
+                  onclick="updateFilterCount('typeCount')"
+                  data-count-id="typeCount"
+                />
+                <span class="ms-2">Villas</span>
+              </div>
+              <span class="text-xs text-default-500">98</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative md:block hidden">
+        <iconify-icon icon="lucide:map-pin"
+          class="absolute start-4 top-1/2 -translate-y-1/2 text-default-500 z-10"
+        ></iconify-icon>
+        <select
+          class="w-full rounded-full border border-default-900 dark:border-white/20 ps-10 pe-4 text-sm py-2.25 bg-transparent text-default-700"
+          aria-label="Location select"
+        >
+          <option value="">Any location</option>
+          <option value="Paris">Paris</option>
+          <option value="Rome">Rome</option>
+          <option value="Barcelona" selected>Barcelona</option>
+          <option value="London">London</option>
+          <option value="Amsterdam">Amsterdam</option>
+          <option value="Berlin">Berlin</option>
+          <option value="Prague">Prague</option>
+          <option value="Venice">Venice</option>
+          <option value="Vienna">Vienna</option>
+          <option value="Florence">Florence</option>
+        </select>
+      </div>
+
+      <div class="relative md:block hidden">
+        <i
+          data-lucide="calendar"
+          class="absolute start-4 top-1/2 -translate-y-1/2 text-default-500 size-3.5"
+        ></i>
+        <input
+          id="datepicker"
+          type=""
+          placeholder="Choose date"
+          class="w-full text-sm rounded-full border border-default-300 dark:border-white/20 ps-10 pe-4 py-2.25 text-default-700 bg-transparent"
+        />
+      </div>
+
+      <div class="relative lg:block hidden">
+        <!-- Button -->
+        <button
+          type="button"
+          onclick="document.getElementById('priceDropdown').classList.toggle('hidden')"
+          class="flex items-center justify-between w-full px-4 py-2.5 border border-default-300 text-default-700 rounded-full bg-transparent"
+        >
+          <div class="flex items-center">
+            <iconify-icon icon="lucide:dollar-sign" class="text-base me-2"></iconify-icon>
+            <span class="text-sm">Price range</span>
+            <span class="ms-1 text-sm" id="priceCount"></span>
+          </div>
+          <svg
+            class="w-4 h-4 text-default-500"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+
+        <!-- Dropdown -->
+        <div
+          id="priceDropdown"
+          class="absolute z-20 mt-2 w-full bg-white border border-default-200 rounded-lg shadow-lg p-3 hidden"
+        >
+          <div class="flex flex-col gap-2">
+            <!-- Price 1 -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="price-1"
+                  class="w-4 h-4 checked:text-dark border-default-300 rounded"
+                  onclick="updateFilterCount('priceCount')"
+                  data-count-id="priceCount"
+                />
+                <span class="ms-2">$0.00 - 99.99</span>
+              </div>
+              <span class="text-xs text-default-500">241</span>
+            </label>
+
+            <!-- Price 2 -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="price-2"
+                  class="w-4 h-4 checked:text-dark border-default-300 rounded"
+                  onclick="updateFilterCount('priceCount')"
+                  data-count-id="priceCount"
+                />
+                <span class="ms-2">$100.00 - 199.99</span>
+              </div>
+              <span class="text-xs text-default-500">398</span>
+            </label>
+
+            <!-- Price 3 -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="price-3"
+                  class="w-4 h-4 checked:text-dark border-default-300 rounded"
+                  onclick="updateFilterCount('priceCount')"
+                  data-count-id="priceCount"
+                />
+                <span class="ms-2">$200.00 - 299.99</span>
+              </div>
+              <span class="text-xs text-default-500">253</span>
+            </label>
+
+            <!-- Price 4 -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="price-4"
+                  class="w-4 h-4 checked:text-dark border-default-300 rounded"
+                  onclick="updateFilterCount('priceCount')"
+                  data-count-id="priceCount"
+                />
+                <span class="ms-2">$300.00 - 399.99</span>
+              </div>
+              <span class="text-xs text-default-500">197</span>
+            </label>
+
+            <!-- Price 5 -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="price-5"
+                  class="w-4 h-4 checked:text-dark border-default-300 rounded"
+                  onclick="updateFilterCount('priceCount')"
+                  data-count-id="priceCount"
+                />
+                <span class="ms-2">$400.00 - 499.99</span>
+              </div>
+              <span class="text-xs text-default-500">152</span>
+            </label>
+
+            <!-- Price 6 -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="price-6"
+                  class="w-4 h-4 checked:text-dark border-default-300 rounded"
+                  onclick="updateFilterCount('priceCount')"
+                  data-count-id="priceCount"
+                />
+                <span class="ms-2">$500.00 - 599.99</span>
+              </div>
+              <span class="text-xs text-default-500">138</span>
+            </label>
+
+            <!-- Price 7 -->
+            <label
+              class="flex items-center justify-between text-sm text-default-700 cursor-pointer"
+            >
+              <div class="flex items-center">
+                <input
+                  type="checkbox"
+                  id="price-7"
+                  class="w-4 h-4 checked:text-dark border-default-300 rounded"
+                  onclick="updateFilterCount('priceCount')"
+                  data-count-id="priceCount"
+                />
+                <span class="ms-2">$600.00+</span>
+              </div>
+              <span class="text-xs text-default-500">27</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lg:col-span-2 md:col-span-3 col-span-1">
+    <button
+      type="button"
+      class="inline-flex items-center text-sm font-semibold text-default-800 w-full disabled:opacity-50 disabled:pointer-events-none"
+      aria-haspopup="dialog"
+      aria-expanded="false"
+      aria-controls="filtersOffcanvas"
+      data-hs-overlay="#filtersOffcanvas"
+    >
+      <iconify-icon icon="tabler:plus" class="size-4.5 me-2"></iconify-icon>
+      <a [routerLink]="[]" class="hover:underline"> More filters</a>
+    </button>
+  </div>
+</div>
+
+<div class="mb-2 pb-1 flex gap-4 pt-2">
+  <div class="flex gap-2 pb-4 whitespace-nowrap overflow-x-auto lg:w-auto w-70 md:w-165">
+    <button
+      class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300"
+    >
+      <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+      Apartments
+    </button>
+
+    <button
+      class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300"
+    >
+      <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+      Hotels
+    </button>
+
+    <button
+      class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300"
+    >
+      <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+      Resorts
+    </button>
+
+    <button
+      class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300"
+    >
+      <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+      Cottages
+    </button>
+
+    <button
+      class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300"
+    >
+      <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+      Barcelona
+    </button>
+
+    <button
+      class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300"
+    >
+      <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+      5 <lucide-icon name="star" class="fill-warning text-warning ms-2 size-3"></lucide-icon>
+    </button>
+
+    <button
+      class="text-xs py-2 px-4 bg-default-100 font-semibold dark:bg-default-200 rounded-full inline-flex justify-center items-center transition-all duration-500 ease-in-out hover:bg-default-200 dark:hover:bg-default-300"
+    >
+      <lucide-icon name="x" class="size-3.5 me-1"></lucide-icon>
+      4 <lucide-icon name="star" class="fill-warning text-warning ms-2 size-3"></lucide-icon>
+    </button>
+  </div>
+
+  <div class="pb-4">
+    <a class="underline hover:no-underline text-default-800 text-xs" [routerLink]="[]">Clear all</a>
+  </div>
+</div>
+
+<div>
+  <div class="flex items-center gap-6 pb-4 md:mb-4 mb-2">
+    <div class="text-sm whitespace-nowrap hidden md:inline">Showing 95 results</div>
+
+    <div class="relative md:ms-auto w-42.5">
+      <i
+        data-lucide="arrow-up-down"
+        class="absolute top-1/2 start-4 -translate-y-1/2 z-10 size-3.5"
+      ></i>
+      <select
+        class="w-full rounded-full border bg-transparent border-default-300 dark:border-white/20 ps-10 pe-18 py-2 text-sm text-default-700"
+      >
+        <option value="Popular" selected>Popular</option>
+        <option value="Rating">Rating</option>
+        <option value="Price asc">Price asc</option>
+        <option value="Price desc">Price desc</option>
+      </select>
+    </div>
+
+    <div class="ms-auto md:ms-0 flex items-center">
+      <a href="#map" class="relative inline-flex items-center">
+        <i class="iconify lucide--map text-base me-2"></i>
+        <a href="" class="hover:underline text-sm text-default-800 font-medium">
+          <span>View on <span class="hidden sm:inline">the</span> map</span></a
+        >
+      </a>
+    </div>
+  </div>
+</div>

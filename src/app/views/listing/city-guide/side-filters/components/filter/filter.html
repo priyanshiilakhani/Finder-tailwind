@@ -1,0 +1,25 @@
+<div class="flex items-center gap-6 pb-4 md:mb-4">
+  <div class="text-sm whitespace-nowrap hidden md:inline">Showing 116 results</div>
+
+  <div class="relative md:ms-auto w-42.5">
+    <lucide-icon
+      name="arrow-up-down"
+      class="absolute top-1/2 start-2 -translate-y-1/2 z-10 size-3.5"></lucide-icon>
+    <select class="w-full rounded-full border bg-transparent border-default-300 dark:border-white/20 ps-10 pe-18 py-2 text-sm text-default-700">
+      <option value="Popular" selected>Popular</option>
+      <option value="Rating">Rating</option>
+      <option value="Price asc">Price asc</option>
+      <option value="Price desc">Price desc</option>
+    </select>
+  </div>
+
+  <div class="ms-auto md:ms-0 flex items-center">
+    <a href="#map" class="relative inline-flex items-center">
+      <iconify-icon icon="lucide:map" class="text-base me-2"></iconify-icon>
+      <a [routerLink]="[]" class="hover:underline text-sm text-default-800 font-medium">
+        <span>View on <span class="hidden sm:inline">the</span> map</span></a>
+    </a>
+  </div>
+</div>
+
+

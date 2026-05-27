@@ -1,0 +1,86 @@
+<section class="pb-12 my-4">
+  <div class="container">
+    <div class="flex items-center justify-between md:mb-8 mb-6">
+      <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold">Sports</h2>
+      <div class="inline-flex items-center gap-2">
+        <a routerLink="/listings-events" class="hover:underline flex items-center py-2 font-semibold"
+          >View all
+          <lucide-icon name="chevron-right" class="size-4.5 ms-1"></lucide-icon>
+        </a>
+      </div>
+    </div>
+
+    <div class="relative">
+      <div class="swiper">
+        <swiper-container [config]="swiperConfig" init="false">
+          @for (item of sportsEventData; track $index) {
+            <swiper-slide class="h-auto group">
+              <a>
+                <div class="bg-body-bg rounded-md">
+                  <div class="rounded-md size-full overflow-hidden relative">
+                    <img
+                      [src]="item.image"
+                      alt="Image"
+                      class="size-full object-cover transition-transform duration-500 group-hover:scale-110 z-0 rounded-md"
+                    />
+
+                    <div
+                      class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2"
+                    >
+                      <button
+                        type="button"
+                        class="size-8 bg-white text-dark rounded-full shadow flex items-center justify-center"
+                      >
+                        <iconify-icon icon="lucide:heart"></iconify-icon>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="pt-4">
+                    <ul class="flex flex-wrap items-center gap-2 text-sm mb-3">
+                      <li class="flex items-center">
+                        <iconify-icon icon="lucide:calendar" class="me-1"></iconify-icon>
+                        {{ item.date }}
+                      </li>
+
+                      <li>{{ item.time }}</li>
+
+                      <li class="flex items-center">
+                        <iconify-icon icon="lucide:map-pin" class="me-1"></iconify-icon>
+                        {{ item.location }}
+                      </li>
+                    </ul>
+
+                    <h3 class="text-xl font-semibold text-default-900 mb-3 pt-1">
+                      <a class="group-hover:underline" [routerLink]="item.link">
+                        {{ item.title }}
+                      </a>
+                    </h3>
+                  </div>
+                </div>
+              </a>
+            </swiper-slide>
+          }
+        </swiper-container>
+      </div>
+
+      <button
+        type="button"
+        class="size-10 flex items-center border border-default-300 dark:border-white/20 bg-body-bg rounded-full justify-center me-1 absolute top-2/5 lg:start-0 start-10 -translate-x-1/2 z-10 -mt-5 end-full"
+        id="sports-prev"
+        aria-label="Prev"
+      >
+        <iconify-icon icon="lucide:chevron-left" class="size-4.5"></iconify-icon>
+      </button>
+
+      <button
+        type="button"
+        class="size-10 flex items-center justify-center border border-default-300 bg-body-bg dark:border-white/20 rounded-full absolute top-2/5 lg:start-full end-0 -translate-x-1/2 z-10 -mt-5"
+        id="sports-next"
+        aria-label="Next"
+      >
+        <iconify-icon icon="lucide:chevron-right" class="size-4.5"></iconify-icon>
+      </button>
+    </div>
+  </div>
+</section>

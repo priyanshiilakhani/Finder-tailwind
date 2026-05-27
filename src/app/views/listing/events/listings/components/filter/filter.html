@@ -1,0 +1,102 @@
+  <div>
+                <h1 class="mb-6 lg:text-4.5xl md:text-26 text-2xl font-semibold text-default-900">Concerts</h1>
+                <div class="grid md:grid-cols-4 col-span-1 gap-6 mb-6">
+                    <div class="relative">
+                        <iconify-icon icon="lucide:menu" class="absolute top-1/2 start-0 -translate-y-1/2 ms-3"></iconify-icon>
+                        <select aria-label="Concerts select" class="w-full bg-transparent ps-10 border text-sm border-default-300 dark:border-white/20 rounded-md text-default-400">
+                            <option value="Concerts">Concerts</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Hobbies">Hobbies</option>
+                            <option value="Disco">Disco</option>
+                            <option value="Conference">Conference</option>
+                            <option value="Cinema">Cinema</option>
+                        </select>
+                    </div>
+
+                    <div class="relative">
+                        <iconify-icon icon="lucide:map-pin" class="absolute top-1/2 start-0 -translate-y-1/2 ms-3"></iconify-icon>
+                        <select aria-label="Location select" class="w-full bg-transparent ps-10 border text-sm border-default-300 dark:border-white/20 rounded-md text-default-400">
+                            <option value="">Location</option>
+                            <option value="New York">New York</option>
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="Houston">Houston</option>
+                            <option value="Phoenix">Phoenix</option>
+                            <option value="Philadelphia">Philadelphia</option>
+                            <option value="San Antonio">San Antonio</option>
+                            <option value="San Diego">San Diego</option>
+                            <option value="Dallas">Dallas</option>
+                            <option value="San Jose">San Jose</option>
+                        </select>
+                    </div>
+
+                    <div class="relative">
+                        <iconify-icon icon="lucide:calendar" class="absolute top-1/2 start-0 -translate-y-1/2 ms-3"></iconify-icon>
+                        <input id="datepicker" mwlFlatpickr type="date" [options]="flatPickrOptions" placeholder="Date" class="w-full bg-transparent ps-10 border border-default-300 text-sm dark:border-white/20 rounded-md text-default-400 placeholder-default-400">
+                    </div>
+
+                    <div class="relative">
+                        <iconify-icon icon="lucide:credit-card" class="absolute top-1/2 start-0 -translate-y-1/2 ms-3"></iconify-icon>
+                        <select aria-label="Price select" class="w-full bg-transparent text-sm ps-10 border border-default-300 dark:border-white/20 rounded-md text-default-400">
+                            <option value="">Price</option>
+                            <option value="Free">Free</option>
+                            <option value="Up to $25">Up to $25</option>
+                            <option value="$25 - $50">$25 - $50</option>
+                            <option value="$50 - $100">$50 - $100</option>
+                            <option value="$100 - $200">$100 - $200</option>
+                            <option value="Over $200">Over $200</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mb-4">
+                <div class="overflow-x-auto lg:w-full md:w-110 w-40 pb-2">
+                    <ul class="flex gap-2">
+                        <li>
+                            <a [routerLink]="[]" class="border border-dark bg-default-50 inline-flex rounded-full dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">All</a>
+                        </li>
+
+                        <li>
+                            <a [routerLink]="[]" class="border border-default-200 inline-flex dark:border-white/20 transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Pop</a>
+                        </li>
+
+                        <li>
+                            <a [routerLink]="[]" class="border border-default-200 inline-flex dark:border-white/20 transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Dance</a>
+                        </li>
+
+                        <li>
+                            <a [routerLink]="[]" class="border border-default-200 inline-flex dark:border-white/20 transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Jazz</a>
+                        </li>
+
+                        <li>
+                            <a [routerLink]="[]" class="border border-default-200 inline-flex dark:border-white/20 transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Blues</a>
+                        </li>
+
+                        <li>
+                            <a [routerLink]="[]" class="border border-default-200 inline-flex dark:border-white/20 transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Disco</a>
+                        </li>
+
+                        <li>
+                            <a [routerLink]="[]" class="border border-default-200 inline-flex dark:border-white/20 transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Techno</a>
+                        </li>
+
+                        <li>
+                            <a [routerLink]="[]" class="border border-default-200 inline-flex dark:border-white/20 transition-all duration-300 hover:border-dark rounded-full hover:dark:border-white text-default-900 py-2.5 px-5 text-sm font-medium">Hiphop</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="flex gap-6 items-center pb-2">
+                    <div class="text-sm text-nowrap md:flex hidden"><span class="lg:block hidden me-1">Showing</span> 96 results</div>
+
+                    <div class="relative w-40">
+                        <lucide-icon name="arrow-up-down" class="absolute top-1/2 start-0 -translate-y-1/2 z-10 size-4"></lucide-icon>
+                        <select class="bg-transparent border-0 rounded-none text-sm ps-6 pe-1 w-full text-default-600">
+                            <option value="Most popular">Most popular</option>
+                            <option value="Best rated">Best rated</option>
+                            <option value="Most recent">Most recent</option>
+                        </select>
+                    </div>
+                </div>
+            </div>

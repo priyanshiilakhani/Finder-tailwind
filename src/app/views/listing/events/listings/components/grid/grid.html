@@ -1,0 +1,70 @@
+<div class="grid md:grid-cols-3 gap-6">
+    @for (item of eventCardData; track $index) {
+        <div class="group">
+            <a [routerLink]="item.route">
+                <div class="bg-default-100 dark:bg-white/3 rounded-md">
+                    <div class="rounded-md size-full overflow-hidden relative">
+                        <img
+                            [src]="item.image"
+                            alt="Image"
+                            class="size-full object-cover transition-transform duration-500 group-hover:scale-110 z-0 rounded-md"
+                        >
+
+                        <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
+                            <button
+                                type="button"
+                                class="size-8 bg-white text-dark rounded-full shadow flex items-center justify-center"
+                            >
+                                <iconify-icon icon="lucide:heart"></iconify-icon>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="md:p-6 p-4">
+                        <ul class="flex flex-wrap items-center gap-2 text-sm mb-3">
+                            <li class="flex items-center">
+                                <iconify-icon icon="lucide:calendar" class="me-1"></iconify-icon>
+                                {{ item.date }}
+                            </li>
+
+                            <li>{{ item.time }}</li>
+
+                            <li class="flex mx-n1">
+                                <iconify-icon icon="lucide:dot" class="text-base"></iconify-icon>
+                            </li>
+
+                            <li>{{ item.category }}</li>
+                        </ul>
+
+                        <h3 class="text-xl font-semibold text-default-900 mb-3 pt-1">
+                            <a
+                                class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300"
+                                [routerLink]="item.route"
+                            >
+                                {{ item.title }}
+                            </a>
+                        </h3>
+
+                        <div class="flex items-center text-sm">
+                            <iconify-icon icon="lucide:map-pin" class="me-1"></iconify-icon>
+                            {{ item.location }}
+                        </div>
+                    </div>
+
+                    <div class="pb-6 px-6 flex items-center justify-between">
+                        <div class="text-info text-xl font-semibold">
+                            {{ item.price }}
+                        </div>
+
+                        <button
+                            type="button"
+                            class="rounded-md border border-default-900 dark:border-white text-default-900 dark:text-white py-2.5 px-5 text-sm font-medium inline-flex relative z-2 ms-auto transition-all duration-300 ease-in-out hover:bg-default-900 hover:text-white"
+                        >
+                            Book now
+                        </button>
+                    </div>
+                </div>
+            </a>
+        </div>
+    }
+</div>

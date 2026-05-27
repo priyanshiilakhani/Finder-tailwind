@@ -19,8 +19,11 @@ File: Style CSS File
 
 @import "glightbox/dist/css/glightbox.min.css";
 
+@import "flatpickr/dist/flatpickr.min.css";
+
 @import 'nouislider/dist/nouislider.min.css';
 @import "./_noui-rangeslider.css";
+@import "./_flatpicker.css";
 
 /* Preline UI */
 @import "preline/variants.css";

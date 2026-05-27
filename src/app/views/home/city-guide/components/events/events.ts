@@ -13,6 +13,7 @@ register();
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+  
 export class Events {
   eventsData = eventsData;
   swiperConfig: SwiperOptions = {
