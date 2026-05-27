@@ -78,7 +78,7 @@
             <swiper-container class="swiper-wrapper lg:mb-0 mb-12" [config]="swiperConfig" init="false">
 
                 @for (item of filterableData; track $index) {
-                <div class="swiper-slide h-auto group">
+                <swiper-slide class="h-auto group">
                     <a [routerLink]="item.link">
                         <div class="bg-body-bg rounded-md">
                             <div class="rounded-md size-full overflow-hidden relative">
@@ -130,7 +130,7 @@
                             </div>
                         </div>
                     </a>
-                </div>
+                </swiper-slide>
                 }
 
             </swiper-container>

@@ -1,0 +1,165 @@
+<div class="flex flex-col gap-6">
+    <div class="lg:p-8 p-6 bg-body-bg rounded-md">
+        <div class="md:flex">
+            <div class="flex gap-4">
+                <div class="md:w-43 md:h-53.5 w-12 h-15">
+                    <img src="assets/img/listings/doctors/01.jpg" class="rounded-md" alt="Image">
+                </div>
+
+                <div class="md:hidden flex flex-col gap-1">
+                    <div class="flex justify-between ">
+                        <div class="me-2 text-xl text-default-900 font-semibold">
+                            <a class="group-hover:underline" routerLink="/single-entry-doctors">Dr. Michael Johnston</a>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+                            <span class="text-sm text-default-700">4.5</span>
+                            <span class="text-xs text-secondary self-end">(176)</span>
+                        </div>
+                    </div>
+                    <div class="text-sm text-default-900 font-semibold">Cardiologist</div>
+                </div>
+            </div>
+
+            <div class="lg:ps-12 md:ps-6 lg:ms-0 md:ms-2 w-full">
+                <div class="md:block hidden">
+                    <div class="flex flex-wrap items-center mb-2 pb-1 justify-between">
+                        <div class="me-2 text-2xl text-default-900 font-semibold">
+                            <a class="group-hover:underline" routerLink="/single-entry-doctors">Dr. Michael Johnston</a>
+                        </div>
+
+                        <div class="flex items-center gap-1">
+                            <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+                            <span class="text-sm text-default-700">4.5</span>
+                            <span class="text-xs text-secondary self-end">(176)</span>
+                        </div>
+                    </div>
+
+                    <div class="text-sm text-default-900 font-semibold pb-2 mb-1">Cardiologist</div>
+
+                    <ul class="flex flex-wrap items-center gap-3 lg:mt-0 mt-2">
+                        <li class="flex items-center gap-2">
+                            <span class="px-2 py-0.5 text-xs font-semibold rounded bg-primary text-white">21</span>
+                            <span class="text-sm text-default-800">years experience</span>
+                        </li>
+
+                        <li class="flex items-center gap-1 text-sm text-default-800">
+                            <lucide-icon name="user" class="size-4"></lucide-icon> Adults
+                        </li>
+
+                        <li class="flex items-center gap-1 text-sm text-default-800">
+                            <lucide-icon name="baby" class="size-4"></lucide-icon> Children
+                        </li>
+                    </ul>
+
+                    <figure class="pt-6 mt-2">
+                        <blockquote class=" font-medium mb-4">
+                            <p class="text-default-900 font-medium">Dr. Johnston is a very knowledgeable cardiologist. He provided excellent care, improving my heart health. I'm very grateful!</p>
+                        </blockquote>
+
+                        <figcaption class="text-sm flex gap-1 mb-1">
+                            — Jerome Bell · Sep 13, 2024
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="md:hidden block">
+                <ul class="flex flex-wrap items-center gap-3 lg:mt-0 mt-2">
+                    <li class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 text-xs font-semibold rounded bg-primary text-white">21</span>
+                        <span class="text-sm text-default-800">years experience</span>
+                    </li>
+
+                    <li class="flex items-center gap-1 text-sm text-default-800">
+                        <lucide-icon name="user" class="size-4"></lucide-icon> Adults
+                    </li>
+
+                    <li class="flex items-center gap-1 text-sm text-default-800">
+                        <lucide-icon name="baby" class="size-4"></lucide-icon> Children
+                    </li>
+                </ul>
+
+                <figure class="pt-6 md:mt-2">
+                    <blockquote class=" font-medium mb-4">
+                        <p class="text-default-900 font-medium">Dr. Johnston is a very knowledgeable cardiologist. He provided excellent care, improving my heart health. I'm very grateful!</p>
+                    </blockquote>
+
+                    <figcaption class="text-sm flex mb-1">
+                        — Jerome Bell
+                        <lucide-icon name="circle" class="size-1.5 self-center mx-1"></lucide-icon>
+                        Sep 13, 2024
+                    </figcaption>
+                </figure>
+            </div>
+
+            <h2 class="md:pt-12 pt-8 md:mb-6 mb-4 text-xl md:text-2xl font-semibold text-default-900">About doctor</h2>
+            <p class="text-sm">Dr. Michael Johnston, a highly experienced cardiologist with over two decades in the field, provides comprehensive and advanced cardiovascular care. Known for his expertise in diagnosing and treating a wide range of heart conditions, Dr. Johnston combines cutting-edge medical techniques with personalized treatment plans to ensure the best possible outcomes for his patients. Whether it's managing chronic heart disease, performing complex procedures, or offering preventative care, Dr. Johnston's meticulous diagnostic analysis and patient-centered approach make him a trusted leader in cardiovascular health. Rely on his expertise to safeguard your heart health and improve your quality of life.</p>
+
+            <div class="pt-12">
+                <dl class="space-y-4 text-sm">
+
+                    @for (clinic of clinicLocationsData; track $index) {
+
+                    <div>
+                        <dt class="font-semibold text-default-900 mb-2">
+                            {{ clinic.clinicName }}
+                        </dt>
+
+                        <dd class="flex flex-wrap gap-2">
+
+                            <div class="flex items-center gap-1 me-2">
+                                <lucide-icon name="map-pin" class="size-3.5"></lucide-icon>
+                                {{ clinic.distance }}
+                            </div>
+
+                            <div class="me-2">
+                                {{ clinic.address }}
+                            </div>
+
+                            <div class="flex items-center gap-1 text-sm text-default-900">
+                                <lucide-icon name="map" class="size-3.5"></lucide-icon>
+
+                                <a [routerLink]="[]" class="text-xs hover:underline">
+                                    Show on map
+                                </a>
+                            </div>
+
+                        </dd>
+                    </div>
+
+                    }
+
+                </dl>
+            </div>
+
+            <h2 class="md:pt-12 pt-8 md:mb-6 mb-4 text-xl md:text-2xl font-semibold text-default-900">Procedures</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 text-sm gap-2">
+                @for (column of cardiologyServicesData; track $index) {
+                <ul class="list-disc list-inside flex-col flex gap-2">
+
+                    @for (item of column.items; track $index) {
+                    <li>{{ item }}</li>
+                    }
+
+                </ul>
+                }
+            </div>
+
+            <h2 class="md:pt-12 pt-8 md:mb-6 mb-4 text-xl md:text-2xl font-semibold text-default-900">Education</h2>
+            <ul class="text-sm space-y-2">
+                <li>
+                    <span class="font-medium text-default-900">Harvard Medical School</span> - Doctor of Medicine (MD)
+                </li>
+
+                <li>
+                    <span class="font-medium text-default-900">Johns Hopkins University</span> - Residency in Cardiovascular Medicine
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <doctors-single-entry-reviews />
+</div>

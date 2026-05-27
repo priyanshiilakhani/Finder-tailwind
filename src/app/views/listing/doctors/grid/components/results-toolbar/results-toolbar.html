@@ -1,0 +1,25 @@
+<div class="lg:mb-6 mb-4">
+    <div class="flex items-center justify-between gap-4 md:pb-2 mb-2">
+        <div class="text-sm text-nowrap flex gap-1"><span class="md:block hidden">Showing</span> 73 results</div>
+
+        <div class="flex items-center gap-4 justify-end">
+            <div class="text-sm font-semibold text-default-900 lg:block hidden">Sort by:</div>
+            <div class="relative w-31.25">
+                <lucide-icon name="arrow-up-down" class="absolute start-0 top-1/2 -translate-y-1/2 z-10 size-3.5"></lucide-icon>
+                <select class="w-full ps-6 pe-2 py-1 border-0 rounded-none text-sm text-default-700 focus:outline-none focus:ring-0 bg-transparent">
+                    <option selected>Popular</option>
+                    <option>Newest</option>
+                </select>
+            </div>
+
+            <div class="flex">
+                <a routerLink="/listings-grid-cars" class="text-xl text-default-500 px-2 py-0 pointer-events-none">
+                    <iconify-icon icon="lucide:layout-grid"></iconify-icon>
+                </a>
+                <a routerLink="/listings-list-cars" class="text-xl text-default-700 px-2 py-0">
+                    <iconify-icon icon="lucide:list"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,102 @@
+<div class="lg:pb-12">
+    <div class="flex items-start justify-between gap-4 lg:my-4 mb-4 pt-12 pb-4">
+        <h2 class="lg:text-4.5xl md:text-2.5xl text-2xl font-semibold text-default-900">Doctors nearby </h2>
+        <div class="inline-flex items-center gap-2 ">
+            <a routerLink="/listings-grid-doctors" class="hover:underline flex items-center text-nowrap me-1 font-semibold">View all
+                <iconify-icon icon="lucide:chevron-right" class="text-lg"></iconify-icon>
+            </a>
+        </div>
+    </div>
+
+    <div class="swiper">
+        <swiper-container [config]="swiperConfig" init="false" class="lg:mb-0 mb-12">
+
+            @for (doctor of nearbyDoctorsData; track $index) {
+
+            <swiper-slide class="h-auto">
+
+                <a routerLink="/listings-real-estate">
+
+                    <div class="bg-body-bg group rounded-md">
+
+                        <div class="rounded-tr-md rounded-tl-md overflow-hidden group">
+                            <img [src]="doctor.image" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-tr-md rounded-tl-md group-hover:scale-110 z-0">
+                        </div>
+
+                        <div class="p-6">
+
+                            <div class="flex items-center gap-1 mb-2">
+
+                                <lucide-icon name="star" class="fill-warning text-warning size-4">
+                                </lucide-icon>
+
+                                <span class="text-sm text-default-700">
+                                    {{ doctor.rating }}
+                                </span>
+
+                                <span class="text-xs text-secondary">
+                                    ({{ doctor.reviews }})
+                                </span>
+
+                            </div>
+
+                            <h3 class="text-xl font-semibold text-default-900 mb-2">
+
+                                <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" [routerLink]="[]">
+
+                                    {{ doctor.name }}
+
+                                </a>
+
+                            </h3>
+
+                            <p class="text-sm font-semibold text-default-900 mb-2">
+                                {{ doctor.speciality }}
+                            </p>
+
+                            <ul class="flex-wrap flex gap-2 flex-row text-sm mb-0">
+
+                                <li class="flex items-center me-2">
+
+                                    <lucide-icon name="map-pin" class="size-3.5 me-1">
+                                    </lucide-icon>
+
+                                    {{ doctor.distance }}
+
+                                </li>
+
+                                @for (audience of doctor.audiences; track $index) {
+
+                                <li class="flex items-center">
+
+                                    <lucide-icon [name]="audience.icon" class="size-3.5 me-1">
+                                    </lucide-icon>
+
+                                    {{ audience.label }}
+
+                                </li>
+
+                                }
+
+                            </ul>
+
+                        </div>
+
+                        <div class="pb-6 px-6">
+
+                            <div class="font-semibold text-default-900">
+                                {{ doctor.price }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </swiper-slide>
+            }
+        </swiper-container>
+        <div id="doctor-pagination" class="swiper-pagination static mt-3"></div>
+    </div>
+</div>

@@ -22,7 +22,7 @@
                 <swiper-container [config]="swiperConfig" init="false">
 
                     @for (item of eventsData; track $index) {
-                    <div class="swiper-slide max-w-241.5">
+                    <swiper-slide class="max-w-241.5">
                         <div class="relative w-full rounded overflow-hidden">
                             <div class="bg-default-100 dark:bg-white/3">
                                 <img [src]="item.image" alt="Image" class="w-full h-full object-cover">
@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </swiper-slide>
                     }
 
                 </swiper-container>

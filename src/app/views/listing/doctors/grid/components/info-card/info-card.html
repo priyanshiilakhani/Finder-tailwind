@@ -1,0 +1,150 @@
+<div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
+
+    @for (doctor of doctorInfoData; track $index) {
+
+    <div class="bg-body-bg rounded-md">
+        <div class="p-6 md:flex group">
+
+            <div class="flex gap-4">
+
+                <div class="lg:w-37.5 lg:h-41 md:w-25 md:h-27.25 w-12 h-13">
+                    <img [src]="doctor.image" [alt]="doctor.name" class="object-cover rounded-md lg:w-37.5 lg:h-41 md:w-25 md:h-27.25 w-12 h-13">
+                </div>
+
+                <div class="md:hidden flex flex-col gap-1">
+
+                    <div class="flex flex-col">
+
+                        <div class="me-2 text-xl text-default-900 font-semibold">
+                            <a class="group-hover:underline" routerLink="/single-entry-doctors">
+                                {{ doctor.name }}
+                            </a>
+                        </div>
+
+                        <div class="flex items-center gap-1">
+                            <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+
+                            <span class="text-sm text-default-700">
+                                {{ doctor.rating | number:'1.1-1' }}
+                            </span>
+
+                            <span class="text-xs text-secondary self-end">
+                                ({{ doctor.reviews }})
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="text-sm text-default-900 font-semibold">
+                        {{ doctor.specialty }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:ps-6">
+
+                <div class="md:block hidden">
+
+                    <div class="flex flex-wrap items-center mb-2 justify-between">
+
+                        <div class="me-2 text-xl text-default-900 font-semibold">
+                            <a class="group-hover:underline" routerLink="/single-entry-doctors">
+                                {{ doctor.name }}
+                            </a>
+                        </div>
+
+                        <div class="flex items-center gap-1">
+                            <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+
+                            <span class="text-sm text-default-700">
+                                {{ doctor.rating | number:'1.1-1' }}
+                            </span>
+
+                            <span class="text-xs text-secondary self-end">
+                                ({{ doctor.reviews }})
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="text-sm text-default-900 font-semibold">
+                        {{ doctor.specialty }}
+                    </div>
+                </div>
+
+                <ul class="flex items-center flex-wrap mt-4 pb-4 gap-3">
+
+                    @if (doctor.verified) {
+                    <li class="bg-info text-white text-xs inline-flex item-center font-medium px-2 py-0.5 rounded items-center">
+                        Verified
+                        <iconify-icon icon="lucide:shield" class="ms-1"></iconify-icon>
+                    </li>
+                    }
+
+                    <li class="flex items-center gap-1 text-sm text-default-600">
+                        <lucide-icon name="award" class="size-4"></lucide-icon>
+                        {{ doctor.experience }}
+                    </li>
+
+                    @if (doctor.adults) {
+                    <li class="flex items-center gap-1 text-sm text-default-600">
+                        <lucide-icon name="user" class="size-4"></lucide-icon>
+                        Adults
+                    </li>
+                    }
+
+                    @if (doctor.children) {
+                    <li class="flex items-center gap-1 text-sm text-default-600">
+                        <lucide-icon name="baby" class="size-4"></lucide-icon>
+                        Children
+                    </li>
+                    }
+                </ul>
+
+                <p class="text-sm mb-4">
+                    {{ doctor.description }}
+                </p>
+
+                <ul class="flex flex-col text-sm gap-2">
+
+                    @for (clinic of doctor.clinics; track $index) {
+
+                    <li>
+                        <span class="font-semibold text-default-900 me-1">
+                            {{ clinic.name }}
+                        </span>
+
+                        {{ clinic.distance }}
+                    </li>
+
+                    }
+                </ul>
+            </div>
+        </div>
+
+        <div class="pb-6 px-6">
+
+            <hr class="mb-6 text-default-200 dark:text-white/20">
+
+            <div class="flex justify-between items-center gap-3 flex-wrap">
+
+                <div class="flex flex-wrap items-center gap-2">
+                    <div class="text-xl me-1 text-default-900 font-semibold">
+                        From {{ doctor.price }}
+                    </div>
+
+                    <div class="text-sm text-body-color">
+                        {{ doctor.availability }}
+                    </div>
+                </div>
+
+                <div class="inline-flex md:w-auto w-full">
+                    <button class="w-full border border-primary text-primary rounded px-5 py-2.5 text-sm font-medium">
+                        Book an appointment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    }
+
+</div>
