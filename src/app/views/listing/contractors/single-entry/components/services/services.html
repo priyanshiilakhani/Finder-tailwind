@@ -1,0 +1,14 @@
+<div class="mb-12 lg:pb-4 md:pb-2 pb-0">
+    <h2 class="lg:text-2xl text-xl font-semibold text-default-900 lg:mb-6 mb-4">Services offered</h2>
+   <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
+    @for (item of servicesData; track $index) {
+        <div class="flex items-center">
+            <lucide-icon
+                [name]="item.icon"
+                class="size-5 me-2">
+            </lucide-icon>
+            {{ item.title }}
+        </div>
+    }
+</div>
+</div>

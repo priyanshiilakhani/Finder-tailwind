@@ -1,0 +1,143 @@
+<div>
+    <div id="filterSidebar" class="hs-overlay lg:static [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-auto hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform  hidden fixed top-0 start-0 bottom-0 z-60 bg-body-bg lg:w-auto w-87" role="dialog" tabindex="-1" aria-label="Sidebar">
+        <div class="flex flex-col lg:sticky lg:h-full h-screen top-0">
+            <header class="py-4 px-6 lg:px-0 lg:py-0 flex justify-between items-center gap-x-2 lg:border-none border-b border-default-200 shrink-0">
+                <a class="focus:outline-hidden focus:opacity-80" [routerLink]="[]" aria-label="Brand">
+                    <h3 class="text-xl font-semibold text-default-900 lg:hidden block">Filters</h3>
+                </a>
+
+                <div class="lg:hidden -me-2">
+                    <button type="button" class="" data-hs-overlay="#filterSidebar">
+                        <iconify-icon icon="lucide:x" height="20" width="20"></iconify-icon>
+                        <span class="sr-only">Close</span>
+                    </button>
+                </div>
+            </header>
+
+            <nav class="h-full overflow-y-auto flex-1" data-simplebar>
+                <div class="w-full flex flex-col flex-wrap lg:pt-0 px-6 lg:px-0 pb-4 lg:pb-0 pt-6">
+                    <div class="pb-6 mb-4">
+                        <h4 class="text-default-900 font-semibold mb-4">Location and radius</h4>
+
+                        <div class="flex flex-col gap-3 mt-2">
+                            <div class="relative">
+                                <lucide-icon name="map-pin" class="absolute start-2 top-1/2 -translate-y-1/2 text-default-500 size-4"></lucide-icon>
+                                <select id="location" class="w-full ps-10 pe-3 py-2 text-sm border border-border rounded-md bg-transparent focus:border-indigo-500">
+                                    <option value="">Any location</option>
+                                    <option value="New York" selected>New York</option>
+                                    <option value="Los Angeles">Los Angeles</option>
+                                    <option value="Chicago">Chicago</option>
+                                    <option value="Houston">Houston</option>
+                                    <option value="Phoenix">Phoenix</option>
+                                    <option value="Philadelphia">Philadelphia</option>
+                                    <option value="San Antonio">San Antonio</option>
+                                    <option value="San Diego">San Diego</option>
+                                    <option value="Dallas">Dallas</option>
+                                    <option value="San Jose">San Jose</option>
+                                </select>
+                            </div>
+
+                            <div class="relative">
+                                <lucide-icon name="navigation" class="absolute start-2 top-1/2 -translate-y-1/2 text-default-500 size-4"></lucide-icon>
+                                <select id="radius" class="w-full ps-10 pe-3 py-2 text-sm border border-border rounded-md bg-transparent focus:border-indigo-500">
+                                    <option value="">Any radius</option>
+                                    <option value="10 mi">10 mi</option>
+                                    <option value="20 mi">20 mi</option>
+                                    <option value="30 mi">30 mi</option>
+                                    <option value="40 mi">40 mi</option>
+                                    <option value="50 mi" selected>50 mi</option>
+                                    <option value="60 mi">60 mi</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-4 pb-6">
+                        <h4 class="text-default-900 font-semibold mb-4">Project type</h4>
+                        <div class="relative mb-4">
+                            <lucide-icon name="search" class="absolute start-2 top-1/2 -translate-y-1/2 text-default-500 size-4"></lucide-icon>
+                            <input type="search" placeholder="Search" class="w-full rounded-md border border-border bg-transparent -300 ps-10 pe-10 py-2 text-sm ">
+                        </div>
+
+                        <div class="overflow-x-auto h-55
+                                                [&::-webkit-scrollbar]:w-0.75
+                                                [&::-webkit-scrollbar-track]:bg-default-100
+                                              [&::-webkit-scrollbar-thumb]:bg-default-300
+                                              dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+                                                dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500">
+
+                            <div class="flex flex-col gap-3">
+                                @for (service of servicesData; track $index) {
+                                <label [for]="service.id" class="flex items-center gap-2 text-sm text-default-700 cursor-pointer">
+
+                                    <input type="checkbox" [id]="service.id" class="w-4 h-4 border-default-300 rounded bg-transparent checked:bg-black checked:border-black" [checked]="service.checked">
+
+                                    {{ service.label }}
+                                </label>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pb-6 mb-4">
+                        <h4 class="text-default-900 font-semibold mb-4">Budget</h4>
+                        <div class="flex flex-col gap-3">
+                            @for (item of budgetData; track $index) {
+                            <label [for]="item.id" class="flex items-center gap-2 text-sm text-default-700 cursor-pointer">
+
+                                <input type="checkbox" [id]="item.id" class="w-4 h-4 bg-transparent border-default-300 rounded text-black focus:ring-black checked:bg-black checked:border-black">
+                                {{ item.label }}
+                            </label>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="pb-6 mb-4">
+                        <h4 class="text-default-900 font-semibold mb-4">Features</h4>
+                        <div class="flex flex-col gap-3">
+                            @for (feature of featuresData; track $index) {
+                            <label [for]="feature.id" class="flex items-center gap-2 text-sm text-default-700 cursor-pointer">
+
+                                <input type="checkbox" [id]="feature.id" class="w-4 h-4 bg-transparent border-default-300 rounded text-black focus:ring-black">
+
+                                {{ feature.label }}
+                            </label>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="pb-6 mb-4">
+                        <h4 class="text-default-900 font-semibold mb-4">Availability</h4>
+                        <div>
+                            <label for="now" class="flex items-center gap-2 text-sm text-default-700 cursor-pointer">
+                                <input type="checkbox" id="now" class="w-4 h-4 bg-transparent border-default-300 rounded text-black focus:ring-black">
+                                Available now
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="pb-6 mb-4">
+                        <h4 class="text-default-900 font-semibold mb-4">Average rating</h4>
+                        <div class="flex flex-col gap-3">
+
+                            @for (rating of ratingsData; track $index) {
+
+                            <label [for]="rating.id" class="flex items-center gap-2 text-sm text-default-700 cursor-pointer">
+
+                                <input type="checkbox" [id]="rating.id" class="w-4 h-4 bg-transparent border-default-300 rounded text-black focus:ring-black">
+
+                                {{ rating.label }}
+
+                                <lucide-icon [name]="rating.icon" class="fill-warning text-warning size-3.5">
+                                </lucide-icon>
+
+                            </label>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>

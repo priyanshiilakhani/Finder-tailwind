@@ -1,0 +1,47 @@
+<h2 class="text-2xl font-semibold text-default-900  lg:mb-6 mb-4">8 Projects</h2>
+
+<div class="overflow-x-auto whitespace-nowrap mb-4 pb-4">
+    <ul class="inline-flex gap-2 ">
+        @for (item of categoryTagsData; track $index) {
+        <li>
+            <a [routerLink]="[]" class="inline-flex rounded-full py-2.5 px-5 text-sm font-medium text-default-900 transition-all duration-300 border" [class]="item.active
+                    ? 'border-dark bg-default-100 dark:border-white'
+                    : 'border-default-300 dark:border-white/20 hover:border-dark hover:dark:border-white'">
+                {{ item.title }}
+            </a>
+        </li>
+        }
+    </ul>
+</div>
+
+
+<div class="mb-12 lg:pb-4 md:pb-2 pb-0">
+    <div class="grid grid-cols-2 gap-6">
+        @for (project of projectsData; track $index) {
+        <div class="group">
+            <a [routerLink]="[]" class="group">
+                <div class="rounded-md overflow-hidden">
+                    <img [src]="project.image" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
+                </div>
+
+                <h3 class="text-default-900 font-semibold text-xl pt-6 pb-2">
+                    <span class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300">
+                        {{ project.title }}
+                    </span>
+                </h3>
+
+                <div class="flex gap-1 items-center text-sm">
+                    <lucide-icon name="map-pin" class="size-3.5"></lucide-icon>
+                    {{ project.address }}
+                </div>
+            </a>
+        </div>
+        }
+    </div>
+
+    <div class="mt-6">
+        <button type="button" class="border border-default-300 dark:border-white/20 rounded-md transition-all duration-300 ease-in-out py-3.5 px-6 w-full font-semibold inline-flex justify-center text-default-800 hover:border-default-900">
+            Lead more projects
+        </button>
+    </div>
+</div>

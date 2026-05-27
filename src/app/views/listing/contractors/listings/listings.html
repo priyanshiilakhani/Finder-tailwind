@@ -1,1 +1,25 @@
-<p>listings works!</p>
+<app-navbar />
+<section class="lg:mt-20 mt-15 pt-6 pb-8 mb-6">
+    <div class="container">
+        <contractors-listings-breadcrumb />
+
+        <div class="grid lg:grid-cols-12 grid-cols-1 lg:gap-6 lg:pb-12">
+            <div class="col-span-3 pe-6">
+                <contractors-listings-left-sidebar />
+            </div>
+
+            <div class="lg:col-span-9 col-span-1">
+                <contractors-listings-list />
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer2 />
+
+
+<div class="lg:hidden text-center fixed lg:z-0 z-20 bottom-0 inset-x-0">
+    <button type="button" class="pt-3.5 px-4.5 pb-4.5 w-full inline-flex justify-center items-center text-start bg-default-900 text-body-bg font-medium align-middle hover:bg-default-950 focus:outline-hidden" aria-haspopup="dialog" aria-expanded="false" aria-controls="filterSidebar" aria-label="Toggle navigation" data-hs-overlay="#filterSidebar">
+        <iconify-icon icon="tabler:columns-2" class="me-2 text-body-bg"></iconify-icon> Filters
+    </button>
+</div>

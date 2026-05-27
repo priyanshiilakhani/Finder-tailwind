@@ -1,1 +1,46 @@
-<p>single-entry works!</p>
+<app-navbar />
+
+<section class="lg:mt-20 mt-15 pt-6 pb-12 mb-6">
+    <div class="container">
+        <app-breadcrumb />
+
+        <app-hero />
+
+        <app-image-section />
+
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-6">
+            <div class="lg:col-span-2 col-span-1">
+                <div class="lg:w-190 w-full">
+                    <div class="mb-12 lg:pb-4 md:pb-2 pb-0">
+                        <h2 class="lg:text-2xl text-xl font-semibold text-default-900 lg:mb-6 mb-4">About</h2>
+                        <p class="text-sm">I'm a skilled handyperson adept at various maintenance, repair, and installation tasks. With a keen eye for detail and a wide range of skills, I tackle diverse projects, from fixing leaky faucets and repairing electrical issues to assembling furniture and conducting minor renovations. I bring expertise and efficiency to every job, ensuring homes and spaces remain functional, safe, and aesthetically pleasing.</p>
+                    </div>
+
+                    <app-services />
+
+                    <div class="lg:pb-12">
+                        <app-projects />
+
+                        <app-business-details />
+
+                        <app-reviews />
+
+                        <app-pagination />
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-span-1">
+                <app-contact-card />
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer2 />
+
+<div class="lg:hidden text-center fixed lg:z-0 z-20 bottom-0 inset-x-0">
+    <button type="button" class="pt-3.5 px-4.5 pb-4.5 w-full inline-flex justify-center items-center text-start bg-default-900 text-body-bg font-medium align-middle hover:bg-default-950 focus:outline-hidden" aria-haspopup="dialog" aria-expanded="false" aria-controls="contactForm" aria-label="Toggle navigation" data-hs-overlay="#contactForm">
+        <iconify-icon icon="tabler:mail" class="me-2 text-body-bg"></iconify-icon> Connect
+    </button>
+</div>
