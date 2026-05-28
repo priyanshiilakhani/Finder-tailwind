@@ -1,0 +1,68 @@
+<!-- Account Sidebar -->
+<div class="lg:sticky lg:top-25">
+    <div id="accountSidebar" class="hs-overlay lg:static [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-auto hs-overlay-open:translate-x-0 -translate-x-full transition-all duration-300 transform  hidden fixed top-0 start-0 bottom-0 z-60 bg-body-bg lg:w-auto w-87" role="dialog" tabindex="-1" aria-label="Sidebar">
+        <div class="flex flex-col sticky top-0">
+
+            <header class="py-4 px-6 lg:px-0 lg:py-0 flex justify-between items-center gap-x-2">
+                <a class="focus:outline-hidden focus:opacity-80 " [routerLink]="[]" aria-label="Brand">
+                    <div class="lg:block flex items-center gap-4">
+                        <div class="border border-border rounded-full size-16">
+                            <img src="assets/img/account/avatar.jpg" alt="Avatar" class="rounded-full size-16">
+                        </div>
+
+                        <div class="lg:pt-4">
+                            <h6 class="mb-1 text-default-900 font-semibold">Michael Williams</h6>
+                            <p class="text-sm">m.williams@example.com</p>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="lg:hidden -me-2">
+                    <button type="button" class="" data-hs-overlay="#accountSidebar">
+                        <iconify-icon icon="lucide:x" class="size-5"></iconify-icon>
+                        <span class="sr-only">Close</span>
+                    </button>
+                </div>
+            </header>
+
+            <nav class="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full">
+                <div class="w-full flex flex-col flex-wrap pt-2 px-6 lg:px-0 pb-4 lg:pb-0 lg:pt-6">
+                    <div class="flex flex-col gap-1">
+                        @for (item of accountMenuData; track $index) {
+                            <a
+                                [routerLink]="item.route"
+                                class="py-2.5 px-3 rounded-md text-sm font-medium inline-flex items-center gap-2"
+                                [ngClass]="
+                                    item.isActive
+                                        ? 'text-default-700 bg-default-100 dark:bg-white/10'
+                                        : 'text-default-600 bg-transparent hover:bg-default-100/70 hover:text-default-700 hover:dark:bg-white/8'
+                                "
+                            >
+                                <iconify-icon
+                                    [icon]="item.icon"
+                                    width="16"
+                                    height="16"
+                                ></iconify-icon>
+
+                                {{ item.label }}
+                            </a>
+                          }
+
+                        <div class="pt-4 w-full">
+                            <a routerLink="/account/signin" class="py-2.5 px-3 w-full rounded-md text-default-600 bg-transparent text-sm font-medium inline-flex items-center gap-2 hover:bg-default-100/70 hover:text-default-700 hover:dark:bg-white/8">
+                                <iconify-icon icon="lucide:log-out" width="16" height="16"></iconify-icon> Sign out
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<div class="lg:hidden text-center fixed lg:z-0 z-20 bottom-0 inset-x-0">
+    <button type="button" class="pt-3.5 px-4.5 pb-4.5 w-full inline-flex justify-center items-center text-start bg-default-900 text-body-bg font-medium align-middle hover:bg-default-950 focus:outline-hidden" aria-haspopup="dialog" aria-expanded="false" aria-controls="accountSidebar" aria-label="Toggle navigation" data-hs-overlay="#accountSidebar">
+        <iconify-icon icon="lucide:panel-left" class="me-2 text-body-bg"></iconify-icon> Account menu
+    </button>
+</div>
