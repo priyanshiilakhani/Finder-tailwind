@@ -1,5 +1,9 @@
 import { Route } from '@angular/router';
 import { Location } from './location/location';
+import { Services } from './services/services';
+import { Profile } from './profile/profile';
+import { PriceHours } from './price-hours/price-hours';
+import { Project } from './project/project';
 
 export const ADD_CONTRACTOR_ROUTES: Route[] = [
   {
@@ -9,22 +13,22 @@ export const ADD_CONTRACTOR_ROUTES: Route[] = [
   },
   {
     path: 'services',
-    component: Location,
+    component: Services,
     data: { title: 'Choose Services' },
   },
   {
     path: 'profile',
-    component: Location,
+    component: Profile,
     data: { title: 'Profile Details' },
   },
   {
     path: 'price-hours',
-    component: Location,
+    component: PriceHours,
     data: { title: 'Price and Hours' },
   },
   {
     path: 'project',
-    component: Location,
+    component: Project,
     data: { title: 'Create First Project' },
   },
 ];
