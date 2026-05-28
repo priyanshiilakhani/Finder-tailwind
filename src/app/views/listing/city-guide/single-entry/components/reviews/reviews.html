@@ -1,0 +1,160 @@
+<div class="flex items-center justify-between mb-6">
+  <h2 class="lg:text-2xl md:text-xl text-xl text-default-900 font-semibold">Reviews</h2>
+
+  <div class="flex items-center text-xl text-default-900 font-semibold">
+    <lucide-icon name="star" class="fill-warning text-warning me-1"></lucide-icon>
+    4.8
+    <span class="text-sm font-normal text-default-500 ms-1">(127)</span>
+  </div>
+</div>
+
+<div class="flex justify-between .items-center mb-4">
+  <div class="mb-4 me-4 w-full whitespace-nowrap overflow-x-auto">
+    <div class="flex flex-nowrap gap-2 pb-2 mb-1">
+      <div>
+        <input type="radio" class="hidden peer" checked />
+        <label
+          class="cursor-pointer rounded-full font-medium px-5 py-2 inline-flex text-sm border border-default-300 peer-checked:bg-default-100 peer-checked:dark:bg-white/3 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 hover:bg-default-100 dark:hover:bg-white/3"
+        >
+          All
+        </label>
+      </div>
+
+      <div>
+        <input type="radio" class="hidden peer" />
+        <label
+          class="cursor-pointer rounded-full font-medium px-5 py-2 inline-flex text-sm border border-default-300 peer-checked:bg-default-100 peer-checked:dark:bg-white/3 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900"
+        >
+          Only positive (123)
+        </label>
+      </div>
+
+      <div>
+        <input type="radio" class="hidden peer" />
+        <label
+          class="cursor-pointer rounded-full font-medium px-5 py-2 inline-flex text-sm border border-default-300 peer-checked:bg-default-100 peer-checked:dark:bg-white/3 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900"
+        >
+          Only negative (4)
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-4">
+    <button
+      class="border border-primary text-nowrap text-primary hover:text-white text-sm px-4 py-2 rounded-full font-semibold inline-flex items-center justify-center hover:bg-primary transition-all duration-300"
+    >
+      <iconify-icon icon="lucide:edit-3" class="text-base -ms-1 me-2"></iconify-icon>
+      Add review
+    </button>
+  </div>
+</div>
+
+<div class="flex gap-6 flex-col">
+  @for (item of reviewData; track $index) {
+    <div class="flex flex-col gap-2 mb-2 sm:mb-2">
+      <div class="flex items-center gap-4 mb-1">
+        <h6 class="text-default-900 font-semibold">
+          {{ item.reviewerName }}
+        </h6>
+
+        <span class="text-xs text-default-500">
+          {{ item.reviewDate }}
+        </span>
+      </div>
+
+      <div class="flex gap-1 text-sm mb-1">
+        @for (star of [1, 2, 3, 4, 5]; track $index; let i = $index) {
+          <li class="list-none">
+            <lucide-icon
+              [name]="
+                i + 1 <= Math.floor(item.rating) ? 'star' : i < item.rating ? 'star-half' : 'star'
+              "
+              [class]="
+                i + 1 <= Math.floor(item.rating)
+                  ? 'size-4 fill-warning text-warning'
+                  : i < item.rating
+                    ? 'size-4 fill-warning text-warning'
+                    : 'size-4 text-warning'
+              "
+            ></lucide-icon>
+          </li>
+        }
+      </div>
+
+      <p class="text-sm mb-1">
+        {{ item.reviewMessage }}
+      </p>
+
+      <div class="flex items-center">
+        <button
+          type="button"
+          class="flex items-center py-2 text-sm text-default-500 transition -me-1"
+        >
+          <lucide-icon name="thumbs-up" class="size-3.5 me-1"></lucide-icon>
+
+          {{ item.likesCount }}
+        </button>
+
+        <div class="h-5 w-px bg-default-300 dark:bg-white/20 mx-4 my-2"></div>
+
+        <button
+          type="button"
+          class="flex items-center py-2 text-sm text-default-500 transition -ms-1"
+        >
+          <lucide-icon name="thumbs-down" class="size-3.5 me-1"></lucide-icon>
+
+          {{ item.dislikesCount }}
+        </button>
+      </div>
+    </div>
+  }
+</div>
+
+<nav class="flex items-center gap-x-1 pt-6" aria-label="Pagination">
+  <div class="flex items-center gap-x-1">
+    <button
+      type="button"
+      class="min-h-9.5 min-w-9.5 flex justify-center items-center bg-default-200 text-default-800 py-2 px-3 text-sm rounded-full focus:outline-hidden focus:bg-default-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-600 dark:text-white dark:focus:bg-neutral-500"
+      aria-current="page"
+    >
+      1
+    </button>
+
+    <button
+      type="button"
+      class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-full focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+    >
+      2
+    </button>
+
+    <button
+      type="button"
+      class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-full focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+    >
+      3
+    </button>
+
+    <button
+      type="button"
+      class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-full focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+    >
+      4
+    </button>
+
+    <div class="hs-tooltip inline-block">
+      <button
+        type="button"
+        class="hs-tooltip-toggle group min-h-9.5 min-w-9.5 flex justify-center items-center text-default-400 hover:text-blue-600 p-2 text-sm rounded-full focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:bg-white/10"
+      >
+        <iconify-icon icon="lucide:ellipsis" class="text-lg"></iconify-icon>
+      </button>
+    </div>
+    <button
+      type="button"
+      class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-full focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+    >
+      26
+    </button>
+  </div>
+</nav>

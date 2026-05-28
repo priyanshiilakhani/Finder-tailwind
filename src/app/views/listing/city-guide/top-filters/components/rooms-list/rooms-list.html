@@ -1,1 +1,70 @@
-<p>rooms-list works!</p>
+<div class="grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-6 ">
+  @for (item of cityGuideData; track $index) {
+    <div class="group">
+      <a routerLink="/single-entry-city-guide">
+        <div class="rounded-md w-full lg:h-70 h-56.5 overflow-hidden relative">
+          <img
+            [src]="item.image"
+            alt="Image"
+            class="w-full lg:h-70 h-56.5 object-cover transition-transform duration-500 group-hover:scale-110 rounded-md"
+          >
+
+          <div class="absolute top-0 end-0 z-10 opacity-0 group-hover:opacity-100 transition pt-2 pe-2 mt-2 me-2">
+            <button
+              type="button"
+              class="size-8 bg-white text-dark rounded-full shadow flex items-center justify-center"
+            >
+              <iconify-icon icon="lucide:heart"></iconify-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="pt-4 pb-2">
+          <h3 class="text-xl font-semibold text-default-900">
+            <a
+              class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300"
+              routerLink="/single-entry-city-guide"
+            >
+              {{ item.title }}
+            </a>
+          </h3>
+        </div>
+
+        <div class="flex items-center gap-3 bg-transparent">
+          <div class="flex items-center gap-1">
+            <ul class="flex items-center gap-0.5">
+              
+                <li>
+                  <lucide-icon name="star"
+                    class="size-4 fill-warning text-warning"
+                  ></lucide-icon>
+                </li>
+              
+            </ul>
+
+            <span class="text-sm text-default-500">
+              {{ item.rating }}
+            </span>
+
+            <span class="text-xs text-default-400 self-end">
+              ({{ item.reviewCount }})
+            </span>
+          </div>
+
+          <div class="flex items-center gap-1 text-sm">
+            <lucide-icon name="credit-card" class="size-3.5"></lucide-icon>
+            {{ item.priceRange }}
+          </div>
+
+          <div class="flex items-center gap-1 text-sm">
+            <lucide-icon name="map-pin" class="size-3.5"></lucide-icon>
+
+            <span class="text-truncate">
+              {{ item.distanceFromCenter }}
+            </span>
+          </div>
+        </div>
+      </a>
+    </div>
+  }
+</div>

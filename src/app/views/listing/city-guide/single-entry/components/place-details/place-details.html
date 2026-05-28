@@ -1,0 +1,171 @@
+  <div class="flex justify-between items-center gap-4 lg:mb-6 mb-4">
+                <div class="flex items-center gap-4">
+                    <div class="size-14">
+                        <img src="assets/img/listings/city-guide/single/logo-light.png" class="block dark:hidden" alt="Logo">
+                        <img src="assets/img/listings/city-guide/single/logo-dark.png" class="hidden dark:block" alt="Logo">
+                    </div>
+                    <h1 class="lg:text-4.5xl md:text-3.5xl text-2.5xl text-default-900 font-semibold">Sbarro Restaurant</h1>
+                </div>
+
+                <div class="flex gap-2">
+                    <div class="group flex justify-center items-center flex-col">
+                        <!-- Dropdown + Tooltip Combined -->
+                        <div class="hs-dropdown relative inline-flex hs-tooltip [--placement:auto]">
+                            <!-- Button -->
+                            <button type="button" class="hs-dropdown-toggle hs-tooltip-toggle size-10 focus:bg-default-100 dark:focus:bg-white/3 inline-flex justify-center items-center gap-2 rounded-full">
+                                <lucide-icon name="Share-2" class="stroke-2 size-4 text-default-700"></lucide-icon>
+                                <!-- Tooltip -->
+                                <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-default-800 text-default-50 rounded inline-block absolute invisible text-xs -mt-4 -ms-3 z-10 py-1 px-2">
+                                    Share
+                                </span>
+                            </button>
+
+                            <!-- Dropdown -->
+                            <div class="hs-dropdown-menu hidden transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 absolute top-10! z-20 min-w-38 border-border bg-body-bg shadow-custom rounded-md mt-2">
+                                <div class="p-2.5 space-y-0.5">
+                                    <a [routerLink]="[]" class="flex items-center gap-x-2 py-2 px-3 rounded-md text-sm hover:bg-default-100">
+                                        <lucide-icon name="facebook" class="size-4 fill-default-800"></lucide-icon>
+                                        Facebook
+                                    </a>
+
+                                    <a [routerLink]="[]" class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm hover:bg-default-100">
+                                        <lucide-icon name="instagram" class="size-4 text-default-800"></lucide-icon>
+                                        Instagram
+                                    </a>
+
+                                    <a [routerLink]="[]" class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm hover:bg-default-100">
+                                        <lucide-icon name="linkedin" class="size-4 fill-default-800"></lucide-icon>
+                                        LinkedIn
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="group flex justify-center items-center flex-col hs-tooltip [--placement:auto]">
+                        <button type="button" class="hs-tooltip-toggle size-10 bg-default-100 dark:bg-white/3 rounded-full inline-flex justify-center items-center gap-2 ">
+                            <lucide-icon name="heart" class="stroke-2 size-4 text-default-700"></lucide-icon>
+                            <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible bg-default-800 text-body-bg rounded inline-block absolute invisible text-xs -mt-4 -ms-3 z-10 py-1 px-2 " role="tooltip">
+                                Wishlist
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2 pb-1 lg:mb-6 mb-4">
+                <div class="flex items-center gap-1 text-sm ms-2">
+                    <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+                    <span class="text-default-700">4.8</span>
+                    <span class="text-xs text-default-500 self-end">(127)</span>
+                </div>
+                <div class="flex items-center gap-1 text-sm ms-2">
+                    <lucide-icon name="credit-card" class="size-3.5"></lucide-icon>
+                    $$
+                </div>
+
+                <div class="bg-success ms-2 text-white text-xs inline-flex item-center font-medium px-2 py-0.5 rounded items-center">
+                    Vegan Options
+                    <iconify-icon icon="lucide:leaf" class="ms-1"></iconify-icon>
+                </div>
+
+                <div class="bg-info ms-2 text-white text-xs inline-flex item-center font-medium px-2 py-0.5 rounded items-center">
+                    Verified Hires
+                    <iconify-icon icon="lucide:shield" class="ms-1"></iconify-icon>
+                </div>
+            </div>
+
+            <ul class="flex flex-wrap items-center gap-3 mb-6 text-default-700 text-sm">
+                <li>
+                    <a [routerLink]="[]" class="relative inline-flex items-center gap-1 hover:underline">
+                        <lucide-icon name="map-pin" class="size-4"></lucide-icon>
+                        <span>Carrer de la Lluna 28, Barcelona, Spain</span>
+                    </a>
+                </li>
+
+                <li class="flex items-center mx-1"><lucide-icon name="circle" class="size-0.75 fill-default-800 text-default-800"></lucide-icon></li>
+
+                <li>
+                    <a href="tel:+34931234567" class="relative inline-flex items-center gap-1 hover:underline">
+                        <lucide-icon name="smartphone" class="size-3.5"></lucide-icon>
+                        <span>+34&nbsp;931&nbsp;234&nbsp;567</span>
+                    </a>
+                </li>
+
+                <li class="flex items-center mx-1"><lucide-icon name="circle" class="size-0.75 fill-default-800 text-default-800"></lucide-icon></li>
+                <li>
+                    <a [routerLink]="[]" class="relative inline-flex items-center gap-1 hover:underline">
+                        <lucide-icon name="globe" class="size-3.5"></lucide-icon>
+                        <span>Website</span>
+                    </a>
+                </li>
+
+                <li class="flex items-center mx-1"><lucide-icon name="circle" class="size-0.75 fill-default-800 text-default-800"></lucide-icon></li>
+                <li>
+                    <span class="relative inline-flex items-center gap-1 text-default-700">
+                        <lucide-icon name="clock" class="size-3.5"></lucide-icon>
+                        <span><span class="font-semibold">Open now</span> 07:00 AM - 10:30 AM, 12:00 PM - 11:00 PM</span>
+                    </span>
+                </li>
+            </ul>
+
+            <div class="grid md:grid-cols-12 grid-cols-2 grid-rows-2 lg:gap-6 gap-4 mb-12 pb-2">
+                <div class="group relative overflow-hidden rounded-xl md:col-span-6 col-span-2 row-span-2">
+                    <img src="assets/img/listings/city-guide/single/01.jpg" class="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105" />
+                    <div class="absolute bottom-4 start-4 py-1.25 px-2.5 rounded bg-white text-dark z-20 text-xs inline-flex items-center gap-1">
+                        <lucide-icon name="camera" class="size-3.5 me-1"></lucide-icon>
+                        20
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-xl">
+                        <a appGlightbox href="assets/img/listings/city-guide/single/01.jpg" class="image-popup after:absolute after:inset-0 after:z-1 rounded-xl">
+                            <div class="absolute inset-0 flex justify-center items-center z-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <iconify-icon icon="lucide:zoom-in" class="text-white text-3xl relative z-30"></iconify-icon>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl col-span-1 md:col-span-3 row-span-1">
+                    <img src="assets/img/listings/city-guide/single/02.jpg" class="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105" />
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-xl">
+                        <a appGlightbox href="assets/img/listings/city-guide/single/02.jpg" class="image-popup after:absolute after:inset-0 after:z-1 rounded-xl">
+                            <div class="absolute inset-0 flex justify-center items-center z-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <iconify-icon icon="lucide:zoom-in" class="text-white text-3xl relative z-30"></iconify-icon>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl col-span-1 md:col-span-3 row-span-1">
+                    <img src="assets/img/listings/city-guide/single/03.jpg" class="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105" />
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-xl">
+                        <a appGlightbox href="assets/img/listings/city-guide/single/03.jpg" class="image-popup after:absolute after:inset-0 after:z-1 rounded-xl">
+                            <div class="absolute inset-0 flex justify-center items-center z-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <iconify-icon icon="lucide:zoom-in" class="text-white text-3xl relative z-30"></iconify-icon>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl col-span-1 md:col-span-3 row-span-1">
+                    <img src="assets/img/listings/city-guide/single/04.jpg" class="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105" />
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-xl">
+                        <a appGlightbox href="assets/img/listings/city-guide/single/04.jpg" class="image-popup after:absolute after:inset-0 after:z-1 rounded-xl">
+                            <div class="absolute inset-0 flex justify-center items-center z-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <iconify-icon icon="lucide:zoom-in" class="text-white text-3xl relative z-30"></iconify-icon>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-xl col-span-1 md:col-span-3 row-span-1">
+                    <img src="assets/img/listings/city-guide/single/05.jpg" class="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105" />
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-xl">
+                        <a appGlightbox href="assets/img/listings/city-guide/single/05.jpg" class="image-popup after:absolute after:inset-0 after:z-1 rounded-xl">
+                            <div class="absolute inset-0 flex justify-center items-center z-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                                <iconify-icon icon="lucide:zoom-in" class="text-white text-3xl relative z-30"></iconify-icon>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>

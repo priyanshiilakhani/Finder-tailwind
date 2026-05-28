@@ -1,0 +1,303 @@
+<div
+  id="filtersOffcanvas"
+  class="hs-overlay hs-overlay-open:translate-x-0 hidden translate-x-full fixed top-0 end-0 transition-all duration-300 transform h-full max-w-87.5 w-full z-80 bg-body-bg"
+  role="dialog"
+  tabindex="-1"
+  aria-labelledby="filtersOffcanvaslabel"
+>
+  <div class="flex flex-col h-full">
+    <div class="flex justify-between items-center pt-4 pb-6 px-6">
+      <h3 id="filtersOffcanvaslabel" class="font-bold text-xl text-default-800">Filters</h3>
+      <button
+        type="button"
+        class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-default-100 text-default-800 hover:bg-default-200 focus:outline-hidden focus:bg-default-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600"
+        aria-label="Close"
+        data-hs-overlay="#filtersOffcanvas"
+      >
+        <span class="sr-only">Close</span>
+        <lucide-icon name="x" class="size-4"></lucide-icon>
+      </button>
+    </div>
+
+    <div class="flex-1 px-6 h-full overflow-y-auto">
+      <div class="hs-accordion-group">
+        <div class="relative md:hidden block border-b border-default-200">
+          <iconify-icon
+            icon="lucide:map-pin"
+            class="absolute start-0 top-1/2 -translate-y-1/2 text-default-500 z-10"
+          ></iconify-icon>
+          <select
+            class="w-full rounded-full border-0 border-default-900 dark:border-white/20 ps-6 py-4 bg-transparent text-default-700 pe-0"
+            aria-label="Location select"
+          >
+            <option value="">Any location</option>
+            <option value="Paris">Paris</option>
+            <option value="Rome">Rome</option>
+            <option value="Barcelona" selected>Barcelona</option>
+            <option value="London">London</option>
+            <option value="Amsterdam">Amsterdam</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Prague">Prague</option>
+            <option value="Venice">Venice</option>
+            <option value="Vienna">Vienna</option>
+            <option value="Florence">Florence</option>
+          </select>
+        </div>
+
+       <div class="relative md:hidden block border-b border-default-200">
+                        <lucide-icon name="calendar" class="absolute start-0 top-1/2 -translate-y-1/2 text-default-500 size-3.5"></lucide-icon>
+                        <input id="datepicker" mwlFlatpickr [options]="flatPickrOptions" type="" placeholder="Choose date" class="w-full rounded-full border-0 border-default-900 dark:border-white/20 ps-6 py-4 bg-transparent text-default-700 pe-0" />
+                    </div>
+
+        <div
+          class="hs-accordion lg:hidden block hs-accordion-active:border-b-default-200 bg-transparent border-b border-border group dark:hs-accordion-active:border-b-default-200"
+          id="headingprice"
+        >
+          <!-- Accordion Button -->
+          <button
+            class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start font-semibold text-default-900 py-5"
+            aria-expanded="false"
+            aria-controls="collapseprice"
+          >
+            <span class="flex items-end">
+              Price
+
+              @if (priceCount > 0) {
+                <span class="ms-1 text-sm font-normal text-default-500"> ({{ priceCount }}) </span>
+              }
+            </span>
+
+            <iconify-icon
+              icon="lucide:chevron-down"
+              class="hs-accordion-active:hidden block size-5 text-default-800"
+            ></iconify-icon>
+
+            <iconify-icon
+              icon="lucide:chevron-up"
+              class="hs-accordion-active:block hidden size-5 text-default-800"
+            ></iconify-icon>
+          </button>
+
+          <!-- Accordion Content -->
+          <div
+            id="collapseprice"
+            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300 text-sm"
+            role="region"
+            aria-labelledby="headingprice"
+          >
+            <div class="flex flex-col gap-2 px-1 pb-4">
+              @for (item of priceRangeFilterData; track $index) {
+                <label class="flex items-center justify-between text-default-700 cursor-pointer">
+                  <div class="flex items-center">
+                    <input
+                      type="checkbox"
+                      [id]="item.id"
+                      [(ngModel)]="item.checked"
+                      class="w-4 h-4 checked:text-dark border-default-300 rounded me-2"
+                    />
+
+                    <span>
+                      {{ item.label }}
+                    </span>
+                  </div>
+
+                  <span class="text-xs text-default-500">
+                    {{ item.totalProperties }}
+                  </span>
+                </label>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <lucide-icon
+            name="bed-single"
+            class="absolute start-0 top-1/2 -translate-y-1/2 size-4"
+          ></lucide-icon>
+          <input
+            type="number"
+            min="1"
+            placeholder="Number of rooms"
+            class="w-full border-b border-0 border-default-300 py-4 ps-6 pe-0 text-default-800 font-medium placeholder:text-default-400"
+          />
+        </div>
+
+        <div
+          class="hs-accordion hs-accordion-active:border-b-default-200 bg-transparent border-b border-border group dark:hs-accordion-active:border-b-default-200"
+          id="headingfacilities"
+        >
+          <!-- Accordion Button -->
+          <button
+            class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start font-semibold text-default-900 py-5"
+            aria-expanded="false"
+            aria-controls="collapsefacilities"
+          >
+            <span class="flex items-center">
+              Room facilities
+
+              @if (facilitiesCount > 0) {
+                <span class="ms-1 text-sm font-normal text-default-500">
+                  ({{ facilitiesCount }})
+                </span>
+              }
+            </span>
+
+            <iconify-icon
+              icon="lucide:chevron-down"
+              class="hs-accordion-active:hidden block size-5 text-default-800"
+            ></iconify-icon>
+
+            <iconify-icon
+              icon="lucide:chevron-up"
+              class="hs-accordion-active:block hidden size-5 text-default-800"
+            ></iconify-icon>
+          </button>
+
+          <!-- Accordion Content -->
+          <div
+            id="collapsefacilities"
+            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300 text-sm"
+            role="region"
+            aria-labelledby="headingfacilities"
+          >
+            <div class="flex flex-col gap-2.5 px-1 pb-4">
+              @for (item of roomFacilityFilterData; track $index) {
+                <label [for]="item.id" class="flex items-center text-default-700 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    [id]="item.id"
+                    [(ngModel)]="item.checked"
+                    class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded me-2"
+                  />
+
+                  {{ item.label }}
+
+                  <span class="ms-auto text-xs text-default-500">
+                    {{ item.totalProperties }}
+                  </span>
+                </label>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="hs-accordion hs-accordion-active:border-b-default-200 bg-transparent border-b border-border group dark:hs-accordion-active:border-b-default-200"
+          id="headingamenities"
+        >
+          <button
+            class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start font-semibold text-default-900 py-5"
+            aria-expanded="false"
+            aria-controls="collapseamenities"
+          >
+            <span class="flex items-center">
+              Amenities
+
+              @if (amenitiesCount > 0) {
+                <span class="ms-1 text-sm font-normal text-default-500">
+                  ({{ amenitiesCount }})
+                </span>
+              }
+            </span>
+
+            <iconify-icon
+              icon="lucide:chevron-down"
+              class="hs-accordion-active:hidden block size-5 text-default-800"
+            ></iconify-icon>
+
+            <iconify-icon
+              icon="lucide:chevron-up"
+              class="hs-accordion-active:block hidden size-5 text-default-800"
+            ></iconify-icon>
+          </button>
+
+          <div
+            id="collapseamenities"
+            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300 text-sm"
+            role="region"
+            aria-labelledby="headingamenities"
+          >
+            <div class="flex flex-col gap-2.5 px-1 pb-4">
+              @for (item of amenityFilterData; track $index) {
+                <label [for]="item.id" class="flex items-center text-default-700">
+                  <input
+                    type="checkbox"
+                    [id]="item.id"
+                    [(ngModel)]="item.checked"
+                    class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded me-2"
+                  />
+
+                  {{ item.label }}
+
+                  <span class="ms-auto text-xs text-default-500">
+                    {{ item.totalProperties }}
+                  </span>
+                </label>
+              }
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="hs-accordion hs-accordion-active:border-b-default-200 bg-transparent border-b border-border group dark:hs-accordion-active:border-b-default-200"
+          id="headingrating"
+        >
+          <button
+            class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start font-semibold text-default-900 py-5"
+            aria-expanded="false"
+            aria-controls="collapserating"
+          >
+            <span class="flex items-end">
+              Average rating
+
+              @if (ratingCount > 0) {
+                <span class="ms-1 text-sm font-normal text-default-500"> ({{ ratingCount }}) </span>
+              }
+            </span>
+
+            <iconify-icon
+              icon="lucide:chevron-down"
+              class="hs-accordion-active:hidden block size-5 text-default-800"
+            ></iconify-icon>
+
+            <iconify-icon
+              icon="lucide:chevron-up"
+              class="hs-accordion-active:block hidden size-5 text-default-800"
+            ></iconify-icon>
+          </button>
+
+          <div
+            id="collapserating"
+            class="hs-accordion-content hidden w-full overflow-hidden transition-[height] duration-300 text-sm"
+            role="region"
+            aria-labelledby="headingrating"
+          >
+            <div class="flex flex-col gap-2 px-1 pb-4">
+              @for (item of ratingFilterData; track $index) {
+                <label [for]="item.id" class="flex items-center text-default-700">
+                  <input
+                    type="checkbox"
+                    [id]="item.id"
+                    [(ngModel)]="item.checked"
+                    class="w-4 h-4 checked:text-dark border-default-300 dark:border-white/20 rounded me-2"
+                  />
+
+                  <span class="flex items-center gap-1">
+                    {{ item.ratingLabel }}
+
+                    <lucide-icon name="star" class="fill-warning text-warning size-4"></lucide-icon>
+                  </span>
+
+                  <span class="ms-auto text-xs text-default-500">
+                    {{ item.totalProperties }}
+                  </span>
+                </label>
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

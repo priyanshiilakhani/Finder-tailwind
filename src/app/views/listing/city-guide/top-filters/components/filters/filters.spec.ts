@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Filters } from './filters';
 
 describe('Filters', () => {
