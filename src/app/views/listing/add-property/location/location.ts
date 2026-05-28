@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 import { citiesData, countryGroupsData } from './data';
 
 @Component({
-  selector: 'app-location',
+  selector: 'add-property-location',
   imports: [PropertySidebar, Navbar7, RouterLink],
   templateUrl: './location.html',
   styles: ``,

@@ -1,0 +1,64 @@
+<div class="md:pb-2 md:px-2">
+    <div class="flex items-center justify-between md:mb-6 mb-4 flex-wrap">
+        <h2 class="text-xl font-semibold mb-2 md:mb-0 me-4 text-default-900">Photos / videos</h2>
+
+        <div class="flex items-center group">
+            <lucide-icon name="info" class="size-4 text-info me-2"></lucide-icon>
+            <a [routerLink]="[]" class="text-sm text-info font-medium relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-100 group-hover:after:opacity-0 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-100">How to photograph a car</a>
+        </div>
+    </div>
+
+    <p class="text-sm mb-4">The maximum photo size is 8 MB. Formats: jpeg, jpg, png. Put the main picture first.</p>
+
+    <div class="grid md:grid-cols-3 grid-cols-2 md:gap-6 gap-2">
+
+        @for (item of galleryData; track $index) {
+        <div class="relative group block rounded-md overflow-hidden">
+
+            <img [src]="item.image" alt="" class="size-full bg-cover object-cover">
+
+            <div class="absolute inset-0 flex justify-center items-center text-default-900 opacity-0 group-hover:opacity-100 transition duration-300">
+
+                <a [routerLink]="[]" class="size-8 z-20 bg-body-bg text-default-800 rounded-md flex justify-center items-center hover:bg-default-100">
+
+                    <lucide-icon name="trash-2" class="size-4 relative z-20"></lucide-icon>
+                </a>
+
+                <div class="absolute inset-0 bg-black opacity-20 z-10"></div>
+            </div>
+
+            @if (item.isCover) {
+            <div class="absolute start-2 top-2 z-10 mb-3 me-3 bg-body-bg text-default-900 text-xs px-2 py-1 rounded pointer-events-none flex items-center font-semibold">
+                Cover
+            </div>
+            }
+
+        </div>
+        }
+
+        <div class="w-full group">
+            <div class="flex items-center justify-center relative h-full cursor-pointer bg-default-100 dark:bg-white/3 border border-dashed border-default-300 dark:border-white/20 rounded-md p-4">
+
+                <div class="text-center">
+                    <lucide-icon name="circle-plus" class="size-6 text-default-900 mb-2 block mx-auto"></lucide-icon>
+
+                    <div class="relative text-sm font-medium text-default-700 group-hover:underline">
+                        Upload photos / videos
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="pt-4 mt-4">
+        <label for="link" class="block text-sm font-medium text-default-900 mb-2">
+            Link to the video tour
+        </label>
+
+        <div class="relative">
+            <lucide-icon name="link" class="absolute start-2 top-1/2 -translate-y-1/2 text-default-600 size-4.5"></lucide-icon>
+            <input type="url" id="link" placeholder="www.youtube.com/..." class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent pe-4.5 py-2.75 ps-10" />
+        </div>
+    </div>
+</div>

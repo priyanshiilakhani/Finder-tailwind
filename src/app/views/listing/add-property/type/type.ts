@@ -7,7 +7,7 @@ import { PropertySidebar } from '../components/property-sidebar/property-sidebar
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-type',
+  selector: 'add-property-type',
   imports: [Navbar7, LucideAngularModule, PropertySidebar, RouterLink],
   templateUrl: './type.html',
   styles: ``,

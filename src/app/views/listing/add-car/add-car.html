@@ -1,1 +1,58 @@
-<p>add-car works!</p>
+<app-navbar7 />
+<section class="bg-default-100 dark:bg-white/3 md:pt-18 pt-14">
+    <div class="container">
+        <div class="lg:pt-18 md:pt-14 pt-6 lg:pb-24 md:pb-18 pb-12">
+            <div class="grid lg:grid-cols-12 grid-cols-1 gap-6">
+                <div class="lg:col-span-9 col-span-1">
+                    <h1 class="lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-default-900 mb-4">Sell car</h1>
+                    <div class="bg-body-bg rounded-md mt-6 p-6">
+                        <add-car-photos />
+                    </div>
+
+                    <div class="bg-body-bg rounded-md mt-6 p-6">
+                        <add-car-basic-information />
+                    </div>
+
+                    <div class="bg-body-bg rounded-md mt-6 p-6">
+                        <add-car-specifications />
+                    </div>
+
+                    <div class="bg-body-bg rounded-md mt-6 p-6">
+                        <add-car-features />
+                    </div>
+
+                    <div class="bg-body-bg rounded-md mt-6 p-6">
+                        <add-car-price />
+                    </div>
+
+                    <div class="bg-body-bg rounded-md mt-6 p-6">
+                        <add-car-price2 />
+                    </div>
+
+                    <div class="flex justify-between flex-wrap gap-4 mt-6">
+                        <button type="button" class="md:w-auto w-full bg-body-bg rounded-md font-semibold py-3.5 px-6 leading-0 border border-default-100 dark:border-white/20 transition hover:border-default-900 inline-flex items-center justify-center">
+                            <iconify-icon icon="lucide:eye" class="text-lg me-2"></iconify-icon>
+                            Detailed preview
+                        </button>
+
+                        <button type="button" class="md:w-auto w-full bg-primary text-white rounded-md font-semibold py-3.5 leading-0 px-6  transition hover:bg-primary-hover inline-flex items-center justify-center">
+                            <iconify-icon icon="lucide:upload" class="text-lg me-2"></iconify-icon>
+                            Save and publish
+                        </button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3">
+                    <add-car-right-sidebar />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<app-footer1 />
+
+<div class="lg:hidden text-center fixed lg:z-0 z-20 bottom-0 inset-x-0">
+    <button type="button" class="pt-3.5 px-4.5 pb-4.5 w-full inline-flex justify-center items-center text-start bg-default-900 text-body-bg font-medium align-middle hover:bg-default-950 focus:outline-hidden" aria-haspopup="dialog" aria-expanded="false" aria-controls="quickPreview" aria-label="Toggle navigation" data-hs-overlay="#quickPreview">
+        <iconify-icon icon="tabler:eye" class="me-2 text-body-bg"></iconify-icon> Quick preview
+    </button>
+</div>

@@ -7,7 +7,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-promotion',
+  selector: 'add-property-promotion',
   imports: [RouterLink, Navbar7, LucideAngularModule, CommonModule],
   templateUrl: './promotion.html',
   styles: ``,

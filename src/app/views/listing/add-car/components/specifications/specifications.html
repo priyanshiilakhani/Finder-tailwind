@@ -1,0 +1,100 @@
+<div class="md:pb-2 md:px-2">
+    <h2 class="mb-4 md:mb-6 text-default-900 font-semibold text-xl md:text-2xl">
+        Specifications
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+
+        <!-- Drive type -->
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">Drive type *</label>
+            <select class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4 py-2.5">
+                <option>Front-Wheel Drive</option>
+                <option>Rear-Wheel Drive</option>
+                <option>All-Wheel Drive</option>
+                <option>Four-Wheel Drive</option>
+            </select>
+        </div>
+
+        <!-- Engine -->
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">Engine *</label>
+            <select class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4 py-2.5">
+                <option value="">Select engine</option>
+                <option>Inline-4</option>
+                <option>Inline-6</option>
+                <option>6-Cylinder Turbo</option>
+                <option>V6</option>
+                <option>V8</option>
+                <option>V10</option>
+                <option>V12</option>
+                <option>Electric</option>
+                <option>Hybrid</option>
+            </select>
+        </div>
+
+        <!-- Transmission -->
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">Transmission *</label>
+            <select class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4 py-2.5">
+                <option>Manual</option>
+                <option>Automatic</option>
+                <option>CVT</option>
+                <option>Dual-Clutch</option>
+                <option>Semi-Automatic</option>
+                <option selected>7-Speed Shiftable Automatic</option>
+                <option>8-Speed Automatic</option>
+                <option>9-Speed Automatic</option>
+                <option>10-Speed Automatic</option>
+            </select>
+        </div>
+
+        <!-- Fuel type -->
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">Fuel type *</label>
+            <select required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4 py-2.5">
+                <option selected>Gasoline</option>
+                <option>Diesel</option>
+                <option>Electric</option>
+                <option>Hybrid</option>
+                <option>Plug-in Hybrid</option>
+                <option>Hydrogen</option>
+                <option>Flex Fuel</option>
+                <option>Natural Gas</option>
+            </select>
+        </div>
+
+        <!-- City MPG -->
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">City MPG *</label>
+            <input type="number" placeholder="Miles per gallon" min="10" class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4 py-2.5">
+        </div>
+
+        <!-- Highway MPG -->
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2 items-center gap-1">
+                Highway MPG <iconify-icon icon="lucide:info" class="text-default-600"></iconify-icon>
+            </label>
+            <input type="number" placeholder="Miles per gallon" min="10" class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4 py-2.5">
+        </div>
+
+        <!-- Exterior color -->
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">Exterior color</label>
+            <input type="text" class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4 py-2.5">
+        </div>
+
+        <!-- Interior color -->
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">Interior color</label>
+            <input type="text" class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4 py-2.5">
+        </div>
+
+        <!-- Description -->
+        <div class="md:col-span-2">
+            <label class="block text-default-900 font-semibold mb-2">Description *</label>
+            <p class="text-sm mb-2">Here you can let your imagination run wild and describe the car in the best possible way!</p>
+            <textarea rows="5" placeholder="Maximum 2000 characters" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4 py-2.5"></textarea>
+        </div>
+    </div>
+</div>

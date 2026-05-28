@@ -1,0 +1,35 @@
+<div class="md:pb-2 md:px-2">
+    <h2 class="md:mb-6 mb-4 text-default-900 font-semibold md:text-2xl text-xl">Price</h2>
+
+    <label class="block text-sm text-default-900 font-semibold mb-2">Price *</label>
+    <div class="relative md:w-97.5 w-full md:mb-6 mb-4">
+        <lucide-icon name="dollar-sign" class="size-4.5 absolute top-1/2 -translate-y-1/2 start-2"></lucide-icon>
+        <input type="number" id="price" min="1000" value="41900" placeholder="Set a fair price" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent ps-10 pe-4.5 py-2.75">
+    </div>
+
+    <div class="flex items-center gap-2 md:mb-6 mb-4">
+        <label for="negotiated-price" class="relative inline-block w-11 h-6 cursor-pointer">
+            <input type="checkbox" id="negotiated-price" class="peer sr-only">
+            <span class="absolute inset-0 bg-default-200 rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-success dark:bg-neutral-700 dark:peer-checked:bg-success peer-disabled:opacity-50 peer-disabled:pointer-events-none"></span>
+            <span class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 bg-white rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full dark:bg-neutral-400 dark:peer-checked:bg-white"></span>
+        </label>
+        <label for="negotiated-price" class="text-default-900 text-sm">Negotiated price</label>
+    </div>
+
+    <div class="flex flex-col gap-4">
+        <label for="no-credit" class="flex items-center text-default-700 text-sm cursor-pointer checked:text-default-800">
+            <input type="checkbox" id="no-credit" class="w-4 h-4 bg-transparent checked:text-dark border-default-300 dark:border-white/20 rounded me-2" checked>
+            Payment in installments is possible
+        </label>
+
+        <label for="no-credit" class="flex items-center text-default-700 text-sm cursor-pointer checked:text-default-800">
+            <input type="checkbox" id="no-credit" class="w-4 h-4 bg-transparent checked:text-dark border-default-300 dark:border-white/20 rounded me-2">
+            Exchange for a car is possible
+        </label>
+
+        <label for="no-credit" class="flex items-center text-default-700 text-sm cursor-pointer checked:text-default-800">
+            <input type="checkbox" id="no-credit" class="w-4 h-4 bg-transparent checked:text-dark border-default-300 dark:border-white/20 rounded me-2">
+            Uncleared car
+        </label>
+    </div>
+</div>

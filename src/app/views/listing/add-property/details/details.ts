@@ -5,12 +5,13 @@ import { amenitiesData, propertyFeaturesData, propertyTypeData } from './data';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-details',
+  selector: 'add-property-details',
   imports: [Navbar7, PropertySidebar, RouterLink],
   templateUrl: './details.html',
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class Details {
   propertyTypeData = propertyTypeData;
   propertyFeaturesData = propertyFeaturesData;

@@ -7,6 +7,7 @@ import { LucideAngularModule } from 'lucide-angular';
   templateUrl: './property-sidebar.html',
   styles: ``,
 })
+
 export class PropertySidebar {
   @Input() currentStepIndex: number = 0;
   steps = [

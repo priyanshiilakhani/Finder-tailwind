@@ -1,0 +1,44 @@
+<div class="md:pb-2 md:px-2">
+    <h2 class="mb-2 text-default-900 font-semibold md:text-2xl text-xl">Features</h2>
+    <div class="hs-accordion-group">
+        @for (accordion of accordionData; track $index) {
+
+        <div class="hs-accordion hs-accordion-active:border-b-default-200 bg-transparent border-b border-border group dark:hs-accordion-active:border-b-default-200" [class.active]="accordion.active" [id]="accordion.headingId">
+
+            <button class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start font-semibold text-default-900 py-5" [attr.aria-expanded]="accordion.active ? 'true' : 'false'" [attr.aria-controls]="accordion.id">
+
+                <a [routerLink]="[]" class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:h-0.25 after:bg-current after:transition-all after:duration-300" 
+                [class]="accordion.active
+                    ? 'after:opacity-100'
+                    : 'after:opacity-0 group-hover:after:opacity-100'">
+                    {{ accordion.title }}
+                </a>
+
+                <iconify-icon icon="lucide:plus" class="hs-accordion-active:hidden block size-4 text-default-800"></iconify-icon>
+
+                <iconify-icon icon="lucide:minus" class="hs-accordion-active:block hidden size-4 text-default-800"></iconify-icon>
+            </button>
+
+            <div [id]="accordion.id" class="hs-accordion-content w-full overflow-hidden transition-[height] duration-300 mb-4" [class.hidden]="!accordion.active" role="region" [attr.aria-labelledby]="accordion.headingId">
+
+                <div class="grid md:grid-cols-3 grid-cols-1 gap-4 text-default-600">
+
+                    @for (feature of accordion.features; track feature.id) {
+
+                    <label [for]="feature.id" class="flex items-center gap-2 text-sm text-default-700 cursor-pointer">
+
+                        <input type="checkbox" [id]="feature.id" [checked]="feature.checked" class="w-4 h-4 border border-default-300 rounded bg-transparent checked:bg-black checked:border-black">
+
+                        {{ feature.label }}
+                    </label>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        }
+
+    </div>
+</div>

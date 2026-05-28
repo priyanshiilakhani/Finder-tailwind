@@ -6,12 +6,13 @@ import { propertyOptionsData, userData } from './data';
 import { RouterLink } from "@angular/router";
 
 @Component({
-  selector: 'app-price',
+  selector: 'add-property-price',
   imports: [Navbar7, PropertySidebar, LucideAngularModule, RouterLink],
   templateUrl: './price.html',
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class Price {
   userData = userData;
   propertyOptionsData = propertyOptionsData;

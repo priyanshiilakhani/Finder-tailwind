@@ -6,7 +6,7 @@ import { LucideAngularModule } from 'lucide-angular';
 import { propertyGalleryData } from './data';
 
 @Component({
-  selector: 'app-photos',
+  selector: 'add-property-photos',
   imports: [Navbar7, PropertySidebar, RouterLink, LucideAngularModule],
   templateUrl: './photos.html',
   styles: ``,

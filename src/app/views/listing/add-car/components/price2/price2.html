@@ -1,0 +1,48 @@
+<div class="pb-2 px-2">
+    <h2 class="mb-6 text-default-900 font-semibold md:text-2xl text-xl">Price</h2>
+
+    <div class="flex items-center flex-wrap md:gap-6 gap-4 mb-6">
+        <div class="relative">
+            <input type="radio" name="type" id="private" class="hidden peer" checked>
+            <label for="private" class="cursor-pointer rounded-full font-medium py-2 px-5 border border-default-300 w-full inline-flex items-center peer-checked:bg-default-100 peer-checked:dark:bg-white/10 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 text-sm peer-focus:ring-2 peer-focus:ring-dark peer-focus:dark:ring-white transition">
+                <lucide-icon name="user" class="size-4 me-2"></lucide-icon>
+                Private person
+            </label>
+        </div>
+
+        <div class="relative">
+            <input type="radio" name="type" id="agent" class="hidden peer">
+            <label for="agent" class="cursor-pointer rounded-full font-medium py-2 px-5 border border-default-300 w-full inline-flex items-center peer-checked:bg-default-100 peer-checked:dark:bg-white/10 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 text-sm peer-focus:ring-2 peer-focus:ring-dark peer-focus:dark:ring-white transition">
+                <lucide-icon name="briefcase" class="size-4 me-2"></lucide-icon>
+                Real estate agent
+            </label>
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-4 md:pb-6 pb-4">
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">First name *</label>
+            <input type="text" id="fn" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+        </div>
+
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">Last name *</label>
+            <input type="text" id="ln" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+        </div>
+
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">Email *</label>
+            <input type="email" id="email" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+        </div>
+
+        <div>
+            <label class="block text-sm text-default-900 font-semibold mb-2">Phone number *</label>
+            <input type="tel"  #phoneInput id="phone"  placeholder="(___) ___-____" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+        </div>
+    </div>
+
+    <label for="dealer-ready" class="flex items-center text-default-700 text-sm cursor-pointer checked:text-default-800">
+        <input type="checkbox" id="dealer-ready" class="w-4 h-4 bg-transparent checked:text-dark border-default-300 dark:border-white/20 rounded me-2">
+        Ready to cooperate with dealers
+    </label>
+</div>
