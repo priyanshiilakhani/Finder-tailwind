@@ -22,4 +22,9 @@ export const routes: Routes = [
     path: 'account',
     loadChildren: () => import('./views/account/account.routes').then((mod) => mod.ACCOUNT_ROUTES),
   },
+  {
+    path: '',
+    loadChildren: () => import('./views/pages/pages.routes').then((mod) => mod.PAGES_ROUTES),
+  },
 ];
+
