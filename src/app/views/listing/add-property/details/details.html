@@ -1,1 +1,130 @@
-<p>details works!</p>
+<app-navbar7 />
+<section class="md:mt-20 mt-10 pt-6 pb-12 lg:py-12">
+    <div class="container">
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 pt-4 pb-12 md:mb-0 mb-6">
+            <app-property-sidebar [currentStepIndex]="3" />
+
+            <div class="lg:col-span-2">
+                <h1 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold lg:pb-2 pb-1 mb-4">Property details</h1>
+
+                <div class="grid md:grid-cols-2 grid-cols-1 gap-6 mb-6 lg:pb-2">
+
+                    @for (item of propertyTypeData; track $index) {
+
+                    <div class="col-span-1">
+                        <div class="relative">
+
+                            <input type="radio" name="type" [id]="item.id" class="hidden peer" [checked]="item.checked">
+
+                            <label [for]="item.id" class="cursor-pointer rounded-md font-medium py-2 px-5 border border-default-300 w-full inline-flex flex-col peer-checked:bg-default-100 peer-checked:dark:bg-white/10 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 peer-focus:ring-2 peer-focus:ring-dark peer-focus:dark:ring-white transition">
+
+                                <span class="text-default-900 font-semibold pt-1 mb-1">
+                                    {{ item.title }}
+                                </span>
+
+                                <span class="font-normal pb-1 text-sm">
+                                    {{ item.description }}
+                                </span>
+
+                            </label>
+
+                        </div>
+                    </div>
+
+                    }
+
+                </div>
+
+                <div class="grid md:grid-cols-2 grid-cols-1 gap-6 mb-6 lg:pb-2">
+                    <div>
+                        <label class="block text-sm text-default-900 font-semibold mb-2">Total floors *</label>
+                        <input type="number" id="floors-total" min="1" placeholder="Number" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-default-900 font-semibold mb-2">floors *</label>
+                        <input type="number" id="floors" min="1" placeholder="Number" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 grid-cols-1 gap-6 mb-6 lg:pb-2">
+                    <div>
+                        <label class="block text-sm text-default-900 font-semibold mb-2">Total area *</label>
+                        <input type="number" id="total-area" min="1" placeholder="sq.m." required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-default-900 font-semibold mb-2">Living area *</label>
+                        <input type="number" id="living-area" min="1" placeholder="sq.m." required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-default-900 font-semibold mb-2">Kitchen area *</label>
+                        <input type="number" id="kitchen-area" min="1" placeholder="sq.m." required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+                    </div>
+                </div>
+
+                @for (group of propertyFeaturesData; track $index) {
+                <div class="flex justify-between text-nowrap md:pb-6 pb-4 mb-2">
+                    <label class="block text-sm text-default-900 font-semibold mt-2 me-4">
+                        {{ group.title }}
+                    </label>
+
+                    <div class="flex flex-wrap gap-2">
+                        @for (option of group.options; track $index) {
+                        <label>
+                            <input type="radio" [name]="group.name" [id]="option.id" class="hidden peer" [checked]="option.checked">
+
+                            <span class="inline-flex items-center text-center border rounded-full py-2 px-5 font-semibold border-default-200 dark-border-white/20 text-sm peer-checked:border-default-900 peer-checked:bg-default-100 peer-checked:dark:bg-white/10 peer-hover:border-default-900">
+
+                                @if (option.icon) {
+                                <iconify-icon class="text-base me-1" [icon]="option.icon">
+                                </iconify-icon>
+                                }
+
+                                {{ option.label }}
+                            </span>
+                        </label>
+                        }
+                    </div>
+                </div>
+                }
+
+                <h2 class="text-default-900 mb-4 font-semibold">Amenities</h2>
+
+                <div class="grid md:grid-cols-3 grid-cols-2 gap-6 mb-12">
+                    @for (item of amenitiesData; track $index) {
+                    <label [for]="item.id" class="flex items-center text-default-700 text-sm cursor-pointer checked:text-default-800">
+                        <input type="checkbox" [id]="item.id" class="size-4 checked:text-dark border-default-300 dark:bg-body-bg! rounded me-2">
+
+                        {{ item.label }}
+                    </label>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="fixed bottom-0 pb-4 w-full bg-body-bg">
+    <div class="h-1 w-full rounded-none bg-default-200">
+        <div class="h-1 bg-default-900" style="width: 57.14%"></div>
+    </div>
+
+    <div class="container pt-4">
+        <div class="flex justify-between">
+
+            <a routerLink="/add-property/photos" class="relative inline-flex items-center px-5 py-2.5 border border-default-900 bg-transparent rounded-md text-default-900 text-sm font-medium transition group hover:text-body-bg hover:bg-default-900">
+                <iconify-icon icon="lucide:arrow-left" class="me-2 opacity-100 -translate-x-0 transition-all duration-300 group-hover:opacity-0 group-hover:-translate-x-5"></iconify-icon>
+                Back
+                <iconify-icon icon="lucide:arrow-left" class="me-2 absolute start-5 opacity-0 translate-x-5 transition-all duration-300  group-hover:opacity-100 group-hover:translate-x-0"></iconify-icon>
+            </a>
+
+            <a routerLink="/add-property/price" class="relative inline-flex items-center px-5 py-2 rounded-md bg-default-900 text-body-bg font-medium  hover:bg-default-800 transition group text-sm">
+                Next
+                <iconify-icon icon="lucide:arrow-right" class="ms-2 opacity-100 translate-x-0 transition-all duration-300  group-hover:opacity-0 group-hover:translate-x-5"></iconify-icon>
+                <iconify-icon icon="lucide:arrow-right" class="ms-2 absolute end-5 opacity-0 -translate-x-5 transition-all duration-300  group-hover:opacity-100 group-hover:translate-x-0"></iconify-icon>
+            </a>
+        </div>
+    </div>
+</footer>

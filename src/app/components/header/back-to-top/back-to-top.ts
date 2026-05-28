@@ -16,7 +16,7 @@ export class BackToTop {
   scrollProgress!: ElementRef<SVGRectElement>;
 
   private length = 0;
-  private scrollOffset = 450;
+  private scrollOffset = 100;
 
   ngAfterViewInit(): void {
 

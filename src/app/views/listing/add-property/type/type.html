@@ -1,1 +1,86 @@
-<p>type works!</p>
+<app-navbar7 />
+<section class="md:mt-20 mt-10 pt-6 pb-12 lg:py-12 h-full">
+    <div class="container">
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 pt-4 pb-12 md:mb-0 mb-6">
+
+            <app-property-sidebar [currentStepIndex]="0" />
+
+            <div class="lg:col-span-2">
+                <h1 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold lg:mb-4">Property type</h1>
+
+                <div class="pt-4 lg:mt-4 mt-2">
+                    <h2 class="text-default-900 font-semibold pb-1 mb-2">Category *</h2>
+
+                    <div class="flex gap-4">
+                        @for (item of propertyCategoryData; track $index) {
+                        <div class="relative">
+
+                            <input type="radio" name="property" [id]="item.id" class="hidden peer" [checked]="item.checked">
+
+                            <label [for]="item.id" class="cursor-pointer rounded-full font-medium px-5 py-2 inline-flex text-sm border border-default-300 peer-checked:bg-default-100 peer-checked:dark:bg-white/5 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 peer-focus:ring-2 peer-focus:ring-dark peer-focus:dark:ring-white transition">
+
+                                {{ item.label }}
+
+                            </label>
+
+                        </div>
+                        }
+
+                    </div>
+                </div>
+
+                <div class="pt-4 lg:mt-4 mt-2">
+                    <h2 class="text-default-900 font-semibold pb-1 mb-2">Property type *</h2>
+                    <div class="grid md:grid-cols-5 grid-cols-2 gap-4">
+                        @for (item of propertyTypeData; track $index) {
+                        <div class="relative">
+
+                            <input type="radio" name="type" [id]="item.id" class="hidden peer" [checked]="item.checked">
+
+                            <label [for]="item.id" class="cursor-pointer rounded-md font-medium p-4 flex gap-2 flex-col text-sm border border-default-300 text-center peer-checked:bg-default-100 peer-checked:dark:bg-white/10 peer-checked:text-default-800 peer-checked:border-default-900 peer-checked:dark:border-white hover:border-default-900 peer-focus:ring-2 peer-focus:ring-dark peer-focus:dark:ring-white transition">
+
+                                <span class="mx-auto" [innerHTML]="getSafeSvg(item.icon)">
+                                </span>
+
+                                {{ item.label }}
+                            </label>
+
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="pt-4 lg:mt-4 mt-2">
+                    <h2 class="text-default-900 font-semibold mb-4">Condition of the property *</h2>
+
+                    <div class="flex flex-col gap-2">
+                        <div class="flex items-center gap-2 cursor-pointer mb-1">
+                            <input type="radio" id="secondary" name="condition" class="w-4 h-4 bg-transparent text-black border-default-400 focus:ring-0 checked:bg-default-800" checked>
+                            <label for="secondary" class="text-default-800 text-sm">Secondary market</label>
+                        </div>
+
+                        <div class="flex items-center gap-2 cursor-pointer mb-1">
+                            <input type="radio" id="new" name="condition" class="w-4 h-4 bg-transparent text-black border-default-400 checked:bg-default-800">
+                            <label for="new" class="text-default-800 text-sm">New building</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="fixed bottom-0 pb-4 w-full bg-body-bg">
+    <div class="h-1 w-full rounded-none bg-default-200">
+        <div class="h-1 bg-default-900" style="width: 14.29%"></div>
+    </div>
+
+    <div class="container pt-4">
+        <div class="flex justify-end">
+            <a routerLink="/add-property/location" class="relative inline-flex items-center px-5 py-2 rounded-md bg-default-900 text-body-bg font-medium hover:bg-default-800 transition group text-sm">
+                Next
+                <iconify-icon icon="lucide:arrow-right" class="ms-2 opacity-100 translate-x-0 transition-all duration-300   group-hover:opacity-0 group-hover:translate-x-5"></iconify-icon>
+                <iconify-icon icon="lucide:arrow-right" class="ms-2 absolute end-5 opacity-0 -translate-x-5 transition-all duration-300  group-hover:opacity-100 group-hover:translate-x-0"></iconify-icon>
+            </a>
+        </div>
+    </div>
+</footer>

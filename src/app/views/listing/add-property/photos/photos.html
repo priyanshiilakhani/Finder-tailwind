@@ -1,1 +1,88 @@
-<p>photos works!</p>
+<app-navbar7 />
+<section class="md:mt-20 mt-10 pt-6 pb-12 lg:py-12 h-full">
+    <div class="container">
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 pt-4 pb-12 md:mb-0 mb-6">
+            <div>
+                <app-property-sidebar [currentStepIndex]="2" />
+            </div>
+
+            <div class="lg:col-span-2">
+                <h1 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold lg:pb-2 pb-1 mb-4">Photos and videos</h1>
+
+                <p class="text-sm">The maximum photo size is 8 MB. Formats: jpeg, jpg, png. Put the main picture first.</p>
+                <p class="text-sm mb-4">The maximum video size is 10 MB. Formats: mp4, mov.</p>
+
+                <div class="border border-border rounded-md p-3 grid md:grid-cols-3 grid-cols-2 gap-2">
+                    @for (item of propertyGalleryData; track $index) {
+                    <div class="relative group block rounded-md overflow-hidden">
+
+                        <img [src]="item.image" alt="" class="size-full bg-cover object-cover">
+
+                        <div class="absolute inset-0 flex justify-center items-center text-default-900 opacity-0 group-hover:opacity-100 transition duration-300">
+
+                            <a [routerLink]="[]"  class="size-8 z-20 bg-body-bg text-default-800 rounded-md flex justify-center items-center hover:bg-default-100">
+
+                                <lucide-icon name="trash-2" class="size-4 relative z-20">
+                                </lucide-icon>
+                            </a>
+
+                            <div class="absolute inset-0 bg-black opacity-20 z-10"></div>
+                        </div>
+
+                        @if (item.isCover) {
+                        <div class="absolute start-2 top-2 z-10 mb-3 me-3 bg-body-bg text-default-900 text-xs px-2 py-1 rounded pointer-events-none flex items-center font-semibold">
+                            Cover
+                        </div>
+                        }
+
+                    </div>
+                    }
+
+                    <div class="w-full group">
+                        <div class="flex items-center justify-center relative h-full cursor-pointer bg-default-100 dark:bg-white/3 border border-dashed border-default-300 dark:border-white/20 rounded-md p-4">
+                            <div class="text-center">
+                                <lucide-icon name="circle-plus" class="size-6 text-default-900 mb-2 block mx-auto"></lucide-icon>
+                                <div class="relative text-sm font-medium text-default-700 group-hover:underline">
+                                    Upload photos / videos
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 mt-4">
+                    <label for="link" class="block text-sm font-medium text-default-900 mb-2">
+                        Link to the video tour
+                    </label>
+
+                    <div class="relative">
+                        <lucide-icon name="link" class="absolute start-2 top-1/2 -translate-y-1/2 text-default-600 size-4.5"></lucide-icon>
+                        <input type="url" id="link" placeholder="www.youtube.com/..." class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent pe-4.5 py-2.75 ps-10" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="fixed bottom-0 pb-4 w-full bg-body-bg">
+    <div class="h-1 w-full rounded-none bg-default-200">
+        <div class="h-1 bg-default-900" style="width: 42.86%"></div>
+    </div>
+
+    <div class="container pt-4">
+        <div class="flex justify-between">
+            <a routerLink="/add-property/location" class="relative inline-flex items-center px-5 py-2.5 border border-default-900 bg-transparent rounded-md text-default-900 text-sm font-medium transition group hover:text-body-bg hover:bg-default-900">
+                <iconify-icon icon="lucide:arrow-left" class="me-2 opacity-100 -translate-x-0 transition-all duration-300 group-hover:opacity-0 group-hover:-translate-x-5"></iconify-icon>
+                Back
+                <iconify-icon icon="lucide:arrow-left" class="me-2 absolute start-5 opacity-0 translate-x-5 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"></iconify-icon>
+            </a>
+
+            <a routerLink="/add-property/details" class="relative inline-flex items-center px-5 py-2 rounded-md bg-default-900 text-body-bg font-medium hover:bg-default-800 transition group text-sm">
+                Next
+                <iconify-icon icon="lucide:arrow-right" class="ms-2 opacity-100 translate-x-0 transition-all duration-300 group-hover:opacity-0 group-hover:translate-x-5"></iconify-icon>
+                <iconify-icon icon="lucide:arrow-right" class="ms-2 absolute end-5 opacity-0 -translate-x-5 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"></iconify-icon>
+            </a>
+        </div>
+    </div>
+</footer>

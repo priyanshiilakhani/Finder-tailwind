@@ -1,0 +1,50 @@
+<div>
+    <ul class="flex flex-nowrap lg:flex-col gap-6 lg:gap-y-2 overflow-x-auto whitespace-nowrap pb-2 lg:pb-0">
+
+        @for (item of steps; track $index; let i = $index; let first =$first) {
+
+        <li>
+            <a class="inline-flex items-center py-0.5 lg:px-4 text-sm" [class]="
+                    i === currentStepIndex
+                    ? 'text-default-900 font-medium pointer-events-none'
+                    : i < currentStepIndex
+                    ? 'text-default-800 font-medium cursor-pointer hover:underline'
+                    : 'text-default-400 pointer-events-none'
+                " [class.lg:py-1]="first">
+
+                <!-- Current -->
+                @if (i === currentStepIndex) {
+
+                <lucide-icon name="circle-arrow-right" class="hidden lg:inline-flex shrink-0 size-4.5 me-2">
+                </lucide-icon>
+
+                <lucide-icon name="circle-arrow-down" class="lg:hidden size-4.5 me-2">
+                </lucide-icon>
+
+                }
+
+                <!-- Completed -->
+                @else if (i < currentStepIndex) { <lucide-icon name="circle-check-big" class="size-4.5 me-2">
+                    </lucide-icon>
+
+                    }
+
+                    <!-- Pending -->
+                    @else {
+
+                    <lucide-icon name="circle" class="size-4.5 me-2">
+                    </lucide-icon>
+
+                    }
+
+                    <span>
+                        {{ item }}
+                    </span>
+
+            </a>
+        </li>
+
+        }
+
+    </ul>
+</div>

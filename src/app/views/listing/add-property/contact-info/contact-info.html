@@ -1,1 +1,67 @@
-<p>contact-info works!</p>
+<app-navbar7 />
+
+<section class="md:mt-20 mt-10 pt-6 pb-12 lg:py-12">
+    <div class="container">
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-6 pt-4 pb-12 md:mb-0 mb-6">
+            <app-property-sidebar [currentStepIndex]="5" />
+
+            <div class="lg:col-span-2">
+                <h1 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold lg:pb-4 pb-1 mb-4">Contact info</h1>
+
+                <div class="grid md:grid-cols-2 grid-cols-1 gap-6 pb-6 mb-2">
+                    <div>
+                        <label class="block text-sm text-default-900 font-semibold mb-2">First name *</label>
+                        <input type="text" id="fn" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-default-900 font-semibold mb-2">Last name *</label>
+                        <input type="text" id="ln" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-default-900 font-semibold mb-2">Email *</label>
+                        <input type="email" id="email" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm text-default-900 font-semibold mb-2">Phone number *</label>
+                        <input type="tel" id="phone" #phoneInput placeholder="(___) ___-____" required class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75">
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 mb-2">
+                    <label for="tour" class="relative inline-block w-11 h-6 cursor-pointer">
+                        <input type="checkbox" id="tour" class="peer sr-only">
+                        <span class="absolute inset-0 bg-default-200 rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-success dark:bg-neutral-700 dark:peer-checked:bg-success peer-disabled:opacity-50 peer-disabled:pointer-events-none"></span>
+                        <span class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 bg-white rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full dark:bg-neutral-400 dark:peer-checked:bg-white"></span>
+                    </label>
+                    <label for="tour" class="text-default-900 text-sm">Open for schedule for a tour</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="fixed bottom-0 pb-4 w-full bg-body-bg">
+    <div class="h-1 w-full rounded-none bg-default-200">
+        <div class="h-1 bg-default-900" style="width: 85.71%"></div>
+    </div>
+
+    <div class="container pt-4">
+        <div class="flex justify-between">
+
+            <a routerLink="/add-property/price" class="relative inline-flex items-center px-5 py-2.5 border border-default-900 bg-transparent rounded-md text-default-900 text-sm font-medium transition group hover:text-body-bg hover:bg-default-900">
+                <iconify-icon icon="lucide:arrow-left" class="me-2 opacity-100 -translate-x-0 transition-all duration-300 group-hover:opacity-0 group-hover:-translate-x-5"></iconify-icon>
+                Back
+                <iconify-icon icon="lucide:arrow-left" class="me-2 absolute start-5 opacity-0 translate-x-5 transition-all duration-300  group-hover:opacity-100 group-hover:translate-x-0"></iconify-icon>
+            </a>
+
+            <a routerLink="/add-property/promotion" class="relative inline-flex items-center px-5 py-2 rounded-md bg-default-900 text-body-bg font-medium hover:bg-default-800 transition group text-sm">
+                Next
+                <iconify-icon icon="lucide:arrow-right" class="ms-2 opacity-100 translate-x-0 transition-all duration-300  group-hover:opacity-0 group-hover:translate-x-5"></iconify-icon>
+                <iconify-icon icon="lucide:arrow-right" class="ms-2 absolute end-5 opacity-0 -translate-x-5 transition-all duration-300  group-hover:opacity-100 group-hover:translate-x-0"></iconify-icon>
+            </a>
+        </div>
+    </div>
+</footer>
