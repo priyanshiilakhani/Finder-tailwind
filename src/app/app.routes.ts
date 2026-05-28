@@ -10,8 +10,16 @@ export const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./views/home/home.routes').then((mod) => mod.HOME_ROUTES),
   },
-   {
+  {
     path: '',
     loadChildren: () => import('./views/listing/listing.routes').then((mod) => mod.LISTING_ROUTES),
+  },
+  {
+    path: 'account',
+    loadChildren: () => import('./views/auth/auth.routes').then((mod) => mod.AUTH_ROUTES),
+  },
+  {
+    path: 'account',
+    loadChildren: () => import('./views/account/account.routes').then((mod) => mod.ACCOUNT_ROUTES),
   },
 ];
