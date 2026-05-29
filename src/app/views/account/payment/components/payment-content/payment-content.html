@@ -1,0 +1,137 @@
+<h1 class="mb-4 lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-default-900">
+          Payment details
+        </h1>
+        <p class="md:pb-4 pb-2 mb-4">
+          Add and manage payment methods with our secure payment system.
+        </p>
+
+        <div class="lg:w-200 w-full grid md:grid-cols-2 grid-cols-1 mb-4 gap-6 md:pb-4 pb-2">
+          @for (item of paymentCardData; track $index) {
+            <div class="relative w-full border-0 rounded-xl overflow-visible">
+              <div class="relative z-10 p-6">
+                <div class="flex items-center justify-between md:mb-4 mb-2 pb-6">
+                  <div class="flex items-center">
+                    <svg
+                      class="shrink-0 text-default-900"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="52"
+                      height="32"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M20.224 8.524L13.94 23.516h-4.1L6.748 11.55c-.188-.736-.35-1.006-.922-1.316-.932-.506-2.472-.98-3.826-1.276l.092-.434h6.6a1.81 1.81 0 0 1 1.788 1.528l1.634 8.676L16.15 8.524h4.074zM36.29 18.622c.016-3.958-5.472-4.176-5.434-5.944.012-.538.524-1.11 1.644-1.256a7.32 7.32 0 0 1 3.826.672l.68-3.18c-1.16-.436-2.389-.662-3.628-.666-3.834 0-6.532 2.04-6.556 4.958-.024 2.158 1.926 3.36 3.396 4.08 1.512.734 2.02 1.206 2.012 1.862-.01 1.008-1.204 1.45-2.32 1.468-1.95.03-3.08-.526-3.984-.946l-.702 3.284c.906.416 2.578.78 4.312.796 4.074 0 6.74-2.012 6.754-5.128zm10.122 4.894H50L46.87 8.524h-3.312c-.354-.003-.701.1-.995.296s-.523.476-.657.804l-5.818 13.892h4.072l.81-2.24h4.976l.466 2.24zm-4.326-5.312l2.04-5.63 1.176 5.63h-3.216zm-16.32-9.68L22.56 23.516h-3.88l3.21-14.992h3.876z"
+                      />
+                    </svg>
+
+                    @if (item.isPrimary) {
+                      <span
+                        class="ms-4 px-2 py-0.5 text-xs font-medium rounded bg-body-bg text-default-900"
+                      >
+                        Primary
+                      </span>
+                    }
+                  </div>
+
+                  <div class="hs-dropdown relative inline-flex">
+                    <button
+                      type="button"
+                      class="hs-dropdown-toggle inline-flex items-center justify-center rounded-md size-10 text-default-600 focus:outline-hidden dark:text-white"
+                      aria-haspopup="menu"
+                      aria-expanded="false"
+                      aria-label="Share"
+                    >
+                      <iconify-icon icon="lucide:more-vertical" class="text-xl"></iconify-icon>
+                    </button>
+
+                    <div
+                      class="hs-dropdown-menu hidden transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 absolute z-20 min-w-30 bg-body-bg shadow-custom rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700"
+                      role="menu"
+                      aria-orientation="vertical"
+                    >
+                      <div class="p-2.5 space-y-0.5">
+                        <a
+                          [routerLink]="[]"
+                          class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-default-800 hover:bg-default-100 focus:outline-hidden focus:bg-default-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                        >
+                          <lucide-icon name="square-pen" class="size-4"></lucide-icon>
+                          Edit
+                        </a>
+
+                        <a
+                          [routerLink]="[]"
+                          class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-primary hover:bg-default-100 focus:outline-hidden focus:bg-default-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                        >
+                          <lucide-icon name="trash-2" class="size-4"></lucide-icon>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="text-xl text-default-900 tracking-[1.25px] font-semibold pt-1 mb-4 md:pb-4 pb-2"
+                >
+                  {{ item.cardNumber }}
+                </div>
+
+                <div class="flex justify-between">
+                    <div class="me-3">
+                        <div class="text-xs text-default-500 mb-1">Name</div>
+
+                        <div class="text-sm font-semibold text-default-900">
+                        {{ item.cardHolderName }}
+                        </div>
+                    </div>
+
+                    <div>
+                        @if (item.isExpired) {
+                        <span
+                            class="px-2 py-0.5 text-xs font-medium rounded bg-primary-hover text-white"
+                        >
+                            Expired
+                        </span>
+
+                        <div class="text-sm mt-1 font-semibold text-default-900">
+                            {{ item.expiryDate }}
+                        </div>
+                        } @else {
+                        <div class="text-xs text-default-500 mb-1">
+                            Expiry date
+                        </div>
+
+                        <div class="text-sm font-semibold text-default-900">
+                            {{ item.expiryDate }}
+                        </div>
+                        }
+                    </div>
+                </div>
+              </div>
+
+              <!-- Light mode background -->
+              <span
+                class="absolute inset-0 rounded-2xl dark:hidden"
+                [class]="item.lightGradientClass"
+              >
+              </span>
+
+              <!-- Dark mode background -->
+              <span
+                class="absolute inset-0 rounded-2xl hidden dark:block"
+                [class]="item.darkGradientClass"
+              >
+              </span>
+            </div>
+          }
+        </div>
+
+        <a
+          href="/account/payment#addCard"
+          class="border md:w-auto w-full border-default-900 bg-transparent text-default-900 transition-all duration-300 hover:bg-default-900 hover:text-body-bg py-3.5 px-6 rounded-md justify-center items-center inline-flex font-semibold"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          aria-controls="addPayment"
+          data-hs-overlay="#addPayment">
+          <iconify-icon icon="lucide:plus" class="text-lg me-2"> </iconify-icon>Add payment
+          method
+        </a>

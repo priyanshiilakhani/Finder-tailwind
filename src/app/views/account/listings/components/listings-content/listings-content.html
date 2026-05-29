@@ -1,0 +1,282 @@
+  <h1 class="mb-4 pb-4 lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-default-900">
+          My listings
+        </h1>
+
+        <div class="overflow-auto whitespace-nowrap">
+          <nav
+            class="flex gap-2 pb-2 mb-1"
+            aria-label="Tabs"
+            role="tablist"
+            aria-orientation="horizontal"
+          >
+            <button
+              type="button"
+              class="hs-tab-active:border-default-900 hs-tab-active:bg-default-100 hs-tab-active:dark-bg-white/3 rounded-full border border-border py-2 px-5 text-sm font-semibold text-body-color hover:border-default-900 active"
+              id="published-tab"
+              aria-selected="true"
+              data-hs-tab="#published"
+              aria-controls="published"
+              role="tab"
+            >
+              Published (3)
+            </button>
+
+            <button
+              type="button"
+              class="hs-tab-active:border-default-900 hs-tab-active:bg-default-100 hs-tab-active:dark-bg-white/3 rounded-full border border-border py-2 px-5 text-sm font-semibold text-body-color hover:border-default-900"
+              id="drafts-tab"
+              aria-selected="false"
+              data-hs-tab="#drafts"
+              aria-controls="drafts"
+              role="tab"
+            >
+              Drafts (2)
+            </button>
+
+            <button
+              type="button"
+              class="hs-tab-active:border-default-900 hs-tab-active:bg-default-100 hs-tab-active:dark-bg-white/3 rounded-full border border-border py-2 px-5 text-sm font-semibold text-body-color hover:border-default-900 bg-transparent"
+              id="archived-tab"
+              aria-selected="false"
+              data-hs-tab="#archived"
+              aria-controls="archived"
+              role="tab"
+            >
+              Archived (0)
+            </button>
+          </nav>
+        </div>
+        <div class="mt-3">
+          @for (section of propertySections; track $index) {
+            <div
+              [id]="section.id"
+              [class.hidden]="section.hidden"
+              role="tabpanel"
+              [attr.aria-labelledby]="section.tabId"
+            >
+              @if (section.masterCheckboxLabel) {
+                <div class="flex items-center mb-4">
+                  <div class="mb-6 mt-2">
+                    <div class="flex flex-col gap-2">
+                      <div class="flex md:gap-6 gap-4 flex-wrap">
+                        <label class="flex items-center text-default-700 text-sm cursor-pointer">
+                          <input
+                            type="checkbox"
+                            class="w-4 h-4 checked:text-dark text-sm border-default-300 dark:border-white/20 rounded me-2"
+                            checked
+                          />
+                          {{ section.masterCheckboxLabel }}
+                        </label>
+
+                         @if(section.showActions){
+
+                            <a [routerLink]="[]" class="flex items-center">
+                              <lucide-icon name="zap" class="size-4 me-2"></lucide-icon>
+
+                              <span class="hover:underline text-sm font-semibold">
+                                Promote
+                              </span>
+                            </a>
+
+                            <a [routerLink]="[]" class="flex items-center">
+                              <lucide-icon name="archive" class="size-4 me-2"></lucide-icon>
+
+                              <span class="hover:underline text-sm font-semibold">
+                                Move to archive
+                              </span>
+                            </a>
+
+                            <a [routerLink]="[]" class="flex items-center text-primary">
+                              <lucide-icon name="trash-2" class="size-4 me-2"></lucide-icon>
+
+                              <span class="hover:underline text-sm font-semibold">
+                                Delete
+                              </span>
+                            </a>
+
+                          }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+
+              @if (section.listings?.length) {
+                @for (item of section.listings; track $index) {
+                  <div class="md:flex gap-4 relative">
+                    <label
+                      class="md:flex hidden items-center text-default-700 text-sm cursor-pointer"
+                    >
+                      <input
+                        type="checkbox"
+                        class="size-4 checked:text-dark dark:bg-body-bg text-sm border-default-300 rounded me-2"
+                      />
+                    </label>
+
+                    <div
+                      class="absolute top-0 start-0 z-10 flex-col gap-1 mt-2 ms-2 size-8 bg-body-bg rounded-md flex justify-center items-center"
+                    >
+                      <label
+                        class="md:hidden flex items-center text-default-700 text-sm cursor-pointer"
+                      >
+                        <input
+                          type="checkbox"
+                          class="w-4 h-4 bg-transparent checked:text-dark text-sm border-default-300 dark:border-white/20 rounded"
+                        />
+                      </label>
+                    </div>
+
+                    <div
+                      class="group cursor-pointer border border-border rounded-md md:grid grid-cols-4 mb-4 w-full"
+                    >
+                      <div class="col-span-1">
+                        <div
+                          class="min-h-43.5 size-full rounded-tl-md md:rounded-bl-md md:rounded-tr-none rounded-bl-none rounded-tr-md md:pe-2"
+                        >
+                          <img
+                            [src]="item.image"
+                            class="size-full rounded-tl-md md:rounded-bl-md md:rounded-tr-none rounded-bl-none rounded-tr-md object-cover"
+                            alt="Image"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="col-span-3 md:py-6 md:ps-4 md:pe-6 p-4">
+                        <div
+                          class="flex lg:flex-row flex-col gap-6 lg:items-center items-start justify-between w-full"
+                        >
+                          <div>
+                            <div
+                              class="bg-default-100 mb-2 dark:bg-white/3 text-default-900 text-xs inline-flex item-center font-medium px-2 py-0.5 rounded items-center"
+                            >
+                              {{ item.propertyType }}
+                            </div>
+
+                            <div class="text-xl font-semibold text-default-900 mb-2">
+                              {{ item.price }}
+                            </div>
+
+                            <a class="text-sm block mb-2" [routerLink]="[]">
+                              {{ item.address }}
+                            </a>
+
+                            <div class="text-default-900 text-sm font-semibold">
+                              {{ item.area }}
+                            </div>
+                          </div>
+
+                          <div class="lg:text-end w-full lg:w-auto">
+                            <div class="text-xs mb-4">Created: {{ item.createdDate }}</div>
+
+                            <div class="mb-4 flex gap-2 lg:justify-end flex-wrap">
+                              <button
+                                class="py-2.5 px-5 w-auto text-sm text-default-600 rounded-md border border-border transition hover:bg-default-900 hover:text-body-bg inline-flex font-semibold"
+                              >
+                                {{ item.buttonText || 'Statistics' }}
+                              </button>
+
+                              <div class="hs-dropdown relative inline-flex">
+                                <button
+                                  type="button"
+                                  class="hs-dropdown-toggle inline-flex items-center justify-center rounded-md border border-default-300 size-10 text-default-600 focus:outline-hidden hover:border-default-900 dark:text-white"
+                                >
+                                  <iconify-icon icon="lucide:settings"></iconify-icon>
+                                </button>
+
+                                <div
+                                  class="hs-dropdown-menu hidden transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 absolute z-20 min-w-45 bg-body-bg border border-border shadow-custom rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700"
+                                >
+                                  <div class="p-2.5 space-y-0.5">
+                                    <a
+                                      [routerLink]="[]"
+                                      class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm hover:bg-default-100"
+                                    >
+                                      <lucide-icon name="square-pen" class="size-4"></lucide-icon>
+                                      Edit
+                                    </a>
+
+                                    <a
+                                      [routerLink]="[]"
+                                      class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm hover:bg-default-100"
+                                    >
+                                      <lucide-icon name="zap" class="size-4"></lucide-icon>
+                                      Promote
+                                    </a>
+
+                                    <a
+                                      [routerLink]="[]"
+                                      class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm hover:bg-default-100"
+                                    >
+                                      <lucide-icon name="archive" class="size-4"></lucide-icon>
+                                      Move to archive
+                                    </a>
+
+                                    <a
+                                      [routerLink]="[]"
+                                      class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-primary hover:bg-default-100"
+                                    >
+                                      <lucide-icon name="trash-2" class="size-4"></lucide-icon>
+                                      Delete
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <ul class="flex flex-row lg:justify-end gap-2 flex-wrap text-sm">
+                              <li class="flex items-center md:me-4 me-2">
+                                <iconify-icon
+                                  icon="lucide:eye"
+                                  class="text-base me-1"
+                                ></iconify-icon>
+
+                                {{ item.stats.views }}
+                              </li>
+
+                              <li class="flex items-center md:me-4 me-2">
+                                <iconify-icon
+                                  icon="lucide:heart"
+                                  class="text-base me-1"
+                                ></iconify-icon>
+
+                                {{ item.stats.favorites }}
+                              </li>
+
+                              <li class="flex items-center">
+                                <iconify-icon
+                                  icon="lucide:phone-incoming"
+                                  class="text-base me-1"
+                                ></iconify-icon>
+
+                                {{ item.stats.calls }}
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                }
+              }
+
+              @if (section.emptyState) {
+                <h2 class="text-default-900 font-semibold pt-2 mb-2">
+                  {{ section.emptyState.title }}
+                </h2>
+
+                <p class="text-sm mb-6 max-w-[640px]">
+                  {{ section.emptyState.description }}
+                </p>
+
+                <button
+                  type="button"
+                  class="flex items-center py-2.5 px-5 text-body-bg bg-default-800 hover:bg-default-900 text-sm rounded-md"
+                >
+                  <lucide-icon name="archive" class="size-4 me-2"></lucide-icon>
+
+                  {{ section.emptyState.buttonText }}
+                </button>
+              }
+            </div>
+          }
+        </div>

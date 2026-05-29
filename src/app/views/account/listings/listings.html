@@ -1,1 +1,17 @@
-<p>listings works!</p>
+<app-navbar8 />
+<section class="pt-24 pb-12 lg:mb-4 lg:mt-10">
+  <div class="container">
+    <div class="grid lg:grid-cols-12 grid-cols-1 gap-6 lg:pb-12 md:pb-8">
+      <!-- Sidebar navigation that turns into offcanvas on screens < 992px wide (lg breakpoint) -->
+      <div class="lg:col-span-3 lg:block hidden pe-6">
+        <app-account-sidebar />
+      </div>
+
+      <!-- Account listings content -->
+      <div class="lg:col-span-9 col-span-1">
+        <app-listings-content />
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer />

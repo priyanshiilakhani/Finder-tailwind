@@ -1,0 +1,329 @@
+   <h1 class="mb-4 pb-4 lg:text-3.5xl md:text-2.5xl text-2xl font-semibold text-default-900">
+          Reviews
+        </h1>
+
+        <div class="overflow-auto whitespace-nowrap mb-6">
+          <nav
+            class="flex gap-2 pb-2 mb-1"
+            aria-label="Tabs"
+            role="tablist"
+            aria-orientation="horizontal"
+          >
+            <button
+              type="button"
+              class="hs-tab-active:border-default-900 hs-tab-active:bg-default-100 hs-tab-active:dark-bg-white/3 rounded-full border border-border py-2 px-5 text-sm font-semibold text-body-color hover:border-default-900 active"
+              id="reviews-about-you-tab"
+              aria-selected="true"
+              data-hs-tab="#reviews-about-you"
+              aria-controls="reviews-about-you"
+              role="tab"
+            >
+              Reviews about you (8)
+            </button>
+
+            <button
+              type="button"
+              class="hs-tab-active:border-default-900 hs-tab-active:bg-default-100 hs-tab-active:dark-bg-white/3 rounded-full border border-border py-2 px-5 text-sm font-semibold text-body-color hover:border-default-900"
+              id="reviews-by-you-tab"
+              aria-selected="false"
+              data-hs-tab="#reviews-by-you"
+              aria-controls="reviews-by-you"
+              role="tab"
+            >
+              Reviews by you (12)
+            </button>
+          </nav>
+        </div>
+
+        <div class="mt-3">
+          <div id="reviews-about-you" role="tabpanel" aria-labelledby="reviews-about-you-tab">
+            @for (item of reviewaboutData; track $index) {
+              <div class="border-b border-border pb-6" [class.py-6]="$index !== 0">
+                <div class="flex items-center justify-between mb-4" [class.mt-2]="$index !== 0">
+                  <div class="flex items-center pe-4">
+                    <div class="rounded-full overflow-hidden size-12">
+                      <img
+                        [src]="item.reviewerImage"
+                        alt="Avatar"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    <div class="ps-4">
+                      <h6 class="mb-1 font-semibold text-default-900">
+                        {{ item.reviewerName }}
+                      </h6>
+                      <div class="text-xs">{{ item.reviewDate }}</div>
+                    </div>
+                  </div>
+
+                  <div class="flex gap-1">
+                    @for (star of [1, 2, 3, 4, 5]; track $index) {
+                      @if (star <= item.rating) {
+                        <lucide-icon
+                          name="star"
+                          class="fill-warning text-warning size-3.5"
+                        ></lucide-icon>
+                      } @else {
+                        <lucide-icon name="star" class="text-warning size-3.5"></lucide-icon>
+                      }
+                    }
+                  </div>
+                </div>
+
+                <p class="text-sm mb-2">
+                  Review on:
+                  <a class="hover-underline font-semibold text-default-900 ms-1" [routerLink]="[]">
+                    {{ item.reviewLocation }}
+                  </a>
+                </p>
+
+                <p class="text-sm mb-4">
+                  {{ item.reviewDescription }}
+                </p>
+
+                @if (item.reviewReply) {
+                  <div class="mb-2 p-6 bg-default-100 dark:bg-white/3 rounded-md">
+                    <div class="flex gap-4 items-center mb-4">
+                      <div>
+                        <img
+                          [src]="item.reviewReply.ownerImage"
+                          alt="Avatar"
+                          class="rounded-full size-9.5"
+                        />
+                      </div>
+
+                      <div>
+                        <h6 class="mb-1 text-default-900 font-semibold">
+                          {{ item.reviewReply.ownerName }}
+                        </h6>
+                        <p class="mb-1 text-xs">
+                          {{ item.reviewReply.ownerRole }}
+                        </p>
+                      </div>
+                    </div>
+
+                    <p class="text-sm">
+                      {{ item.reviewReply.message }}
+                    </p>
+                  </div>
+                }
+
+                @if (item.galleryImages?.length) {
+                  <div class="grid grid-cols-3 gap-2 md:w-88.5 w-full mb-4">
+                    @for (galleryItem of item.galleryImages; track $index) {
+                      <div class="group relative overflow-hidden rounded-xl">
+                        <img
+                          [src]="galleryItem.image"
+                          class="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
+                        />
+
+                        <div
+                          class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-xl"
+                        >
+                          <a
+                            [href]="galleryItem.image"
+                            class="image-popup after:absolute after:inset-0 after:z-1 rounded-xl"
+                          >
+                            <div
+                              class="absolute inset-0 flex justify-center items-center z-20 opacity-0 group-hover:opacity-100 transition duration-300"
+                            >
+                              <iconify-icon
+                                icon="lucide:zoom-in"
+                                class="text-white text-3xl relative z-30"
+                              ></iconify-icon>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                }
+
+                @if (!item.reviewReply) {
+                  <div class="flex items-center justify-between">
+                    <button
+                      type="button"
+                      class="py-1.5 px-4 text-xs border border-default-200 rounded-md hover:border-default-900 text-default-800 inline-flex items-center transition-all duration-300 hover:text-default-900"
+                    >
+                      <iconify-icon
+                        icon="lucide:corner-up-left"
+                        class="text-sm me-2"
+                      ></iconify-icon>
+                      Reply
+                    </button>
+
+                    <a
+                      class="text-xs py-1 text-default-800 inline-flex items-center"
+                      [routerLink]="[]"
+                    >
+                      <iconify-icon icon="lucide:info" class="text-sm me-1"></iconify-icon>
+
+                      <span class="hover:underline"> Report </span>
+                    </a>
+                  </div>
+                }
+              </div>
+            }
+
+            <nav class="flex items-center gap-x-1 pt-8 mt-2" aria-label="Pagination">
+              <div class="flex items-center gap-x-1">
+                <button
+                  type="button"
+                  class="min-h-9.5 min-w-9.5 flex justify-center items-center bg-default-200 text-default-800 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-600 dark:text-white dark:focus:bg-neutral-500"
+                  aria-current="page"
+                >
+                  1
+                </button>
+                <button
+                  type="button"
+                  class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+                >
+                  2
+                </button>
+              </div>
+            </nav>
+          </div>
+
+          <div
+            id="reviews-by-you"
+            class="hidden"
+            role="tabpanel"
+            aria-labelledby="reviews-by-you-tab"
+          >
+            @for (item of reviewbyyouData; track $index) {
+              <div class="border-b border-border py-6">
+                <div class="flex items-center justify-between mb-4 mt-2">
+                  <div class="flex items-center pe-4">
+                    <div class="rounded-md overflow-hidden size-28">
+                      <img [src]="item.image" class="bg-body-tertiary rounded" alt="Image" />
+                    </div>
+
+                    <div class="px-4">
+                      <div
+                        class="bg-info/10 text-info mb-2 text-xs inline-flex item-center font-medium px-2 py-0.5 rounded items-center"
+                      >
+                        {{ item.status }}
+                      </div>
+
+                      <div class="flex gap-1 pb-1 mb-2">
+                        @for (star of [1, 2, 3, 4, 5]; track $index) {
+                          @if (star <= item.rating) {
+                            <lucide-icon
+                              name="star"
+                              class="fill-warning text-warning size-3.5"
+                            ></lucide-icon>
+                          } @else {
+                            <lucide-icon name="star" class="text-warning size-3.5"></lucide-icon>
+                          }
+                        }
+                      </div>
+
+                      <p class="text-sm mb-2">
+                        Review on:
+                        <a
+                          class="hover:underline font-medium text-default-900 ms-1"
+                          [routerLink]="[]"
+                        >
+                          {{ item.reviewAddress }}
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="text-end">
+                    <div class="hs-dropdown relative inline-flex mb-6">
+                      <button
+                        type="button"
+                        class="hs-dropdown-toggle inline-flex items-center justify-center rounded-md border border-default-300 size-10 text-default-600 focus:outline-hidden hover:border-default-900 dark:text-white"
+                        aria-haspopup="menu"
+                        aria-expanded="false"
+                        aria-label="Share"
+                      >
+                        <iconify-icon icon="lucide:more-vertical"></iconify-icon>
+                      </button>
+
+                      <div
+                        class="hs-dropdown-menu hidden transition-[opacity,margin] duration opacity-0 hs-dropdown-open:opacity-100 absolute z-20 min-w-45 bg-body-bg border-border shadow-custom rounded-lg mt-2 dark:bg-neutral-800 dark:border dark:border-neutral-700"
+                        role="menu"
+                        aria-orientation="vertical"
+                      >
+                        <div class="p-1 space-y-0.5">
+                          <a
+                            [routerLink]="[]"
+                            class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-default-800 hover:bg-default-100 focus:outline-hidden focus:bg-default-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                          >
+                            <lucide-icon name="square-pen" class="size-4"></lucide-icon>
+                            Edit
+                          </a>
+
+                          <a
+                            [routerLink]="[]"
+                            class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-default-800 hover:bg-default-100 focus:outline-hidden focus:bg-default-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                          >
+                            <lucide-icon name="archive" class="size-4"></lucide-icon>
+                            Move to archive
+                          </a>
+
+                          <a
+                            [routerLink]="[]"
+                            class="flex items-center gap-x-2 py-2 px-3 rounded-lg text-sm text-primary hover:bg-default-100 focus:outline-hidden focus:bg-default-100 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-neutral-300 dark:focus:bg-neutral-700"
+                          >
+                            <lucide-icon name="trash-2" class="size-4"></lucide-icon>
+                            Delete
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="text-xs">
+                      {{ item.reviewDate }}
+                    </div>
+                  </div>
+                </div>
+
+                <p class="text-sm mb-4">
+                  {{ item.reviewDescription }}
+                </p>
+
+                <div class="flex items-center">
+                  <button type="button" class="text-default-600 flex items-center">
+                    <iconify-icon icon="lucide:thumbs-up" class="text-base me-1"></iconify-icon>
+                    {{ item.likes }}
+                  </button>
+
+                  <div class="w-px h-5 bg-default-300 dark:bg-white/20 my-2 mx-4"></div>
+
+                  <button type="button" class="text-default-600 flex items-center">
+                    <iconify-icon icon="lucide:thumbs-down" class="text-base me-1"></iconify-icon>
+                    {{ item.dislikes }}
+                  </button>
+                </div>
+              </div>
+            }
+
+            <nav class="flex items-center gap-x-1 pt-8 mt-2" aria-label="Pagination">
+              <div class="flex items-center gap-x-1">
+                <button
+                  type="button"
+                  class="min-h-9.5 min-w-9.5 flex justify-center items-center bg-default-200 text-default-800 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-600 dark:text-white dark:focus:bg-neutral-500"
+                  aria-current="page"
+                >
+                  1
+                </button>
+                <button
+                  type="button"
+                  class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+                >
+                  2
+                </button>
+                <button
+                  type="button"
+                  class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10"
+                >
+                  3
+                </button>
+              </div>
+            </nav>
+          </div>
+        </div>

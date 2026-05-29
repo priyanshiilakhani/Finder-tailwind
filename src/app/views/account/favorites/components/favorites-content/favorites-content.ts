@@ -1,28 +1,26 @@
-import { SwiperDirective } from '@/app/directive/swiper-directive';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { register } from 'swiper/element/bundle';
-import { Pagination } from 'swiper/modules';
+import { realEstateListingData } from '../../data';
 import { SwiperOptions } from 'swiper/types';
-import { realEstateData } from '../../data';
-
-register();
+import { Navigation, Pagination } from 'swiper/modules';
+import { SwiperDirective } from '@/app/directive/swiper-directive';
+import { LucideAngularModule } from "lucide-angular";
 
 @Component({
-  selector: 'real-estate-vendor-properties',
-  imports: [RouterLink, SwiperDirective],
-  templateUrl: './properties.html',
+  selector: 'app-favorites-content',
+  imports: [RouterLink, SwiperDirective, LucideAngularModule],
+  templateUrl: './favorites-content.html',
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
   
-export class Properties {
-  realEstateData = realEstateData;
+export class FavoritesContent {
+  realEstateListingData = realEstateListingData;
   getSwiperConfig(index: number): SwiperOptions {
     return {
-      modules: [Pagination],
+      modules: [Pagination, Navigation],
       pagination: {
-        el: `.properties-pagination-${index}`,
+        el: `.favorites-pagination-${index}`,
         clickable: true,
       },
       navigation: {

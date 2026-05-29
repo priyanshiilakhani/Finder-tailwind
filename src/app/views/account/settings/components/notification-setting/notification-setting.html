@@ -1,0 +1,64 @@
+@for (item of notificationPreferenceData; track $index; let first = $first) {
+  <div
+    class="border-b border-border flex justify-between items-center flex-wrap gap-2"
+    [class]="first ? 'pb-6' : 'py-6'"
+  >
+    <div class="mb-2">
+      <h3 class="text-default-900 font-semibold mb-2">{{ item.title }}</h3>
+
+      <p class="text-sm pb-1">
+        @if (item.favoriteLink) {
+          {{ item.description.split('Favorites')[0] }}
+
+          <a class="underline hover:no-underline" routerLink="/account/favorites"> Favorites </a>
+        } @else {
+          {{ item.description }}
+        }
+      </p>
+    </div>
+
+    <div class="flex gap-12 mb-2">
+      <div class="flex items-center gap-2">
+        <label [for]="item.emailId" class="text-default-900 text-sm"> Email </label>
+
+        <label [for]="item.emailId" class="relative inline-block w-11 h-6 cursor-pointer">
+          <input
+            type="checkbox"
+            [id]="item.emailId"
+            class="peer sr-only"
+            [checked]="item.emailChecked"
+          />
+
+          <span
+            class="absolute inset-0 bg-default-200 rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-success dark:bg-neutral-700 dark:peer-checked:bg-success peer-disabled:opacity-50 peer-disabled:pointer-events-none"
+          ></span>
+
+          <span
+            class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 bg-white rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full dark:bg-neutral-400 dark:peer-checked:bg-white"
+          ></span>
+        </label>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <label [for]="item.phoneId" class="text-default-900 text-sm"> Phone </label>
+
+        <label [for]="item.phoneId" class="relative inline-block w-11 h-6 cursor-pointer">
+          <input
+            type="checkbox"
+            [id]="item.phoneId"
+            class="peer sr-only"
+            [checked]="item.phoneChecked"
+          />
+
+          <span
+            class="absolute inset-0 bg-default-200 rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-success dark:bg-neutral-700 dark:peer-checked:bg-success peer-disabled:opacity-50 peer-disabled:pointer-events-none"
+          ></span>
+
+          <span
+            class="absolute top-1/2 start-0.5 -translate-y-1/2 size-5 bg-white rounded-full shadow-xs transition-transform duration-200 ease-in-out peer-checked:translate-x-full dark:bg-neutral-400 dark:peer-checked:bg-white"
+          ></span>
+        </label>
+      </div>
+    </div>
+  </div>
+}

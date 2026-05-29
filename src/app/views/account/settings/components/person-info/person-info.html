@@ -1,0 +1,221 @@
+<div class="flex flex-col gap-6">
+  <div class="bg-warning/10 rounded-md h-full p-6 flex items-center mb-2">
+    <div
+      class="relative shrink-0 w-24 h-24"
+      role="progressbar"
+      aria-label="Warning progress"
+      aria-valuenow="65"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      <svg class="w-full h-full transform -rotate-90" viewBox="0 0 96 96">
+        <circle
+          cx="48"
+          cy="48"
+          r="44"
+          stroke="rgba(255,255,255)"
+          stroke-width="8"
+          fill="transparent"
+        />
+        <circle
+          cx="48"
+          cy="48"
+          r="44"
+          stroke="currentColor"
+          stroke-width="8"
+          fill="transparent"
+          stroke-dasharray="276.46"
+          stroke-dashoffset="96.76"
+          class="text-warning transition-all duration-300"
+        />
+      </svg>
+      <h5
+        class="absolute inset-0 flex items-center justify-center text-default-900 font-semibold text-xl"
+      >
+        65%
+      </h5>
+    </div>
+
+    <div class="ps-6">
+      <h3 class="text-default-900 font-semibold pb-1 mb-2">Complete your profile</h3>
+      <ul class="text-sm flex md:flex-row flex-col gap-2">
+        <li class="flex items-center me-4">
+          <iconify-icon icon="lucide:plus" class="me-2"></iconify-icon>
+          Add the languages you speak
+        </li>
+
+        <li class="flex items-center me-4">
+          <iconify-icon icon="lucide:plus" class="me-2"></iconify-icon>
+          Verify your email
+        </li>
+
+        <li class="flex items-center me-4">
+          <iconify-icon icon="lucide:plus" class="me-2"></iconify-icon>
+          Add date of birth
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="mb-2 flex md:items-center">
+    <div>
+      <div class="relative group block rounded-full overflow-hidden md:size-30.5 size-17.5">
+        <img
+          src="assets/img/account/avatar-lg.jpg"
+          alt=""
+          class="md:size-30.5 size-17.5 bg-cover object-cover"
+        />
+        <div
+          class="absolute inset-0 flex justify-center items-center text-default-900 opacity-0 group-hover:opacity-100 transition duration-300"
+        >
+          <a
+            [routerLink]="[]"
+            class="size-8 z-20 bg-body-bg text-default-800 rounded-md flex justify-center items-center hover:bg-default-100"
+          >
+            <lucide-icon name="trash-2" class="size-4 relative z-20"></lucide-icon>
+          </a>
+          <div class="absolute inset-0 bg-black opacity-20 z-10"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="md:ps-6 ps-4">
+      <p class="text-sm mb-4" style="max-width: 440px">
+        Your profile photo will appear on your profile and directory listing. PNG or JPG no bigger
+        than 1000px wide and tall.
+      </p>
+      <button
+        type="button"
+        class="py-1.5 px-4 text-xs border font-semibold border-default-200 rounded-md hover:border-default-900 text-default-800 inline-flex items-center transition-all duration-300 hover:text-default-900"
+      >
+        <iconify-icon icon="lucide:refresh-ccw" class="text-sm me-2"></iconify-icon>Upload photo
+      </button>
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 grid-cols-1 gap-6">
+    <div>
+      <label class="block text-default-900 font-semibold mb-2">First name *</label>
+      <input
+        type="text"
+        id="fn"
+        required
+        value="Michael"
+        class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75"
+      />
+    </div>
+
+    <div>
+      <label class="block text-default-900 font-semibold mb-2">Last name *</label>
+      <input
+        type="text"
+        id="ln"
+        required
+        value="Williams"
+        class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75"
+      />
+    </div>
+
+    <div>
+      <label class="block text-default-900 font-semibold mb-2"
+        >Email address *
+        <div
+          class="bg-primary-hover/10 ms-2 text-primary text-xs inline-flex item-center font-medium px-2 py-0.5 rounded items-center"
+        >
+          Verify email
+        </div>
+      </label>
+      <input
+        type="text"
+        id="email"
+        required
+        value="m.williams@example.com"
+        class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75"
+      />
+    </div>
+
+    <div>
+      <label class="block text-default-900 font-semibold mb-2"
+        >Phone number *
+        <div
+          class="bg-success ms-2 text-white text-xs inline-flex item-center font-medium px-2 py-0.5 rounded items-center"
+        >
+          Verified
+        </div>
+      </label>
+      <input
+        type="tel"
+        id="phone"
+        #phoneInput
+        required
+        value="(212) 555-7890"
+        class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75"
+      />
+    </div>
+
+    <div>
+      <label class="block text-default-900 font-semibold mb-2">Languages you speak</label>
+      <select
+        required
+        placeholder="Select language"
+        class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75"
+      >
+        <option value="">Select language</option>
+        <option value="English">English</option>
+        <option value="Spanish">Spanish</option>
+        <option value="French">French</option>
+        <option value="German">German</option>
+        <option value="Italian">Italian</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="block text-default-900 font-semibold mb-2">Date of birth</label>
+      <input
+        id="datepicker"
+        type="text"
+        mwlFlatpickr
+        [options]="flatPickrOptions"
+        placeholder="Choose date"
+        class="w-full bg-transparent ps-10 border border-default-300 text-sm dark:border-white/20 rounded-md text-default-400 placeholder-default-400"
+      />
+    </div>
+
+    <div class="md:col-span-2 col-span-1">
+      <label class="block text-default-900 font-semibold mb-2">Address *</label>
+      <input
+        type="text"
+        id="address"
+        required
+        value="New York, Brooklyn"
+        class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75"
+      />
+    </div>
+
+    <div class="md:col-span-2 col-span-1 mb-6 pb-2">
+      <label class="block text-default-900 font-semibold mb-2">Information about you</label>
+      <textarea
+        id="Information"
+        rows="6"
+        required
+        class="w-full rounded-lg border border-default-300 dark:border-white/20 bg-transparent px-4.5 py-2.75"
+      >
+Extensive experience in rentals and a vast database means I can quickly find the options that are right for you. Looking for a seamless and exciting rental experience? Contact me today - I promise it won't be boring! Your perfect home is just a call away. </textarea
+      >
+    </div>
+  </div>
+</div>
+
+<div class="flex gap-4">
+  <a
+    class="rounded-md bg-default-100 hover:bg-default-200 text-default-900 py-3.5 px-6 font-semibold transition-all duration-300"
+    routerLink="/account/profile"
+    >Cancel</a
+  >
+  <button
+    type="submit"
+    class="py-3.5 px-6 rounded-md bg-default-800 text-body-bg hover:bg-default-900 font-semibold transition-all duration-300"
+  >
+    Save changes
+  </button>
+</div>
