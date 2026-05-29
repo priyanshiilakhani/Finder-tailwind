@@ -14,6 +14,7 @@ register();
   styles: ``,
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class Features {
   featureCardData = featureCardData;
   constructor(private sanitizer: DomSanitizer) {}

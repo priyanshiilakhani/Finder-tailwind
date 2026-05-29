@@ -7,4 +7,5 @@ import { LucideAngularModule } from "lucide-angular";
   templateUrl: './hero.html',
   styles: ``,
 })
+
 export class Hero {}

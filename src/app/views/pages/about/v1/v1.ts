@@ -16,4 +16,5 @@ import { Footer } from "@app/components/footer/footer/footer";
   templateUrl: './v1.html',
   styles: ``,
 })
+
 export class V1 {}

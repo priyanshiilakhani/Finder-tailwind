@@ -15,6 +15,7 @@ register();
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class Partners {
   partnersData = partnersData;
   constructor(private sanitizer: DomSanitizer) {}

@@ -7,6 +7,7 @@ import { principlesData } from '../../data';
   templateUrl: './principles.html',
   styles: ``,
 })
+
 export class Principles {
   principlesData = principlesData;
 }

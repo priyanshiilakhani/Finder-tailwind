@@ -9,6 +9,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './partner-logos.html',
   styles: ``,
 })
+
 export class PartnerLogos {
   companyLogosData = companyLogosData;
   constructor(private sanitizer: DomSanitizer) {}

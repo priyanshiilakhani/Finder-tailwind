@@ -8,4 +8,5 @@ import { RouterLink } from "@angular/router";
   styles: ``,
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class Cta {}

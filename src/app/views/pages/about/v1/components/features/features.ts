@@ -8,6 +8,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   templateUrl: './features.html',
   styles: ``,
 })
+
 export class Features {
   featureData = featureData;
   constructor(private sanitizer: DomSanitizer) {}

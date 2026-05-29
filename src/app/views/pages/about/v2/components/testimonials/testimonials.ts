@@ -13,6 +13,7 @@ register();
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class Testimonials {
   testimonialsData = testimonialsData;
   swiperConfig: SwiperOptions = {

@@ -10,6 +10,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class InfoColumns {
   marketRatingsData = marketRatingsData;
   marketLinksData = marketLinksData;

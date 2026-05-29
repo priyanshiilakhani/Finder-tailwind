@@ -14,6 +14,7 @@ register()
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class BlogPosts {
   blogPostsData = blogPostsData;
   swiperConfig: SwiperOptions = {

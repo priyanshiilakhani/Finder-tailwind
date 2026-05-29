@@ -7,6 +7,7 @@ import { timelineData } from '../../data';
   templateUrl: './story.html',
   styles: ``,
 })
+
 export class Story {
   timelineData = timelineData;
 }

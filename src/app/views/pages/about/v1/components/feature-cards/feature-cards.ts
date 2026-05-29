@@ -9,4 +9,5 @@ import { GlightboxDirective } from "@/app/directive/glightbox.directive";
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class FeatureCards {}
