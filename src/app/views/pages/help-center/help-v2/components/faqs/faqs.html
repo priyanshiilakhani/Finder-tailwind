@@ -1,0 +1,45 @@
+<h2 class="pt-12 md:pb-4 pb-2 lg:my-4 mb-4 lg:text-2.5xl md:text-2xl text-xl text-default-900 font-semibold">
+  Popular FAQs
+</h2>
+
+<div class="hs-accordion-group">
+  @for (item of popularFaqData; track $index) {
+    <div
+      class="hs-accordion hs-accordion-active:border-b-default-200 bg-transparent border-b border-default-300 dark:border-white/20 group dark:hs-accordion-active:border-b-default-200"
+      [id]="'faqHeading-' + ($index + 1)"
+    >
+      <button
+        class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start font-semibold text-default-900 py-5 hover:underline"
+        aria-expanded="false"
+        [attr.aria-controls]="'faqCollapse-' + ($index + 1)"
+      >
+        {{ item.question }}
+
+        <iconify-icon
+          icon="lucide:chevron-down"
+          class="hs-accordion-active:hidden block text-default-800"
+          width="20"
+          height="20"
+        ></iconify-icon>
+
+        <iconify-icon
+          icon="lucide:chevron-up"
+          class="hs-accordion-active:block hidden text-default-800"
+          width="20"
+          height="20"
+        ></iconify-icon>
+      </button>
+
+      <div
+        [id]="'faqCollapse-' + ($index + 1)"
+        class="hs-accordion-content hidden w-full overflow-hidden transition-[height] mb-4 duration-300"
+        role="region"
+        [attr.aria-labelledby]="'faqHeading-' + ($index + 1)"
+      >
+        <p class="text-sm">
+          {{ item.answer }}
+        </p>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,136 @@
+<section class="mb-12 lg:pb-12 md:pb-8">
+  <div class="container">
+    <ul class="flex md:gap-4 gap-2 lg:mb-12 mb-10">
+      <li>
+        <a
+          [routerLink]="[]"
+          class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-900 bg-default-100 dark:bg-white/3 text-sm font-semibold"
+          >For tenants</a
+        >
+      </li>
+
+      <li>
+        <a
+          [routerLink]="[]"
+          class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-300 dark:border-white/20 hover:border-default-900 transition-all duration-300 text-sm font-semibold"
+          >For hosts</a
+        >
+      </li>
+    </ul>
+
+    <div class="grid md:grid-cols-12 grid-cols-1 md:gap-0 gap-8">
+      <div class="lg:col-span-3 md:col-span-4 col-span-1">
+        <h2 class="md:pb-6 pb-4 text-xl text-default-900 font-semibold border-b border-border">
+          Help topics
+        </h2>
+
+        <div>
+          <nav
+            class="flex flex-col gap-1 pt-6 pe-6"
+            aria-label="Tabs"
+            role="tablist"
+            aria-orientation="horizontal"
+          >
+            @for (item of supportTabData; track $index) {
+              <button
+                type="button"
+                class="hs-tab-active:font-semibold hs-tab-active:bg-default-100 py-2.5 px-4 w-full rounded inline-flex items-center font-semibold text-default-900"
+                [class.active]="item.isActive"
+                [class.text-start]="item.customClass === 'text-start'"
+                [id]="item.buttonId"
+                [attr.aria-selected]="item.isActive ? 'true' : 'false'"
+                [attr.data-hs-tab]="item.tabTarget"
+                [attr.aria-controls]="item.ariaControls"
+                role="tab"
+              >
+                {{ item.title }}
+              </button>
+            }
+          </nav>
+        </div>
+      </div>
+
+      <div class="lg:col-span-9 md:col-span-8 col-span-1">
+        <div id="accommodation" role="tabpanel" aria-labelledby="accommodation-tab">
+          <h2
+            class="md:pb-6 pb-4 md:ps-6 text-xl text-default-900 font-semibold border-b border-border"
+          >
+            Accommodation
+          </h2>
+
+          <app-accommodation />
+        </div>
+
+        <div id="booking" class="hidden" role="tabpanel" aria-labelledby="booking-tab">
+          <h2
+            class="md:pb-6 pb-4 md:ps-6 text-xl text-default-900 font-semibold border-b border-border"
+          >
+            Booking
+          </h2>
+          <app-booking />
+        </div>
+
+        <div id="payment" class="hidden" role="tabpanel" aria-labelledby="payment-tab">
+          <h2
+            class="md:pb-6 pb-4 md:ps-6 text-xl text-default-900 font-semibold border-b border-border"
+          >
+            Payment
+          </h2>
+
+          <app-payment />
+        </div>
+
+        <div id="after-booking" class="hidden" role="tabpanel" aria-labelledby="after-booking-tab">
+          <h2
+            class="md:pb-6 pb-4 md:ps-6 text-xl text-default-900 font-semibold border-b border-border"
+          >
+            After a booking
+          </h2>
+
+          <app-after-booking />
+        </div>
+
+        <div id="cancellation" class="hidden" role="tabpanel" aria-labelledby="cancellation-tab">
+          <h2
+            class="md:pb-6 pb-4 md:ps-6 text-xl text-default-900 font-semibold border-b border-border"
+          >
+            Cancellation, notice, exptension
+          </h2>
+
+          <app-cancellation />
+        </div>
+
+        <div id="regulations" class="hidden" role="tabpanel" aria-labelledby="regulations-tab">
+          <h2
+            class="md:pb-6 pb-4 md:ps-6 text-xl text-default-900 font-semibold border-b border-border"
+          >
+            Regulations
+          </h2>
+
+          <app-regulations />
+        </div>
+
+        <div id="insurances" class="hidden" role="tabpanel" aria-labelledby="insurances-tab">
+          <h2
+            class="md:pb-6 pb-4 md:ps-6 text-xl text-default-900 font-semibold border-b border-border"
+          >
+            Insurances
+          </h2>
+
+          <app-insurances />
+        </div>
+      </div>
+    </div>
+
+    <div class="pt-6 mt-4">
+      <h3 class="text-base font-semibold text-default-900 pb-1 mb-4">
+        Can't find an answer to your question?
+      </h3>
+      <a
+        class="bg-primary text-white py-3.5 px-6 rounded-md font-semibold inline-flex transition-all duration-300 ease-in-out hover:bg-primary-hover"
+        routerLink="/contact/v1"
+        >Contact us</a
+      >
+    </div>
+  </div>
+</section>

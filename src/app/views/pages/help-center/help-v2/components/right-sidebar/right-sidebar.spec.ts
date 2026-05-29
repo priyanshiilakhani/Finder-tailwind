@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HelpV1 } from './help-v1';
+import { RightSidebar } from './right-sidebar';
 
-describe('HelpV1', () => {
-  let component: HelpV1;
-  let fixture: ComponentFixture<HelpV1>;
+describe('RightSidebar', () => {
+  let component: RightSidebar;
+  let fixture: ComponentFixture<RightSidebar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HelpV1],
+      imports: [RightSidebar],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(HelpV1);
+    fixture = TestBed.createComponent(RightSidebar);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

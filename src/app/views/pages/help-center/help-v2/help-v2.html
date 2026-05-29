@@ -1,1 +1,100 @@
-<p>help-v2 works!</p>
+<app-navbar3 />
+
+<section class="mt-24 lg:mb-8 py-12">
+  <div class="container">
+    <div class="grid lg:grid-cols-12 grid-cols-1 lg:pb-12 md:pb-6 pb-0">
+      <div class="lg:col-span-8 col-span-1">
+        <h1
+          class="text-default-900 font-bold lg:text-4.8xl md:text-3.5xl text-3xl mb-6 md:text-start text-center"
+        >
+          How can we help you?
+        </h1>
+        <div class="border border-border rounded-md p-2 mb-6">
+          <form class="flex flex-col md:flex-row gap-2 p-1">
+            <div class="relative w-full">
+              <lucide-icon
+                name="search"
+                class="absolute start-1 top-1/2 -translate-y-1/2 text-default-500 size-5"
+              ></lucide-icon>
+              <input
+                type="search"
+                placeholder="What do you need help with?"
+                class="w-full ps-10 pe-3 py-3 text-base border-0 focus:ring-0 rounded-none bg-transparent"
+              />
+            </div>
+            <button
+              type="submit"
+              class="px-6 py-3.5 font-medium text-body-bg bg-default-800 hover:bg-default-900 rounded-md"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+
+        <div class="flex gap-2 fs-sm">
+          <span class="text-secondary text-sm me-2">Popular searches:</span>
+          <a
+            class="hover:underline text-default-800 hover:text-default-900 text-sm font-medium me-2"
+            [routerLink]="[]"
+            >Sell car</a
+          >
+          <a
+            class="hover:underline text-default-800 hover:text-default-900 text-sm font-medium me-2"
+            [routerLink]="[]"
+            >Buy car</a
+          >
+          <a
+            class="hover:underline text-default-800 hover:text-default-900 text-sm font-medium me-2"
+            [routerLink]="[]"
+            >Insurance</a
+          >
+          <a
+            class="hover:underline text-default-800 hover:text-default-900 text-sm font-medium me-2"
+            [routerLink]="[]"
+            >Legal issues</a
+          >
+        </div>
+
+        <help-v2-account-settings />
+
+        <help-v2-buying-car />
+
+        <help-v2-selling-car />
+
+        <help-v2-faqs />
+
+        <h2 class="pt-6 mt-4 mb-6 text-default-500">
+          Still have unanswered questions and need to get in touch?
+        </h2>
+
+        <a
+          class="bg-primary text-white py-3.5 px-6 rounded-md font-semibold inline-flex transition-all duration-300 ease-in-out hover:bg-primary-hover"
+          routerLink="/contact/v1"
+          >Contact us</a
+        >
+      </div>
+
+      <div class="lg:col-span-4">
+        <div class="lg:sticky lg:top-25">
+          <help-v2-right-sidebar />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-footer1 />
+
+<div class="lg:hidden text-center fixed lg:z-0 z-20 bottom-0 inset-x-0">
+  <button
+    type="button"
+    class="pt-3.5 px-4.5 pb-4.5 w-full inline-flex justify-center items-center text-start bg-default-900 text-body-bg font-medium align-middle hover:bg-default-950 focus:outline-hidden"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    aria-controls="accountSidebar"
+    aria-label="Toggle navigation"
+    data-hs-overlay="#accountSidebar"
+  >
+    <iconify-icon icon="lucide:message-circle-more" class="me-2 text-body-bg"></iconify-icon> Chat
+  </button>
+</div>

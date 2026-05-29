@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HelpV2 } from './help-v2';
 
 describe('HelpV2', () => {

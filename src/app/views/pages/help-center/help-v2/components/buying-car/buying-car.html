@@ -1,0 +1,23 @@
+<h2
+  class="pt-12 md:pb-4 pb-2 lg:my-4 mb-4 lg:text-2.5xl md:text-2xl text-xl text-default-900 font-semibold"
+>
+  Buying a car
+</h2>
+
+<div class="grid md:grid-cols-2 grid-cols-1 gap-6">
+  @for (card of supportCards; track card.title) {
+    <div class="group">
+      <a [routerLink]="card.link">
+        <div class="md:p-8 p-6 bg-info/10 rounded-md !h-full">
+          <h3
+            class="mb-4 relative inline-block text-xl text-default-900 font-semibold after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-100"
+          >
+            {{ card.title }}
+          </h3>
+
+          <p>{{ card.description }}</p>
+        </div>
+      </a>
+    </div>
+  }
+</div>
