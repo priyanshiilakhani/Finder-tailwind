@@ -1,0 +1,31 @@
+<section class="lg:py-12 md:pt-6 pt-4 pb-12 lg:my-4">
+    <div class="container">
+        <h2 class="lg:mb-12 md:mb-10 mb-7 text-default-900 font-semibold lg:text-4.5xl md:text-3.5xl text-2.5xl">Finder story</h2>
+        <div class="overflow-auto pb-4">
+
+            <div class="lg:grid lg:grid-cols-4 flex gap-6">
+
+                @for (item of timelineData; track $index) {
+                <div class="min-w-55">
+                    <div class="flex items-center gap-4">
+                        <div class="border border-info text-info py-3 inline-flex font-semibold px-6 text-sm rounded-full">
+                            {{ item.year }}
+                        </div>
+
+                        <div class="w-full border-t border-default-300 dark:border-white/20 me-n2"></div>
+                    </div>
+
+                    <h3 class="pt-4 mt-4 pb-1 mb-2 text-xl text-default-900 font-semibold">
+                        {{ item.title }}
+                    </h3>
+
+                    <p>
+                        {{ item.description }}
+                    </p>
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -64,7 +64,8 @@
 
                         <div class="flex gap-1">
                             @for (star of [1, 2, 3, 4, 5]; track $index) {
-                            @if (star <= item.rating) { <lucide-icon name="star" class="fill-warning text-warning size-3.5"></lucide-icon>
+                            @if (star <= item.rating) { 
+                                <lucide-icon name="star" class="fill-warning text-warning size-3.5"></lucide-icon>
                                 } @else {
                                 <lucide-icon name="star" class="text-warning size-3.5"></lucide-icon>
                                 }

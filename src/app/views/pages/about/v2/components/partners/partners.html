@@ -1,0 +1,34 @@
+<section class="lg:py-12 md:pt-6 pt-4 pb-12 lg:my-4">
+    <div class="container">
+        <h2 class="lg:text-4.5xl md:text-3.5xl text-2.5xl font-semibold text-default-900 lg:mb-12 md:mb-10 mb-8">Top partners</h2>
+
+        <div class="swiper">
+            <swiper-container class="mb-12" [config]="swiperConfig" init="false">
+
+                @for (partner of partnersData; track $index) {
+
+                <swiper-slide class="h-auto border border-border rounded-lg">
+                    <div class="md:p-2 p-0" [routerLink]="[]">
+
+                        <div class="text-center p-6">
+
+                            <div class="inline-block text-default-900 lg:w-55 md:w-41.5 w-55" [innerHTML]="getSafeSvg(partner.logoSvg)">
+                            </div>
+
+                            <p class="pt-2 text-sm">
+                                {{ partner.description }}
+                            </p>
+
+                        </div>
+
+                    </div>
+                </swiper-slide>
+
+                }
+            </swiper-container>
+
+            <!-- Pagination (Bullets) -->
+            <div id="partners-pagination" class="swiper-pagination position-static mt-3"></div>
+        </div>
+    </div>
+</section>
