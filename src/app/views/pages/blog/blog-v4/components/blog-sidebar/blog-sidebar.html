@@ -1,0 +1,94 @@
+<!-- Sidebar -->
+<div id="blogSidebar" class="hs-overlay lg:z-0 z-30  [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-0 w-[350px] 
+                            hs-overlay-open:translate-x-0 translate-x-full transition-all duration-300 transform h-full hidden lg:sticky lg:top-10 fixed end-0 bottom-0 bg-white lg:border-0 border-e border-gray-200" role="dialog" tabindex="-1" aria-label="Sidebar">
+    <div class="relative flex flex-col h-full max-h-full">
+        <!-- Header -->
+        <header class="lg:hidden flex p-6 justify-between items-center gap-x-2 border-b border-default-200 lg:border-none">
+            <h4 class="text-xl text-default-900 font-semibold">Sidebar</h4>
+
+            <div class="lg:hidden -me-2">
+                <!-- Close Button -->
+                <button type="button" class="flex justify-center items-center gap-x-3 size-6 bg-white border border-gray-200 text-sm text-gray-600 hover:bg-gray-100 rounded-full disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden focus:bg-gray-100" data-hs-overlay="#blogSidebar">
+                    <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                    <span class="sr-only">Close</span>
+                </button>
+                <!-- End Close Button -->
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Body -->
+        <div class="lg:p-0 p-6 lg:sticky lg:h-auto lg:top-26 h-[calc(100vh-64px)] overflow-y-auto" data-simplebar>
+            <h4 class="mb-4 text-xl text-default-900 font-semibold">Categories</h4>
+
+            <ul class="flex flex-col gap-1 mb-6 pb-4">
+
+                @for (item of topicsData; track $index) {
+                <li>
+                    <a [routerLink]="[]" class="flex justify-between items-center relative py-1 text-sm text-body-color" [class.font-semibold]="item.isAllTopics" [class.font-normal]="!item.isAllTopics">
+                        <span class="hover:underline">{{ item.title }}</span>
+
+                        <span class="text-xs text-default-500">
+                            ({{ item.count }})
+                        </span>
+                    </a>
+                </li>
+                }
+
+                <div [class.hidden]="!showMore" id="commentsCollapse">
+
+                    @for (item of moreTopicsData; track $index) {
+                    <li>
+                        <a [routerLink]="[]" class="flex justify-between items-center relative font-normal py-1 text-sm text-body-color">
+                            <span class="hover:underline">{{ item.title }}</span>
+
+                            <span class="text-xs text-default-500">
+                                ({{ item.count }})
+                            </span>
+                        </a>
+                    </li>
+                    }
+
+                </div>
+
+                <div class="nav">
+                    <div class="flex">
+                        <button class="w-full text-default-900 inline-flex items-center text-start text-sm font-medium pb-3 hover:underline" type="button" (click)="toggleTopics()" [attr.aria-expanded]="showMore" aria-controls="commentsCollapse">
+                            {{ showMore ? 'Show less' : 'Show more' }}
+
+                            <iconify-icon icon="lucide:chevron-down" [class.rotate-180]="showMore" class="transition-all duration-300"></iconify-icon>
+                        </button>
+                    </div>
+                </div>
+
+            </ul>
+
+            <div class="bg-default-100 dark:bg-white/3 rounded-md p-6">
+                <div class="relative mx-auto mb-2" style="width: 40px">
+                    <div class="ratio bg-secondary" style="--fn-aspect-ratio: calc(33 / 40 * 100%); -webkit-clip-path: url(#mask); clip-path: url(#mask)">
+                        <img src="assets/img/blog/v4/subscribe.jpg" alt="Image">
+                    </div>
+
+                    <svg class="absolute" xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 40 33" fill="none">
+                        <defs>
+                            <clipPath id="mask" clipPathUnits="objectBoundingBox" transform="scale(0.025, 0.0303030303)">
+                                <path d="M28.6582 0.00077145C25.3214 -0.0169982 22.1493 1.4433 20 3.98667C17.8641 1.42591 14.6831 -0.0385342 11.3417 0.00077145C5.07783 0.00077145 0 5.06077 0 11.3026C0 21.9992 18.7342 32.4433 19.4937 32.847C19.8001 33.051 20.1998 33.051 20.5063 32.847C21.2658 32.4433 40 22.1505 40 11.3026C40 5.06077 34.9221 0.00077145 28.6582 0.00077145Z"></path>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+
+                <h4 class="mb-4 text-default-900 font-semibold text-center">Stay updated with Finder</h4>
+                <form class="flex flex-col gap-4 needs-validation" novalidate="">
+                    <input type="email" class="w-full border border-border rounded-md focus:ring-0 placeholder-default-500 text-sm bg-body-bg" placeholder="Your email" aria-label="Email input" required="">
+                    <button type="submit" class="py-2.5 px-3.5 rounded text-sm font-semibold w-full bg-info text-white">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <!-- End Body -->
+    </div>
+</div>
+<!-- End Sidebar -->

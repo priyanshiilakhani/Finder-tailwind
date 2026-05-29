@@ -1,0 +1,57 @@
+<section class="lg:py-12 md:py-8 pt-2 pb-4 lg:my-4">
+    <div class="container">
+        <div class="flex items-center justify-between pb-4 flex-wrap md:mb-4 mb-2 gap-4">
+            <h2 class="text-default-900 font-semibold lg:text-3.5xl md:text-2.5xl text-2xl">Recent posts</h2>
+
+            <div class="flex gap-3 md:gap-6 lg:-ms-2 ms-0">
+                <div class="w-51.25">
+                    <select class="w-full border-0 rounded-none ps-0 text-default-700 focus:ring-0 focus:outline-none bg-transparent">
+                        <option value="All">All categories</option>
+                        <option value="Home improvement">Home improvement</option>
+                        <option value="Contractor advice">Contractor advice</option>
+                        <option value="DIY projects">DIY projects</option>
+                        <option value="Renovation trends" selected>Renovation trends</option>
+                    </select>
+                </div>
+
+                <div class="relative w-31.25">
+                    <iconify-icon icon="lucide:arrow-down-up" class="absolute top-1/2 start-0 -translate-y-1/2 z-10"></iconify-icon>
+                    <select class="w-full border-0 rounded-none ps-4 pe-0 text-default-700 focus:ring-0 focus:outline-none ms-2 items-center flex bg-transparent">
+                        <option value="Newest">Newest</option>
+                        <option value="Popular" selected>Popular</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6">
+
+            @for (blog of blogsData; track $index) {
+
+            <div class="group relative rounded-md overflow-hidden">
+                <a [routerLink]="[]">
+
+                    <div class="rounded-md overflow-hidden size-full">
+
+                        <img [src]="blog.image" alt="Category image" class="size-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
+
+                        <div class="p-4 absolute bottom-0 start-0 z-10">
+                            <h3 class="text-xl font-semibold text-white">
+                                <a class="group-hover:underline text-white" [routerLink]="[]">
+                                    {{ blog.title }}
+                                </a>
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <span class="bg-gradient-to-t from-[#212a36]/75 to-transparent absolute start-0 top-30 h-full w-full"></span>
+
+                </a>
+            </div>
+
+            }
+
+        </div>
+    </div>
+</section>

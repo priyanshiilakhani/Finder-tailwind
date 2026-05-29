@@ -1,0 +1,46 @@
+<div class="mb-6 flex justify-between items-center">
+    <h2 class="lg:text-2.5xl md:text-2xl text-2xl text-default-900 font-semibold">8 comments</h2>
+
+    <button type="button" class="py-2.5 px-5 rounded text-sm inline-flex items-center text-body-bg bg-default-900 font-semibold transition-all duration-300 hover:bg-default-950">
+        <iconify-icon icon="lucide:edit-3" class="me-2 text-sm"></iconify-icon>
+        Write comment
+    </button>
+</div>
+
+<div class="flex flex-col gap-6">
+    @for (item of commentsData; track $index) {
+    <div>
+        <div class="flex items-center gap-4 mb-2">
+            <span class="text-default-900 font-semibold">
+                {{ item.name }}
+            </span>
+
+            <span class="text-secondary text-xs">
+                {{ item.date }}
+            </span>
+        </div>
+
+        <p class="text-sm pb-2 mb-1">
+            {{ item.comment }}
+        </p>
+
+        <div class="flex items-center">
+            <button type="button" class="text-default-600 flex items-center">
+                <iconify-icon icon="lucide:thumbs-up" class="text-base me-1">
+                </iconify-icon>
+
+                {{ item.likes }}
+            </button>
+
+            <div class="w-px h-5 bg-default-300 dark:bg-white/20 my-2 mx-4"></div>
+
+            <button type="button" class="text-default-600 flex items-center">
+                <iconify-icon icon="lucide:thumbs-down" class="text-base me-1">
+                </iconify-icon>
+
+                {{ item.dislikes }}
+            </button>
+        </div>
+    </div>
+    }
+</div>

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { Principles } from './principles';
 
 describe('Principles', () => {

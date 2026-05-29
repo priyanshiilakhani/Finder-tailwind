@@ -1,1 +1,23 @@
-<p>blog-v4 works!</p>
+<app-navbar4 />
+<blog-v4-featured-posts />
+<section class="md:py-12 py-6 mt-6">
+    <div class="container">
+        <div class="grid lg:grid-cols-12 grid-cols-1 gap-6 lg:pb-12 mb-6">
+            <div class="lg:col-span-8 col-span-1">
+                <blog-v4-blog-list />
+            </div>
+
+            <div class="col-span-4 ms-auto w-80">
+                <blog-v4-blog-sidebar />
+            </div>
+        </div>
+    </div>
+</section>
+<blog-v4-cta />
+<app-footer3 />
+<div class="lg:hidden">
+    <button type="button" class="lg:static fixed w-full start-0 end-0 bottom-0 py-2 px-3 inline-flex justify-center items-center gap-x-2 text-start bg-gray-800 border border-gray-800 text-white text-sm font-medium shadow-2xs align-middle hover:bg-gray-950 focus:outline-hidden focus:bg-gray-900" aria-haspopup="dialog" aria-expanded="false" aria-controls="blogSidebar" aria-label="Toggle navigation" data-hs-overlay="#blogSidebar">
+        <iconify-icon icon="tabler:columns-2" height="18" width="18"></iconify-icon>
+        Sidebar
+    </button>
+</div>

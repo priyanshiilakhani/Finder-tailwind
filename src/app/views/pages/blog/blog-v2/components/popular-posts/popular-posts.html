@@ -1,0 +1,45 @@
+<section class="lg:pt-12 md:pt-6">
+    <div class="container">
+        <h2 class="pt-12 md:mb-4 pb-4 lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold">Popular posts</h2>
+
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-6">
+
+            @for (item of blogData; track $index) {
+            <div>
+                <a [routerLink]="item.link">
+                    <div class="flex gap-6 items-center md:flex-nowrap flex-wrap">
+
+                        <div>
+                            <div class="rounded-md overflow-hidden h-35 w-55">
+                                <img [src]="item.image" alt="Category image" class="w-55 h-35 object-cover transition-transform duration-500 rounded-md hover:scale-110 z-0">
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex items-center gap-2 text-secondary pb-2 mb-1">
+
+                                <a class="text-secondary text-xs uppercase hover:text-default-900 ms-2" [routerLink]="item.link">
+                                      {{ item.category }}
+                                </a>
+
+                                <div class="bg-default-300 dark:bg-white/20 w-px h-4 m-1"></div>
+
+                                <span class="text-sm">
+                                    {{ item.date }}
+                                </span>
+                            </div>
+
+                            <a class="hover:underline text-default-900 font-semibold text-xl" [routerLink]="item.link">
+
+                                {{ item.title }}
+                            </a>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+            }
+
+        </div>
+    </div>
+</section>

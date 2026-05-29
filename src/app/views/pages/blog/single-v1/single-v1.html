@@ -1,1 +1,29 @@
-<p>single-v1 works!</p>
+<app-navbar2 />
+
+<section class="lg:mt-20 mt-15 pt-6 md:pb-12 mb-6">
+    <div class="container">
+        <blog-single-v1-breadcrumb />
+
+        <div class="grid lg:grid-cols-12 grid-cols-1 gap-6">
+            <div class="lg:col-span-8 col-span-1">
+                <blog-single-v1-single-post />
+            </div>
+
+            <div class="lg:col-span-4">
+                <blog-single-v1-blog-sidebar />
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="lg:pb-28 md:pb-18 pb-12">
+    <blog-single-v1-blog-posts />
+</section>
+
+<app-footer />
+
+<div class="lg:hidden text-center fixed lg:z-0 z-20 bottom-0 inset-x-0">
+    <button type="button" class="pt-3.5 px-4.5 pb-4.5 w-full inline-flex justify-center items-center text-start bg-default-900 text-body-bg font-medium align-middle hover:bg-default-950 focus:outline-hidden" aria-haspopup="dialog" aria-expanded="false" aria-controls="blogSidebar" aria-label="Toggle navigation" data-hs-overlay="#blogSidebar">
+        <iconify-icon icon="tabler:columns-2" class="me-2 text-body-bg"></iconify-icon> Sidebar
+    </button>
+</div>

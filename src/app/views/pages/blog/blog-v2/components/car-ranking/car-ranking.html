@@ -1,0 +1,49 @@
+<section class="lg:pt-12 md:pt-6">
+    <div class="container">
+        <h2 class="pt-12 md:mb-4 pb-4 lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold">Finder car ranking</h2>
+        <div class="overflow-auto whitespace-nowrap mb-4 pb-4">
+            <ul class="flex md:gap-4 gap-2">
+                @for (item of carCategoriesData; track $index) {
+                <li>
+                    <a [routerLink]="[]" class="py-2.5 px-5 inline-flex rounded-full text-default-900 text-sm font-semibold transition-all duration-300 border" [class]="item.active 
+                    ? 'border-default-900 bg-default-100 dark:bg-white/3' 
+                    : 'border-default-300 dark:border-white/20 hover:border-default-900'">
+                        {{ item.title }}
+                    </a>
+                </li>
+                }
+            </ul>
+        </div>
+
+        <div class="grid md:grid-cols-2 grid-cols-1 bg-default-50 rounded-xl dark:bg-white/3">
+            <div class="rounded-tl-xl rounded-bl-xl !h-full md:block hidden">
+                <img src="assets/img/blog/v2/ranking.jpg" class="rounded-tl-xl rounded-bl-xl h-full object-cover" alt="Image">
+            </div>
+
+            <div class="md:p-12 p-6">
+                <div class="flex items-center justify-between gap-4 my-2">
+                    <h3 class="lg:text-2xl text-xl font-semibold text-default-900">Best small SUVs</h3>
+                    <span class="bg-primary py-1 px-2 text-xs text-white rounded font-semibold">Top 5</span>
+                </div>
+
+                <ol class="mb-4 lg:pb-1">
+                    @for (item of carListData; track $index) {
+                    <li class="flex justify-between gap-4 border-b py-4 border-border">
+                        <span class="text-sm font-semibold text-body-color">
+                            {{ ('0' + ($index + 1)).slice(-2) }}
+                        </span>
+
+                        <span class="text-default-900">
+                            {{ item }}
+                        </span>
+                    </li>
+                    }
+                </ol>
+
+                <a [routerLink]="[]" class="hover:underline flex items-center text-nowrap me-1 text-sm font-semibold">View all
+                    <iconify-icon icon="lucide:chevron-right" class="text-lg"></iconify-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

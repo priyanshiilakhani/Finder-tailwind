@@ -1,0 +1,68 @@
+<ul class="flex md:gap-4 gap-2 mb-6 pb-4 overflow-x-auto whitespace-nowrap">
+
+    @for (item of categoryData; track $index) {
+    <li>
+        <a [routerLink]="[]" class="py-2.5 px-5 inline-flex rounded-full text-default-900 text-sm font-semibold transition-all duration-300 border" [class]="item.active 
+                    ? 'border-default-900 bg-default-100 dark:bg-white/3' 
+                    : 'border-default-300 dark:border-white/20 hover:border-default-900'">
+            {{ item.title }}
+        </a>
+    </li>
+    }
+
+</ul>
+<div>
+    @for (item of blogData; track $index) {
+
+    <div class="grid md:grid-cols-12 grid-cols-1 md:gap-12 gap-6 lg:pb-4">
+
+        <div class="col-span-9 md:order-1 order-2">
+
+            <div class="flex items-center gap-1 text-default-500 mb-4">
+
+                <div class="relative flex flex-nowrap items-center">
+                    <div class="size-6 me-2">
+                        <img class="w-full h-full rounded-full object-cover" [src]="item.authorImage" alt="Avatar">
+                    </div>
+
+                    <a [routerLink]="[]" class="text-default-600 hover:text-default-900 font-semibold text-sm">
+                        {{ item.author }}
+                    </a>
+                </div>
+
+                <iconify-icon icon="lucide:dot"></iconify-icon>
+
+                <div class="text-sm">
+                    {{ item.date }}
+                </div>
+
+            </div>
+
+            <h3 class="text-xl font-semibold mb-4 text-default-900">
+                <a class="hover:underline" [routerLink]="item.link">
+                    {{ item.title }}
+                </a>
+            </h3>
+
+            <p class="mb-4">
+                {{ item.description }}
+            </p>
+
+            <a [routerLink]="[]" class="py-1 px-2 uppercase text-xs text-default-800 bg-default-100 dark:bg-white/3 rounded-md font-medium">
+                {{ item.category }}
+            </a>
+
+        </div>
+
+        <div class="col-span-3 md:order-2 order-1">
+            <div class="overflow-hidden rounded-md w-33">
+                <img [src]="item.image" class="rounded-md object-cover w-33 transition-transform duration-500 hover:scale-105" alt="Image">
+            </div>
+        </div>
+
+    </div>
+
+    <hr class="my-6 text-default-200 dark:text-white/20">
+    }
+    <blog-v4-pagination />
+</div>

@@ -1,0 +1,116 @@
+<div class="mb-4">
+    <a class="text-default-700 text-xs uppercase font-medium mb-4 inline-flex" [routerLink]="[]">Selling strategies</a>
+    <h1 class="md:text-2.5xl text-2xl font-semibold text-default-900 mb-6">How real estate drone photography can elevate your listing?</h1>
+
+    <div class="pb-6 flex justify-between items-center border-b border-border">
+        <div class="flex md:flex-row flex-col md:items-center text-sm md:gap-4 gap-2 md:mb-2">
+            <a class="font-semibold text-default-900" [routerLink]="[]">by Darrell Steward</a>
+            <span class="text-default-500">May 05, 2024</span>
+            <div class="h-6 w-0.25 bg-default-200 dark:bg-white/20 md:block hidden"></div>
+            <a class="font-normal text-default-500" href="#comments">8 comments</a>
+        </div>
+
+        <div class="flex items-center">
+            <div class="hs-tooltip [--placement:top] flex justify-end mb-3">
+                <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-10 rounded-full transition-all duration-300">
+                    <iconify-icon icon="lucide:instagram" class="size-4 text-default-900"></iconify-icon>
+                    <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
+                        Share on Instagram
+                    </span>
+                </button>
+            </div>
+
+            <div class="hs-tooltip [--placement:top] flex justify-end mb-3">
+                <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-10 rounded-full transition-all duration-300">
+                    <iconify-icon icon="lucide:facebook" class="size-4 text-default-900"></iconify-icon>
+                    <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
+                        Share on Facebook
+                    </span>
+                </button>
+            </div>
+
+            <div class="hs-tooltip [--placement:top] flex justify-end mb-3">
+                <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-10 rounded-full transition-all duration-300">
+                    <iconify-icon icon="lucide:link" class="size-4 text-default-900"></iconify-icon>
+                    <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md " role="tooltip">
+                        Copy link
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="md:mt-2 pt-6">
+        <p class="mb-4">In the competitive world of real estate, first impressions matter, and drone photography has become a game-changer for property listings. The use of aerial imagery captured by drones can significantly elevate the presentation of a property. Here's how real estate drone photography can make your listing stand out.</p>
+
+        <div class="pt-6 mb-4">
+            <img src="assets/img/blog/v1/single/01.jpg" class="rounded-md mb-2" alt="Image">
+            <p class="text-default-500 text-sm">Image source Freepik.com</p>
+        </div>
+
+        @for (item of benefitsData; track $index; let i = $index) {
+        <h2 class="lg:pt-6 pt-4 mb-4 text-xl text-default-900 font-semibold">
+            {{ i + 1 }}. {{ item.title }}
+        </h2>
+
+        <p class="mb-4">
+            {{ item.description }}
+        </p>
+        }
+
+        <div class="pt-6 mb-4">
+            <img src="assets/img/blog/v1/single/02.jpg" class="rounded-md mb-2" alt="Image">
+            <p class="text-default-500 text-sm">Image source Freepik.com</p>
+        </div>
+
+        <h2 class="lg:pt-6 pt-4 mb-4 text-xl text-default-900 font-semibold">Conclusion</h2>
+        <p class="mb-4">Incorporating drone photography into your real estate listings not only adds a touch of innovation but also provides potential buyers with a comprehensive and visually appealing overview of the property. It's an investment that can pay off by making your listings more attractive and memorable in the eyes of prospective buyers. So why settle for a worm's-eye view when you can soar above the competition with drone photography?</p>
+
+        <div class="md:py-6 py-4 border-b border-border">
+            <ul class="mb-4 flex-wrap flex gap-2">
+                @for (tag of blogCategoriesData; track $index) {
+                <li>
+                    <a [routerLink]="[]" class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-300 dark:border-white/20 hover:border-default-900 transition-all duration-300 text-sm font-semibold">
+                        {{ tag }}
+                    </a>
+                </li>
+                }
+            </ul>
+        </div>
+
+        <div class="border-b border-border py-4">
+            <div class="py-4">
+                <div class="rounded-full size-14 mb-4">
+                    <img src="assets/img/blog/v1/single/avatar.jpg" class="rounded-full" alt="Avatar">
+                </div>
+
+                <div class="flex items-center gap-6 mb-2">
+                    <h6 class="text-default-900 font-semibold">Darrell Steward</h6>
+                    <div class="flex gap-2">
+                        <a class="size-8 rounded bg-default-100 dark:bg-white/3 flex justify-center items-center transition-all duration-300 hover:bg-default-200" [routerLink]="[]" aria-label="Facebook">
+                            <iconify-icon icon="tabler:brand-facebook-filled" class="text-sm"></iconify-icon>
+                        </a>
+
+                        <a class="size-8 rounded bg-default-100 dark:bg-white/3 flex justify-center items-center transition-all duration-300 hover:bg-default-200" [routerLink]="[]" aria-label="Facebook">
+                            <iconify-icon icon="tabler:brand-linkedin-filled" class="text-sm"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <p class="text-sm">Real estate expert with over 10 years of experience, specializing in residential and commercial properties. The author of numerous articles on the real estate market, trends and investment strategies.</p>
+            </div>
+        </div>
+
+        <div class="pt-12 lg:mt-12 md:mt-4 mt-2">
+            <blog-single-v1-comments />
+
+            <div class="pt-6 mt-4">
+                <nav class="flex items-center gap-x-1" aria-label="Pagination">
+                    <div class="flex items-center gap-x-1">
+                        <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center bg-default-200 text-default-800 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-600 dark:text-white dark:focus:bg-neutral-500" aria-current="page">1</button>
+                        <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">2</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<section class="bg-default-100 dark:bg-white/3 lg:mt-20 mt-15 pt-8 pb-12">
+    <div class="container">
+        <ol class="flex flex-wrap items-center whitespace-nowrap lg:mb-4 pb-2 mb-2">
+            <li class="inline-flex items-center">
+                <a class="flex items-center text-sm font-medium text-default-700 hover:text-default-900 focus:outline-hidden" routerLink="/">
+                    Home
+                </a>
+                <iconify-icon icon="lucide:chevron-right" class="mx-2"></iconify-icon>
+            </li>
+
+            <li class="inline-flex items-center text-sm font-medium text-default-500/80 truncate" aria-current="page">
+                Blog layout v.2
+            </li>
+        </ol>
+
+        <div class="grid md:grid-cols-12 grid-cols-1 gap-6 lg:pb-12 pb-8">
+            <div class="md:col-span-7 col-span-1">
+                <a routerLink="/blog-single/v2">
+                    <div class="rounded-xl overflow-hidden mb-6">
+                        <img src="assets/img/blog/v2/featured.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-xl hover:scale-110 z-0">
+                    </div>
+
+                    <div class="flex items-center gap-2 text-secondary pb-2 mb-2">
+                        <a class=" text-secondary text-xs uppercase hover:text-default-900 ms-2" [routerLink]="[]">Electric vehicles</a>
+                        <div class="bg-default-300 dark:bg-white/20 w-px h-4 m-1"></div>
+                        <span class="text-sm">December 03, 2024</span>
+                    </div>
+
+                    <h2 class="lg:text-2.5xl md:text-2xl text-xl pb-2 mb-1">
+                        <a class="relative text-default-900 font-semibold after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-100" routerLink="/blog-single/v2">Kia EV9: The best electric car to buy in 2024?</a>
+                    </h2>
+
+                    <p>Combining cutting-edge electric vehicle technology with a bold, modern design. Its impressive electric range and fast-charging capabilities make it perfect for long-distance travel...</p>
+                </a>
+            </div>
+
+            <div class="md:col-span-5 col-span-1">
+                <div class="md:ps-6 lg:ms-4 md:border-s md:border-t-0 border-t md:pt-0 pt-6 border-border">
+
+                    <div class="flex flex-col gap-6 lg:pb-4 mb-12">
+
+                        @for (item of blogListData; track $index) {
+                        <div class="mt-2">
+                            <div class="flex items-center gap-2 text-secondary pb-2 mb-1">
+                                <a class="text-secondary text-xs uppercase hover:text-default-900" [routerLink]="[]">
+
+                                    {{ item.category }}
+                                </a>
+
+                                <div class="bg-default-300 dark:bg-white/20 w-px h-4 m-1"></div>
+
+                                <span class="text-sm">
+                                    {{ item.date }}
+                                </span>
+                            </div>
+
+                            <h3 class="text-xl">
+                                <a class="relative text-default-900 font-semibold after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-100" [routerLink]="item.blogLink">
+
+                                    {{ item.title }}
+                                </a>
+                            </h3>
+                        </div>
+                        }
+
+                    </div>
+
+                    <div class="rounded-md mt-auto bg-info/10">
+                        <div class="flex items-end justify-between gap-4 pt-4 ps-4">
+                            <h3 class="text-base font-semibold mb-4 text-default-900">Stay updated with Finder</h3>
+
+                            <div class="relative lg:max-w-67.25 max-w-32 -mt-10 lg:-me-12 -me-4 aspect-[269/82]">
+                                <img src="assets/img/blog/v2/subscription.png" alt="Image" class="w-full h-full object-contain" />
+                            </div>
+                        </div>
+
+                        <form class="px-4 pb-4">
+                            <input type="email" required placeholder="Your email" class="w-full mb-4 rounded-md border border-default-300 focus:ring-2 focus:ring-info focus:border-info px-4 py-2.25 text-sm bg-body-bg" />
+                            <button type="submit" class="w-full text-sm bg-info text-white font-medium py-2.5 rounded-md shadow hover:bg-info/90 transition">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

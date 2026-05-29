@@ -1,0 +1,48 @@
+<section class="lg:mt-15 mt-10 pt-12 md:mb-6 relative">
+    <div class="container">
+        <h1 class="lg:text-3.5xl md:text-2.5xl text-2xl mb-4 pb-4 text-default-900 font-semibold">Our blog</h1>
+
+        <div class="grid md:grid-cols-2 grid-cols-1 gap-6 lg:pb-16 md:pb-12 pb-10 border-b border-border">
+
+            @for (blog of featuredBlogsData; track $index) {
+            <div>
+                <a [routerLink]="blog.slug">
+                    <div class="overflow-hidden rounded-md w-full h-105 mb-6">
+                        <img [src]="blog.image" class="rounded-md mb-6 object-cover w-full h-105 transition-transform duration-500 hover:scale-105" alt="Image">
+                    </div>
+
+                    <div class="flex items-center gap-1 text-default-500 mb-4">
+
+                        <div class="relative flex flex-nowrap items-center">
+                            <div class="size-6 me-2 ms-1">
+                                <img class="w-full h-full rounded-full object-cover" [src]="blog.authorImage" alt="Avatar">
+                            </div>
+
+                            <a [routerLink]="[]" class="text-default-600 hover:text-default-900 font-semibold text-sm">
+                                {{ blog.authorName }}
+                            </a>
+                        </div>
+
+                        <iconify-icon icon="lucide:dot"></iconify-icon>
+
+                        <div class="text-sm">
+                            {{ blog.date }}
+                        </div>
+                    </div>
+
+                    <h3 class="md:text-2xl text-xl font-semibold mb-4 text-default-900">
+                        <a class="hover:underline" [routerLink]="blog.slug">
+                            {{ blog.title }}
+                        </a>
+                    </h3>
+
+                    <a [routerLink]="[]" class="py-1 px-2 uppercase text-xs text-default-800 bg-default-100 dark:bg-white/3 rounded-md font-medium">
+                        {{ blog.category }}
+                    </a>
+                </a>
+            </div>
+            }
+            
+        </div>
+    </div>
+</section>

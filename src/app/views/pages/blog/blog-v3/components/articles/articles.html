@@ -1,0 +1,46 @@
+<section class="py-12 lg:mt-12 md:mt-4">
+    <div class="container">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-12">
+
+            @for (section of blogSectionsData; track $index) {
+
+            <div class="flex flex-col gap-6">
+
+                <a [routerLink]="[]" class="text-xl font-semibold text-default-900 inline-flex items-center hover:underline">
+                    {{ section.heading }}
+
+                    <iconify-icon icon="lucide:chevron-right" class="ms-2"></iconify-icon>
+                </a>
+
+                @for (blog of section.blogs; track $index) {
+                <div>
+                    <a [routerLink]="[]">
+                        <div class="flex gap-4 items-center">
+                            <div class="rounded-md overflow-hidden size-24  flex-shrink-0">
+
+                                <img [src]="blog.image" alt="Category image" class="size-24 h-full object-cover transition-transform duration-500 rounded-md hover:scale-105 z-0">
+                            </div>
+
+                            <div>
+                                <h3 class="pb-1 mb-2">
+                                    <a class="text-base font-semibold text-default-900 hover:underline" [routerLink]="[]">
+                                        {{ blog.title }}
+                                    </a>
+                                </h3>
+                                <div class="text-xs text-secondary">
+                                    {{ blog.date }}
+                                </div>
+                            </div>
+                        </div>
+
+                    </a>
+                </div>
+                }
+
+            </div>
+
+            }
+
+        </div>
+    </div>
+</section>

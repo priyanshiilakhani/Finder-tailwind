@@ -1,0 +1,30 @@
+<div id="categoriesModal" class="hs-overlay hidden size-full fixed top-0 start-0 z-80 overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="categoriesModallabel">
+    categoriesModal
+    <div class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 md:max-w-lg md:w-full m-3 md:mx-auto min-h-[calc(100%-56px)] flex items-center">
+        <div class="w-full flex flex-col bg-body-bg border border-gray-200 shadow-2xs rounded-xl pointer-events-auto dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
+            <div class="flex justify-between items-center border-b border-default-200 px-6 py-5">
+                <h3 id="categoriesModallabel" class="font-semibold text-default-800 text-xl">
+                    Categories
+                </h3>
+                <button type="button" class="size-8" aria-label="Close" data-hs-overlay="#categoriesModal">
+                    <iconify-icon icon="lucide:x" height="20" width="20"></iconify-icon>
+                </button>
+            </div>
+
+            <div class="p-6">
+                <ul class="flex gap-2 flex-wrap">
+                    @for (item of categoryTagsData; track $index) {
+                    <li [class]="item.hideOn || ''">
+                        <a [routerLink]="[]" class="py-2.5 px-5 inline-flex rounded-full text-default-900 border" [class]="item.active
+                        ? 'border-default-900 bg-default-100 dark:bg-white/3 text-sm font-semibold transition-all duration-300'
+                        : 'border-default-300 dark:border-white/20 hover:border-default-900 text-sm font-semibold transition-all duration-300'
+                ">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

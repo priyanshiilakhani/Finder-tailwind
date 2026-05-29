@@ -1,0 +1,56 @@
+<div class="lg:ms-auto lg:w-75 w-full">
+    <div class="lg:sticky lg:top-25">
+        <div id="blogSidebar" class="hs-overlay lg:static [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-auto hs-overlay-open:translate-x-0 translate-x-full transition-all duration-300 transform fixed top-0 end-0 bottom-0 z-60 bg-body-bg lg:w-auto w-87" role="dialog" tabindex="-1" aria-label="Sidebar">
+            <div class="flex flex-col lg:h-full h-screen lg:sticky lg:top-0">
+                <header class="py-4 px-6 lg:px-0 lg:py-0 flex justify-between items-center gap-x-2 shrink-0">
+                    <a class="focus:outline-hidden focus:opacity-80 " [routerLink]="[]" aria-label="Brand">
+                        <h3 class="text-xl text-default-900 font-semibold lg:hidden block">Sidebar</h3>
+                    </a>
+
+                    <div class="lg:hidden -me-2">
+                        <button type="button" class="" data-hs-overlay="#blogSidebar">
+                            <iconify-icon icon="lucide:x" height="20" width="20"></iconify-icon>
+                            <span class="sr-only">Close</span>
+                        </button>
+                    </div>
+                </header>
+
+                <nav class="h-full overflow-y-auto flex-1" data-simplebar>
+                    <div class="w-full flex flex-col pt-2 px-6 lg:px-0 pb-4 lg:pb-0 lg:pt-6">
+                        <h3 class="text-xl text-default-900 font-semibold mb-2">Related posts</h3>
+
+                        @for (item of relatedPostsData; track $index) {
+                        <a class="py-4 inline-flex border-b border-border text-sm hover:underline text-default-700 hover:text-default-900 font-semibold" [routerLink]="[]">
+                            {{ item }}
+                        </a>
+                        }
+
+                        <div class="mt-6">
+                            <div class="bg-default-100 dark:bg-white/3 rounded-md p-6">
+                                <img src="assets/img/blog/v1/single/subscription.jpg" alt="Image" class="mb-4 rounded-md">
+                                <h4 class="mb-4 text-default-900 font-semibold">Subscribe to a free newsletter</h4>
+
+                                <ul class="pb-1 mb-4 flex flex-col gap-2">
+                                    @for (item of notificationsData; track $index) {
+                                    <label [for]="item.id" class="flex items-center text-default-700 text-sm cursor-pointer checked:text-default-800">
+
+                                        <input type="checkbox" [id]="item.id" class="w-4 h-4 bg-transparent checked:text-dark border-default-300 dark:border-white/20 rounded me-2">
+
+                                        {{ item.label }}
+                                    </label>
+                                    }
+                                </ul>
+
+                                <button type="button" class="py-2.5 px-5 bg-primary hover:bg-primary-hover rounded-md text-white text-sm font-medium w-full transition-all">Subscribe</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <blog-single-v1-top-offers />
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>

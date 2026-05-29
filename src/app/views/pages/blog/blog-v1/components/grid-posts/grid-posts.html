@@ -1,0 +1,93 @@
+<section class="lg:pb-12 md:pb-8 mb-12">
+    <div class="container">
+        <div class="flex justify-between gap-6 items-center mb-4">
+            <ul class="flex md:gap-4 gap-2">
+
+                <li class="md:block hidden">
+                    <a [routerLink]="[]" class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-900 bg-default-100 dark:bg-white/3 text-sm font-semibold">All</a>
+                </li>
+
+                <li class="md:block hidden">
+                    <a [routerLink]="[]" class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-300 dark:border-white/20 hover:border-default-900 transition-all duration-300 text-sm font-semibold">Real estate news</a>
+                </li>
+
+                <li class="md:block hidden">
+                    <a [routerLink]="[]" class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-300 dark:border-white/20 hover:border-default-900 transition-all duration-300 text-sm font-semibold">Buying tips</a>
+                </li>
+
+                <li class="lg:block hidden">
+                    <a [routerLink]="[]" class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-300 dark:border-white/20 hover:border-default-900 transition-all duration-300 text-sm font-semibold">Selling strategies</a>
+                </li>
+
+                <li class="md:block hidden">
+                    <a href="/blog-layout/v1#categoriesModal" class=" md:w-auto w-full bg-transparent text-default-900 py-2.5 px-5 text-sm rounded-md justify-center items-center inline-flex font-semibold" aria-haspopup="dialog" aria-expanded="false" aria-controls="categoriesModal" data-hs-overlay="#categoriesModal">More categories<iconify-icon icon="lucide:plus" class="text-sm ms-2"></iconify-icon></a>
+                </li>
+
+                <li>
+                    <button aria-haspopup="dialog" aria-expanded="false" aria-controls="categoriesModal" data-hs-overlay="#categoriesModal" type="button" class="md:hidden py-2.5 px-5 border border-border rounded-md text-sm font-semibold text-default-900 inline-flex justify-center items-center"><iconify-icon icon="lucide:list" class="text-base me-2"></iconify-icon>Categories</button>
+                </li>
+            </ul>
+
+            <div class="relative w-30">
+                <lucide-icon name="arrow-down-up" class="absolute top-1/2 start-0 -translate-y-1/2 z-10 size-4"></lucide-icon>
+                <select class="bg-transparent border-0 rounded-none text-sm ps-6 pe-1 w-full text-default-600">
+                    <option value="Most popular" selected>Newest</option>
+                    <option value="Most popular">popular</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 md:gap-6">
+            @for (item of blogsData; track $index) {
+            <div class="h-full mt-6">
+                <a [routerLink]="item.blogLink" class="group">
+                    <div class="rounded-md overflow-hidden mb-6">
+                        <img [src]="item.image" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
+                    </div>
+
+                    <div class="mb-3">
+                        <a class="text-secondary text-xs uppercase hover:text-default-900 transition-all duration-400" [routerLink]="[]">
+                            {{ item.category }}
+                        </a>
+                    </div>
+
+                    <h3 class="text-default-900 font-semibold text-xl mb-2">
+                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" [routerLink]="item.blogLink">
+                            {{ item.title }}
+                        </a>
+                    </h3>
+
+                    <p class="text-sm mb-4">
+                        {{ item.description }}
+                    </p>
+
+                    <div class="text-sm gap-3">
+                        <a class="font-semibold" [routerLink]="[]">
+                            by {{ item.author }}
+                        </a>
+
+                        <span class="text-secondary">
+                            {{ item.date }}
+                        </span>
+                    </div>
+                </a>
+            </div>
+            }
+        </div>
+
+        <nav class="flex items-center gap-x-1 pt-12 justify-center" aria-label="Pagination">
+            <div class="flex items-center gap-x-1">
+                <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center bg-default-200 text-default-800 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-300 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-600 dark:text-white dark:focus:bg-neutral-500" aria-current="page">1</button>
+                <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">2</button>
+                <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">3</button>
+                <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">4</button>
+                <div class="hs-tooltip inline-block">
+                    <button type="button" class="hs-tooltip-toggle group min-h-9.5 min-w-9.5 flex justify-center items-center text-default-400 hover:text-blue-600 p-2 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-neutral-500 dark:hover:text-blue-500 dark:focus:bg-white/10">
+                        <iconify-icon icon="lucide:ellipsis" class="text-lg"></iconify-icon>
+                    </button>
+                </div>
+                <button type="button" class="min-h-9.5 min-w-9.5 flex justify-center items-center text-default-800 hover:bg-default-100 py-2 px-3 text-sm rounded-lg focus:outline-hidden focus:bg-default-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10">8</button>
+            </div>
+        </nav>
+    </div>
+</section>

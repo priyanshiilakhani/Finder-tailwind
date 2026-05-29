@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PartnerLogos } from './partner-logos';
 
 describe('PartnerLogos', () => {
