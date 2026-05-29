@@ -1,0 +1,62 @@
+<section class="bg-default-100 dark:bg-white/3 py-12">
+  <div class="container">
+    <div class="lg:py-12 py-6 grid md:grid-cols-12 grid-cols-1 gap-6">
+      <div class="lg:col-span-3 md:col-span-4 col-span-1 lg:pe-0 md:pe-6">
+        <h2 class="mb-4 lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold">
+          Popular FAQs
+        </h2>
+        <p class="mb-4">Check out Finder helpful articles for answers and tips.</p>
+
+        <a
+          class="inline-flex items-center text-default-700 font-medium transition-all duration-300 ease-in-out hover:text-default-900"
+          routerLink="/help/topics/v1"
+        >
+          <span class="hover:underline me-1 text-sm">Help Center</span>
+          <iconify-icon icon="lucide:chevron-right" class="text-base mt-1"></iconify-icon>
+        </a>
+      </div>
+
+      <div class="lg:col-span-9 md:col-span-8 col-span-1">
+        <div class="lg:w-214 w-full ms-auto">
+          <div class="hs-accordion-group">
+            @for (item of faqData; track $index) {
+              <div
+                class="hs-accordion hs-accordion-active:border-b-default-200 bg-transparent border-b border-default-300 dark:border-white/20 group dark:hs-accordion-active:border-b-default-200"
+                [id]="'faqHeading-' + item.id"
+              >
+                <button
+                  class="hs-accordion-toggle inline-flex justify-between items-center gap-x-3 w-full text-start font-semibold text-default-900 py-5 hover:underline"
+                  aria-expanded="false"
+                  [attr.aria-controls]="'faqCollapse-' + item.id"
+                >
+                  {{ item.question }}
+
+                  <iconify-icon
+                    icon="lucide:chevron-down"
+                    class="hs-accordion-active:hidden block text-default-800"
+                    width="20" height="20"
+                    ></iconify-icon>
+
+                  <iconify-icon
+                    icon="lucide:chevron-up"
+                    class="hs-accordion-active:block hidden text-default-800"
+                    width="20" height="20"
+                    ></iconify-icon>
+                </button>
+
+                <div
+                  [id]="'faqCollapse-' + item.id"
+                  class="hs-accordion-content hidden w-full overflow-hidden transition-[height] mb-4 duration-300"
+                  role="region"
+                  [attr.aria-labelledby]="'faqHeading-' + item.id"
+                >
+                  <p class="text-sm">{{ item.answer }}</p>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

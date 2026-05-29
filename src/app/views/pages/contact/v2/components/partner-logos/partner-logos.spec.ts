@@ -1,16 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { V3 } from './v3';
 
-describe('V3', () => {
-  let component: V3;
-  let fixture: ComponentFixture<V3>;
+import { PartnerLogos } from './partner-logos';
+
+describe('PartnerLogos', () => {
+  let component: PartnerLogos;
+  let fixture: ComponentFixture<PartnerLogos>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [V3],
+      imports: [PartnerLogos],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(V3);
+    fixture = TestBed.createComponent(PartnerLogos);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
