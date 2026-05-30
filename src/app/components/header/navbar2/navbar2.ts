@@ -21,6 +21,7 @@ import { NavbarMenu } from "../navbar-menu/navbar-menu";
   templateUrl: './navbar2.html',
   styles: ``,
 })
+  
 export class Navbar2 {
   isSticky = false;
 

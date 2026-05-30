@@ -1,6 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterLink } from "@angular/router";
-import { sportsEventData } from '../../listings/components/data';
+import { sportsEventData } from '../../listings/data';
 import { SwiperOptions } from 'swiper/types';
 import { Navigation } from 'swiper/modules';
 import { LucideAngularModule } from "lucide-angular";

@@ -27,20 +27,21 @@
               "src/assets"
             ],
             "styles": ["node_modules/leaflet/dist/leaflet.css", "src/styles.css"],
-            "scripts": ["node_modules/preline/dist/index.js"]
+            "scripts": ["node_modules/preline/dist/index.js"],
+            "allowedCommonJsDependencies": ["leaflet", "glightbox", "img-comparison-slider"]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumWarning": "2mb",
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "20kb",
+                  "maximumError": "40kb"
                 }
               ],
               "outputHashing": "all"

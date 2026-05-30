@@ -1,5 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { eventCardData } from '../data';
+import { eventCardData } from '../../data';
 import { RouterLink } from '@angular/router';
 
 @Component({

@@ -1,131 +1,160 @@
 <div id="navbar" class="flex justify-start gap-1 items-center">
-    @for (menu of navbarMenuData; track $index) {
-    <div class="hs-dropdown [--trigger:click] relative inline-flex transition-all duration-300 py-2 overflow-visible">
-        <button type="button" class="hs-dropdown-toggle cursor-pointer text-default-900 flex items-center py-2 px-4.5 gap-1 rounded-full font-medium">
-            {{ menu.label }}
-            <iconify-icon icon="tabler:chevron-down" class="size-4.5">
-            </iconify-icon>
-        </button>
+  @for (menu of navbarMenuData; track $index) {
+    <div
+      class="hs-dropdown [--trigger:click] relative inline-flex transition-all duration-300 py-2 overflow-visible"
+    >
+      <button
+        type="button"
+        class="hs-dropdown-toggle cursor-pointer text-default-900 flex items-center py-2 px-4.5 gap-1 rounded-full font-medium"
+         [class.active]="isMenuActive(menu)"
+      >
+        {{ menu.label }}
+        <iconify-icon icon="tabler:chevron-down" class="size-4.5"> </iconify-icon>
+      </button>
 
-        @if (menu.label === 'Home') {
-        <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50">
+      @if (menu.label === 'Home') {
+        <div
+          class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50"
+        >
+          <div
+            class="relative p-3 border border-border hs-dropdown-open:ease-in hs-dropdown-open:opacity-100 hs-dropdown-open:scale-100 transition ease-out opacity-0 scale-90 duration-200 origin-center min-w-0 bg-body-bg shadow-custom rounded-xl overflow-visible"
+          >
+            <ul class="flex flex-col">
+              @for (item of menu.items; track $index) {
+                <li class="group z-30">
+                  <a
+                    [routerLink]="item.link"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    class="block text-default text-sm font-semibold rounded-md hover:bg-default-100 hover:dark:bg-white/3 p-2"
+                  >
+                    <span class="font-medium">
+                      {{ item.title }}
+                    </span>
 
-            <div class="relative p-3 border border-border hs-dropdown-open:ease-in hs-dropdown-open:opacity-100 hs-dropdown-open:scale-100 transition ease-out opacity-0 scale-90 duration-200 origin-center min-w-0 bg-body-bg shadow-custom rounded-xl overflow-visible">
+                    <span class="block text-xs font-normal text-body-color">
+                      {{ item.description }}
+                    </span>
+                  </a>
+                  <a
+                    [routerLink]="item.link"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    class="absolute top-0 end-2 h-full -m-px w-50 rounded translate-x-full bg-body-bg p-2 border border-default-200 bg-cover bg-no-repeat opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:z-30"
+                  >
+                    <img
+                      [src]="item.image?.light"
+                      [alt]="item.title"
+                      class="block dark:hidden h-full w-full object-cover rounded-lg"
+                    />
 
-                <ul class="flex flex-col">
-                    @for (item of menu.items; track $index) {
-                    <li class="group z-30">
-                        <a [routerLink]="item.link" class="block text-default text-sm font-semibold rounded-md hover:bg-default-100 hover:dark:bg-white/3 p-2">
-
-                            <span class="font-medium">
-                                {{ item.title }}
-                            </span>
-
-                            <span class="block text-xs font-normal text-body-color">
-                                {{ item.description }}
-                            </span>
-
-                        </a>
-                        <a [routerLink]="item.link" class="absolute top-0 end-2 h-full -m-px w-50 rounded translate-x-full bg-body-bg p-2 border border-default-200 bg-cover bg-no-repeat opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:z-30">
-
-                            <img [src]="item.image?.light" [alt]="item.title" class="block dark:hidden h-full w-full object-cover rounded-lg">
-
-                            <img [src]="item.image?.dark" [alt]="item.title" class="hidden dark:block h-full w-full object-cover rounded-lg">
-                        </a>
-                    </li>
-                    }
-                </ul>
-            </div>
+                    <img
+                      [src]="item.image?.dark"
+                      [alt]="item.title"
+                      class="hidden dark:block h-full w-full object-cover rounded-lg"
+                    />
+                  </a>
+                </li>
+              }
+            </ul>
+          </div>
         </div>
+      }
 
-        }
-
-        @if (menu.label === 'Listings') {
-        <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50">
-
-            <div class="relative p-6 border border-border hs-dropdown-open:ease-in hs-dropdown-open:opacity-100 hs-dropdown-open:scale-100 transition ease-out opacity-0 scale-90 duration-200 origin-center min-w-60 bg-body-bg shadow-custom rounded-xl">
-
-                <div class="grid grid-cols-3 gap-6">
-
-                    @for (section of menu.sections; track $index) {
-
-                    <div class="col-span-1 w-47.5">
-
-                        @for (item of section.items; track $index) {
-
-                        <div class="mb-2 text-default-900 font-semibold">
-                            {{ item.title }}
-                        </div>
-
-                        <ul class="flex flex-col gap-1 mb-4">
-                            @for (link of item.links; track $index) {
-                            <li>
-                                <a class="hover:underline text-sm" [routerLink]="link.link">
-                                    {{ link.label }}
-                                </a>
-                            </li>
-                            }
-                        </ul>
-                        }
+      @if (menu.label === 'Listings') {
+        <div
+          class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50"
+        >
+          <div
+            class="relative p-6 border border-border hs-dropdown-open:ease-in hs-dropdown-open:opacity-100 hs-dropdown-open:scale-100 transition ease-out opacity-0 scale-90 duration-200 origin-center min-w-60 bg-body-bg shadow-custom rounded-xl"
+          >
+            <div class="grid grid-cols-3 gap-6">
+              @for (section of menu.sections; track $index) {
+                <div class="col-span-1 w-47.5">
+                  @for (item of section.items; track $index) {
+                    <div class="mb-2 text-default-900 font-semibold">
+                      {{ item.title }}
                     </div>
-                    }
+
+                    <ul class="flex flex-col gap-1 mb-4">
+                      @for (link of item.links; track $index) {
+                        <li>
+                          <a
+                            class="hover:underline text-sm"
+                            [routerLink]="link.link"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                          >
+                            {{ link.label }}
+                          </a>
+                        </li>
+                      }
+                    </ul>
+                  }
                 </div>
+              }
             </div>
+          </div>
         </div>
+      }
 
-        }
+      @if (menu.type === 'dropdown') {
+        <div
+          class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50"
+        >
+          <div
+            class="relative p-3 border border-border hs-dropdown-open:ease-in hs-dropdown-open:opacity-100 hs-dropdown-open:scale-100 transition ease-out opacity-0 scale-90 duration-200 origin-center min-w-45 bg-body-bg shadow-custom rounded-xl"
+          >
+            <ul class="dropdown-menu flex flex-col gap-y-1">
+              @for (item of menu.items; track $index) {
+                <li class="relative group">
+                  <!-- SUBMENU -->
+                  @if (item.links?.length) {
+                    <a
+                      [routerLink]="[]"
+                      class="flex items-center justify-between w-full py-2 px-3 hover:bg-default-300/25 dark:hover:bg-white/10 text-sm rounded-md"
+                    >
+                      {{ item.title }}
+                      <iconify-icon icon="tabler:chevron-right"> </iconify-icon>
+                    </a>
 
-        @if (menu.type === 'dropdown') {
-
-        <div class="hs-dropdown-menu transition-[opacity,margin] duration hs-dropdown-open:opacity-100 opacity-0 hidden z-50">
-
-            <div class="relative p-3 border border-border hs-dropdown-open:ease-in hs-dropdown-open:opacity-100 hs-dropdown-open:scale-100 transition ease-out opacity-0 scale-90 duration-200 origin-center min-w-45 bg-body-bg shadow-custom rounded-xl">
-
-                <ul class="dropdown-menu flex flex-col gap-y-1">
-
-                    @for (item of menu.items; track $index) {
-                    <li class="relative group">
-                        <!-- SUBMENU -->
-                        @if (item.links?.length) {
-
-                        <a [routerLink]="[]" class="flex items-center justify-between w-full py-2 px-3 hover:bg-default-300/25 dark:hover:bg-white/10 text-sm rounded-md">
-                            {{ item.title }}
-                            <iconify-icon icon="tabler:chevron-right">
-                            </iconify-icon>
-                        </a>
-
-                        <!-- NESTED SUBMENU -->
-                        <ul class="absolute -top-3 start-full hidden group-hover:block p-3 border border-border rounded-xl shadow-lg bg-body-bg z-50 list-none" [class]="item.className">
-
-                            <div class="flex flex-col gap-y-0.5">
-
-                                @for (subItem of item.links; track $index) {
-
-                                <a [routerLink]="subItem.link" class="text-sm py-2 px-3 hover:bg-default-300/25 dark:hover:bg-white/10 rounded-lg">
-
-                                    {{ subItem.label }}
-
-                                </a>
-                                }
-                            </div>
-                        </ul>
+                    <!-- NESTED SUBMENU -->
+                    <ul
+                      class="absolute -top-3 start-full hidden group-hover:block p-3 border border-border rounded-xl shadow-lg bg-body-bg z-50 list-none"
+                      [class]="item.className"
+                    >
+                      <div class="flex flex-col gap-y-0.5">
+                        @for (subItem of item.links; track $index) {
+                          <a
+                            [routerLink]="subItem.link"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                            class="text-sm py-2 px-3 hover:bg-default-300/25 dark:hover:bg-white/10 rounded-lg"
+                          >
+                            {{ subItem.label }}
+                          </a>
                         }
+                      </div>
+                    </ul>
+                  }
 
-                        <!-- NORMAL LINK -->
-                        @else {
-
-                        <a [routerLink]="item.link" class="py-2 px-3 text-sm inline-flex hover:bg-default-300/25 dark:hover:bg-white/10 w-full rounded-md">
-
-                            {{ item.title }}
-
-                        </a>
-                        }
-                    </li>
-                    }
-                </ul>
-            </div>
+                  <!-- NORMAL LINK -->
+                  @else {
+                    <a
+                      [routerLink]="item.link"
+                      routerLinkActive="active"
+                      [routerLinkActiveOptions]="{ exact: true }"
+                      class="py-2 px-3 text-sm inline-flex hover:bg-default-300/25 dark:hover:bg-white/10 w-full rounded-md"
+                    >
+                      {{ item.title }}
+                    </a>
+                  }
+                </li>
+              }
+            </ul>
+          </div>
         </div>
-        }
+      }
     </div>
-    }
+  }
 </div>
