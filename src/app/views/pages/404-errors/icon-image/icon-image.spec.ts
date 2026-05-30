@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { IconImage } from './icon-image';
 
 describe('IconImage', () => {

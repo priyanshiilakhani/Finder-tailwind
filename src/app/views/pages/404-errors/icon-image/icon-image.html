@@ -1,1 +1,83 @@
-<p>icon-image works!</p>
+<app-navbar3 />
+
+<section class="lg:pb-27 md:pb-15 lg:pt-45 md:pt-35 pt-25 bg-default-100 dark:bg-white/3">
+  <div class="container">
+    <div class="md:w-141 w-full mx-auto">
+      <img src="assets/img/404/traffic-cones.png" alt="Traffic cones" class="w-49 mx-auto" />
+      <h1
+        class="md:pt-12 pt-6 mb-6 text-default-900 font-semibold lg:text-3.5xl md:text-2.5xl text-2xl text-center"
+      >
+        Sorry, we can't find that page
+      </h1>
+      <div class="bg-body-bg border border-default-300 dark:border-white/20 rounded-md p-2">
+        <form class="flex flex-col sm:flex-row gap-2 p-1">
+          <div class="flex items-center w-full ms-2">
+            <iconify-icon icon="lucide:search" class="text-lg text-default-800"></iconify-icon>
+            <input
+              type="search"
+              placeholder="What are you looking for?"
+              required
+              class="w-full border-0 focus:ring-0 placeholder-default-500 text-sm bg-transparent"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="text-body-bg bg-default-800 rounded-md transition-all duration-300 ease-in-out hover:bg-default-900 py-3.5 px-6"
+          >
+            Search
+          </button>
+        </form>
+      </div>
+
+      <div class="md:pt-12 pt-6 flex flex-col gap-6">
+        @for (item of supportFeatureData; track $index) {
+          <div class="group cursor-pointer flex items-center">
+            <div>
+              <div
+                class="size-13 rounded border border-border flex items-center justify-center bg-body-bg text-default-700"
+              >
+                <iconify-icon [icon]="item.icon" class="text-xl"> </iconify-icon>
+              </div>
+            </div>
+
+            <div class="ps-4">
+              <div class="flex items-center mb-1">
+                <a
+                  class="relative text-default-900 font-semibold after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 group-hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-100"
+                  [routerLink]="[]"
+                >
+                  {{ item.title }}
+                </a>
+
+                <lucide-icon name="chevron-right" class="size-4.5 ms-0.5"> </lucide-icon>
+              </div>
+
+              <p class="text-sm">
+                {{ item.description }}
+              </p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Page footer -->
+<footer class="pt-12 pb-6 bg-default-100 dark:bg-white/3">
+  <div class="container">
+    <div class="md:pb-4">
+      <p class="text-sm text-center">
+        © All rights reserved. Made by
+        <a
+          class="text-default-900 font-medium hover:underline"
+          [routerLink]="[]"
+          target="_blank"
+          rel="noreferrer"
+          >Coderthemes</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>
