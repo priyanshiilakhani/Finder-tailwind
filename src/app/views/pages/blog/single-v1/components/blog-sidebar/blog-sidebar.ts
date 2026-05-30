@@ -10,6 +10,7 @@ import { notificationsData, relatedPostsData } from '../../data';
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class BlogSidebar {
   relatedPostsData = relatedPostsData;
   notificationsData = notificationsData;

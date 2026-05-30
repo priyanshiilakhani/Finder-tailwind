@@ -1,3 +1,13 @@
+const property1 = 'assets/img/listings/real-estate/01.jpg';
+const property4 = 'assets/img/listings/real-estate/04.jpg';
+const property6 = 'assets/img/listings/real-estate/06.jpg';
+
+const blogImg1 = 'assets/img/blog/v1/01.jpg';
+const blogImg2 = 'assets/img/blog/v1/02.jpg';
+const blogImg3 = 'assets/img/blog/v1/03.jpg';
+const blogImg4 = 'assets/img/blog/v1/07.jpg';
+const blogImg5 = 'assets/img/blog/v1/08.jpg';
+
 export type BenefitType = {
   title: string;
   description: string;
@@ -101,7 +111,7 @@ export const relatedPostsData: string[] = [
 export type NotificationType = {
   id: string;
   label: string;
-}
+};
 
 export const notificationsData: NotificationType[] = [
   {
@@ -115,5 +125,117 @@ export const notificationsData: NotificationType[] = [
   {
     id: 'alerts',
     label: 'Breaking news alerts (as needed)',
+  },
+];
+
+export type PropertyType = {
+  images: string[];
+  price: string;
+  address: string;
+  area: string;
+  beds: number;
+  baths: number;
+  parking: number;
+  type?: string;
+  verified?: boolean;
+  isNew?: boolean;
+  favorite?: boolean;
+};
+
+export const propertyData: PropertyType[] = [
+  {
+    images: [property6, property6, property6],
+    price: '$375,000',
+    address: '929 Hart St, Brooklyn, NY 11237',
+    area: '108 sq.m',
+    beds: 3,
+    baths: 2,
+    parking: 1,
+    type: 'For sale',
+    isNew: true,
+    favorite: true,
+  },
+  {
+    images: [property1, property1, property1],
+    price: '$1,620',
+    address: '40 S 9th St, Brooklyn, NY 11249',
+    area: '65 sq.m',
+    beds: 2,
+    baths: 1,
+    parking: 1,
+    verified: true,
+    isNew: true,
+  },
+  {
+    images: [property4, property4, property4],
+    price: '$1,170',
+    address: '67-04 Myrtle Ave Glendale, NY 11385',
+    area: '42 sq.m',
+    beds: 1,
+    baths: 1,
+    parking: 0,
+  },
+];
+
+export type BlogPostType = {
+  image: string;
+  category: string;
+  title: string;
+  description: string;
+  author: string;
+  date: string;
+  blogLink: string;
+};
+
+export const blogpostData: BlogPostType[] = [
+  {
+    image: blogImg1,
+    category: 'Renting advice',
+    title: 'What to know when renting an apartment',
+    description:
+      'It is quite difficult to find a good apartment for long-term rent in large cities. In addition, potential tenants can face prob...',
+    author: 'Cody Fisher',
+    date: 'July 09, 2024',
+    blogLink: '/blog-single/v1',
+  },
+  {
+    image: blogImg2,
+    category: 'Investment advice',
+    title: 'Types of luxury housing',
+    description:
+      'What luxury housing is clear to every person. Housing characterized by increased comfort, interior, quality and ma...',
+    author: 'Kristin Watson',
+    date: 'June 26, 2024',
+    blogLink: '/blog-single/v1',
+  },
+  {
+    image: blogImg3,
+    category: 'Home improvement',
+    title: 'How to modernize your home on a budget',
+    description:
+      "Modernizing your home doesn't have to break the bank. Here are some budget-friendly tips to give your living space a mo...",
+    author: 'Darrell Steward',
+    date: 'May 13, 2024',
+    blogLink: '/blog-single/v1',
+  },
+  {
+    image: blogImg4,
+    category: 'Home improvement',
+    title: 'When is the right time to downsize home?',
+    description:
+      'Deciding when to downsize your home is a personal choice that depends on various factors. Here are some common...',
+    author: 'Darrell Steward',
+    date: 'March 29, 2024',
+    blogLink: '/blog-single/v1',
+  },
+  {
+    image: blogImg5,
+    category: 'Interior design',
+    title: '7 tips for achieving maximum coziness',
+    description:
+      'Creating a cozy atmosphere in your home is a delightful way to enhance comfort and relaxation. Here are seven tips to...',
+    author: 'Bessie Cooper',
+    date: 'March 10, 2024',
+    blogLink: '/blog-single/v1',
   },
 ];

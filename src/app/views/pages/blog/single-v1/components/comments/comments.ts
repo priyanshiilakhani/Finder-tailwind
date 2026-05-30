@@ -8,6 +8,7 @@ import { commentsData } from '../../data';
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class Comments {
   commentsData = commentsData;
 }

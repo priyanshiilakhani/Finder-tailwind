@@ -13,4 +13,5 @@ import { BlogSidebar } from "./components/blog-sidebar/blog-sidebar";
   styles: ``,
   schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
+
 export class SingleV1 {}

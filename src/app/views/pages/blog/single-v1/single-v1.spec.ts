@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SingleV1 } from './single-v1';
 
 describe('SingleV1', () => {

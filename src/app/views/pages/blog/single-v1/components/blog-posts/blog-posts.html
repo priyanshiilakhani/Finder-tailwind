@@ -4,145 +4,52 @@
 
         <div class="flex gap-2">
             <button type="button" class="size-10 flex items-center border border-default-300 dark:border-white/20 bg-body-bg rounded-full justify-center me-1" id="prev" aria-label="Prev">
-                <i class="iconify lucide--chevron-left  size-4.5"></i>
+                <iconify-icon icon="lucide:chevron-left" class="size-4.5"></iconify-icon>
             </button>
 
             <button type="button" class="size-10 flex items-center justify-center border border-default-300 bg-body-bg dark:border-white/20 rounded-full" id="next" aria-label="Next">
-                <i class="iconify lucide--chevron-right  size-4.5"></i>
+                <iconify-icon icon="lucide:chevron-right" class="size-4.5"></iconify-icon>
             </button>
         </div>
     </div>
 
-    <div class="swiper pb-5" data-swiper='{
-                    "slidesPerView": 1,
-                    "spaceBetween": 24,
-                    "loop": true,
-                    "navigation": {
-                    "prevEl": "#prev",
-                    "nextEl": "#next"
-                    },
-                    "breakpoints": {
-                    "500": {
-                        "slidesPerView": 2
-                    },
-                    "900": {
-                        "slidesPerView": 3
-                        }
-                    }
-                }'>
-        <div class="swiper-wrapper">
-            <!-- Article -->
-            <div class="swiper-slide">
-                <a href="blog-single-v1.html" class="group">
+    <div class="swiper pb-5">
+        <swiper-container [config]="swiperConfig" init="false">
+            @for (post of blogpostData; track $index) {
+            <swiper-slide>
+                <a [routerLink]="post.blogLink" class="group">
                     <div class="rounded-md overflow-hidden mb-6">
-                        <img src="assets/img/blog/v1/01.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
+                        <img [src]="post.image" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
                     </div>
 
                     <div class="mb-3">
-                        <a class="text-secondary text-xs uppercase" href="#!">Renting advice</a>
+                        <a class="text-secondary text-xs uppercase" [routerLink]="[]">
+                            {{ post.category }}
+                        </a>
                     </div>
 
                     <h3 class="text-default-900 font-semibold text-xl mb-2">
-                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" href="blog-single-v1.html">What to know when renting an apartment</a>
+                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" [routerLink]="post.blogLink">
+                            {{ post.title }}
+                        </a>
                     </h3>
 
-                    <p class="text-sm mb-4">It is quite difficult to find a good apartment for long-term rent in large cities. In addition, potential tenants can face prob...</p>
+                    <p class="text-sm mb-4">
+                        {{ post.description }}
+                    </p>
 
                     <div class="text-sm gap-3">
-                        <a class="font-semibold" href="#!">by Cody Fisher</a>
-                        <span class="text-secondary">July 09, 2024</span>
+                        <a class="font-semibold" [routerLink]="[]">
+                            by {{ post.author }}
+                        </a>
+
+                        <span class="text-secondary">
+                            {{ post.date }}
+                        </span>
                     </div>
                 </a>
-            </div>
-
-            <div class="swiper-slide">
-                <a href="blog-single-v1.html" class="group">
-                    <div class="rounded-md overflow-hidden mb-6">
-                        <img src="assets/img/blog/v1/02.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
-                    </div>
-
-                    <div class="mb-3">
-                        <a class="text-secondary text-xs uppercase" href="#!">Investment advice</a>
-                    </div>
-
-                    <h3 class="text-default-900 font-semibold text-xl mb-2">
-                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" href="blog-single-v1.html">Types of luxury housing</a>
-                    </h3>
-
-                    <p class="text-sm mb-4">What luxury housing is clear to every person. Housing characterized by increased comfort, interior, quality and ma...</p>
-
-                    <div class="text-sm gap-3">
-                        <a class="font-semibold" href="#!">by Kristin Watson</a>
-                        <span class="text-secondary">June 26, 2024</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="swiper-slide">
-                <a href="blog-single-v1.html" class="group">
-                    <div class="rounded-md overflow-hidden mb-6">
-                        <img src="assets/img/blog/v1/03.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
-                    </div>
-
-                    <div class="mb-3">
-                        <a class="text-secondary text-xs uppercase" href="#!">Home improvement</a>
-                    </div>
-
-                    <h3 class="text-default-900 font-semibold text-xl mb-2">
-                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" href="blog-single-v1.html">How to modernize your home on a budget</a>
-                    </h3>
-
-                    <p class="text-sm mb-4">Modernizing your home doesn't have to break the bank. Here are some budget-friendly tips to give your living space a mo...</p>
-
-                    <div class="text-sm gap-3">
-                        <a class="font-semibold" href="#!">by Darrell Steward</a>
-                        <span class="text-secondary">May 13, 2024</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="swiper-slide">
-                <a href="blog-single-v1.html" class="group">
-                    <div class="rounded-md overflow-hidden mb-6">
-                        <img src="assets/img/blog/v1/07.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
-                    </div>
-
-                    <div class="mb-3">
-                        <a class="text-secondary text-xs uppercase" href="#!">Home improvement</a>
-                    </div>
-
-                    <h3 class="text-default-900 font-semibold text-xl mb-2">
-                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" href="blog-single-v1.html">When is the right time to downsize home?</a>
-                    </h3>
-
-                    <p class="text-sm mb-4">Deciding when to downsize your home is a personal choice that depends on various factors. Here are some common...</p>
-                    <div class="text-sm gap-3">
-                        <a class="font-semibold" href="#!">by Darrell Steward</a>
-                        <span class="text-secondary">March 29, 2024</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="swiper-slide">
-                <a href="blog-single-v1.html" class="group">
-                    <div class="rounded-md overflow-hidden mb-6">
-                        <img src="assets/img/blog/v1/08.jpg" alt="Category image" class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0">
-                    </div>
-
-                    <div class="mb-3">
-                        <a class="text-secondary text-xs uppercase" href="#!">Interior design</a>
-                    </div>
-
-                    <h3 class="text-default-900 font-semibold text-xl mb-2">
-                        <a class="relative after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-300" href="blog-single-v1.html">7 tips for achieving maximum coziness</a>
-                    </h3>
-                    <p class="text-sm mb-4">Creating a cozy atmosphere in your home is a delightful way to enhance comfort and relaxation. Here are seven tips to...</p>
-                    <div class="text-sm gap-3">
-                        <a class="font-semibold" href="#!">by Bessie Cooper</a>
-                        <span class="text-secondary">arch 10, 2024</span>
-                    </div>
-                </a>
-            </div>
-        </div>
+            </swiper-slide>
+            }
+        </swiper-container>
     </div>
 </div>

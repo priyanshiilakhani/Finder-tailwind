@@ -10,6 +10,7 @@ import { benefitsData, blogCategoriesData } from '../../data';
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
+
 export class SinglePost {
   benefitsData = benefitsData;
   blogCategoriesData = blogCategoriesData;

@@ -1,20 +1,22 @@
+import { SwiperDirective } from '@/app/directive/swiper-directive';
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { register } from 'swiper/element/bundle';
 import { Navigation } from 'swiper/modules';
 import { SwiperOptions } from 'swiper/types';
-import { RouterLink } from '@angular/router';
-import { blogpostData } from '../../data';
-import { SwiperDirective } from '@/app/directive/swiper-directive';
+import { BlogCarouselData } from '../../data';
+register();
 
 @Component({
-  selector: 'blog-single-v1-blog-posts',
-  imports: [RouterLink,SwiperDirective],
+  selector: 'blog-single-v3-blog-posts',
+  imports: [RouterLink, SwiperDirective],
   templateUrl: './blog-posts.html',
   styles: ``,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 
-export class BlogPosts {  
-  blogpostData = blogpostData;
+export class BlogPosts {
+  BlogCarouselData = BlogCarouselData;
   swiperConfig: SwiperOptions = {
     modules: [Navigation],
     slidesPerView: 1,

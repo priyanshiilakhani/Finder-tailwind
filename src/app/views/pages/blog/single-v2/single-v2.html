@@ -1,1 +1,119 @@
-<p>single-v2 works!</p>
+<app-navbar3 />
+<section class="lg:mt-20 mt-15 pt-6 pb-12 mb-6">
+    <div class="container">
+        <blog-single-v2-breadcrumb />
+        <div>
+            <img src="assets/img/blog/v2/single/01.jpg" alt="Image" class="rounded-md">
+        </div>
+
+        <div class="lg:py-12 mt-4 lg:w-4xl w-full mx-auto">
+            <div class="mb-6">
+                <div class="flex md:flex-row flex-col md:items-center text-sm md:gap-4 gap-2 md:mb-2">
+                    <a class="font-semibold text-default-500 uppercase hover:text-default-900 text-xs" [routerLink]="[]">Industry news</a>
+                    <div class="h-6 w-0.25 bg-default-200 dark:bg-white/20 md:block hidden"></div>
+                    <span class="text-default-500">November 15, 2024</span>
+                </div>
+            </div>
+
+            <h1 class="pb-6 text-default-900 font-semibold lg:text-4.5xl md:text-3.5xl text-2.5xl">Ford Edge to be discontinued in 2025, won't return for 2026</h1>
+
+            <hr class="md:my-4 text-default-200 dark:text-white/20">
+
+            <div class="pt-6">
+                <p class="mb-4">Ford has officially announced that the midsize crossover SUV, Ford Edge, is set to be discontinued in the second quarter of 2024, with no plans for a 2025 model year. Ford spokesperson Jenn Banovetz confirmed the news, stating that production will continue into the second quarter, and the existing inventory will be sold throughout the year.</p>
+
+                <p class="mb-4">Speculation about the discontinuation of the Edge had circulated for years, yet the redesigned 2024 Lincoln Nautilus hinted at the possibility of another generation for the Edge. Notably, production of the Nautilus transitioned from Ford's Oakville Assembly Complex in Ontario, Canada, to China, with anticipated deliveries in the current quarter. It's worth noting that an extended wheelbase variant known as the Ford Edge L is manufactured in China and available in various markets.</p>
+
+                <div class="md:py-6 py-4 mb-4">
+                    <div class="grid grid-cols-12 grid-rows-2 lg:gap-6 gap-4">
+                        @for (item of galleryData; track $index) {
+                        <div class="group relative overflow-hidden rounded-xl" [class]="$first ? 'col-span-8 row-span-2' : 'col-span-4 row-span-1'">
+                            <img [src]="item.image" class="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105" alt="Gallery Image" />
+
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100 rounded-xl">
+                                <a [href]="item.image" class="image-popup after:absolute after:inset-0 after:z-1 rounded-xl" appGlightbox>
+                                    <div class="absolute inset-0 flex justify-center items-center z-20 opacity-0 group-hover:opacity-100 transition duration-300">
+                                        <iconify-icon icon="lucide:zoom-in" class="text-white text-3xl relative z-30"></iconify-icon>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+
+                <p class="mb-4">The Oakville plant, previously dedicated to manufacturing the Edge, has undergone a strategic transition to produce five upcoming electric vehicles. This shift, disclosed in 2020 with a production goal set for 2025, is anticipated to encompass a three-row electric SUV among the unnamed models. The move aligns with the broader industry trend toward electric mobility, reflecting Ford's commitment to embracing a more sustainable future.</p>
+
+                <p class="mb-4">Introduced in 2007, the Edge midsize crossover established itself as a pioneer, filling the niche between smaller compact crossovers like the Escape and larger three-row SUVs like the Explorer. Competing with models such as the Jeep Grand Cherokee, Chevy Blazer, and Honda Passport, as well as newer entries like the Mazda CX-70, the Edge carved its place in the market. The decision to exit this seemingly lucrative segment appears unconventional, particularly considering its competitive pricing ranging from $40,000 for the base SE to well over $50,000 for the ST with additional options.</p>
+
+                <div class="md:py-6 py-4 mb-4">
+                    <div class="border-b border-t border-border font-semibold py-4 flex gap-6 items-center">
+                        <div class="py-4 flex gap-6 items-center flex-wrap">
+                            <div class="rounded-md overflow-hidden w-55">
+                                <img src="assets/img/blog/v2/03.jpg" alt="Category image" class="w-55 h-full object-cover transition-transform duration-500 rounded-md hover:scale-110 z-0">
+                            </div>
+
+                            <div>
+                                <div class="flex md:flex-row flex-col md:items-center text-sm md:gap-4 gap-2 pb-1 mb-2">
+                                    <a class="font-semibold text-default-500 uppercase hover:text-default-900 text-xs" [routerLink]="[]">Electric vehicles</a>
+                                    <div class="h-6 w-0.25 bg-default-200 dark:bg-white/20 md:block hidden"></div>
+                                    <span class="text-default-500">July 12, 2024</span>
+                                </div>
+
+                                <h3 class="text-xl font-semibold text-default-900">
+                                    <a class="hover:underline" [routerLink]="[]">Tesla fixes common recall with over-the-air update</a>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mb-4">Ford has confirmed that the 2024 Ford Edge will remain available for purchase throughout the year, but its discontinuation will undoubtedly create a significant void in Ford's overall sales volume. In 2023, Ford successfully sold 106,098 units of the five-seat Edge, reflecting a notable 24.1% increase from the previous year. Comparatively, the Ford Bronco midsize SUV slightly trailed behind the Edge in sales, while the smaller Bronco Sport, based on the Ford Escape, outperformed both with 127,476 units sold. Despite these figures, the Edge's sales numbers still fall behind Ford's leading crossover SUVs, the Escape and Explorer, in the robust family lineup.</p>
+
+                <div class="md:py-6 py-4 mb-4">
+                    <img src="assets/img/blog/v2/single/02.jpg" class="rounded-md mb-2" alt="Image">
+                    <p class="text-default-500 text-sm">Image source Unsplash.com</p>
+                </div>
+
+                <p class="mb-4">The disappearance of the Edge from the market has fueled speculation, especially as Ford expands its electric vehicle (EV) portfolio and capitalizes on the triumph of the Bronco models. Ford's strategic move aligns with the industry trend of discontinuing older crossovers with traditional gas engines in favor of embracing the shift towards electric mobility. This shift is not exclusive to Ford, as other automakers, including Nissan with the Murano, Jeep with the Cherokee, and Mazda with the CX-9, have also discontinued older crossover models in 2024, signaling a broader transformation within the automotive landscape.</p>
+
+                <div class="md:pt-6 pt-4 flex gap-4">
+                    <button class="py-2.5 px-5 rounded-md text-default-700 border border-border transition-all duration-400 ease-in-out text-sm font-semibold hover:border-default-900 inline-flex items-center " type="button">
+                        <iconify-icon icon="lucide:share-2" class="size-4 me-2"></iconify-icon>Share
+                    </button>
+
+                    <button class="py-2.5 px-5 rounded-md text-default-700 border border-border transition-all duration-400 ease-in-out text-sm font-semibold hover:border-default-900 inline-flex items-center " type="button">
+                        <iconify-icon icon="lucide:thumbs-up" class="size-4 me-2"></iconify-icon>Like it
+                    </button>
+                </div>
+
+                <div class="pt-12 lg:mt-12 md:mt-6 mt-2">
+                    <div class="sm:flex items-center bg-default-100 dark:bg-white/3 rounded">
+                        <div class="text-start ps-12 py-6">
+                            <h2 class="text-2xl font-semibold pb-1 mb-2">Finder car ranking</h2>
+                            <p class="text-sm">Check your guide to the bestsellers in this year</p>
+                        </div>
+
+                        <div class="relative w-full self-end sm:pt-4 sm:ms-auto max-w-[429px]">
+                            <div class="absolute inset-0 flex items-start sm:items-center justify-center sm:justify-end z-10 px-4 sm:px-10">
+                                <a [routerLink]="[]" class="bg-primary hover:bg-primary-hover text-white text-sm font-medium px-5 py-2.5 rounded-lg">
+                                    See the ranking
+                                </a>
+                            </div>
+
+                            <div class="relative w-full">
+                                <img src="assets/img/blog/v2/single/cta.png" alt="Image" class="w-full h-full object-cover rounded" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-12 lg:mt-12 md:mt-6 mt-2">
+                    <blog-single-v2-blog-read />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer1 />

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SingleV3 } from './single-v3';
+import { Sidebar } from './sidebar';
 
-describe('SingleV3', () => {
-  let component: SingleV3;
-  let fixture: ComponentFixture<SingleV3>;
+describe('Sidebar', () => {
+  let component: Sidebar;
+  let fixture: ComponentFixture<Sidebar>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SingleV3],
+      imports: [Sidebar],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SingleV3);
+    fixture = TestBed.createComponent(Sidebar);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

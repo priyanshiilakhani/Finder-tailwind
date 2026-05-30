@@ -1,0 +1,59 @@
+<div class="flex items-start justify-between gap-4 pb-6 mb-4">
+    <h2 class="text-center lg:text-4.5xl md:text-3.5xl text-2xl font-semibold text-default-900">Also read</h2>
+
+    <div class="flex gap-2">
+        <button type="button" class="size-10 flex items-center border border-default-300 dark:border-white/20 bg-body-bg rounded-full justify-center me-1" id="prev" aria-label="Prev">
+            <iconify-icon icon="lucide:chevron-left" height="18" width="18"></iconify-icon>
+        </button>
+
+        <button type="button" class="size-10 flex items-center justify-center border border-default-300 bg-body-bg dark:border-white/20 rounded-full" id="next" aria-label="Next">
+            <iconify-icon icon="lucide:chevron-right" height="18" width="18"></iconify-icon>
+        </button>
+    </div>
+</div>
+
+<div class="swiper pb-5">
+    <swiper-container [config]="swiperConfig" init="false">
+
+        @for (item of BlogCarouselData; track $index) {
+        <div class="swiper-slide">
+            <a [routerLink]="[]">
+
+                <div class="overflow-hidden rounded-md w-full h-full mb-6">
+                    <img [src]="item.image" class="rounded-md mb-6 object-cover w-full h-full transition-transform duration-500 hover:scale-105" alt="Image">
+                </div>
+
+                <div class="flex items-center gap-1 text-default-500 mb-4">
+                    <div class="relative flex flex-nowrap items-center">
+                        <div class="size-6 me-2 ms-1">
+                            <img class="w-full h-full rounded-full object-cover" [src]="item.authorImage" alt="Avatar">
+                        </div>
+
+                        <a [routerLink]="[]" class="text-default-600 hover:text-default-900 font-semibold text-sm">
+                            {{ item.authorName }}
+                        </a>
+                    </div>
+
+                    <iconify-icon icon="lucide:dot"></iconify-icon>
+
+                    <div class="text-sm">
+                        {{ item.date }}
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold mb-4 text-default-900">
+                    <a class="hover:underline" [routerLink]="[]">
+                        {{ item.title }}
+                    </a>
+                </h3>
+
+                <a [routerLink]="[]" class="py-1 px-2 uppercase text-xs text-default-800 bg-default-100 dark:bg-white/3 rounded-md font-medium">
+                    {{ item.category }}
+                </a>
+
+            </a>
+        </div>
+        }
+
+    </swiper-container>
+</div>

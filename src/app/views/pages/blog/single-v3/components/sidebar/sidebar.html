@@ -1,0 +1,100 @@
+<div class="lg:w-80 w-full ms-auto lg:sticky lg:top-25">
+    <div id="blogSidebar" class="hs-overlay lg:static [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-auto hs-overlay-open:translate-x-0 translate-x-full transition-all duration-300 transform  hidden fixed top-0 end-0 bottom-0 z-60 bg-body-bg lg:w-auto w-87" role="dialog" tabindex="-1" aria-label="Sidebar">
+        <div class="flex flex-col sticky top-0">
+            <header class="py-4 px-6 lg:px-0 lg:py-0 flex justify-between items-center gap-x-2">
+                <a class="focus:outline-hidden focus:opacity-80 " [routerLink]="[]" aria-label="Brand">
+                    <h3 class="text-xl text-default-900 font-semibold lg:hidden block">Sidebar</h3>
+                </a>
+
+                <div class="lg:hidden -me-2">
+                    <button type="button" class="" data-hs-overlay="#blogSidebar">
+                        <iconify-icon icon="lucide:x" height="20" width="20"></iconify-icon>
+                        <span class="sr-only">Close</span>
+                    </button>
+                </div>
+            </header>
+
+            <nav class="lg:h-full h-[calc(100vh-64px)] overflow-y-auto" data-simplebar>
+                <div class="w-full flex flex-col flex-wrap pt-2 px-6 lg:px-0 pb-4 lg:pb-0">
+                    <div class="flex flex-col gap-4">
+                        <div>
+                            <div class="mb-4">
+                                <img src="assets/img/blog/v4/author/09.jpg" alt="Avatar" class="size-14 rounded-full">
+                            </div>
+                            <h4 class="text-default-900 font-semibold text-sm mb-2">Dr. Guy Hawkins</h4>
+                            <p class="text-sm mb-4">Cardiologist with experience in interventional cardiology and personalized patient care.</p>
+
+                            <div class="flex gap-2">
+                                <div class="bg-info text-white text-xs inline-flex item-center font-medium px-2 py-0.5 rounded items-center">
+                                    Verified <iconify-icon icon="lucide:shield" class="ms-1"></iconify-icon>
+                                </div>
+
+                                <div class="flex items-center gap-1">
+                                    <iconify-icon icon="tabler:star-filled" class="text-warning"></iconify-icon>
+                                    <span class="text-sm text-default-700">4.9</span>
+                                    <span class="text-sm text-secondary self-end">(248)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4 text-default-200 dark:text-white/20">
+
+                        <div>
+                            <h4 class="text-xl text-default-900 font-semibold mb-6">Related articles</h4>
+
+                            <div class="flex flex-col gap-6">
+                                @for (post of blogPostsData; track $index) {
+                                <div class="flex gap-4">
+                                    <div class="flex flex-col gap-2">
+                                        <div class="flex mb-1 items-center">
+                                            <img class="rounded-full size-6 me-2" [src]="post.authorImage" alt="Avatar">
+
+                                            <a class="text-xs font-normal" [routerLink]="[]">
+                                                {{ post.authorName }}
+                                            </a>
+                                        </div>
+
+                                        <h5 class="text-default-900 font-semibold text-sm">
+                                            <a class="hover:underline" [routerLink]="[]">
+                                                {{ post.title }}
+                                            </a>
+                                        </h5>
+                                    </div>
+
+                                    <div>
+                                        <div class="rounded-md overflow-hidden w-20">
+                                            <img [src]="post.thumbnail" alt="Category image" class="w-20 object-cover transition-transform duration-500 rounded-md hover:scale-110 z-0">
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                        </div>
+
+                        <hr class="my-4 text-default-200 dark:text-white/20">
+
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-default-900 font-semibold text-sm me-2">Share this post</h4>
+
+                            <div class="flex gap-2">
+                                @for (item of socialShareData ; track $index) {
+                                <div class="hs-tooltip [--placement:top] flex justify-end mb-3">
+                                    <button type="button" class="hs-tooltip-toggle flex justify-center items-center size-10 transition-all duration-300 bg-default-100 dark:bg-white/3 rounded-md">
+
+                                        <iconify-icon [icon]="item.icon" class="size-4 text-default-900">
+                                        </iconify-icon>
+
+                                        <span class="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 transition-opacity inline-block absolute invisible z-10 py-1 px-2 bg-default-900 text-xs font-medium text-body-bg rounded-md" role="tooltip">
+                                            {{ item.tooltip }}
+                                        </span>
+                                    </button>
+                                </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
