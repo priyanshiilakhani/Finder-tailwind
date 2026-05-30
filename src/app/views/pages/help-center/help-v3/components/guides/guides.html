@@ -1,1 +1,41 @@
-<p>guides works!</p>
+<section class="lg:py-12 md:pt-6 pt-2 pb-12 lg:my-4">
+        <div class="container">
+            <div class="flex justify-between items-center md:mb-4 mb-2 pb-4">
+                <h2 class="text-default-900 font-semibold lg:text-3.5xl md:text-2.5xl text-2xl">Guides for getting started</h2>
+
+                <div class="flex gap-2">
+                    <button type="button" class="size-10 flex items-center border border-border rounded-full justify-center me-1" id="prev" aria-label="Prev">
+                        <iconify-icon icon="lucide:chevron-left" class="text-default-900 size-4.5"></iconify-icon>
+                    </button>
+
+                    <button type="button" class="size-10 flex items-center justify-center border border-border rounded-full" id="next" aria-label="Next">
+                        <iconify-icon icon="lucide:chevron-right" class="text-default-900 size-4.5"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+
+            <div class="swiper">
+                <swiper-container [config]="swiperConfig" init="false">
+                    @for (item of helpArticleData; track $index) {
+                        <swiper-slide class="group">
+                        <a [routerLink]="[]">
+                            <div class="rounded-md overflow-hidden mb-6">
+                            <img
+                                [src]="item.image"
+                                alt="Category image"
+                                class="w-full h-full object-cover transition-transform duration-500 rounded-md group-hover:scale-110 z-0"
+                            />
+                            </div>
+
+                            <h3 class="text-default-900 font-semibold">
+                            <a class="group-hover:underline" [routerLink]="[]">
+                                {{ item.title }}
+                            </a>
+                            </h3>
+                        </a>
+                        </swiper-slide>
+                    }
+                </swiper-container>
+            </div>
+        </div>
+    </section>

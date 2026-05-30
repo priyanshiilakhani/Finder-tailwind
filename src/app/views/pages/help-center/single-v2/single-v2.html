@@ -1,1 +1,274 @@
-<p>single-v2 works!</p>
+<app-navbar3 />
+ <section class="mt-24 lg:mb-8 py-12">
+        <div class="container">
+            <div class="grid lg:grid-cols-12 grid-cols-1 lg:pb-12 md:pb-6 pb-0">
+                <div class="lg:col-span-8 col-span-1">
+                    <h1 class="text-default-900 font-bold lg:text-4.8xl md:text-3.5xl text-3xl mb-6 md:text-start text-center">How can we help you?</h1>
+
+                    <div class="border border-border rounded-md p-2 mb-6">
+                        <form class="flex flex-col md:flex-row gap-2 p-1">
+                            <div class="relative w-full">
+                                <lucide-icon name="search" class="absolute start-1 top-1/2 -translate-y-1/2 text-default-500 size-5"></lucide-icon>
+                                <input type="search" placeholder="What do you need help with?" class="w-full ps-10 pe-3 py-3 text-base border-0 focus:ring-0 rounded-none bg-transparent" />
+                            </div>
+                            <button type="submit" class="px-6 py-3.5 font-medium text-body-bg bg-default-800 hover:bg-default-900 rounded-md">
+                                Search
+                            </button>
+                        </form>
+                    </div>
+
+                    <div class="flex gap-2 fs-sm flex-wrap">
+                        <span class="text-secondary text-sm me-2">Popular searches:</span>
+                        <a class="hover:underline text-default-800 hover:text-default-900 text-sm font-medium me-2" [routerLink]="[]">Sell car</a>
+                        <a class="hover:underline text-default-800 hover:text-default-900 text-sm font-medium me-2" [routerLink]="[]">Buy car</a>
+                        <a class="hover:underline text-default-800 hover:text-default-900 text-sm font-medium me-2" [routerLink]="[]">Insurance</a>
+                        <a class="hover:underline text-default-800 hover:text-default-900 text-sm font-medium me-2" [routerLink]="[]">Legal issues</a>
+                    </div>
+
+                    <div class="pt-12 lg:mt-4 pb-2">
+                        <ol class="flex flex-wrap items-center whitespace-nowrap mb-4">
+                            <li class="inline-flex items-center">
+                                <a class="flex items-center text-sm font-medium text-default-700 hover:text-default-900 focus:outline-hidden" routerLink="/help/topics/v2">
+                                    Help Center
+                                </a>
+                                <iconify-icon icon="lucide:chevron-right" class="mx-2"></iconify-icon>
+                            </li>
+
+                            <li class="inline-flex items-center text-sm font-medium text-default-500/80 truncate" aria-current="page">
+                                Single article v.2
+                            </li>
+                        </ol>
+                    </div>
+
+                    <h1 class="text-default-900 font-semibold lg:text-3.5xl md:text-2.5xl text-2xl mb-6">Account: Get started</h1>
+
+                    <div class="bg-success/10 rounded-md p-6">
+                        <div class="p-2">
+                            <h3 class="mb-4 text-default-900 font-semibold">In this article</h3>
+                            <ul class="flex flex-col gap-1.5">
+                                <li class="nav-item mt-1">
+                                    <a href="#introduction">
+                                        <iconify-icon icon="lucide:chevron-right" class="text-base me-3"></iconify-icon>
+                                        <span class="text-default-900 text-sm font-medium">Introduction</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item mt-1">
+                                    <a href="#creating-account">
+                                        <iconify-icon icon="lucide:chevron-right" class="text-base me-3"></iconify-icon>
+                                        <span class="text-default-900 text-sm font-medium">Creating your account</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item mt-1">
+                                    <a href="#verifying-email">
+                                        <iconify-icon icon="lucide:chevron-right" class="text-base me-3"></iconify-icon>
+                                        <span class="text-default-900 text-sm font-medium">Verifying your email</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item mt-1">
+                                    <a href="#setting-up-profile">
+                                        <iconify-icon icon="lucide:chevron-right" class="text-base me-3"></iconify-icon>
+                                        <span class="text-default-900 text-sm font-medium">Setting up your profile</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item mt-1">
+                                    <a href="#customizing-notification-preferences">
+                                        <iconify-icon icon="lucide:chevron-right" class="text-base me-3"></iconify-icon>
+                                        <span class="text-default-900 text-sm font-medium">Customizing notification preferences</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item mt-1">
+                                    <a href="#managing-account-security">
+                                        <iconify-icon icon="lucide:chevron-right" class="text-base me-3"></iconify-icon>
+                                        <span class="text-default-900 text-sm font-medium">Managing account security</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item mt-1">
+                                    <a href="#getting-help-and-support">
+                                        <iconify-icon icon="lucide:chevron-right" class="text-base me-3"></iconify-icon>
+                                        <span class="text-default-900 text-sm font-medium">Getting help and support</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item mt-1">
+                                    <a href="#conclusion">
+                                        <iconify-icon icon="lucide:chevron-right" class="text-base me-3"></iconify-icon>
+                                        <span class="text-default-900 text-sm font-medium">Conclusion</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="mb-4 pt-12 md:text-2xl text-xl text-default-900 font-semibold" id="introduction">1. Introduction</h2>
+
+                    <p class="mb-4">Welcome to the first step in your journey on our car listing platform. Setting up your account is crucial to fully enjoying the features we offer, such as listing your car, contacting sellers, and managing your profile. This guide will walk you through the process, from creating your account to managing security settings.</p>
+
+                    <h2 class="mb-4 pt-6 md:text-2xl text-xl text-default-900 font-semibold" id="creating-account">2. Creating your account</h2>
+
+                    <dl class="mb-4">
+                        <dt class="text-default-900 font-semibold">Step 1: Access the sign-up page</dt>
+                        <dd class="mb-3 text-body-color">Begin by navigating to our website and clicking on the "Sign Up" button located at the top right corner of the homepage.</dd>
+                        <dt class="text-default-900 font-semibold">Step 2: Enter your details</dt>
+                        <dd class="mb-3 text-body-color">You will be prompted to fill in basic information such as your name, email address, and a secure password. Ensure that your password is strong, combining letters, numbers, and special characters.</dd>
+                        <dt class="text-default-900 font-semibold">Step 3: Agree to the terms</dt>
+                        <dd class="mb-3 text-body-color">Before proceeding, you must agree to our Terms of Service and Privacy Policy. Once you've read and agreed, check the box to continue.</dd>
+                        <dt class="text-default-900 font-semibold">Step 4: Complete the CAPTCHA</dt>
+                        <dd class="mb-3 text-body-color">For security purposes, complete the CAPTCHA challenge to verify that you're not a robot.</dd>
+                        <dt class="text-default-900 font-semibold">Step 5: Click "Create Account"</dt>
+                        <dd class="mb-3 text-body-color">After filling in all the necessary information, click on the "Create Account" button. You will receive a confirmation email shortly.</dd>
+                    </dl>
+
+                    <h2 class="mb-4 pt-6 md:text-2xl text-xl text-default-900 font-semibold" id="verifying-email">3. Verifying your email</h2>
+
+                    <p class="mb-4">Once you've signed up, check your email inbox for a verification email. If you don't see it, check your spam or junk folder. Inside the email, you'll find a link to verify your email address. Click on this link to confirm your registration. After clicking the verification link, you'll be redirected to our website, where you'll see a confirmation message indicating that your email has been successfully verified.</p>
+
+                    <div class="md:py-6 py-4 mb-4">
+                        <div class="border-b border-t border-border font-semibold py-4 flex gap-6 items-center">
+                            <div class="py-4 flex gap-6 items-center flex-wrap">
+                                <div class="rounded-md overflow-hidden w-55">
+                                    <img src="assets/img/blog/v2/03.jpg" alt="Category image" class="w-55 h-full object-cover transition-transform duration-500 rounded-md hover:scale-110 z-0">
+                                </div>
+
+                                <div>
+                                    <div class="flex md:flex-row flex-col md:items-center text-sm md:gap-4 gap-2 pb-1 mb-2">
+                                        <a class="font-semibold text-default-500 uppercase hover:text-default-900 text-xs" [routerLink]="[]">Electric vehicles</a>
+                                        <div class="h-6 w-0.25 bg-default-200 dark:bg-white/20 md:block hidden"></div>
+                                        <span class="text-default-500">July 12, 2024</span>
+                                    </div>
+
+                                    <h3 class="text-xl font-semibold text-default-900">
+                                        <a class="hover:underline" [routerLink]="[]">Tesla fixes common recall with over-the-air update</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="mb-4 pt-6 md:text-2xl text-xl text-default-900 font-semibold" id="setting-up-profile">4. Setting up your profile</h2>
+
+                    <dl class="mb-4">
+                        <dt class="text-default-900 font-semibold">Step 1: Access profile settings</dt>
+                        <dd class="mb-3 text-body-color">Log in to your account and navigate to the "Profile" section from your dashboard.</dd>
+                        <dt class="text-default-900 font-semibold">Step 2: Add personal information</dt>
+                        <dd class="mb-3 text-body-color">Here, you can add or update your personal information, such as your full name, phone number, and profile picture.</dd>
+                        <dt class="text-default-900 font-semibold">Step 3: Link social accounts (Optional)</dt>
+                        <dd class="mb-3 text-body-color">For convenience, you can link your social media accounts. This will make it easier to share your listings or log in quickly.</dd>
+                        <dt class="text-default-900 font-semibold">Step 4: Save your changes</dt>
+                        <dd class="mb-3 text-body-color">After entering all your details, click "Save Changes" to update your profile.</dd>
+                    </dl>
+
+                    <h2 class="mb-4 pt-6 md:text-2xl text-xl text-default-900 font-semibold" id="customizing-notification-preferences">5. Customizing notification preferences</h2>
+
+                    <p class="mb-4">In your account dashboard, find the "Notification Settings" section. You can customize how and when you receive notifications about inquiries, messages, and platform updates. Options include email, SMS, or push notifications. If there are certain notifications you'd rather not receive, simply toggle them off in this section. Make sure to save your preferences before exiting the page.</p>
+
+                    <h2 class="mb-4 pt-6 md:text-2xl text-xl text-default-900 font-semibold" id="managing-account-security">6. Managing account security</h2>
+
+                    <p class="mb-4">Regularly updating your password enhances account security. You can change your password by going to the "Security" section in your account settings.</p>
+
+                    <p class="mb-4">For added security, we recommend enabling Two-Factor Authentication (2FA). This requires an additional code, sent to your phone, each time you log in.</p>
+
+                    <p class="mb-4">Keep track of any unusual activity by regularly reviewing the "Recent Activity" section in your account settings. If you notice anything suspicious, contact support immediately. Adding security questions can help recover your account if you forget your password. Choose questions that are easy for you to remember but hard for others to guess.</p>
+
+                    <h2 class="mb-4 pt-6 md:text-2xl text-xl text-default-900 font-semibold" id="getting-help-and-support">7. Getting help and support</h2>
+
+                    <p class="mb-4">If you encounter any issues or have questions, visit our Help Center. It provides answers to common questions and step-by-step guides.</p>
+
+                    <p class="mb-4">For more personalized assistance, you can contact our customer support team via email, phone, or live chat. They're available 24/7 to assist you.</p>
+
+                    <p class="mb-4">Join our community forum to ask questions, share experiences, and get advice from other users. We value your feedback. If you have suggestions on how we can improve, go to the "Feedback" section and share your thoughts.</p>
+
+                    <h2 class="mb-4 pt-6 md:text-2xl text-xl text-default-900 font-semibold" id="conclusion">Conclusion</h2>
+
+                    <p class="mb-4">Getting started with your account settings is simple and straightforward. By following this guide, you'll be able to set up your account, customize your profile, and ensure your information is secure. Remember, our support team is always available to help you with any questions or concerns. Enjoy your journey with us, whether you're buying or selling cars on our platform!</p>
+
+                    <div class="flex items-center text-sm text-secondary pt-6 pb-2">
+                        9 months ago
+                        <iconify-icon icon="lucide:dot" class="mx-1"></iconify-icon>
+                        Updated
+                    </div>
+
+                    <hr class="text-default-200 dark:text-white/20 my-6">
+                    <div class="pt-2">
+                        <h4 class="text-default-900 font-semibold pb-1 mb-4">Was this information helpful?</h4>
+                        <div class="flex gap-4">
+                            <button type="button" class="py-2.5 px-5 border border-default-200 rounded-md text-default-800 transition-all duration-300 inline-flex items-center hover:border-default-900 dark:border-white/3 text-sm font-semibold">
+                                <iconify-icon icon="lucide:thumbs-up" class="me-2"></iconify-icon>Yes
+                            </button>
+
+                            <button type="button" class="py-2.5 px-5 border border-default-200 rounded-md text-default-800 transition-all duration-300 inline-flex items-center hover:border-default-900 dark:border-white/3 text-sm font-semibold">
+                                <iconify-icon icon="lucide:thumbs-down" class="me-2"></iconify-icon>No
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 ">
+                    <div class="lg:sticky lg:top-25">
+                        <div id="accountSidebar" class="hs-overlay lg:static [--auto-close:lg] lg:block lg:translate-x-0 lg:end-auto lg:bottom-auto hs-overlay-open:translate-x-0 translate-x-full transition-all duration-300 transform  hidden fixed top-0 end-0 bottom-0 z-60 bg-body-bg lg:w-auto w-87" role="dialog" tabindex="-1" aria-label="Sidebar">
+                            <div class="flex flex-col sticky top-0">
+
+                                <header class="py-4 px-6 lg:px-0 lg:py-0 flex justify-between items-center gap-x-2 lg:border-none border-b border-default-200">
+                                    <a class="focus:outline-hidden focus:opacity-80 " [routerLink]="[]" aria-label="Brand">
+                                        <h3 class="text-xl font-semibold text-default-900 lg:hidden block">Chat</h3>
+                                    </a>
+
+                                    <div class="lg:hidden -me-2">
+                                        <button type="button" class="" data-hs-overlay="#accountSidebar">
+                                            <iconify-icon icon="lucide:x" width="20" height="20"></iconify-icon>
+                                            <span class="sr-only">Close</span>
+                                        </button>
+                                    </div>
+                                </header>
+
+                                <nav class="h-full overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-thumb]:rounded-full">
+                                    <div class="w-full flex flex-col flex-wrap  px-6 lg:px-0 pb-4 lg:pb-0 pt-6">
+                                        <div class="lg:ms-6 lg:bg-default-100 flex flex-col justify-between dark:bg-white/3 h-145 rounded-xl">
+                                            <div class="lg:p-6">
+                                                <div class="flex items-start gap-2 z-10">
+                                                    <div class="flex shrink-0 bg-primary rounded-full p-2 me-1">
+                                                        <iconify-icon icon="lucide:zap" class="text-base text-white"></iconify-icon>
+                                                    </div>
+
+                                                    <div class="w-full border border-border lg:bg-body-bg bg-default-100 rounded-md overflow-hidden py-2 px-4">
+                                                        <div class="z-10 text-sm py-1">
+                                                            Hello!<br>
+                                                            I'm your virtual assistant from the Help Center, ready to assist you in finding the information and resources you're looking for.<br>
+                                                            How can I help?
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="lg:p-6 mt-auto">
+                                                <div class="relative">
+                                                    <textarea class="w-full rounded-lg border border-default-300 bg-default-100 lg:bg-white px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500" rows="1" placeholder="Ask assistant anything..." required></textarea>
+
+                                                    <button type="submit" aria-label="Submit your message" class="absolute top-0 end-0 mt-1 me-1 flex items-center size-10 justify-center rounded-md border-0 bg-transparent text-xl text-default-600 hover:text-default-800 hover:bg-default-100 dark:hover:bg-white/3 focus:outline-none transition-all duration-300">
+                                                        <iconify-icon icon="lucide:circle-arrow-right"></iconify-icon>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <app-footer1 />
+
+    <div class="lg:hidden text-center fixed lg:z-0 z-20 bottom-0 inset-x-0">
+        <button type="button" class="pt-3.5 px-4.5 pb-4.5 w-full inline-flex justify-center items-center text-start bg-default-900 text-body-bg font-medium align-middle hover:bg-default-950 focus:outline-hidden" aria-haspopup="dialog" aria-expanded="false" aria-controls="accountSidebar" aria-label="Toggle navigation" data-hs-overlay="#accountSidebar">
+            <iconify-icon icon="lucide:message-circle-more" class="me-2 text-body-bg"></iconify-icon> Chat
+        </button>
+    </div>

@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'help-v3-cta',
+  selector: 'single-v3-cta',
   imports: [RouterLink],
   templateUrl: './cta.html',
   styles: ``,
 })
   
-export class CTA {}
+export class Cta {}

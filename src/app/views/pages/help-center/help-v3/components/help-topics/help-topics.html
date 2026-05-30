@@ -1,319 +1,81 @@
- <section class="lg:py-12 pt-6 pb-12 mt-6">
-        <div class="container">
-            <ul class="flex md:gap-4 gap-2 mb-4 pb-4">
-                <li>
-                    <a [routerLink]="[]" class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-900 bg-default-100 dark:bg-white/3 text-sm font-semibold">For patients</a>
-                </li>
+<section class="lg:py-12 pt-6 pb-12 mt-6">
+  <div class="container">
+    <ul class="flex md:gap-4 gap-2 mb-4 pb-4">
+      <li>
+        <a
+          [routerLink]="[]"
+          class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-900 bg-default-100 dark:bg-white/3 text-sm font-semibold"
+          >For patients</a
+        >
+      </li>
 
+      <li>
+        <a
+          [routerLink]="[]"
+          class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-300 dark:border-white/20 hover:border-default-900 transition-all duration-300 text-sm font-semibold"
+          >For doctors</a
+        >
+      </li>
+    </ul>
+
+    <div class="grid md:grid-cols-2 grid-cols-1 gap-6">
+      @for (item of helpCategoryData; track $index) {
+        <div class="bg-default-100 dark:bg-white/3 rounded-md lg:p-2">
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-default-900 mb-6">
+              {{ item.title }}
+            </h3>
+
+            <ul class="flex flex-col gap-4">
+              @for (article of item.visibleArticles; track $index) {
                 <li>
-                    <a [routerLink]="[]" class="py-2.5 px-5 inline-flex rounded-full text-default-900 border border-default-300 dark:border-white/20 hover:border-default-900 transition-all duration-300 text-sm font-semibold">For doctors</a>
+                  <a
+                    routerLink="/help/single-article/v3"
+                    class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out"
+                  >
+                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
+                    <span class="hover:underline transition-all duration-300 ease-in-out">
+                      {{ article }}
+                    </span>
+                  </a>
                 </li>
+              }
             </ul>
 
-            <div class="grid md:grid-cols-2 grid-cols-1 gap-6">
-                <div class="bg-default-100 dark:bg-white/3 rounded-md lg:p-2">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-default-900 mb-6">Search and navigation</h3>
-
-                        <ul class="flex flex-col gap-4">
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">What is included in my rental accommodation?</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Navigating the doctor directory</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Filtering options for doctor search</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">How to schedule an appointment online</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Availability and waitlist information</span>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <div class="hidden" id="commentsCollapse">
-                            <ul class="flex flex-col gap-4 pt-4">
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">Search for doctors by specialty and location</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">Using the map view to find nearby doctors</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">Using advanced search features for better results</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="pb-6 px-6">
-                        <div class="flex">
-                            <button class="w-full py-2 text-default-900 inline-flex items-center text-start text-sm font-medium hover:underline" type="button" onclick="document.getElementById('commentsCollapse').classList.toggle('hidden')" aria-expanded="false" aria-controls="commentsCollapse">
-                                Show more
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-default-100 dark:bg-white/3 rounded-md lg:p-2">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-default-900 mb-6">Appointment booking</h3>
-
-                        <ul class="flex flex-col gap-4">
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">How to schedule an appointment online</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Managing and cancelling appointments</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Availability and waitlist information</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Verifying insurance coverage for a doctor</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Billing and payment information</span>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <div class="hidden" id="commentsCollapse1">
-                            <ul class="flex flex-col gap-4 pt-4">
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">Managing and rescheduling your appointments</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">Different types of appointments: In-person vs. Telehealth</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">How to book an appointment for someone else</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="pb-6 px-6">
-                        <div class="flex">
-                            <button class="w-full py-2 text-default-900 inline-flex items-center text-start text-sm font-medium hover:underline" type="button" onclick="document.getElementById('commentsCollapse1').classList.toggle('hidden')" aria-expanded="false" aria-controls="commentsCollapse">
-                                Show more
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-default-100 dark:bg-white/3 rounded-md lg:p-2">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-default-900 mb-6">Specialties and services</h3>
-
-                        <ul class="flex flex-col gap-4">
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Exploring different medical specialties</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Finding doctors for specific services</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Researching doctors based on expertise</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Utilizing telehealth services</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Technical requirements for virtual visits</span>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <div class="hidden" id="commentsCollapse2">
-                            <ul class="flex flex-col gap-4 pt-4">
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">Understanding medical specialties</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">Find doctors offering specific services or treatments</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">Finding a team of specialists for comprehensive treatment</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="pb-6 px-6">
-                        <div class="flex">
-                            <button class="w-full py-2 text-default-900 inline-flex items-center text-start text-sm font-medium hover:underline" type="button" onclick="document.getElementById('commentsCollapse2').classList.toggle('hidden')" aria-expanded="false" aria-controls="commentsCollapse">
-                                Show more
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-default-100 dark:bg-white/3 rounded-md lg:p-2">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-default-900 mb-6">Doctor-patient communication</h3>
-
-                        <ul class="flex flex-col gap-4">
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Communicating with your doctor online</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Secure messaging and consultations</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Obtaining test results</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Verifying insurance coverage for a doctor</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                    <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                    <span class="hover:underline transition-all duration-300 ease-in-out">Understanding doctor's treatment instructions</span>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <div class="hidden" id="commentsCollapse3">
-                            <ul class="flex flex-col gap-4 pt-4">
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">How to send and receive messages with your doctor</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">What to discuss during your appointment</span>
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a routerLink="/help/single-article/v3" class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out">
-                                        <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
-                                        <span class="hover:underline transition-all duration-300 ease-in-out">Using video and chat features for telehealth appointments</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="pb-6 px-6">
-                        <div class="flex">
-                            <button class="w-full py-2 text-default-900 inline-flex items-center text-start text-sm font-medium hover:underline" type="button" onclick="document.getElementById('commentsCollapse3').classList.toggle('hidden')" aria-expanded="false" aria-controls="commentsCollapse">
-                                Show more
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="hidden" [id]="item.collapseId">
+              <ul class="flex flex-col gap-4 pt-4">
+                @for (article of item.hiddenArticles; track $index) {
+                  <li>
+                    <a
+                      routerLink="/help/single-article/v3"
+                      class="flex items-center text-base font-normal text-default-800 hover:text-default-900 transition-all duration-300 ease-in-out"
+                    >
+                      <iconify-icon icon="lucide:chevron-right" class="text-lg me-2"></iconify-icon>
+                      <span class="hover:underline transition-all duration-300 ease-in-out">
+                        {{ article }}
+                      </span>
+                    </a>
+                  </li>
+                }
+              </ul>
             </div>
+          </div>
+
+          <div class="pb-6 px-6">
+            <div class="flex">
+              <button
+                class="w-full py-2 text-default-900 inline-flex items-center text-start text-sm font-medium hover:underline"
+                type="button"
+                (click)="toggleCollapse(item.collapseId)"
+                aria-expanded="false"
+                [attr.aria-controls]="item.collapseId"
+              >
+                Show more
+              </button>
+            </div>
+          </div>
         </div>
-    </section>
+      }
+    </div>
+  </div>
+</section>

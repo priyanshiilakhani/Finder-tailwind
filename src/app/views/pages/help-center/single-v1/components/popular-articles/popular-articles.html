@@ -1,0 +1,76 @@
+<section class="py-12 bg-default-100 dark:bg-white/3">
+    <div class="container">
+        <div class="lg:py-12 md:py-8">
+            <h2 class="lg:text-3.5xl md:text-2.5xl text-2xl text-default-900 font-semibold mb-4 pb-4">
+                Popular articles
+            </h2>
+
+            <div class="flex justify-between gap-6 items-center">
+                <ul class="flex md:gap-4 gap-2 mb-6 pb-4 overflow-x-auto whitespace-nowrap">
+                    @for (item of articleCategoryData; track $index) {
+                        <li>
+                            <a
+                                [routerLink]="[]"
+                                class="py-2.5 px-5 inline-flex rounded-full text-sm font-semibold"
+                                [ngClass]="
+                                    item.isActive
+                                        ? 'text-default-900 border border-default-900 bg-default-100 dark:bg-white/3'
+                                        : 'text-default-900 border border-default-300 dark:border-white/20 hover:border-default-900 transition-all duration-300'
+                                ">
+                                {{ item.title }}
+                            </a>
+                        </li>
+                    }
+                </ul>
+
+                <div class="mb-6 pb-4">
+                    <a
+                        [routerLink]="[]"
+                        class="hover:underline flex items-center text-nowrap text-sm font-semibold">
+                        Browse all topics
+                        <lucide-icon name="chevron-right" class="size-4.5 ms-1"></lucide-icon>
+                    </a>
+                </div>
+            </div>
+
+            <div class="swiper">
+                <swiper-container [config]="swiperConfig" init="false" class="mb-12">
+                    @for (item of popularArticleData; track $index) {
+                        <!-- Article -->
+                        <swiper-slide>
+                            <a [routerLink]="item.articleLink">
+                                <div class="rounded-md overflow-hidden size-full">
+                                    <img
+                                        [src]="item.image"
+                                        alt="Category image"
+                                        class="size-full object-cover transition-transform duration-500 rounded-md hover:scale-110 z-0" />
+                                </div>
+
+                                <div class="pt-6">
+                                    <div class="text-secondary text-xs uppercase pb-2 mb-1">
+                                        {{ item.category }}
+                                    </div>
+
+                                    <h3 class="text-xl mb-2">
+                                        <a
+                                            class="relative text-default-900 font-semibold after:absolute after:bottom-0 after:start-0 after:w-full after:opacity-0 hover:after:opacity-100 after:h-0.25 after:bg-current hover:after:w-full after:transition-all after:duration-100"
+                                            [routerLink]="item.articleLink">
+                                            {{ item.title }}
+                                        </a>
+                                    </h3>
+
+                                    <p class="text-sm">
+                                        {{ item.description }}
+                                    </p>
+                                </div>
+                            </a>
+                        </swiper-slide>
+                    }
+                </swiper-container>
+
+                <!-- Pagination (Bullets) -->
+                <div id="single-articles-pagination" class="swiper-pagination position-static mt-3 mt-md-4"></div>
+            </div>
+        </div>
+    </div>
+</section>
